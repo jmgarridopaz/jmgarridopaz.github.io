@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <h2 id="about-this-web-site">About this web site</h2>
 
 <p align="right"><em>“Praise makes you weak”</em></p>
