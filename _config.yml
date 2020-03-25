@@ -1,8 +1,8 @@
-site.title: HEXAGONAL ME
-site.description: A web site about Hexagonal Architecture
+title: HEXAGONAL ME
+description: A web site about Hexagonal Architecture
 
-site.page.about_url: https://jmgarridopaz.githb.io
-site.page.articles_url: https://jmgarridopaz.githb.io/_pages/articles.md
-site.page.contact_url: https://jmgarridopaz.githb.io/_pages/contact.md
+page.about_url: https://jmgarridopaz.githb.io
+page.articles_url: https://jmgarridopaz.githb.io/_pages/articles.md
+page.contact_url: https://jmgarridopaz.githb.io/_pages/contact.md
 
 theme: jekyll-theme-midnight
