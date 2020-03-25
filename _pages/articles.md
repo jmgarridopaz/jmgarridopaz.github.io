@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 ## Articles
 
 - Ports and adapters patern (aka Hexagonal Architecture)
