@@ -1,8 +1,8 @@
-theme: jekyll-theme-midnight
-
 site.title: HEXAGONAL ME
 site.description: A web site about Hexagonal Architecture
 
 site.page.about_url: https://jmgarridopaz.githb.io
 site.page.articles_url: https://jmgarridopaz.githb.io/_pages/articles.md
 site.page.contact_url: https://jmgarridopaz.githb.io/_pages/contact.md
+
+theme: jekyll-theme-midnight
