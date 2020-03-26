@@ -2,12 +2,3 @@
 ---
 
 @import "{{ site.theme }}";
-
-#header nav {
-  background: none;
-}
-
-#header nav li a {
-  color: black;
-  background: white;
-}
