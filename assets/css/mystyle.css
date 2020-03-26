@@ -1,9 +1,12 @@
-
-#header nav {
-  background: none;
+#header div {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 10px;
+    background: black;
+    margin: 6px auto;
 }
 
-#header nav a {
+#header div a {
   color: black;
   background: white;
 }
