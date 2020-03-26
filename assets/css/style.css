@@ -1,0 +1,13 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+#header nav {
+  background: none;
+}
+
+#header nav li.item {
+  color: black;
+  background: white;
+}
