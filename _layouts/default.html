@@ -20,21 +20,16 @@
   <body>
       <div id="header">
         <nav>
-          <li class="fork"><a href="{{ page.about_url }}">About</a></li>
-          <li class="fork"><a href="{{ page.articles_url }}">Articles</a></li>
-          <li class="fork"><a href="{{ page.contact_url }}">Contact</a></li>
+          <li class="fork"><a href="{{ articles_url }}">Articles</a></li>
+          <li class="fork"><a href="{{ contact_url }}">Contact</a></li>
+          <li class="downloads"><a href="{{ index_url }}">{{ site.title }}: {{ site.description }}</a></li>
+          <li class="title">By <a href="{{ site.github.owner_url }}">@{{ site.github.owner_name }}</a></li>
         </nav>
       </div><!-- end header -->
 
     <div class="wrapper">
 
       <section>
-        <div id="title">
-          <h1>{{ site.title | default: site.github.repository_name }}</h1>
-          <p>{{ site.description | default: site.github.project_tagline }}</p>
-          <hr>
-          <span class="credits left">By <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
-        </div>
 
         {{ content }}
 
