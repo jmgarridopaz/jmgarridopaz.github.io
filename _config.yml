@@ -1,8 +1,4 @@
 title: HEXAGONAL ME
 description: A web site about Hexagonal Architecture
 
-index_url: https://jmgarridopaz.githb.io
-articles_url: https://jmgarridopaz.githb.io/content/articles.html
-contact_url: https://jmgarridopaz.githb.io/content/contact.html
-
 theme: jekyll-theme-midnight
