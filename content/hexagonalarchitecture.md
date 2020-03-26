@@ -33,18 +33,18 @@ layout: default
     <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-2">6.1.2.- Maintainability improvement.</a><br>
     <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-3">6.1.3.- Flexibility.</a><br>
     <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-4">6.1.4.- Application immune to technology evolution.</a><br>
-    <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html/#tc6-1-5">6.1.5.- Delay technological decisions.</a><br>
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html/#tc6-2">6.2.- Cons.</a><br>
-    <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html/#tc6-2-1">6.2.1.- Complexity.</a><br>
-    <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html/#tc6-2-2">6.2.2.- Build process performance.</a><br>
-    <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html/#tc6-2-3">6.2.3.- Indirection and Mappings.</a><br>
-<a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html/#tc7">7.- When to <em>“Hexagonal this!”</em>.</a><br>
-<a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html/#tc8">8.- Implementation steps.</a><br>
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html/#tc8-1">8.1.- Test driver adapters / Mock driven adapters.</a><br>
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html/#tc8-2">8.2.- Real driver adapters / Mock driven adapters.</a><br>
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html/#tc8-3">8.3.- Test driver adapters / Real driven adapters.</a><br>
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html/#tc8-4">8.4.- Real driver adapters / Real driven adapters.</a><br>
-<a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html/#tc9">9.- Links.</a>
+    <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-5">6.1.5.- Delay technological decisions.</a><br>
+  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2">6.2.- Cons.</a><br>
+    <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2-1">6.2.1.- Complexity.</a><br>
+    <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2-2">6.2.2.- Build process performance.</a><br>
+    <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2-3">6.2.3.- Indirection and Mappings.</a><br>
+<a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc7">7.- When to <em>“Hexagonal this!”</em>.</a><br>
+<a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8">8.- Implementation steps.</a><br>
+  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-1">8.1.- Test driver adapters / Mock driven adapters.</a><br>
+  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-2">8.2.- Real driver adapters / Mock driven adapters.</a><br>
+  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-3">8.3.- Test driver adapters / Real driven adapters.</a><br>
+  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-4">8.4.- Real driver adapters / Real driven adapters.</a><br>
+<a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc9">9.- Links.</a>
 
 <div id="tc1"></div>
 ### 1.- INTRODUCTION
