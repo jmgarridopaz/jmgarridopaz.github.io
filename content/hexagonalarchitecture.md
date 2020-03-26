@@ -94,7 +94,7 @@ Repository: The application can also obtain information from it, besides sending
 Recipient: The application just sends information to it and forgets about it. For example, a SMTP server for sending emails.
 The following picture shows some examples of actors in both driver and driven sides:
 
-![Figure 1: Actors](/images/actors.png)
+![Figure 1: Actors](/images/hexagonalarchitecture/figure1.png)
 
 Figure 1: Actors
 
@@ -129,7 +129,7 @@ A driver adapter uses a driver port interface, converting a specific technology 
 
 Figure 2 shows some examples of driver adapters:
 
-figure2
+![Figure 2: Driver Adapters](/images/hexagonalarchitecture/figure2.png)
 
 Figure 2: Driver Adapters
 
@@ -145,7 +145,7 @@ A driven adapter implements a driven port interface, converting the technology a
 
 Some examples of driven adapters are shown in the picture:
 
-figure3
+![Figure 3: Driven Adapters](/images/hexagonalarchitecture/figure3.png)
 
 Figure 3: Driven Adapters
 
@@ -188,7 +188,7 @@ It runs the driver adapter instance.
 
 Simple application with a web interface, used by the employees of a company for assigning tasks to each other. When an employee is assigned a task, the application sends an email to him/her.
 
-figure4
+![Figure 4: An example - Task Assignement Application](/images/hexagonalarchitecture/figure4.png)
 
 Figure 4: An example (Task Assignement Application)
 
@@ -213,7 +213,7 @@ Driven side: The conversation is started by the application, so the application 
 
 So dependencies are as follows:
 
-figure5
+![Figure 5: Dependencies](/images/hexagonalarchitecture/figure5.png)
 
 Figure 5: Dependencies
 
@@ -406,20 +406,20 @@ At this point you are done. You can configure every port with the adapter you wi
 
 * Article by Alistair Cockburn defining Ports and Adapters Pattern:
 
-https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture
+[https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture](https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture)
 
 * My translation of Alistair Cockburn article into spanish:
 
-https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.html
+[https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.html](https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.html)
 
 * Alistair in the Hexagone: a talk by Alistair Cockburn about Hexagonal Architecture:
 
-https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL
+[https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL](https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL)
 
 * Interview with Alistair Cockburn about Hexagonal Architecture:
 
-https://web.archive.org/web/20170925184018/http://alistair.cockburn.us/Hexagonal+Architecture+FAQ
+[https://web.archive.org/web/20170925184018/http://alistair.cockburn.us/Hexagonal+Architecture+FAQ](https://web.archive.org/web/20170925184018/http://alistair.cockburn.us/Hexagonal+Architecture+FAQ)
 
 * An article I like about Hexagonal Architecture:
 
-https://beyondxscratch.wordpress.com/2017/08/19/decoupling-your-technical-code-from-your-business-logic-with-the-hexagonal-architecture-hexarch
+[https://beyondxscratch.wordpress.com/2017/08/19/decoupling-your-technical-code-from-your-business-logic-with-the-hexagonal-architecture-hexarch](https://beyondxscratch.wordpress.com/2017/08/19/decoupling-your-technical-code-from-your-business-logic-with-the-hexagonal-architecture-hexarch)
