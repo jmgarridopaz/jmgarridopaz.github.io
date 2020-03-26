@@ -3,7 +3,7 @@
   background: none;
 }
 
-#header nav li.item {
+.menuitem {
   color: black;
   background: white;
 }
