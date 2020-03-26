@@ -1,8 +1,4 @@
 ---
----
-
-@import "{{ site.theme }}";
-
 #header nav {
   background: none;
 }
@@ -11,3 +7,6 @@
   color: black;
   background: white;
 }
+---
+
+@import "{{ site.theme }}";
