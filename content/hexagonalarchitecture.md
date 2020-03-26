@@ -94,6 +94,6 @@ Repository: The application can also obtain information from it, besides sending
 Recipient: The application just sends information to it and forgets about it. For example, a SMTP server for sending emails.
 The following picture shows some examples of actors in both driver and driven sides:
 
-<div style="background-image: url('/images/figure1.png');"></div>
+<img src="/images/figure1.png" width="100% height="100%" />
 
 Figure 1: Actors
