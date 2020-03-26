@@ -14,4 +14,4 @@ layout: default
 
   - #### Chapter 1: Application design
 
-- ### Hexagonal Architecture: Spanish translation of the pattern
+- ### [My translation of Alistair Cockburn pattern into spanish](https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.html)
