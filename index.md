@@ -8,7 +8,7 @@ layout: default
 
 <p align="justify"><strong><em>Hexagonal Me</em></strong> is a site about software development, a site for sharing my knowledge about a pattern to structure and implement software applications, a pattern named <strong>Ports and Adapters</strong>, that is also known as <strong>Hexagonal Architecture</strong>. Other topics I’m interested in are: Software Craftmanship, Domain Driven Design, User Story Mapping, Behaviour Driven Development, Clean Code, ...</p>
 
-[contact](/_pages/contact.md)
+[contact](./_pages/contact.md)
 
 <p align="right"><em>Juan Manuel Garrido de Paz</em></p>
 
