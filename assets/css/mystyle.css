@@ -1,9 +1,9 @@
 
-#header {
+#header nav {
   background: none;
 }
 
-#header a {
+#header nav a {
   color: black;
   background: white;
 }
