@@ -4,7 +4,7 @@ layout: default
 
 <div id="title">
 <h1>Arquitectura Hexagonal</h1>
-<p>(Patrón "Ports and Adapters")</p>
+<p>Mi traducción al español del Patrón "Ports and Adapters" de Alistair Cockburn</p>
 <hr>
 <span class="credits right">Published on July 23, 2018 by <a href="{{ site.github.owner_url }}">@{{ site.github.owner_name }}</a></span>
 </div>
@@ -17,4 +17,4 @@ El patrón "Ports and Adapters" es obra del Dr. Alistair Cockburn, coautor del "
 
 - Fecha de la Traducción: 24 de Junio de 2018
 
-## [Descarga de la traducción en formato pdf](https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.pdf)
+### [Descarga de la traducción en formato pdf](https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.pdf)
