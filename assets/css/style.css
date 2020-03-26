@@ -1,12 +1,13 @@
 ---
+---
+
+@import "{{ site.theme }}";
+
 #header nav {
   background: none;
 }
 
-.menuitem {
+#header nav li a {
   color: black;
   background: white;
 }
----
-
-@import "{{ site.theme }}";
