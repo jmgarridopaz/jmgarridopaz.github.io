@@ -2,9 +2,12 @@
 layout: default
 ---
 
-<h1>Ports and Adapters Pattern (Hexagonal Architecture)</h1>
-
-<p>Published on August 29, 2018 by <a href="https://github.com/jmgarridopaz">@jmgarridopaz</a></p>
+<div id="title">
+<h1>Ports and Adapters Pattern</h1>
+<p>(Hexagonal Architecture)</p>
+<hr>
+<span class="credits right">Published on August 29, 2018 by <a href="{{ site.github.owner_url }}">@{{ site.github.owner_name }}</a></span>
+</div>
 
 <p><em>This article is for sharing my knowledge about Ports & Adapters pattern (also known as Hexagonal Architecture), hoping it can be helpful to someone interested in this subject. Here I expose my understanding of this architecture pattern, after being reading articles, watching talks and learning about it, since I first heard of it two years ago. This is a conceptual article, rather than a practical one. I hope to publish a pragmatic article soon, explaining my implementation of this architecture using Java 9 modules; and I hope to upload a proof of concept to github as well</em></p>
 
@@ -81,3 +84,5 @@ There are two kinds of driven actors:
 Repository: The application can also obtain information from it, besides sending. For example, a database or any other storage device.
 Recipient: The application just sends information to it and forgets about it. For example, a SMTP server for sending emails.
 The following picture shows some examples of actors in both driver and driven sides:
+
+[Figure 1: Actors](/images/figure1.png)
