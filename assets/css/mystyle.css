@@ -1,7 +1,7 @@
 #header div {
     max-width:650px;
     margin:0 auto;
-    padding:0 10px;
+    padding:10px 10px;
     background:none;
     margin:6px auto
 }
@@ -19,31 +19,4 @@
     font-size:14px;
     display:inline-block;
     text-align:center
-}
-
-#header nav li {
-    font-family:'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight:normal;
-    list-style:none;
-    display:inline;
-    color:white;
-    line-height:50px;
-    text-shadow:0px 1px 0px rgba(0,0,0,0.2);
-    font-size:14px
-}
-
-#header nav li.fork {
-    float:left;
-    margin-left:0px
-}
-
-#header nav li.downloads {
-    float:right;
-    margin-left:6px
-}
-
-#header nav li.title {
-    float:right;
-    margin-right:10px;
-    font-size:11px
 }
