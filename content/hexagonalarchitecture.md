@@ -49,15 +49,17 @@ layout: default
 <div id="tc1">
 <h3>1.- INTRODUCTION</h3>
 </div>
-<p>Ports and Adapters is an Object Structural Pattern coined by Dr. Alistair Cockburn, in an <a href="https://alistair.cockburn.us/hexagonal-architecture" target="_blank">article</a> he wrote in 2005.</p>
-<p>If you are thinking… “Isn’t the article too old? How is it that it is still worth it nowadays, being software development a discipline in continous evolution where new technologies and frameworks arise every day and kill the one we used yesterday?” Well the answer is in the question. Ports & Adapters is a pattern that promotes <strong>decoupling from technology</strong> and frameworks. So no, it isn’t too old. Good things are timeless. They are like wine, they get better as time passes by.</p>
-<p>The <strong>main idea of Ports & Adapters</strong> is to define the structure of an application so that it could be run by different kinds of clients (humans, tests cases, other applications,…), and it could be <strong>tested in isolation from external devices</strong> of the real world that the application depends on (databases, servers, other applications, ...).</p>
+<p>Ports and Adapters is an Object Structural Pattern coined by Dr. Alistair Cockburn, in an <a href="https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture" target="_blank">article</a> he wrote in 2005.</p>
+<p>If you are thinking... "Isn't the article too old? How is it that it is still worth it nowadays, being software development a discipline in continous evolution where new technologies and frameworks arise every day and kill the one we used yesterday?" Well the answer is in the question. Ports & Adapters is a pattern that promotes <strong>decoupling from technology</strong> and frameworks. So no, it isn’t too old. Good things are timeless. They are like wine, they get better as time passes by.</p>
+<p>The <strong>main idea of Ports & Adapters</strong> is to define the structure of an application so that it could be run by different kinds of clients (humans, tests cases, other applications, ...), and it could be <strong>tested in isolation from external devices</strong> of the real world that the application depends on (databases, servers, other applications, ...).</p>
 <p>Let’s see how to achieve this.</p>
 
 2.- THE ARCHITECTURE
+
 In this section we will see the elements of Ports & Adapters pattern and the relationships between them.
 
 2.1.- THE HEXAGON
+
 Ports & Adapters pattern depicts the application as a closed area.
 
 The closed area chosen by Alistair Cockburn for drawing the application was a hexagon, that’s why this pattern is also called Hexagonal Architecture.
@@ -73,6 +75,7 @@ The hexagon contains the business logic, with no references to any technology, f
 Ports & Adapters pattern says nothing about the structure of the inside of the hexagon. You can have layers… you can have components by feature… you can have spagheti code… you can have a Big Ball of Mud… you can apply DDD tactical patterns… you can have a single CRUD… it’s up to you.
 
 2.2- ACTORS
+
 Outside the hexagon we have any real world thing that the application interacts with. These things include humans, other applications, or any hardware/software device. They are the actors. We could say that actors are the environment of the application.
 
 Actors are arranged around the hexagon depending on who triggers the interaction between the application and the actor:
@@ -85,4 +88,4 @@ Repository: The application can also obtain information from it, besides sending
 Recipient: The application just sends information to it and forgets about it. For example, a SMTP server for sending emails.
 The following picture shows some examples of actors in both driver and driven sides:
 
-[Figure 1: Actors](/images/figure1.png)
+![Figure 1: Actors](/images/figure1.png)
