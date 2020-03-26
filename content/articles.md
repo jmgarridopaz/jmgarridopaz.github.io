@@ -8,10 +8,10 @@ layout: default
 <span class="credits right">By <a href="{{ site.github.owner_url }}">@{{ site.github.owner_name }}</a></span>
 </div>
 
-### - [Ports and Adapters Patern (Hexagonal Architecture)](./content/hexagonalarchitecture.md)
+- ### [Ports and Adapters Patern (Hexagonal Architecture)](/content/hexagonalarchitecture.md)
 
-### - Hexagonal Architecture: An implementation guide
+- ### Hexagonal Architecture: An implementation guide
 
-  #### - Chapter 1: Application design
+  - #### Chapter 1: Application design
 
-### - Hexagonal Architecture: Spanish translation of the pattern
+- ### Hexagonal Architecture: Spanish translation of the pattern
