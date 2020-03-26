@@ -2,6 +2,13 @@
 layout: default
 ---
 
+<div id="title">
+<h1>{{ site.title }}</h1>
+<p>{{ site.description }}</p>
+<hr>
+<span class="credits right">By <a href="{{ site.github.owner_url }}">@{{ site.github.owner_name }}</a></span>
+</div>
+
 <h2 id="about-this-web-site">About this web site</h2>
 
 <p align="right"><em>“Praise makes you weak”</em></p>
