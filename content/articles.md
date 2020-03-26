@@ -14,4 +14,4 @@ layout: default
 
   - #### Chapter 1: Application design
 
-- ### [My translation of Alistair Cockburn pattern into spanish](https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.html)
+- ### [My translation of "Ports and Adapters Pattern" (by Alistair Cockburn) into spanish](https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.html)
