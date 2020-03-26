@@ -1,12 +1,49 @@
 #header div {
-    max-width: 650px;
-    margin: 0 auto;
-    padding: 0 10px;
-    background: black;
-    margin: 6px auto;
+    max-width:650px;
+    margin:0 auto;
+    padding:0 10px;
+    background:none;
+    margin:6px auto
 }
 
 #header div a {
-  color: black;
-  background: white;
+    color:black;
+    border:1px solid #5d910b;
+    background:linear_gradient(#93bd20, #659e10);
+    border-radius:2px;
+    box-shadow:inset 0px 1px 0px rgba(255,255,255,0.3),0px 3px 7px rgba(0,0,0,0.7);
+    background-color:white;
+    padding:10px 12px;
+    margin-top:6px;
+    line-height:14px;
+    font-size:14px;
+    display:inline-block;
+    text-align:center
+}
+
+#header nav li {
+    font-family:'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight:normal;
+    list-style:none;
+    display:inline;
+    color:white;
+    line-height:50px;
+    text-shadow:0px 1px 0px rgba(0,0,0,0.2);
+    font-size:14px
+}
+
+#header nav li.fork {
+    float:left;
+    margin-left:0px
+}
+
+#header nav li.downloads {
+    float:right;
+    margin-left:6px
+}
+
+#header nav li.title {
+    float:right;
+    margin-right:10px;
+    font-size:11px
 }
