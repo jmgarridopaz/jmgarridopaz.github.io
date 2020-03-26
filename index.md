@@ -10,7 +10,7 @@ layout: default
 
 [contact](./contact.md)
 
-[pages contact](./_pages/contact.md)
+[pages contact](./pages/contact.md)
 
 [docs contact](./docs/contact.md)
 
