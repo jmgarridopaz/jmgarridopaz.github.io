@@ -26,6 +26,11 @@ p.intro {
     font-style:italic
 }
 
+p.introquote {
+    text-align:right;
+    font-style:italic
+}
+
 section p {
     text-align:justify;    
 }
