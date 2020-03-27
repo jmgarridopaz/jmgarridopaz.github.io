@@ -184,7 +184,7 @@ As we have seen, the elements of the architecture are:
 
 Besides these elements, there will be a [Composition Root](http://blog.ploeh.dk/2011/07/28/CompositionRoot/) (also called __Main Component__ by Robert C. Martin, in his book [Clean Architecture: A Craftsman’s Guide to Software Structure and Design](https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164)). This component will run at startup and it builds the whole system doing the following:
 
-- It initializes and configures the environment (databases, servers, …)
+- It initializes and configures the environment (databases, servers, ...)
 - For each driven port, it chooses a driven adapter implementing the port, and creates an instance of the adapter.
 - It creates an instance of the application injecting the driven adapters instances into the application constructor.
 - For each driver port:
@@ -268,7 +268,7 @@ Many articles I’ve read about this architecture say that it is a layered one. 
 Some people wonder why a hexagon, perhaps __thinking that the number of edges is important__. Well the answer is no, __it doesn’t matter at all__. Number six isn’t important per se. Anyway, if you are curious, here you have some reasons by Alistair Cockburn on why he chose a hexagon:
 
 - You have enough space for drawing ports and adapters as you need.
-- The shape should evoke the inside/outside asymmetry rather than top/down or let/right. Then Squeare is not suitable. Pentagon, Heptagon, Octogon, … too hard to draw. So Hexagon is the winner.
+- The shape should evoke the inside/outside asymmetry rather than top/down or let/right. Then Squeare is not suitable. Pentagon, Heptagon, Octogon, ... too hard to draw. So Hexagon is the winner.
 
 <div id="tc5-3"></div>
 #### 5.3.- PORTS OUTSIDE ADAPTERS
@@ -303,7 +303,7 @@ The main benefit this architecture provides is the ability of __testing the appl
 
 Testing the hexagon in isolation can be useful for:
 
-- Running __regression tests__. When source code changes for whatever reason (a new feature is added, a bug is fixed, …), these tests are run to ensure that those changes don’t have side effects on any already existing functionality. To run these tests, the driver adapter uses an automated test framework.
+- Running __regression tests__. When source code changes for whatever reason (a new feature is added, a bug is fixed, ...), these tests are run to ensure that those changes don’t have side effects on any already existing functionality. To run these tests, the driver adapter uses an automated test framework.
 
 - Doing [BDD (Behaviour Driven Development)](https://dannorth.net/introducing-bdd). For each driver port functionality, a set of acceptance criteria is defined by the user. The functionality will be considered “done” when all the acceptance criteria are met. These acceptance criteria are called scenarios, which will be the test cases run by the test adapter. For running these acceptance tests the adapter can use tools like [Cucumber](https://cucumber.io/).
 
@@ -401,7 +401,7 @@ __Next steps are for adding “real” driver and driven adapters__ for each por
 <div id="tc8-2"></div>
 #### 8.2.- REAL DRIVER ADAPTERS / MOCK DRIVEN ADAPTERS
 
-- _Driver side_: For each driver port, construct and add the “real” driver adapters you need. For example a Web UI, a REST API, …
+- _Driver side_: For each driver port, construct and add the “real” driver adapters you need. For example a Web UI, a REST API, ...
 
 - _Driven side_: Keep the mock adapters you constructed in step (1).
 
@@ -412,7 +412,7 @@ This way you can test the new driver adapters.
 
 - _Driver side_: Configure each driver port with the test driver adapter constructed in step (1).
 
-- _Driven side_: For each driven port, construct and add the “real” driven adapters you need. For example a database adapter, an email notification adapter, …
+- _Driven side_: For each driven port, construct and add the "real" driven adapters you need. For example a database adapter, an email notification adapter, ...
 
 This way you can test the new driven adapters.
 
