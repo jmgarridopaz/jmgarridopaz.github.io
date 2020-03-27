@@ -9,12 +9,12 @@ layout: default
 <span class="credits right">By <a href="{{ site.github.owner_url }}">@{{ site.github.owner_name }}</a></span>
 </div>
 
-<h2 id="about-this-web-site">About this web site</h2>
+## About this web site
 
-<p align="right"><em>“Praise makes you weak”</em></p>
+<p class="introquote">"Praise makes you weak"</p>
 
-<p align="justify"><strong><em>Hexagonal Me</em></strong> is a site about software development, a site for sharing my knowledge about a pattern to structure and implement software applications, a pattern named <strong>Ports and Adapters</strong>, that is also known as <strong>Hexagonal Architecture</strong>. Other topics I’m interested in are: Software Craftmanship, Domain Driven Design, User Story Mapping, Behaviour Driven Development, Clean Code, ...</p>
+___Hexagonal Me___ is a site about software development, a site for sharing my knowledge about a pattern to structure and implement software applications, a pattern named __Ports and Adapters__, that is also known as __Hexagonal Architecture__. Other topics I'm interested in are: Software Craftmanship, Domain Driven Design, User Story Mapping, Behaviour Driven Development, Clean Code, ...
 
-<p align="right"><em>Juan Manuel Garrido de Paz</em></p>
+<p clasa="introquote">Juan Manuel Garrido de Paz</p>
 
-<p align="right"><em>Programmer since 1985</em></p>
+<p class="introquote">Programmer since 1985</p>
