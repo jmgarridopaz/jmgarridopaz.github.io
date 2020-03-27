@@ -14,21 +14,13 @@ layout: default
 #### TABLE OF CONTENTS
 
 1. [Introduction](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc1)
-
-2. [The Architecture](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2)
-
-  2.1. [The Hexagon](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-1)
-
-  2.2. [Actors](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-2)
-
-  2.3. [Ports](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-3)
-
-  2.4. [Adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-4)
-
-  2.5. [Summary](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-5)
-
-  2.6. [Example](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-6)
-
+2. [The Architecture](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2)  
+2.1. [The Hexagon](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-1)
+2.2. [Actors](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-2)
+2.3. [Ports](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-3)
+2.4. [Adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-4)
+2.5. [Summary](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-5)
+2.6. [Example](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-6)
 3. [Configurable Dependency Pattern](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc3)
 
 4. [From "Symmetrical Asymmetry" to "Asymmetrical Symmetry"](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc4)
