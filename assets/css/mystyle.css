@@ -20,3 +20,12 @@
     display:inline-block;
     text-align:center
 }
+
+p.intro {
+    text-align:center;
+    font-style:italic
+}
+
+section p {
+    text-align:justify;    
+}
