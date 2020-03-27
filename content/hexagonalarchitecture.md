@@ -15,58 +15,35 @@ layout: default
 
 1. [Introduction](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc1)
 2. [The Architecture](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2)  
-2.1. [The Hexagon](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-1)
-2.2. [Actors](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-2)
-2.3. [Ports](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-3)
-2.4. [Adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-4)
-2.5. [Summary](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-5)
+2.1. [The Hexagon](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-1)  
+2.2. [Actors](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-2)  
+2.3. [Ports](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-3)  
+2.4. [Adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-4)  
+2.5. [Summary](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-5)  
 2.6. [Example](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-6)
 3. [Configurable Dependency Pattern](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc3)
-
 4. [From "Symmetrical Asymmetry" to "Asymmetrical Symmetry"](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc4)
-
-5. [Misconceptions](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc5)
-
-5.1. [Layered Architecture](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc5-1)
-
-5.2. [Why a Hexagon?](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc5-2)
-
+5. [Misconceptions](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc5)  
+5.1. [Layered Architecture](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc5-1)  
+5.2. [Why a Hexagon?](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc5-2)  
 5.3. [Ports Outside Adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc5-3)
-
-6. [Pros and Cons](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6)
-
-6.1. [Pros](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1)
-
-6.1.1. [Testability improvement](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-1)
-
-6.1.2. [Maintainability improvement](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-2)
-
-6.1.3. [Flexibility](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-3)
-
-6.1.4. [Application immune to technology evolution](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-4)
-
-6.1.5. [Delay technological decisions](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-5)
-
-6.2. [Cons](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2)
-
-6.2.1. [Complexity](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2-1)
-
-6.2.2. [Build process performance](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2-2)
-
-6.2.3. [Indirection and Mappings](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2-3)
-
+6. [Pros and Cons](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6)  
+6.1. [Pros](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1)  
+6.1.1. [Testability improvement](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-1)  
+6.1.2. [Maintainability improvement](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-2)  
+6.1.3. [Flexibility](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-3)  
+6.1.4. [Application immune to technology evolution](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-4)  
+6.1.5. [Delay technological decisions](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-5)  
+6.2. [Cons](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2)  
+6.2.1. [Complexity](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2-1)  
+6.2.2. [Build process performance](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2-2)  
+6.2.3. [Indirection and Mappings](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2-3)  
 7. [When to "Hexagonal this!"](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc7)
-
-8. [Implementation steps](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8)
-
-8.1. [Test driver adapters / Mock driven adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-1)
-
-8.2. [Real driver adapters / Mock driven adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-2)
-
-8.3. [Test driver adapters / Real driven adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-3)
-
+8. [Implementation steps](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8)  
+8.1. [Test driver adapters / Mock driven adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-1)  
+8.2. [Real driver adapters / Mock driven adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-2)  
+8.3. [Test driver adapters / Real driven adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-3)  
 8.4. [Real driver adapters / Real driven adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-4)
-
 9. [Links](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc9)
 
 <div id="tc1"></div>
