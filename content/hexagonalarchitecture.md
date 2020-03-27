@@ -109,27 +109,28 @@ So, for knowing which kind is the actor in an __application-actor interaction__,
 <div id="tc2-3"></div>
 #### 2.3.- PORTS
 
-The interactions between actors and the application are organized at the hexagon boundary by the reason why they are interacting with the application. Each group of interactions with a given purpose/intention is a port.
+The interactions between actors and the application are organized at the hexagon boundary by the reason why they are interacting with the application. Each __group of interactions with a given purpose/intention__ is a port.
 
-Ports should be named according to what they are for, not according to any technology. So, in order to name a port, we should use a verb ending with “ing” and we should say “this port is for …ing something”. For example:
+Ports should be named according to what they are for, not according to any technology. So, in order to name a port, we should use a verb ending with "ing" and we should say __"this port is for ...ing something"__. For example:
 
-This driver port is for “adding products to the shopping cart”.
-This driven port (repository) is “for obtaining information about orders”
-This driven port (recipient) is for “sending notifications”.
-Ports are the application boundary, in the picture a port is an edge of the hexagon. From the outside world, actors can only interact with the hexagon ports, they shouldn’t be able to access the inside of the hexagon. Ports are interfaces that the application offers to the outside world for allowing actors interact with the application. So the application should follow the Information Hiding Principle. An important thing to remark is that Ports belong to the application.
+- This driver port is for "adding products to the shopping cart".
+- This driven port (repository) is "for obtaining information about orders".
+- This driven port (recipient) is for "sending notifications".
 
-Driver Ports offer the application functionality to drivers of the outside world. Thus, driver ports are said to be the use case boundary of the application. They are the API of the application.
+Ports are the application boundary, in the picture a port is an __edge of the hexagon__. From the outside world, actors can only interact with the hexagon ports, they shouldn’t be able to access the inside of the hexagon. Ports are __interfaces__ that the application offers to the outside world for allowing actors interact with the application. So the application should follow the [Information Hiding Principle](https://en.wikipedia.org/wiki/Information_hiding). An important thing to remark is that __ports belong to the application__.
 
-Depending on the granularity we apply when grouping functionality, we can have a port interface with many use cases or with just a few. If we want to follow the Single Responsibility Principle, then we would have a lot of ports, each one for a use case. In this case a better option is applying the command bus design pattern to the port, with a command handler for each use case. Same idea could be applied to queries, so that we would satisfy the CQRS pattern as well. We would have a port for executing commands and another port for executing queries.
+__Driver Ports__ offer the application functionality to drivers of the outside world. Thus, driver ports are said to be the __use case boundary__ of the application. They are __the API__ of the application.
 
-A driven port is an interface for a functionality, needed by the application for implementing the business logic. Such functionality is provided by a driven actor. So driven ports are the SPI (Service Provider Interface) required by the application. A driven port would be like a Required Interface.
+Depending on the granularity we apply when grouping functionality, we can have a port interface with many use cases or with just a few. If we want to follow the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle), then we would have a lot of ports, each one for a use case. In this case a better option is applying the [command bus](https://matthiasnoback.nl/2015/01/a-wave-of-command-buses/) design pattern to the port, with a command handler for each use case. Same idea could be applied to queries, so that we would satisfy the [CQRS pattern](https://kalele.io/blog-posts/really-simple-cqrs/) as well. We would have a port for executing commands and another port for executing queries.
+
+A __driven port__ is an interface for a functionality, needed by the application for implementing the business logic. Such functionality is provided by a driven actor. So driven ports are the __SPI (Service Provider Interface) required by the application__. A driven port would be like a [Required Interface](https://martinfowler.com/bliki/RequiredInterface.html).
 
 <div id="tc2-4"></div>
 #### 2.4.- ADAPTERS
 
-Actors interact with hexagon ports through adapters using a specific technology. An adapter is a software component that allows a technology to interact with a port of the hexagon. Given a port, there may be an adapter for each desired technology that we want to use. Adapters are outside the application.
+Actors interact with hexagon ports through adapters using a specific technology. An __adapter__ is a software component that allows a __technology__ to interact with a port of the hexagon. Given a port, there may be an adapter for each desired technology that we want to use. Adapters are __outside the application__.
 
-A driver adapter uses a driver port interface, converting a specific technology request into a technology agnostic request to a driver port.
+A __driver adapter uses a driver port interface__, converting a specific technology request into a technology agnostic request to a driver port.
 
 Figure 2 shows some examples of driver adapters:
 
@@ -137,15 +138,16 @@ Figure 2 shows some examples of driver adapters:
 
 Figure 2: Driver Adapters
 
-An automated test framework: Converts test cases into requests to a driver port.
-A CLI  (Command Line Interface): Converts text entered in a console.
-A GUI of a desktop application: Converts events triggered by graphical components.
-An MVC web application: The Controller receives from the View the action requested by the user, and converts it into a request to a driver port.
-A REST API controller: Converts REST API requests.
-An event subscriber: Converts messages (events) from a message queue to which the application is subscribed.
+- An _automated test framework_: Converts test cases into requests to a driver port.
+- A _CLI (Command Line Interface)_: Converts text entered in a console.
+- A _GUI of a desktop application_: Converts events triggered by graphical components.
+- An _MVC web application_: The Controller receives from the View the action requested by the user, and converts it into a request to a driver port.
+- A _REST API controller_: Converts REST API requests.
+- An _event subscriber_: Converts messages (events) from a message queue to which the application is subscribed.
+
 For each driver port, there should be at least two adapters: one for the real driver that is going to run it, and another one for testing the behaviour of the port.
 
-A driven adapter implements a driven port interface, converting the technology agnostic methods of the port into specific technology methods.
+A __driven adapter implements a driven port interface__, converting the technology agnostic methods of the port into specific technology methods.
 
 Some examples of driven adapters are shown in the picture:
 
@@ -153,39 +155,41 @@ Some examples of driven adapters are shown in the picture:
 
 Figure 3: Driven Adapters
 
-A mock adapter: It mimics the behaviour of a real secondary actor, for example an inmemory database.
-A SQL adapter: Implements a driven port for persisting data by accessing a SQL database.
-An email adapter: Implements a driven port for notifying people by sending an email to them.
-An App-To-App adapter: Implements a driven port for getting some data by requesting them to a remote application.
-An event publisher: Implements a driven port for publishing events by sending them to a message queue, so that they are available for subscribers.
-For each driven port we should write at least two adapters: one for the real world device, and another one a mock that mimics the real behavior.
+- A _mock adapter_: It mimics the behaviour of a real secondary actor, for example an inmemory database.
+- A _SQL adapter_: Implements a driven port for persisting data by accessing a SQL database.
+- An _email adapter_: Implements a driven port for notifying people by sending an email to them.
+- An _App-To-App adapter_: Implements a driven port for getting some data by requesting them to a remote application.
+- An _event publisher_: Implements a driven port for publishing events by sending them to a message queue, so that they are available for subscribers.
 
-What an adapter does in the end is to convert an interface into another, so we could use the Adapter Design Pattern to implement it.
+For each driven port we should write at least two adapters: one for the real world device, and another one a [mock](https://en.wikipedia.org/wiki/Mock_object) that mimics the real behavior.
 
-Which adapter to use for each port is something that is configured at application startup. This is what gives flexibility to this pattern, so that we can switch from a technology to another everytime we run the application. If we choose a test driver and mocks adapters for the driven ports, it allows the application to be tested in isolation.
+What an adapter does in the end is to convert an interface into another, so we could use the [Adapter Design Pattern](http://w3sdesign.com/?gr=s01&ugr=intent) to implement it.
+
+Which adapter to use for each port is something that is configured at application startup. This is what gives flexibility to this pattern, so that we can __switch from a technology to another__ everytime we run the application. If we choose a test driver and mocks adapters for the driven ports, it allows the application to be tested in isolation.
 
 <div id="tc2-5"></div>
 #### 2.5.- SUMMARY
 
 As we have seen, the elements of the architecture are:
 
-The Hexagon ==> the application
-Driver Ports ==> API offered by the application
-Driven Ports ==> SPI required by the application
-Actors ==> environment devices that interact with the application
-Drivers ==> application users (either humans or hardware/software devices)
-Driven Actors ==> provide services required by the application
-Adapters ==> adapt specific technology to the application
-Driver Adapters ==> use the drivers ports
-Driven Adapters ==> implement the driven ports
-Besides these elements, there will be a Composition Root (also called Main Component by Robert C. Martin, in his book Clean Architecture: A Craftsman’s Guide to Software Structure and Design). This component will run at startup and it builds the whole system doing the following:
+- __The Hexagon__ ==> the application
+  * Driver Ports ==> API offered by the application
+  * Driven Ports ==> SPI required by the application
+- __Actors__ ==> environment devices that interact with the application
+  * Drivers ==> application users (either humans or hardware/software devices)
+  * Driven Actors ==> provide services required by the application
+- __Adapters__ ==> adapt specific technology to the application
+  * Driver Adapters ==> use the drivers ports
+  * Driven Adapters ==> implement the driven ports
 
-It initializes and configures the environment (databases, servers, …)
-For each driven port, it chooses a driven adapter implementing the port, and creates an instance of the adapter.
-It creates an instance of the application injecting the driven adapters instances into the application constructor.
-For each driver port:
-It chooses a driver adapter that uses the port, and creates an instance of the adapter, injecting the application instance into the adapter constructor.
-It runs the driver adapter instance.
+Besides these elements, there will be a [Composition Root](http://blog.ploeh.dk/2011/07/28/CompositionRoot/) (also called __Main Component__ by Robert C. Martin, in his book [Clean Architecture: A Craftsman’s Guide to Software Structure and Design](https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164)). This component will run at startup and it builds the whole system doing the following:
+
+- It initializes and configures the environment (databases, servers, …)
+- For each driven port, it chooses a driven adapter implementing the port, and creates an instance of the adapter.
+- It creates an instance of the application injecting the driven adapters instances into the application constructor.
+- For each driver port:
+  * It chooses a driver adapter that uses the port, and creates an instance of the adapter, injecting the application instance into the adapter constructor.
+  * It runs the driver adapter instance.
 
 <div id="tc2-6"></div>
 #### 2.6- EXAMPLE
