@@ -17,41 +17,65 @@ layout: default
 
 2. [The Architecture](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2)
 
-  2.1. [The Hexagon](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-1)
+2.1. [The Hexagon](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-1)
 
-  2.2. [Actors](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-2)
+2.2. [Actors](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-2)
 
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-3">2.3.- Ports.</a><br>
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-4">2.4.- Adapters.</a><br>
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-5">2.5.- Summary.</a><br>
+2.3. [Ports](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-3)
 
-  2.6. [Example](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-6)
+2.4. [Adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-4)
+
+2.5. [Summary](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-5)
+
+2.6. [Example](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc2-6)
 
 3. [Configurable Dependency Pattern](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc3)
 
-<a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc4">4.- From “Symmetrical Asymmetry” To “Asymmetrical Symmetry”.</a><br>
-<a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc5">5.- Misconceptions.</a><br>
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc5-1">5.1.- Layered Architecture.</a><br>
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc5-2">5.2.- Why a hexagon?</a><br>
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc5-3">5.3.- Ports outside Adapters.</a><br>
-<a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6">6.- Pros and Cons.</a><br>
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1">6.1.- Pros.</a><br>
-    <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-1">6.1.1.- Testability improvement.</a><br>
-    <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-2">6.1.2.- Maintainability improvement.</a><br>
-    <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-3">6.1.3.- Flexibility.</a><br>
-    <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-4">6.1.4.- Application immune to technology evolution.</a><br>
-    <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-5">6.1.5.- Delay technological decisions.</a><br>
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2">6.2.- Cons.</a><br>
-    <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2-1">6.2.1.- Complexity.</a><br>
-    <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2-2">6.2.2.- Build process performance.</a><br>
-    <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2-3">6.2.3.- Indirection and Mappings.</a><br>
-<a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc7">7.- When to <em>“Hexagonal this!”</em>.</a><br>
-<a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8">8.- Implementation steps.</a><br>
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-1">8.1.- Test driver adapters / Mock driven adapters.</a><br>
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-2">8.2.- Real driver adapters / Mock driven adapters.</a><br>
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-3">8.3.- Test driver adapters / Real driven adapters.</a><br>
-  <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-4">8.4.- Real driver adapters / Real driven adapters.</a><br>
-<a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc9">9.- Links.</a>
+4. [From "Symmetrical Asymmetry" to "Asymmetrical Symmetry"](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc4)
+
+5. [Misconceptions](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc5)
+
+5.1. [Layered Architecture](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc5-1)
+
+5.2. [Why a Hexagon?](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc5-2)
+
+5.3. [Ports Outside Adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc5-3)
+
+6. [Pros and Cons](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6)
+
+6.1. [Pros](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1)
+
+6.1.1. [Testability improvement](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-1)
+
+6.1.2. [Maintainability improvement](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-2)
+
+6.1.3. [Flexibility](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-3)
+
+6.1.4. [Application immune to technology evolution](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-4)
+
+6.1.5. [Delay technological decisions](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-1-5)
+
+6.2. [Cons](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2)
+
+6.2.1. [Complexity](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2-1)
+
+6.2.2. [Build process performance](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2-2)
+
+6.2.3. [Indirection and Mappings](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2-3)
+
+7. [When to "Hexagonal this!"](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc7)
+
+8. [Implementation steps](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8)
+
+8.1. [Test driver adapters / Mock driven adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-1)
+
+8.2. [Real driver adapters / Mock driven adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-2)
+
+8.3. [Test driver adapters / Real driven adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-3)
+
+8.4. [Real driver adapters / Real driven adapters](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc8-4)
+
+9. [Links](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc9)
 
 <div id="tc1"></div>
 ### 1.- INTRODUCTION
@@ -72,33 +96,37 @@ In this section we will see the elements of Ports & Adapters pattern and the rel
 <div id="tc2-1"></div>
 #### 2.1.- THE HEXAGON
 
-Ports & Adapters pattern depicts the application as a closed area.
+Ports & Adapters pattern depicts the __application as a closed area__.
 
-The closed area chosen by Alistair Cockburn for drawing the application was a hexagon, that’s why this pattern is also called Hexagonal Architecture.
+The closed area chosen by Alistair Cockburn for drawing the application was a hexagon, that's why this pattern is also called __Hexagonal Architecture__.
 
-Personally I prefer the name Ports and Adapters, because it refers to the key elements of the architecture, as we will see soon. On the other hand the figure you use for drawing the application isn’t important. However, it seems that the name Hexagonal Architecture is more popular.
+Personally I prefer the name __Ports and Adapters__, because it refers to the key elements of the architecture, as we will see soon. On the other hand the figure you use for drawing the application isn’t important. However, it seems that the name Hexagonal Architecture is more popular.
 
-The hexagon is the application itself. Saying “hexagon” and saying “application” is the same thing, from now on these terms will be used indistinctly.
+The hexagon is the application itself. Saying "hexagon" and saying "application" is the same thing, from now on these terms will be used indistinctly.
 
-Inside the hexagon we just have the things that are important for the business problem that the application is trying to solve.
+__Inside the hexagon__ we just have the things that are important for the __business__ problem that the application is trying to solve.
 
-The hexagon contains the business logic, with no references to any technology, framework or real world device. So the application is technology agnostic.
+The hexagon contains the business logic, with no references to any technology, framework or real world device. So the application is __technology agnostic__.
 
-Ports & Adapters pattern says nothing about the structure of the inside of the hexagon. You can have layers… you can have components by feature… you can have spagheti code… you can have a Big Ball of Mud… you can apply DDD tactical patterns… you can have a single CRUD… it’s up to you.
+Ports & Adapters pattern says nothing about the structure of the inside of the hexagon. You can have layers... you can have components by feature... you can have spagheti code... you can have a Big Ball of Mud... you can apply DDD tactical patterns... you can have a single CRUD... it’s up to you.
 
 <div id="tc2-2"></div>
 #### 2.2- ACTORS
 
-Outside the hexagon we have any real world thing that the application interacts with. These things include humans, other applications, or any hardware/software device. They are the actors. We could say that actors are the environment of the application.
+__Outside the hexagon__ we have any real world thing that the application interacts with. These things include __humans, other applications, or any hardware/software device__. They are the actors. We could say that actors are the __environment of the application__.
 
 Actors are arranged around the hexagon depending on who triggers the interaction between the application and the actor:
 
-Actors on the left/top side are Drivers, or Primary Actors. The interaction is triggered by the actor. A driver is an actor that interacts with the application to achieve a goal. Drivers are the users (either humans or devices) of the application.
-Actors on the right/bottom side are Driven Actors, or Secondary Actors. The interaction is triggered by the application. A driven actor provides some functionality needed by the application for implementing the business logic.
+- Actors on the left/top side are __Drivers, or Primary Actors__. The interaction is triggered by the actor. A driver is an actor that interacts with the application to achieve a goal. Drivers are the users (either humans or devices) of the application.
+
+- Actors on the right/bottom side are __Driven Actors, or Secondary Actors__. The interaction is triggered by the application. A driven actor provides some functionality needed by the application for implementing the business logic.
+
 There are two kinds of driven actors:
 
-Repository: The application can also obtain information from it, besides sending. For example, a database or any other storage device.
-Recipient: The application just sends information to it and forgets about it. For example, a SMTP server for sending emails.
+- _Repository_: The application can also obtain information from it, besides sending. For example, a database or any other storage device.
+
+- _Recipient_: The application just sends information to it and forgets about it. For example, a SMTP server for sending emails.
+
 The following picture shows some examples of actors in both driver and driven sides:
 
 ![Figure 1: Actors](/images/hexagonalarchitecture/figure1.png)
@@ -107,7 +135,7 @@ Figure 1: Actors
 
 These concepts of primary (drivers) and secondary (driven) actors evoke use cases.
 
-So, for knowing which kind is the actor in an application-actor interaction, ask yourself “who” triggers the conversation. If the answer is “the actor” then it is a driver. If the answer is “the application” then the actor is a driven actor.
+So, for knowing which kind is the actor in an __application-actor interaction__, ask yourself __"who" triggers the conversation__. If the answer is "the actor" then it is a driver. If the answer is "the application" then the actor is a driven actor.
 
 <div id="tc2-3"></div>
 #### 2.3.- PORTS
