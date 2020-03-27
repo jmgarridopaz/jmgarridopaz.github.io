@@ -203,21 +203,21 @@ Figure 4: An example (Task Assignement Application)
 <div id="tc3"></div>
 ### 3.- CONFIGURABLE DEPENDENCY PATTERN
 
-Configurable Dependency is a generalization of Dependency Injection, also called Inversion of Control.
+[Configurable Dependency](https://web.archive.org/web/20170624023207/http://alistair.cockburn.us/Configurable+Dependency) is a generalization of [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection), also called [Inversion of Control](https://martinfowler.com/bliki/InversionOfControl.html).
 
-It’s a new name coined by Gerard Meszaros. Alistair Cockburn considers it is a better name for the pattern, because it is a property, a characteristic. “Dependency Injection” is not a property, it is an action, it is the thing you do to achieve a configurable dependency. “Inversion of Control” is a double negative, like doing things wrong first and then inverting them.
+It’s a new name coined by Gerard Meszaros. Alistair Cockburn considers it is a __better name for the pattern__, because it is a property, a characteristic. “Dependency Injection” is not a property, it is an action, it is the thing you do to achieve a configurable dependency. “Inversion of Control” is a double negative, like doing things wrong first and then inverting them.
 
 Configurable Dependency fits the definition of what a pattern is:
 
-“A pattern for something are common characteristics of good examples of something”
+__"A pattern for something are common characteristics of good examples of something"__
 
 We could say that a configurable dependency is a dependency of an object on an interface. This interface would be an argument of the object constructor. Then, at runtime, a specific implementation of the interface is passed to the constructor when instantiating the object.
 
-Hexagonal Architecture applies Configurable Dependency Pattern to both driver and driven side. In an actor-application interaction, the one that starts the conversation must know of the other, in order to know who to talk to, i.e. it must have a Configurable Dependency on an interface implemented by the other:
+Hexagonal Architecture applies __Configurable Dependency Pattern to both driver and driven side__. In an actor-application interaction, the one that starts the conversation must know of the other, in order to know who to talk to, i.e. it must have a Configurable Dependency on an interface implemented by the other:
 
-Driver side: The conversation is started by the driver (primary actor), so the driver adapter has a configurable dependency on the driver port, which is an interface implemented by the application.
+- _Driver side_: The conversation is started by the driver (primary actor), so __the driver adapter has a configurable dependency on the driver port__, which is an interface implemented by the application.
 
-Driven side: The conversation is started by the application, so the application has a configurable dependency on the driven port, which is an interface implemented by the driven adapter of the secondary actor
+- _Driven side_: The conversation is started by the application, so __the application has a configurable dependency on the driven port__, which is an interface implemented by the driven adapter of the secondary actor.
 
 So dependencies are as follows:
 
@@ -225,10 +225,11 @@ So dependencies are as follows:
 
 Figure 5: Dependencies
 
-A driver adapter depends on the hexagon (it uses a driver port interface).
-A driven adapter depends on the hexagon (it implements a driven port interface)
-Hexagon depends on nothing, maybe just on utilities of the programming lenguage.
-Configurable Dependency is the most important pattern that Ports & Adapters Architecture is based on, as it allows the hexagon to be decoupled from any techonology. And this decoupling is what make possible the main goal of the architecture, that is, to have an application that can be run by several drivers and tested in isolation from recipients/repositories.
+- A driver adapter depends on the hexagon (it uses a driver port interface).
+- A driven adapter depends on the hexagon (it implements a driven port interface)
+- Hexagon depends on nothing, maybe just on utilities of the programming lenguage.
+
+Configurable Dependency is the most important pattern that Ports & Adapters Architecture is based on, as it allows the __hexagon__ to be __decoupled from any techonology__. And this __decoupling is what make possible the main goal of the architecture__, that is, to have an application that can be run by several drivers and tested in isolation from recipients/repositories.
 
 <div id="tc4"></div>
 ### 4.- FROM “SYMMETRICAL ASYMMETRY” TO “ASYMMETRICAL SYMMETRY”
@@ -249,8 +250,9 @@ So what’s the conclusion? Is Ports & Adapters symmetrical or asymmetrical?
 
 The corollary is that both symmetry and asymmetry coexists:
 
-Symmetry: All the adapters, both driver and driven, depends on the hexagon. The application is technology agnostic in both sides.
-Asymmetry: Configurable Dependency implementation is different for each side. In the driver side, the application doesn’t know about which adapter is driving it. But in the driven side, the application must know which driven adapter it must talk to.
+- _Symmetry_: All the adapters, both driver and driven, depends on the hexagon. __The application is technology agnostic in both sides__.
+
+- _Asymmetry_: __Configurable Dependency implementation is different for each side__. In the driver side, the application doesn’t know about which adapter is driving it. But in the driven side, the application must know which driven adapter it must talk to.
 
 <div id="tc5"></div>
 ### 5.- MISCONCEPTIONS
@@ -258,26 +260,26 @@ Asymmetry: Configurable Dependency implementation is different for each side. In
 <div id="tc5-1"></div>
 #### 5.1.- LAYERED ARCHITECTURE
 
-Many articles I’ve read about this architecture say that it is a layered one. They talk about three layers: domain, ports, adapters. I don’t know why they say such thing, the pattern says nothing about layers. The pattern just says that we have the application (the hexagon), with a given number of ports, and that for each port we can have different adapters, each one using a technology. There’s no layers nowhere.
+Many articles I’ve read about this architecture say that it is a layered one. __They talk about three layers: domain, ports, adapters__. I don’t know why they say such thing, __the pattern says nothing about layers__. The pattern just says that we have the application (the hexagon), with a given number of ports, and that for each port we can have different adapters, each one using a technology. There’s no layers nowhere.
 
 <div id="tc5-2"></div>
 #### 5.2.- WHY A HEXAGON?
 
-Some people wonder why a hexagon, perhaps thinking that the number of edges is important. Well the answer is no, it doesn’t matter at all. Number six isn’t important per se. Anyway, if you are curious, here you have some reasons by Alistair Cockburn on why he chose a hexagon:
+Some people wonder why a hexagon, perhaps __thinking that the number of edges is important__. Well the answer is no, __it doesn’t matter at all__. Number six isn’t important per se. Anyway, if you are curious, here you have some reasons by Alistair Cockburn on why he chose a hexagon:
 
-You have enough space for drawing ports and adapters as you need.
-The shape should evoke the inside/outside asymmetry rather than top/down or let/right. Then Squeare is not suitable. Pentagon, Heptagon, Octogon, … too hard to draw. So Hexagon is the winner.
+- You have enough space for drawing ports and adapters as you need.
+- The shape should evoke the inside/outside asymmetry rather than top/down or let/right. Then Squeare is not suitable. Pentagon, Heptagon, Octogon, … too hard to draw. So Hexagon is the winner.
 
 <div id="tc5-3"></div>
 #### 5.3.- PORTS OUTSIDE ADAPTERS
 
-I’ve seen many drawings where they put ports outside adapters, so that an actor interacts directly with the port, and then the adapter is the middleware between the port and the hexagon. This way:
+I’ve seen many drawings where __they put ports outside adapters, so that an actor interacts directly with the port__, and then the adapter is the middleware between the port and the hexagon. This way:
 
 Actor ===> Port ===> Adapter ===> Hexagon
 
-This is not correct at all.
+__This is not correct at all__.
 
-Ports are the hexagon boundary. In fact, they belong to the hexagon, they are part of it, they are interfaces of the hexagon. The actor interacts with the hexagon (the port) through an adapter. The adapter is the middleware between the actor and the port. The correct drawing is:
+Ports are the hexagon boundary. In fact, they belong to the hexagon, they are part of it, they are interfaces of the hexagon. The actor interacts with the hexagon (the port) through an adapter. __The adapter is the middleware between the actor and the port__. The correct drawing is:
 
 Actor ===> Adapter ===> (Port) Hexagon
 
@@ -294,46 +296,52 @@ Modularity and application decoupling from technology are two important characte
 <div id="tc6-1-1"></div>
 ##### 6.1.1.- TESTABILITY IMPROVEMENT
 
-The main benefit this architecture provides is the ability of testing the application in isolation from external devices it depends on. This is achieved by doing two things:
+The main benefit this architecture provides is the ability of __testing the application in isolation__ from external devices it depends on. This is achieved by doing two things:
 
-For each driver port, develop a test adapter that will run test cases against the port.
-For each driven port, develop a mock adapter.
+- For each driver port, develop a test adapter that will run test cases against the port.
+- For each driven port, develop a mock adapter.
+
 Testing the hexagon in isolation can be useful for:
 
-Running regression tests. When source code changes for whatever reason (a new feature is added, a bug is fixed, …), these tests are run to ensure that those changes don’t have side effects on any already existing functionality. To run these tests, the driver adapter uses an automated test framework.
-Doing BDD (Behaviour Driven Development). For each driver port functionality, a set of acceptance criteria is defined by the user. The functionality will be considered “done” when all the acceptance criteria are met. These acceptance criteria are called scenarios, which will be the test cases run by the test adapter. For running these acceptance tests the adapter can use tools like Cucumber.
-Nat Pryce (co-author of the book Growing Object-Oriented Software, Guided by Tests) defines in his article Visualising Test Terminology different kinds of tests related to hexagonal architecture:
+- Running __regression tests__. When source code changes for whatever reason (a new feature is added, a bug is fixed, …), these tests are run to ensure that those changes don’t have side effects on any already existing functionality. To run these tests, the driver adapter uses an automated test framework.
 
-Unit Tests: For testing single objects inside the hexagon.
-Integration Tests: For testing adapters. They ensure that translation between ports and the outside world is done by the adapters correctly.
-Acceptance Tests: For testing driver ports, i.e. the hexagon in isolation. They check that application behaves as the user expects, meeting the acceptance criteria he/she previously defined for the use cases.
-System Tests: For testing the whole system, adapters and the hexagon together. They also test system deployment and startup.
+- Doing [BDD (Behaviour Driven Development)](https://dannorth.net/introducing-bdd). For each driver port functionality, a set of acceptance criteria is defined by the user. The functionality will be considered “done” when all the acceptance criteria are met. These acceptance criteria are called scenarios, which will be the test cases run by the test adapter. For running these acceptance tests the adapter can use tools like [Cucumber](https://cucumber.io/).
+
+Nat Pryce (co-author of the book [Growing Object-Oriented Software, Guided by Tests](https://www.amazon.com/gp/product/0321503627)) defines in his article [Visualising Test Terminology](http://www.natpryce.com/articles/000772.html) different kinds of tests related to hexagonal architecture:
+
+- _Unit Tests_: For testing single objects inside the hexagon.
+
+- _Integration Tests_: For testing adapters. They ensure that translation between ports and the outside world is done by the adapters correctly.
+
+- _Acceptance Tests_: For testing driver ports, i.e. the hexagon in isolation. They check that application behaves as the user expects, meeting the acceptance criteria he/she previously defined for the use cases.
+
+- _System Tests_: For testing the whole system, adapters and the hexagon together. They also test system deployment and startup.
 
 <div id="tc6-1-2"></div>
 ##### 6.1.2.- MAINTAINABILITY IMPROVEMENT
 
-Maintainable systems are those who are easy to modify. Hexagonal Architecture increases maintainability, because it provides separation of concerns and business logic decoupling, which makes it easier to locate the code we want to modify.
+Maintainable systems are those who are easy to modify. Hexagonal Architecture increases maintainability, because it provides separation of concerns and business logic decoupling, which makes it __easier to locate the code we want to modify__.
 
-Application maintainability is a long term concept related to technical debt. The more maintainability the less technical debt. So, Hexagonal Architecture reduces the techical debt.
+Application maintainability is a long term concept related to [technical debt](https://martinfowler.com/bliki/TechnicalDebt.html). The more maintainability the less technical debt. So, Hexagonal Architecture reduces the techical debt.
 
 <div id="tc6-1-3"></div>
 ##### 6.1.3.- FLEXIBILITY
 
-Swapping between different technologies is easy. For a given port, you can have multiple adapters, each one using a specific technology. For choosing one of them, you just have to configure which adapter to use for that port. This configuration can be as easy as modifying an external configuration properties file. No source code modified, no re-compiling, no re-building.
+__Swapping between different technologies__ is easy. For a given port, you can have multiple adapters, each one using a specific technology. For choosing one of them, you just have to configure which adapter to use for that port. This configuration can be as easy as modifying an external configuration properties file. No source code modified, no re-compiling, no re-building.
 
-Likewise, adding a new specific technology adapter to a port can be done without touching the existing source code. The adapter is developed and compiled on his own. At runtime, it will be detected and plugged into the port.
+Likewise, __adding a new specific technology adapter__ to a port can be done without touching the existing source code. The adapter is developed and compiled on his own. At runtime, it will be detected and plugged into the port.
 
 <div id="tc6-1-4"></div>
 ##### 6.1.4.- APPLICATION IMMUNE TO TECHNOLOGY EVOLUTION
 
 Technology evolves more frequently than business logic does. In applications where the business logic is tied to technology, you can’t do technology changes without touching business logic. This is no good, beacuse business should not change.
 
-With hexagonal architecture, the technolgy you want to upgrade is located at an adapter outside the application. You just have to change the adapter. The application itself remains immutable because it doesn’t depend on adapters.
+With hexagonal architecture, the technolgy you want to upgrade is located at an adapter outside the application. __You just have to change the adapter__. The __application itself remains immutable__ because it doesn’t depend on adapters.
 
 <div id="tc6-1-5"></div>
 ##### 6.1.5.- DELAY TECHNOLOGICAL DECISIONS
 
-When you start developing and coding, you can focus just on business logic, deferring decisions about which framework and technology you are going to use. You can choose a technology later, and code an adapter for it.
+When you start developing and coding, you can __focus just on business logic__, deferring decisions about which framework and technology you are going to use. You can __choose a technology later__, and code an adapter for it.
 
 <div id="tc6-2"></div>
 #### 6.2.- CONS
@@ -341,7 +349,7 @@ When you start developing and coding, you can focus just on business logic, defe
 <div id="tc6-2-1"></div>
 ##### 6.2.1.- COMPLEXITY
 
-A software project implementing Hexagonal Architecture has a complex structure, with lot of modules and explicit dependencies defined between them. By modules I mean source code subprojects (e.g. Maven modules) to physically separate the different elements of the architecture.
+A software project implementing Hexagonal Architecture has a complex structure, with __lot of modules and explicit dependencies__ defined between them. By modules I mean source code subprojects (e.g. Maven modules) to physically separate the different elements of the architecture.
 
 At least, there will be one module for the hexagon, one module for each adapter, and one module for starting up the whole project. You would also have to define the dependencies between modules: hexagon depends on nothing, adapters depend on hexagon, and the starting-up depends on all of them.
 
@@ -362,52 +370,62 @@ Decoupling application from technology through ports and adapters adds indirecti
 
 Or you could say it this way if you want: “When should Hexagonal Architecture be applied to a project?”. Well, the answer may be the most hated answer by silver bullet hunters: “It depends”.
 
-For small projects, maybe “the cure is worse than the disease”, so that solving trivial problems doesn’t deserve the extra complexity added by the architecture.
-For medium/large projects, which are supposed to have a long life cycle, and are supposed to be modified many times during their lifetime, using Hexagonal Architecture will be worth it in the long-term.
-Some might say that they don’t need Hexagonal Architecture if they know for sure that the technology or frameworks used in the project are not going to change (e.g. because they are tied to a specific technology for some reason). Well, even in this case Ports and Adapters Pattern is useful, because you could add mock adapters to be used when devices/services the application depends on are not available, or you could add adapters for different runtime enviroments (development, test, production).
+- For __small projects__, maybe “the cure is worse than the disease”, so that solving trivial problems doesn’t deserve the extra complexity added by the architecture.
+
+- For __medium/large projects__, which are supposed to have a long life cycle, and are supposed to be modified many times during their lifetime, using Hexagonal Architecture will be worth it in the long-term.
+
+Some might say that they don’t need Hexagonal Architecture if they know for sure that the __technology or frameworks used in the project are not going to change__ (e.g. because they are tied to a specific technology for some reason). Well, even in this case Ports and Adapters Pattern is useful, because you could add mock adapters to be used when devices/services the application depends on are not available, or you could add adapters for different runtime enviroments (development, test, production).
 
 <div id="tc8"></div>
 ### 8.- IMPLEMENTATION STEPS
 
-The starting point is the application as a black box, with ports interfaces defined around it, at both driver and driven sides, for interaction with the ouside world.
+The starting point is the __application as a black box, with ports interfaces defined__ around it, at both driver and driven sides, for interaction with the ouside world.
 
-At the beginning maybe you still can’t define completely every driven port, as you still don’t know exactly all the needings the application will have regarding the purpose of the port. Or maybe you missed some driven port. But these needings will arise when developing the inside of the hexagon, i.e. the implementation of the driver ports.
+At the beginning maybe you __still can’t define completely every driven port__, as you still don’t know exactly all the needings the application will have regarding the purpose of the port. Or maybe you missed some driven port. But these __needings will arise when developing the inside of the hexagon__, i.e. the implementation of the driver ports.
 
-So, for developing a hexagonal application from scratch, here is the order in which adapters are constructed and added at both driver and driven sides, until getting all done:
+So, for developing a hexagonal application from scratch, here is the __order in which adapters are constructed and added__ at both driver and driven sides, until getting all done:
 
 <div id="tc8-1"></div>
 #### 8.1.- TEST DRIVER ADAPTERS / MOCK DRIVEN ADAPTERS
 
-Driver side: For each driver port, construct a test adapter, and implement the driver port driven by the tests. BDD can be used here for implementing driver ports, and the test cases would be GWT scenarios.
-Driven side: When implementing a driver port, you may need to use driven ports. In such a case, construct mock adapters for them.
+- _Driver side_: For each driver port, construct a test adapter, and implement the driver port driven by the tests. BDD can be used here for implementing driver ports, and the test cases would be [GWT scenarios](https://martinfowler.com/bliki/GivenWhenThen.html).
+
+- _Driven side_: When implementing a driver port, you may need to use driven ports. In such a case, construct mock adapters for them.
+
 Once you have implemented all the driver ports and mocked the driven ports, you are done.
 
-At this point the hexagon is complete, with tests at driver side and mocks at driven side. The application can be tested in isolation.
+At this point the __hexagon is complete__, with tests at driver side and mocks at driven side. The application __can be tested in isolation__.
 
-Next steps are for adding “real” driver and driven adapters for each port as you need, depending on the communication requirements with the outside world. For example, you may need Web UI and REST API adapters for the driver side; and SQL database and app-to-app adapters for the driven side. 
+__Next steps are for adding “real” driver and driven adapters__ for each port as you need, depending on the communication requirements with the outside world. For example, you may need Web UI and REST API adapters for the driver side; and SQL database and app-to-app adapters for the driven side. 
 
 <div id="tc8-2"></div>
 #### 8.2.- REAL DRIVER ADAPTERS / MOCK DRIVEN ADAPTERS
 
-Driver side: For each driver port, construct and add the “real” driver adapters you need. For example a Web UI, a REST API, …
-Driven side: Keep the mock adapters you constructed in step (1).
+- _Driver side_: For each driver port, construct and add the “real” driver adapters you need. For example a Web UI, a REST API, …
+
+- _Driven side_: Keep the mock adapters you constructed in step (1).
+
 This way you can test the new driver adapters.
 
 <div id="tc8-3"></div>
 #### 8.3.- TEST DRIVER ADAPTERS / REAL DRIVEN ADAPTERS
 
-Driver side: Configure each driver port with the test driver adapter constructed in step (1).
-Driven side: For each driven port, construct and add the “real” driven adapters you need. For example a database adapter, an email notification adapter, …
+- _Driver side_: Configure each driver port with the test driver adapter constructed in step (1).
+
+- _Driven side_: For each driven port, construct and add the “real” driven adapters you need. For example a database adapter, an email notification adapter, …
+
 This way you can test the new driven adapters.
 
 <div id="tc8-4"></div>
 #### 8.4.- REAL DRIVER ADAPTERS / REAL DRIVEN ADAPTERS
 
-Driver side: Configure each driver port with a “real” driver adapter constructed in step (2).
-Driven side: Configure each driven port with a “real” driven adapter constructed in step (3).
+- _Driver side_: Configure each driver port with a “real” driver adapter constructed in step (2).
+
+- _Driven side_: Configure each driven port with a “real” driven adapter constructed in step (3).
+
 This way you can test the application end to end, including “real” adapters at both driver and driven sides.
 
-At this point you are done. You can configure every port with the adapter you wish, and run the application with any combination of ports and adapters configuration.
+At this point you are done. You can __configure every port with the adapter you wish__, and __run the application with any combination__ of ports and adapters configuration.
 
 <div id="tc9"></div>
 ### 9.- LINKS
