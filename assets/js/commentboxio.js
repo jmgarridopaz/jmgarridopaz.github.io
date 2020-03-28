@@ -1,6 +1,6 @@
-import commentBox from 'commentbox.io';
+const commentBox = require('commentbox.io');
 // or
-//const commentBox = require('commentbox.io');
+//import commentBox from 'commentbox.io';
 // or if using the CDN, it will be available as a global "commentBox" variable.
 
 // id of my commentbox.io project
