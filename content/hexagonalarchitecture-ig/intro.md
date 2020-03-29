@@ -14,7 +14,7 @@ layout: default
 #### TABLE OF CONTENTS
 
 1. [Introduction](#tc1)
-2. [The Overall Idea](tc2)
+2. [The Overall Idea](#tc2)
 3. [Chapters](#tc3)
 4. [Links](#tc4)
 
