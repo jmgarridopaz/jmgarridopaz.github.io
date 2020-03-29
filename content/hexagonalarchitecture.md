@@ -98,7 +98,7 @@ There are two kinds of driven actors:
 
 The following picture shows some examples of actors in both driver and driven sides:
 
-![Figure 1: Actors](/images/hexagonalarchitecture/figure1.png)
+![Figure 1: Actors](/assets/images/hexagonalarchitecture/figure1.png)
 
 Figure 1: Actors
 
@@ -134,7 +134,7 @@ A __driver adapter uses a driver port interface__, converting a specific technol
 
 Figure 2 shows some examples of driver adapters:
 
-![Figure 2: Driver Adapters](/images/hexagonalarchitecture/figure2.png)
+![Figure 2: Driver Adapters](/assets/images/hexagonalarchitecture/figure2.png)
 
 Figure 2: Driver Adapters
 
@@ -151,7 +151,7 @@ A __driven adapter implements a driven port interface__, converting the technolo
 
 Some examples of driven adapters are shown in the picture:
 
-![Figure 3: Driven Adapters](/images/hexagonalarchitecture/figure3.png)
+![Figure 3: Driven Adapters](/assets/images/hexagonalarchitecture/figure3.png)
 
 Figure 3: Driven Adapters
 
@@ -196,7 +196,7 @@ Besides these elements, there will be a [Composition Root](http://blog.ploeh.dk/
 
 Simple application with a web interface, used by the employees of a company for assigning tasks to each other. When an employee is assigned a task, the application sends an email to him/her.
 
-![Figure 4: An example - Task Assignement Application](/images/hexagonalarchitecture/figure4.png)
+![Figure 4: An example - Task Assignement Application](/assets/images/hexagonalarchitecture/figure4.png)
 
 Figure 4: An example (Task Assignement Application)
 
@@ -221,7 +221,7 @@ Hexagonal Architecture applies __Configurable Dependency Pattern to both driver 
 
 So dependencies are as follows:
 
-![Figure 5: Dependencies](/images/hexagonalarchitecture/figure5.png)
+![Figure 5: Dependencies](/assets/images/hexagonalarchitecture/figure5.png)
 
 Figure 5: Dependencies
 
