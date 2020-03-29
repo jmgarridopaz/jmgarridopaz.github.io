@@ -69,7 +69,7 @@ I’ve structured the implementation guide into the following chapters, and each
 4. Real adapters.
 5. Advanced execution.
 
-These are my intentions, but then life will decide whether or not I'm able to finish it all. I hope I will though, but who knows?... This is life, and live :)
+These are my intentions, but then life will decide whether or not I will be able to finish it all. I hope I will though, but who knows?... This is life, and live :)
 
 Last, but not least, I would like to thank Alistair Cockburn for being always there, for always answering to my questions. Thank you very much Alistair.
 
