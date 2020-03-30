@@ -12,6 +12,6 @@ layout: default
 
 - #### [Hexagonal Architecture: An implementation guide](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/intro.html)
 
-  - ##### Chapter 1: Application design
+  - ##### [Chapter 1: Application design](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html)
 
 - #### [My translation of "Ports and Adapters Pattern" (by Alistair Cockburn) into spanish](https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.html)
