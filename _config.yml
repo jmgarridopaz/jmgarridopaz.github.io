@@ -3,5 +3,6 @@ description: A web site about Hexagonal Architecture
 google_analytics: UA-162056338-1
 
 showcomments: false
+nombrearticulo: empty
 
 theme: jekyll-theme-midnight
