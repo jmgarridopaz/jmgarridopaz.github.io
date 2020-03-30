@@ -122,12 +122,12 @@ So we have the actors shown in Figure 1. Here I borrow a [picture for representi
 
 Actors interacts with the hexagon through ports. A port groups the allowed interactions of the hexagon with a set of possible actors according to the purpose of the communication, using an declared program interface (API) which will be independent from the technologies any of the actors might use. ___An application port has a purpose, it is "for doing something", and we should name ports that way, even in source code___.
 
-* __Driver ports__: For each driver actor, ask to yourself: What purpose does the driver actor want the application for? The answer will be the name of the port.
+* __Driver ports__: For each driver actor, ask to yourself: What purpose does the driver actor want the application for? The answer will be the name of the port.  
 In the example application:
   - Car drivers want the application for parking their cars. So there will be a driver port named ___"for parking cars"___.
   - Parking inspectors want the application for checking cars. So there will be a driver port named ___"for checking cars"___.
 
-* __Driven ports__: For each driven actor, ask to yourself: What purpose does the application want the driven actor for? The answer will be the name of the port. Do this considering the driven actors as abstract repositories/recipients, regardless of their techonology.
+* __Driven ports__: For each driven actor, ask to yourself: What purpose does the application want the driven actor for? The answer will be the name of the port. Do this considering the driven actors as abstract repositories/recipients, regardless of their techonology.  
 In the example application:
   - The application wants the "Rate Provider" for obtaining rates, in order to calculate prices of parking permits. So there will be a driven port named ___"for obtaining rates"___. The application will just say to the driven port: "Hey you! Gimme the rate of name ...", but it doesn't care if it comes from a file, or from another application, or from whatever device else.
   - The application wants the "Permit Storage" for storing the parking permits that car drivers request, and for querying them when parking inspectors want to check a car. So there will be a driven port named ___"for storing permits"___.
@@ -195,20 +195,13 @@ In the example application:
 
 ___"for parking cars" port:___
 
-1. Interactions of the actor (A) with the port (P):
-
-A: Requests a parking permit
-
-P: Returns all the rates
-
-A: Enters the car plate, the rate name, the ending datetime of the period, and the payment card
-
+1. Interactions of the actor (A) with the port (P):  
+A: Requests a parking permit  
+P: Returns all the rates  
+A: Enters the car plate, the rate name, the ending datetime of the period, and the payment card  
 P: Issues the parking permit
-
-2. Operations of the port:
-
+2. Operations of the port:  
 getAllRates, issuePermit
-
 3. Description of the operations:
 
 ~~~
@@ -293,16 +286,11 @@ public interface PermitTicket {
 
 ___"for checking cars" port:___
 
-1. Interactions of the actor (A) with the port (P):
-
-A: Enters the car plate and the rate name
-
+1. Interactions of the actor (A) with the port (P):  
+A: Enters the car plate and the rate name  
 P: Checks whether the car is parked correctly
-
-2. Operations of the port:
-
+2. Operations of the port:  
 isParkedCorrectly
-
 3. Description of the operations:
 
 ~~~
