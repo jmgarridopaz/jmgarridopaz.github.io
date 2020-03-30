@@ -63,7 +63,7 @@ Since this article would be very large, I will write and publish it (and the sou
 
 I’ve structured the implementation guide into the following chapters, and each one will be an article on its own. So if you are interested, stay tunned... I will enable these chapters incrementally, as I write and publish them:
 
-1. Application design.
+1. [Application design](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html).
 2. Project structure.
 3. The hexagon in isolation.
 4. Real adapters.
