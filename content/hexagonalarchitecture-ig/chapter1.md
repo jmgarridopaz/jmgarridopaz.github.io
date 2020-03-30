@@ -92,11 +92,11 @@ We will not define driven ports in detail yet, since we will find out their oper
 Now let's see these design steps...
 
 <div id="tc3-1"></div>
-### 3.1.- IDENTIFY ACTORS
+#### 3.1.- IDENTIFY ACTORS
 
 1. Draw an hexagon. It represents the application, the business logic.
 
-2. Put driver actors outside the hexagon, on the left side. Drivers are those who needs the application for achieving their goals. They trigger the communication with the application. [As Alistair Cockburn says in his talk Alistair in the Hexagone, think of the application as a thing resting in a quiet state, doing nothing. When the driver needs the application to perform an action, the driver would kick it and wake it up saying "Hey you, do this"](https://youtu.be/th4AgBcrEHA?list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL&t=1409).
+2. Put driver actors outside the hexagon, on the left side. Drivers are those who needs the application for achieving their goals. They trigger the communication with the application. As Alistair Cockburn says in his talk [Alistair in the Hexagone, think of the application as a thing resting in a quiet state](https://youtu.be/th4AgBcrEHA?list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL&t=1409), doing nothing. When the driver needs the application to perform an action, the driver would kick it and wake it up saying "Hey you, do this".
 
 3. Put driven actors outside the hexagon, on the right side. Driven actors are those who are needed by the application for achieving application goals. The application triggers the communication with the driven actors.
 
@@ -111,16 +111,14 @@ In the example application, BlueZone, the real world things we can identify are:
 
 At this early stage of development we don't care if actors are humans, files, databases, remote systems, etc. We just abstract the actor as a thing outside the application, it doesn't matter the technology it uses.
 
-So we have the actors shown in Figure 1. Here I borrow a [picture for representing actors, drawn by Alistair Cockburn in his talk Alistair in the Hexagone, meaning that an actor can be a human being, a computer, or whatever... it doesn't matter](https://youtu.be/th4AgBcrEHA?list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL&t=1365).
+So we have the actors shown in Figure 1. Here I borrow a [picture for representing actors, drawn by Alistair Cockburn in his talk Alistair in the Hexagone](https://youtu.be/th4AgBcrEHA?list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL&t=1365), meaning that an actor can be a human being, a computer, or whatever... it doesn't matter.
 
-![Figure 1: Actors](/assets/images/hexagonalarchitecture-ig/figure1-1.png)
-
-![Figure 1: Actors](/assets/images/hexagonalarchitecture-ig/figure1-1-transp.png)
+![Figure 1: Hexagon and Actors](/assets/images/hexagonalarchitecture-ig/figure1-1.png)
 
 Figure 1: Hexagon and Actors
 
 <div id="tc3-2"></div>
-### 3.2.- IDENTIFY PORTS
+#### 3.2.- IDENTIFY PORTS
 
 Actors interacts with the hexagon through ports. A port groups the allowed interactions of the hexagon with a set of possible actors according to the purpose of the communication, using an declared program interface (API) which will be independent from the technologies any of the actors might use. ___An application port has a purpose, it is "for doing something", and we should name ports that way, even in source code___.
 
@@ -128,28 +126,30 @@ Actors interacts with the hexagon through ports. A port groups the allowed inter
 
 In the example application:
 
-  - Car drivers want the application for parking their cars. So there will be a driver port named ___"for parking cars"___.
+    - Car drivers want the application for parking their cars. So there will be a driver port named ___"for parking cars"___.
 
-  - Parking inspectors want the application for checking cars. So there will be a driver port named ___"for checking cars"___.
+    - Parking inspectors want the application for checking cars. So there will be a driver port named ___"for checking cars"___.
 
 * __Driven ports__: For each driven actor, ask to yourself: What purpose does the application want the driven actor for? The answer will be the name of the port. Do this considering the driven actors as abstract repositories/recipients, regardless of their techonology.
 
 In the example application:
 
-  - The application wants the "Rate Provider" for obtaining rates, in order to calculate prices of parking permits. So there will be a driven port named ___"for obtaining rates"___. The application will just say to the driven port: "Hey you! Gimme the rate of name ...", but it doesn't care if it comes from a file, or from another application, or from whatever device else.
+    - The application wants the "Rate Provider" for obtaining rates, in order to calculate prices of parking permits. So there will be a driven port named ___"for obtaining rates"___. The application will just say to the driven port: "Hey you! Gimme the rate of name ...", but it doesn't care if it comes from a file, or from another application, or from whatever device else.
 
-  - The application wants the "Permit Storage" for storing the parking permits that car drivers request, and for querying them when parking inspectors want to check a car. So there will be a driven port named ___"for storing permits"___.
+    - The application wants the "Permit Storage" for storing the parking permits that car drivers request, and for querying them when parking inspectors want to check a car. So there will be a driven port named ___"for storing permits"___.
 
-  - The application wants the "Payment System" for letting car drivers paying. So there will be a driven port named "___for paying___".
+    - The application wants the "Payment System" for letting car drivers paying. So there will be a driven port named "___for paying___".
 
 Maybe at this early stage of development, you still don’t know all driven actors needed by the application. But don’t worry about it, they will appear when you implement the business logic. You will realize that the application has to deal with some technologic device, or it has to use a functionality which is not under its responsability. In such a case you will have to abstract the purpose of the communication, and create a driven port for it, which should be named according to the "for doing something" pattern.
 
 Figure 2 shows the identified ports added to the drawing. I write the name of the ports inside the hexagon to remark that they are part of it, they belong to the hexagon.
 
+![Figure 2: Hexagon with Ports](/assets/images/hexagonalarchitecture-ig/figure1-2.png)
+
 Figure 2: Hexagon with Ports
 
 <div id="tc3-3"></div>
-### 3.2.- ADD ADAPTERS
+#### 3.3.- ADD ADAPTERS
 
 Do you remember when I said forget about technologies? Think of an actor as an abstract thing outside the hexagon? Well now it's time for technologies, forget about abstractions.
 
@@ -159,39 +159,43 @@ For every port, we will have __at least two adapters__:
 
 * What I call the _"Default adapter"_: It is the one that will be used when we want to test the hexagon in isolation.
 
-  - In the driver side, the default adapter for a port is an _automated test tool_ that will run test cases against the port.
+    - In the driver side, the default adapter for a port is a _testing automation tool_ that will run test cases against the port.
 
-  - In the driven side, the default adapter for a port is a _test double_. There are many kinds of test doubles: mocks, fakes, stubs, etc. A resource I recommend about this topic is ["XUnit Test Patterns" by Gerard Meszaros](http://xunitpatterns.com).
+    - In the driven side, the default adapter for a port is a _test double_. There are many kinds of test doubles: mocks, fakes, stubs, etc. A resource I recommend about this topic is ["XUnit Test Patterns" by Gerard Meszaros](http://xunitpatterns.com).
 
 * What I call the _"Real adapter"_: It is the one that will be used when running the application in production environment.
 
-In the example application we have the adapters you can see in Figure 4.
+In the example application we have the adapters you can see in Figure 3.
 
-Design alternatives for the driver side:
+Then, more adapters could be added if we want or if the requirements change. For example, imagine users need to access the appliation from a mobile app. We could add REST API adapters.
 
-Imagine that the requirements say that both driver actors (car drivers and parking inspector) use just one web UI to access the application. Here the trick is to consider those actors as roles that a person can play.
+___Design alternatives for the driver side:___
 
-Figure 3 shows the drawing of this design. We would just have one actor (the person) playing two roles (car driver and parking inspector). There would be two adapters, one for each role. The web UI would send the request to one of the adapters, depending on the role of the user who did the request. 
+I've chosen the design of Figure 4 for showing how to implement an application with multiple driver ports, adapters and actors, but of course there are other ways to design it. I mention here two of them if someone want to try:
 
-Figure 3: Driver side with one actor playing two roles
+1. Imagine that the requirements say that both driver actors (car drivers and parking inspector) use just one web UI to access the application. Here the trick is to consider those actors as roles that a person can play. We would just have one actor (the person) playing two roles (car driver and parking inspector). There would be two web UI adapters, one for each port. A middleware component would route the web UI request to one of the adapters, depending on the requested operation. In this case ports would have to check the role of the user who did the request.
 
-(3.4) The whole picture.
+2. Having just one port instead of two. The port would be kind of a "use case bus". The hexagon would have use case handlers. This would be analog to a command bus, but instead of commands you would have use cases with a request and a response. This almost deserves an article on its own. Maybe the next one after this series.
+
+<div id="tc3-4"></div>
+#### 3.4.- THE WHOLE PICTURE
 
 Putting it all together, we have the following design diagram that shows all the elements of the system: hexagon (with ports), actors and adapters. It will be a reference for next chapter, where we will see the project structure and dependencies between elements.
 
-Figure 4: Hexagon (with Ports), Adapters and Actors
+![Figure 3: Hexagon (with Ports), Adapters and Actors](/assets/images/hexagonalarchitecture-ig/figure1-3.png)
 
-(3.5) Driver ports.
+Figure 3: Hexagon (with Ports), Adapters and Actors
+
+<div id="tc3-5"></div>
+#### 3.5.- DRIVER PORTS
 
 Finally, to implement the business logic in the next chapters, we need to define now the API of the hexagon, i.e. the operations offered by driver ports to the outside world.
 
 A port groups a set of operations related to the purpose of the port. For every driver port, do the following:
 
-* Write down the sequence of interactions that take place when a driver actor uses the port. These interactions will help you to find out the operations that the port should offer.
-
-* Identify and write down the names of the operations you found.
-
-* For every operation, describe the input it receives, the output it returns, and what it does.
+1. Write down the sequence of interactions that take place when a driver actor uses the port. These interactions will help you to find out the operations that the port should offer.
+2. Identify and write down the names of the operations you found.
+3. For every operation, describe the input it receives, the output it returns, and what it does.
 
 Once you've done this, you will have defined the API of the hexagon.
 
@@ -199,9 +203,9 @@ Here I will put the API definition in Java, but you can do it in natural languag
 
 In the example application:
 
-"for parking cars" port.
+___"for parking cars" port:___
 
-* Interactions of the actor (A) with the port (P):
+1. Interactions of the actor (A) with the port (P):
 
 A: Requests a parking permit
 
@@ -211,37 +215,94 @@ A: Enters the car plate, the rate name, the ending datetime of the period, and t
 
 P: Issues the parking permit
 
-* Operations of the port:
+2. Operations of the port:
 
 getAllRates, issuePermit
 
-* Description of the operations:
+3. Description of the operations:
 
-JAVA API
+~~~
+public interface ForParkingCars {
 
-"for checking cars" port.
+	/**
+	 * @author jmgarrido
+	 * 
+	 * Returns all the available rates
+	 * 
+	 * @return a list of {@code RateInfo} objects
+	 */
+	public List<RateInfo> getAllRates();
 
-* Interactions of the actor (A) with the port (P):
+
+	/**
+	 * @author jmgarrido
+	 * 
+	 * Creates a permit for the car {} parked at an area with the rate {}.
+	 * The permit period starts at the current datetime, given by the clock {}, and ends at datetime {}.
+	 * The permit price is charged to the payment card {}.
+	 * Returns a ticket with the permit information.
+	 * 
+	 * @param clock				
+	 * 					Clock to get current datetime from.
+	 * @param carPlate
+	 * 					Car that we want to get the permit for.
+	 * @param rateName
+	 * 					Rate of the regulated area where we want to park the car.
+	 * @param endingDateTime
+	 * 					A datetime in the future, that will be the expiration date of the permit.
+	 * @param paymentCardInfo
+	 * 					Card to charge the permit price to.
+	 * @return an object of type {@code PermitTicket}
+	 * 
+	 */
+	public PermitTicket issuePermit ( Clock clock, String carPlate, String rateName, LocalDateTime endingDateTime, PaymentCardInfo paymentCardInfo );
+}
+~~~
+
+___"for checking cars" port:___
+
+1. Interactions of the actor (A) with the port (P):
 
 A: Enters the car plate and the rate name
 
 P: Checks whether the car is parked correctly
 
-* Operations of the port:
+2. Operations of the port:
 
 isParkedCorrectly
 
-* Description of the operations:
+3. Description of the operations:
 
-JAVA API
+~~~
+public interface ForCheckingCars {
+	/**
+	 * @author jmgarrido
+	 * 
+	 * Checks whether the car {} has an active permit for being parked
+	 * at the current datetime in a regulated area with rate {}
+	 * 
+	 * @param clock				
+	 * 					Clock to get current datetime from.
+	 * @param carPlate
+	 * 					Car that we want to check.
+	 * @param rateName
+	 * 					Rate of the regulated area where the car is parked.
+	 * @return a boolean value
+	 * 					true if such a permit exists, false otherwise
+	 * 
+	 */
+	public boolean isParkedCorrectly ( Clock clock, String carPlate, String rateName );	
+}
+~~~
 
-I want to remark here that the clock as a parameter is useful for mocking the current datetime when testing. It has the drawback that you should pass it to every method that needs it. Another alternative for avoiding this would be to create a driven port for the clock.
+I want to remark here that the clock as a parameter is useful for mocking the current datetime when testing. But if you have many methods that need the clock, it has the drawback that you should pass it to all of them. To avoid this, it would be better to create a driven port for the clock.
 
-(4) ANALOGY WITH USE CASES.
+<div id="tc4"></div>
+### 4.- ANALOGY WITH USE CASES
 
 It is worth to mention here the paralelism between hexagonal architecture and use cases world.
 
-Reading the article "Structuring use cases with goals" by Alistair Cockburn (https://web.archive.org/web/20170620145208/http://alistair.cockburn.us/Structuring+use+cases+with+goals), I realized that hexagonal architecture is tightly related to use cases. I describe here some analogies I've found:
+Reading the article ["Structuring use cases with goals" by Alistair Cockburn](https://web.archive.org/web/20170620145208/http://alistair.cockburn.us/Structuring+use+cases+with+goals), I realized that hexagonal architecture is tightly related to use cases. I describe here some analogies I've found:
 
 * In use cases there are different levels of abstraction for goals: summary goals, user goals (sea level) and subfunctions. At high level (summary goals) you have multiple primary actors. This is for helping you to find out better the functionality that the system might offer to the users. Then at lower levels (user goals and subfunctions) you have just one actor.
 
@@ -251,7 +312,9 @@ A topic related to this is "How primary actors can be important and unimportant 
 
 * In use cases we have this figure, that shows how actors communicate with a "goal - interaction - responsability" chain:
 
-Figure 5: Actor-to-actor communication model
+![Figure 4: Actor-to-actor communication model](/assets/images/hexagonalarchitecture-ig/figure1-4.png)
+
+Figure 4: Actor-to-actor communication model
 
 Hexagonal architecture fit this model: Driver actors are primary actors, the hexagon (the application) is the "system under design", and driven actors are secondary actors. Driver ports group use cases.
 
@@ -265,26 +328,21 @@ In the right side of the hexagon... To perform its responsabilities, the hexagon
 
 The hexagon would be like any other actor. It has goals and to achieve them it might need to interact with another actor.
 
-(5) LINKS.
+<div id="tc5"></div>
+### 5.- LINKS
 
 * Ports and Adapters Pattern (aka Hexagonal Architecture), by Alistair Cockburn:
 
-At web archive (captured on 2018/08/22):
-
-https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture
-
-At his new site:
-
-https://alistair.cockburn.us/hexagonal-architecture
+[https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture](https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture)
 
 * My conceptual article about Ports and Adapters Pattern (aka Hexagonal Architecture):
 
-https://softwarecampament.wordpress.com/portsadapters
+[https://jmgarridopaz.github.io/content/hexagonalarchitecture.html](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html)
 
 * "XUnit Test Patterns", by Gerard Meszaros:
 
-http://xunitpatterns.com
+[http://xunitpatterns.com](http://xunitpatterns.com)
 
 * "Structuring use cases with goals" article, by Alistair Cockburn:
 
-https://web.archive.org/web/20170620145208/http://alistair.cockburn.us/Structuring+use+cases+with+goals
+[https://web.archive.org/web/20170620145208/http://alistair.cockburn.us/Structuring+use+cases+with+goals](https://web.archive.org/web/20170620145208/http://alistair.cockburn.us/Structuring+use+cases+with+goals)
