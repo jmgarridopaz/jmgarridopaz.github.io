@@ -1,5 +1,6 @@
 ---
 layout: default
+showcomments: true
 ---
 
 <div id="title">
@@ -27,7 +28,7 @@ layout: default
 <div id="tc1"></div>
 ### 1.- INTRODUCTION
 
-This article is the first one of a series showing how to implement an application conforming to Ports and Adapters pattern, also known as Hexagonal Architecture.
+This article is the first one of a series showing a way of implementing an application conforming to Ports and Adapters pattern, also known as Hexagonal Architecture.
 
 This series has a practical sense. It is supposed that the reader already has theorical knowledge about concepts regarding hexagonal architecture, like actors, ports, adapters, etc. Otherwise, in the Links section you can find resources to read about it.
 
@@ -131,7 +132,7 @@ In the example application:
 In the example application:
   - The application wants the "Rate Provider" for obtaining rates, in order to calculate prices of parking permits. So there will be a driven port named ___"for obtaining rates"___. The application will just say to the driven port: "Hey you! Gimme the rate of name ...", but it doesn't care if it comes from a file, or from another application, or from whatever device else.
   - The application wants the "Permit Storage" for storing the parking permits that car drivers request, and for querying them when parking inspectors want to check a car. So there will be a driven port named ___"for storing permits"___.
-  - The application wants the "Payment System" for letting car drivers paying. So there will be a driven port named "___for paying___".
+  - The application wants the "Payment System" for letting car drivers pay. So there will be a driven port named "___for paying___".
 
 Maybe at this early stage of development, you still don’t know all driven actors needed by the application. But don’t worry about it, they will appear when you implement the business logic. You will realize that the application has to deal with some technologic device, or it has to use a functionality which is not under its responsability. In such a case you will have to abstract the purpose of the communication, and create a driven port for it, which should be named according to the "for doing something" pattern.
 
@@ -157,13 +158,13 @@ For every port, we will have __at least two adapters__:
 
 In the example application we have the adapters you can see in Figure 3.
 
-Then, more adapters could be added if we want or if the requirements change. For example, imagine users need to access the appliation from a mobile app. We could add REST API adapters.
+Then, more adapters could be added if we needed to. For example, if requirements change and users were allowed to access the application from a mobile app, we could add REST API adapters.
 
 ___Design alternatives for the driver side:___
 
 I've chosen the design of Figure 4 for showing how to implement an application with multiple driver ports, adapters and actors, but of course there are other ways to design it. I mention here two of them if someone want to try:
 
-1. Imagine that the requirements say that both driver actors (car drivers and parking inspector) use just one web UI to access the application. Here the trick is to consider those actors as roles that a person can play. We would just have one actor (the person) playing two roles (car driver and parking inspector). There would be two web UI adapters, one for each port. A middleware component would route the web UI request to one of the adapters, depending on the requested operation. In this case ports would have to check the role of the user who did the request.
+1. Imagine that the requirements say that both driver actors (car drivers and parking inspectors) use just one web UI to access the application. Here the trick is to consider those actors as roles that a person can play. We would just have one actor (the person) playing two roles (car driver and parking inspector). There would be two web UI adapters, one for each port. A middleware component would route the web UI request to one of the adapters, depending on the requested operation. In this case ports would have to check the role of the user who did the request.
 
 2. Having just one port instead of two. The port would be kind of a "use case bus". The hexagon would have use case handlers. This would be analog to a command bus, but instead of commands you would have use cases with a request and a response. This almost deserves an article on its own. Maybe the next one after this series.
 
