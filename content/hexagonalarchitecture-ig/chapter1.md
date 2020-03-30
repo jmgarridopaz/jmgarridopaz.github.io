@@ -365,9 +365,7 @@ The hexagon would be like any other actor. It has goals and to achieve them it m
 [https://web.archive.org/web/20170620145208/http://alistair.cockburn.us/Structuring+use+cases+with+goals](https://web.archive.org/web/20170620145208/http://alistair.cockburn.us/Structuring+use+cases+with+goals)
 
 </hr>
-<div>
 <h2>Comments</h2>
 <p>Your questions, suggestions, comments, opinion, or any feedback are wellcome.</p>
 <p>You can send me an email to <a style="text-decoration: underline;" href="mailto:hexagonalme@gmail.com?Subject=hexarchiguno%20Comments">hexagonalme@gmail.com</a></p>
 <p>Thanks for reading.</p>
-</div>
