@@ -80,9 +80,9 @@ Last, but not least, I would like to thank Alistair Cockburn for being always th
 
 [https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture](https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture)
 
-* My translation of Alistair Cockburn article into spanish:
+* My conceptual article about Ports and Adapters Pattern (aka Hexagonal Architecture):
 
-[https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.html](https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.html)
+[https://jmgarridopaz.github.io/content/hexagonalarchitecture.html](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html)
 
 * Alistair in the Hexagone: a talk by Alistair Cockburn about Hexagonal Architecture:
 
@@ -91,6 +91,10 @@ Last, but not least, I would like to thank Alistair Cockburn for being always th
 * Interview with Alistair Cockburn about Hexagonal Architecture:
 
 [https://web.archive.org/web/20170925184018/http://alistair.cockburn.us/Hexagonal+Architecture+FAQ](https://web.archive.org/web/20170925184018/http://alistair.cockburn.us/Hexagonal+Architecture+FAQ)
+
+* My translation of Alistair Cockburn article into spanish:
+
+[https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.html](https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.html)
 
 * An article I like about Hexagonal Architecture:
 

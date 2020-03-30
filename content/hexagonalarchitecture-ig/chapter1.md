@@ -125,20 +125,15 @@ Actors interacts with the hexagon through ports. A port groups the allowed inter
 * __Driver ports__: For each driver actor, ask to yourself: What purpose does the driver actor want the application for? The answer will be the name of the port.
 
 In the example application:
-
-    - Car drivers want the application for parking their cars. So there will be a driver port named ___"for parking cars"___.
-
-    - Parking inspectors want the application for checking cars. So there will be a driver port named ___"for checking cars"___.
+  - Car drivers want the application for parking their cars. So there will be a driver port named ___"for parking cars"___.
+  - Parking inspectors want the application for checking cars. So there will be a driver port named ___"for checking cars"___.
 
 * __Driven ports__: For each driven actor, ask to yourself: What purpose does the application want the driven actor for? The answer will be the name of the port. Do this considering the driven actors as abstract repositories/recipients, regardless of their techonology.
 
 In the example application:
-
-    - The application wants the "Rate Provider" for obtaining rates, in order to calculate prices of parking permits. So there will be a driven port named ___"for obtaining rates"___. The application will just say to the driven port: "Hey you! Gimme the rate of name ...", but it doesn't care if it comes from a file, or from another application, or from whatever device else.
-
-    - The application wants the "Permit Storage" for storing the parking permits that car drivers request, and for querying them when parking inspectors want to check a car. So there will be a driven port named ___"for storing permits"___.
-
-    - The application wants the "Payment System" for letting car drivers paying. So there will be a driven port named "___for paying___".
+  - The application wants the "Rate Provider" for obtaining rates, in order to calculate prices of parking permits. So there will be a driven port named ___"for obtaining rates"___. The application will just say to the driven port: "Hey you! Gimme the rate of name ...", but it doesn't care if it comes from a file, or from another application, or from whatever device else.
+  - The application wants the "Permit Storage" for storing the parking permits that car drivers request, and for querying them when parking inspectors want to check a car. So there will be a driven port named ___"for storing permits"___.
+  - The application wants the "Payment System" for letting car drivers paying. So there will be a driven port named "___for paying___".
 
 Maybe at this early stage of development, you still don’t know all driven actors needed by the application. But don’t worry about it, they will appear when you implement the business logic. You will realize that the application has to deal with some technologic device, or it has to use a functionality which is not under its responsability. In such a case you will have to abstract the purpose of the communication, and create a driven port for it, which should be named according to the "for doing something" pattern.
 
@@ -158,11 +153,8 @@ By now we have the hexagon with its ports, and actors outside. Actors are real w
 For every port, we will have __at least two adapters__:
 
 * What I call the _"Default adapter"_: It is the one that will be used when we want to test the hexagon in isolation.
-
-    - In the driver side, the default adapter for a port is a _testing automation tool_ that will run test cases against the port.
-
-    - In the driven side, the default adapter for a port is a _test double_. There are many kinds of test doubles: mocks, fakes, stubs, etc. A resource I recommend about this topic is ["XUnit Test Patterns" by Gerard Meszaros](http://xunitpatterns.com).
-
+  - In the driver side, the default adapter for a port is a _testing automation tool_ that will run test cases against the port.
+  - In the driven side, the default adapter for a port is a _test double_. There are many kinds of test doubles: mocks, fakes, stubs, etc. A resource I recommend about this topic is ["XUnit Test Patterns" by Gerard Meszaros](http://xunitpatterns.com).
 * What I call the _"Real adapter"_: It is the one that will be used when running the application in production environment.
 
 In the example application we have the adapters you can see in Figure 3.
