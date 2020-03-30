@@ -9,7 +9,7 @@ layout: default
 <span class="credits right">Published on March 30, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
 </div>
 
-<p class="introquote">To Thomas Pierrain. You are not alone, we are all fighting with you</p>
+<p class="introquote">To Thomas Pierrain. You are not alone, all together we will win</p>
 
 #### TABLE OF CONTENTS
 
@@ -364,8 +364,9 @@ The hexagon would be like any other actor. It has goals and to achieve them it m
 
 [https://web.archive.org/web/20170620145208/http://alistair.cockburn.us/Structuring+use+cases+with+goals](https://web.archive.org/web/20170620145208/http://alistair.cockburn.us/Structuring+use+cases+with+goals)
 
-</hr>
+----
 <h2>Comments</h2>
+----
 <p>Your questions, suggestions, comments, opinion, or any feedback are wellcome.</p>
 <p>You can send me an email to <a style="text-decoration: underline;" href="mailto:hexagonalme@gmail.com?Subject=hexarchiguno%20Comments">hexagonalme@gmail.com</a></p>
 <p>Thanks for reading.</p>
