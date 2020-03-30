@@ -115,7 +115,7 @@ So we have the actors shown in Figure 1. Here I borrow a [picture for representi
 
 ![Figure 1: Hexagon and Actors](/assets/images/hexagonalarchitecture-ig/figure1-1.png)
 
-Figure 1: Hexagon and Actors
+<p class="intro">Figure 1: Hexagon and Actors</p>
 
 <div id="tc3-2"></div>
 #### 3.2.- IDENTIFY PORTS
@@ -123,13 +123,11 @@ Figure 1: Hexagon and Actors
 Actors interacts with the hexagon through ports. A port groups the allowed interactions of the hexagon with a set of possible actors according to the purpose of the communication, using an declared program interface (API) which will be independent from the technologies any of the actors might use. ___An application port has a purpose, it is "for doing something", and we should name ports that way, even in source code___.
 
 * __Driver ports__: For each driver actor, ask to yourself: What purpose does the driver actor want the application for? The answer will be the name of the port.
-
 In the example application:
   - Car drivers want the application for parking their cars. So there will be a driver port named ___"for parking cars"___.
   - Parking inspectors want the application for checking cars. So there will be a driver port named ___"for checking cars"___.
 
 * __Driven ports__: For each driven actor, ask to yourself: What purpose does the application want the driven actor for? The answer will be the name of the port. Do this considering the driven actors as abstract repositories/recipients, regardless of their techonology.
-
 In the example application:
   - The application wants the "Rate Provider" for obtaining rates, in order to calculate prices of parking permits. So there will be a driven port named ___"for obtaining rates"___. The application will just say to the driven port: "Hey you! Gimme the rate of name ...", but it doesn't care if it comes from a file, or from another application, or from whatever device else.
   - The application wants the "Permit Storage" for storing the parking permits that car drivers request, and for querying them when parking inspectors want to check a car. So there will be a driven port named ___"for storing permits"___.
@@ -141,7 +139,7 @@ Figure 2 shows the identified ports added to the drawing. I write the name of th
 
 ![Figure 2: Hexagon with Ports](/assets/images/hexagonalarchitecture-ig/figure1-2.png)
 
-Figure 2: Hexagon with Ports
+<p class="intro">Figure 2: Hexagon with Ports</p>
 
 <div id="tc3-3"></div>
 #### 3.3.- ADD ADAPTERS
@@ -176,7 +174,7 @@ Putting it all together, we have the following design diagram that shows all the
 
 ![Figure 3: Hexagon (with Ports), Adapters and Actors](/assets/images/hexagonalarchitecture-ig/figure1-3.png)
 
-Figure 3: Hexagon (with Ports), Adapters and Actors
+<p class="intro">Figure 3: Hexagon (with Ports), Adapters and Actors</p>
 
 <div id="tc3-5"></div>
 #### 3.5.- DRIVER PORTS
@@ -343,7 +341,7 @@ A topic related to this is "How primary actors can be important and unimportant 
 
 ![Figure 4: Actor-to-actor communication model](/assets/images/hexagonalarchitecture-ig/figure1-4.png)
 
-Figure 4: Actor-to-actor communication model
+<p class="intro">Figure 4: Actor-to-actor communication model</p>
 
 Hexagonal architecture fit this model: Driver actors are primary actors, the hexagon (the application) is the "system under design", and driven actors are secondary actors. Driver ports group use cases.
 
