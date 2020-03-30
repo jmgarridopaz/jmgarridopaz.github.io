@@ -100,4 +100,10 @@ Last, but not least, I would like to thank Alistair Cockburn for being always th
 
 [https://beyondxscratch.wordpress.com/2017/08/19/decoupling-your-technical-code-from-your-business-logic-with-the-hexagonal-architecture-hexarch](https://beyondxscratch.wordpress.com/2017/08/19/decoupling-your-technical-code-from-your-business-logic-with-the-hexagonal-architecture-hexarch)
 
-<div class="commentbox"></div>
+
+----
+<h2>Comments</h2>
+----
+<p>Your questions, suggestions, comments, opinion, or any feedback are wellcome.</p>
+<p>You can send me an email to <a style="text-decoration: underline;" href="mailto:hexagonalme@gmail.com?subject=hexarchigintro">hexagonalme@gmail.com</a></p>
+<p>Thanks for reading.</p>
