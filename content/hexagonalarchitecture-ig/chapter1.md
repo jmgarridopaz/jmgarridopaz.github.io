@@ -123,13 +123,11 @@ So we have the actors shown in Figure 1. Here I borrow a [picture for representi
 Actors interacts with the hexagon through ports. A port groups the allowed interactions of the hexagon with a set of possible actors according to the purpose of the communication, using an declared program interface (API) which will be independent from the technologies any of the actors might use. ___An application port has a purpose, it is "for doing something", and we should name ports that way, even in source code___.
 
 * __Driver ports__: For each driver actor, ask to yourself: What purpose does the driver actor want the application for? The answer will be the name of the port.  
-  
 In the example application:
   - Car drivers want the application for parking their cars. So there will be a driver port named ___"for parking cars"___.
   - Parking inspectors want the application for checking cars. So there will be a driver port named ___"for checking cars"___.
 
 * __Driven ports__: For each driven actor, ask to yourself: What purpose does the application want the driven actor for? The answer will be the name of the port. Do this considering the driven actors as abstract repositories/recipients, regardless of their techonology.  
-  
 In the example application:
   - The application wants the "Rate Provider" for obtaining rates, in order to calculate prices of parking permits. So there will be a driven port named ___"for obtaining rates"___. The application will just say to the driven port: "Hey you! Gimme the rate of name ...", but it doesn't care if it comes from a file, or from another application, or from whatever device else.
   - The application wants the "Permit Storage" for storing the parking permits that car drivers request, and for querying them when parking inspectors want to check a car. So there will be a driven port named ___"for storing permits"___.
@@ -292,9 +290,11 @@ ___"for checking cars" port:___
 
 1. Interactions of the actor (A) with the port (P):  
 A: Enters the car plate and the rate name  
-P: Checks whether the car is parked correctly
+P: Checks whether the car is parked correctly  
+
 2. Operations of the port:  
-isParkedCorrectly
+isParkedCorrectly  
+
 3. Description of the operations:
 
 ~~~
@@ -323,10 +323,8 @@ It is worth to mention here the paralelism between hexagonal architecture and us
 
 Reading the article ["Structuring use cases with goals" by Alistair Cockburn](https://web.archive.org/web/20170620145208/http://alistair.cockburn.us/Structuring+use+cases+with+goals), I realized that hexagonal architecture is tightly related to use cases. I describe here some analogies I've found:
 
-* In use cases there are different levels of abstraction for goals: summary goals, user goals (sea level) and subfunctions. At high level (summary goals) you have multiple primary actors. This is for helping you to find out better the functionality that the system might offer to the users. Then at lower levels (user goals and subfunctions) you have just one actor.
-
-In hexagonal architecture, the hexagon (the application) as a whole is needed to achieve summary goals, and it is used by multiple driver actors. Then driver ports are at a lower level, for achieving user goals. And subfunctions are operations of a driver port.
-
+* In use cases there are different levels of abstraction for goals: summary goals, user goals (sea level) and subfunctions. At high level (summary goals) you have multiple primary actors. This is for helping you to find out better the functionality that the system might offer to the users. Then at lower levels (user goals and subfunctions) you have just one actor.  
+In hexagonal architecture, the hexagon (the application) as a whole is needed to achieve summary goals, and it is used by multiple driver actors. Then driver ports are at a lower level, for achieving user goals. And subfunctions are operations of a driver port.  
 A topic related to this is "How primary actors can be important and unimportant at the same time", that Alistair Cockburn explains in his book "Writing effective use cases".
 
 * In use cases we have this figure, that shows how actors communicate with a "goal - interaction - responsability" chain:
