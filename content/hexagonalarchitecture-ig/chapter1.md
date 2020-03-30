@@ -1,6 +1,7 @@
 ---
 layout: default
 showcomments: true
+nombrearticulo: hexarchiguno
 ---
 
 <div id="title">
