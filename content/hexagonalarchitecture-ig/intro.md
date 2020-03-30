@@ -1,5 +1,6 @@
 ---
 layout: default
+showcomments: true
 ---
 
 <div id="title">
