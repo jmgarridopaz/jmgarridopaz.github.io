@@ -217,37 +217,79 @@ getAllRates, issuePermit
 public interface ForParkingCars {
 
 	/**
-	 * @author jmgarrido
+	 * Returns the information of all the available rates in the city.
 	 * 
-	 * Returns all the available rates
-	 * 
-	 * @return a list of {@code RateInfo} objects
+	 * @return	a list of RateInfo objects
 	 */
 	public List<RateInfo> getAllRates();
 
-
+	
 	/**
-	 * @author jmgarrido
-	 * 
-	 * Creates a permit for the car {} parked at an area with the rate {}.
-	 * The permit period starts at the current datetime, given by the clock {}, and ends at datetime {}.
-	 * The permit price is charged to the payment card {}.
+	 * Issues a permit for a car parked at a regulated area, valid until a datetime, paying it with a card.
 	 * Returns a ticket with the permit information.
 	 * 
-	 * @param clock				
-	 * 					Clock to get current datetime from.
-	 * @param carPlate
-	 * 					Car that we want to get the permit for.
-	 * @param rateName
-	 * 					Rate of the regulated area where we want to park the car.
-	 * @param endingDateTime
-	 * 					A datetime in the future, that will be the expiration date of the permit.
-	 * @param paymentCardInfo
-	 * 					Card to charge the permit price to.
-	 * @return an object of type {@code PermitTicket}
+	 * First the permit price is calculated, depending on the number of minutes of the permit period,
+	 * according to the rate of the area where the car is parked.
+	 * Then, permit price is charged to the payment card.
+	 * And finally the permit is stored.
+	 * 
+	 * @param	clock			Clock to get current datetime from, since it will be the starting datetime of the permit period
+	 * @param	carPlate		Car plate of the car we want to get the permit for
+	 * @param	rateName		Rate name of the regulated area where we want to park the car
+	 * @param	endingDateTime	A datetime in the future, that will be the expiration date of the permit period
+	 * @param	paymentCardInfo	Information about the card to charge the permit price to.
+	 * @return					an PermitTicket object
 	 * 
 	 */
 	public PermitTicket issuePermit ( Clock clock, String carPlate, String rateName, LocalDateTime endingDateTime, PaymentCardInfo paymentCardInfo );
+
+}
+~~~
+
+Definition of the data that port operations manage:
+~~~
+public interface RateInfo {
+	
+	public String name();
+	
+	public BigDecimal amountPerHour();
+	
+	public String currencySymbol();
+	
+	public int minNumberOfMinutes();
+	
+	public int maxNumberOfMinutes();
+	
+	public Map < DayOfWeek, List<LocalTime> > timeTable();
+
+}
+
+public interface PaymentCardInfo {
+	
+	public String number();
+	
+	public String cvv();
+	
+	public YearMonth expirationDate();
+
+}
+
+public interface PermitTicket {
+
+	public String code();
+	
+	public String carPlate();
+	
+	public String rateName();
+	
+	public LocalDateTime startingDateTime();
+	
+	public LocalDateTime endingDateTime();
+	
+	public BigDecimal priceAmount();
+	
+	public String priceCurrencySymbol();
+	
 }
 ~~~
 
@@ -267,23 +309,18 @@ isParkedCorrectly
 
 ~~~
 public interface ForCheckingCars {
+		
 	/**
-	 * @author jmgarrido
+	 * Checks whether a car parked in a regulated area has an active permit.
+	 * A permit is active if the current datetime is before the ending datetime of the permit period.
 	 * 
-	 * Checks whether the car {} has an active permit for being parked
-	 * at the current datetime in a regulated area with rate {}
-	 * 
-	 * @param clock				
-	 * 					Clock to get current datetime from.
-	 * @param carPlate
-	 * 					Car that we want to check.
-	 * @param rateName
-	 * 					Rate of the regulated area where the car is parked.
-	 * @return a boolean value
-	 * 					true if such a permit exists, false otherwise
-	 * 
+	 * @param	clock		Clock to get current datetime from
+	 * @param	carPlate	Car plate of the car that we want to check
+	 * @param	rateName	Rate name of the regulated area where the car to check is parked
+	 * @return				true if there exists an active permit, false otherwise
 	 */
-	public boolean isParkedCorrectly ( Clock clock, String carPlate, String rateName );	
+	public boolean isParkedCorrectly ( Clock clock, String carPlate, String rateName );
+	
 }
 ~~~
 
