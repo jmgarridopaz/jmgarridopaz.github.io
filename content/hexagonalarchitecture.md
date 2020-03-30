@@ -1,7 +1,5 @@
 ---
 layout: default
-showcomments: true
-nombrearticulo: hexarch
 ---
 
 <div id="title">
