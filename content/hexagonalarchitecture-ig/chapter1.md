@@ -366,6 +366,4 @@ The hexagon would be like any other actor. It has goals and to achieve them it m
 
 <br/>
 
-<hr/>
-
 <div class="commentbox"></div>
