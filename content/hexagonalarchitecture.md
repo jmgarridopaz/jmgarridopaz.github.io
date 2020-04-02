@@ -450,6 +450,6 @@ At this point you are done. You can __configure every port with the adapter you 
 
 [https://beyondxscratch.wordpress.com/2017/08/19/decoupling-your-technical-code-from-your-business-logic-with-the-hexagonal-architecture-hexarch](https://beyondxscratch.wordpress.com/2017/08/19/decoupling-your-technical-code-from-your-business-logic-with-the-hexagonal-architecture-hexarch)
 
+<br/>
 ---
-
 <div class="commentbox"></div>
