@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 {% seo %}
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include mystyle.html %}
     <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
@@ -41,7 +40,7 @@
     
     <div class="commentbox"></div>
     
-    <script>
+    <script type="module">
       import commentBox from 'commentbox.io';commentBox('5650367689785344-proj');
     </script>
     <!--
