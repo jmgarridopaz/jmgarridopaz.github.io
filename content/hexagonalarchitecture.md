@@ -450,10 +450,4 @@ At this point you are done. You can __configure every port with the adapter you 
 
 [https://beyondxscratch.wordpress.com/2017/08/19/decoupling-your-technical-code-from-your-business-logic-with-the-hexagonal-architecture-hexarch](https://beyondxscratch.wordpress.com/2017/08/19/decoupling-your-technical-code-from-your-business-logic-with-the-hexagonal-architecture-hexarch)
 
-
-----
-<h2>Comments</h2>
-----
-<p>Your questions, suggestions, comments, opinion, or any feedback are wellcome.</p>
-<p>You can send me an email to <a style="text-decoration: underline;" href="mailto:hexagonalme@gmail.com?subject=hexarch">hexagonalme@gmail.com</a></p>
-<p>Thanks for reading.</p>
+<div class="commentbox"></div>
