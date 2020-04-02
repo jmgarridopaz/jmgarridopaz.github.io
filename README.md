@@ -1,3 +1,1 @@
-## GitHub Pages
-## Web Site
-## jmgarridopaz
+## GitHub Pages Web Site (https://jmgarridopaz.github.io)
