@@ -101,5 +101,5 @@ Last, but not least, I would like to thank Alistair Cockburn for being always th
 [https://beyondxscratch.wordpress.com/2017/08/19/decoupling-your-technical-code-from-your-business-logic-with-the-hexagonal-architecture-hexarch](https://beyondxscratch.wordpress.com/2017/08/19/decoupling-your-technical-code-from-your-business-logic-with-the-hexagonal-architecture-hexarch)
 
 <br/>
----
+
 <div class="commentbox"></div>
