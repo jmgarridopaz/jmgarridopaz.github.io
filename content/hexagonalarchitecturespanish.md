@@ -6,7 +6,7 @@ layout: default
 <h1>Arquitectura Hexagonal</h1>
 <p>Mi traducción al español del Patrón "Ports and Adapters" de Alistair Cockburn</p>
 <hr>
-<span class="credits right">Published on July 23, 2018 by <a href="{{ site.github.owner_url }}">@{{ site.github.owner_name }}</a></span>
+<span class="credits right">Published on July 23, 2018 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
 </div>
 
 El patrón "Ports and Adapters" es obra del Dr. Alistair Cockburn, coautor del "Agile Manifesto", que allá por el año 2005 escribió un articulo donde definía el patrón. Ésta es la traducción de dicho artículo. Mi agradecimiento al Sr. Cockburn por permitirme traducirlo.
