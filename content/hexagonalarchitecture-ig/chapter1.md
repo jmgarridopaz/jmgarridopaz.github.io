@@ -364,4 +364,6 @@ The hexagon would be like any other actor. It has goals and to achieve them it m
 
 [https://web.archive.org/web/20170620145208/http://alistair.cockburn.us/Structuring+use+cases+with+goals](https://web.archive.org/web/20170620145208/http://alistair.cockburn.us/Structuring+use+cases+with+goals)
 
+<br/>
+---
 <div class="commentbox"></div>
