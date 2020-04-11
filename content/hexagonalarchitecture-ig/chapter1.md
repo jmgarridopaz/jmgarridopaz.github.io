@@ -96,7 +96,7 @@ Now let's see these design steps...
 
 1. Draw an hexagon. It represents the application, the business logic.
 
-2. Put driver actors outside the hexagon, on the left side. Drivers are those who needs the application for achieving their goals. They trigger the communication with the application. As Alistair Cockburn says in his talk [Alistair in the Hexagone, think of the application as a thing resting in a quiet state](https://youtu.be/th4AgBcrEHA?list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL&t=1409), doing nothing. When the driver needs the application to perform an action, the driver would kick it and wake it up saying "Hey you, do this".
+2. Put driver actors outside the hexagon, on the left side. Drivers are those who need the application for achieving their goals. They trigger the communication with the application. As Alistair Cockburn says in his talk [Alistair in the Hexagone, think of the application as a thing resting in a quiet state](https://youtu.be/th4AgBcrEHA?list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL&t=1409), doing nothing. When the driver needs the application to perform an action, the driver would kick it and wake it up saying "Hey you, do this".
 
 3. Put driven actors outside the hexagon, on the right side. Driven actors are those who are needed by the application for achieving application goals. The application triggers the communication with the driven actors.
 
@@ -161,7 +161,7 @@ Then, more adapters could be added if we needed to. For example, if requirements
 
 ___Design alternatives for the driver side:___
 
-I've chosen the design of Figure 4 for showing how to implement an application with multiple driver ports, adapters and actors, but of course there are other ways to design it. I mention here two of them if someone want to try:
+I've chosen the design of Figure 3 for showing how to implement an application with multiple driver ports, adapters and actors, but of course there are other ways to design it. I mention here two of them if someone want to try:
 
 1. Imagine that the requirements say that both driver actors (car drivers and parking inspectors) use just one web UI to access the application. Here the trick is to consider those actors as roles that a person can play. We would just have one actor (the person) playing two roles (car driver and parking inspector). There would be two web UI adapters, one for each port. A middleware component would route the web UI request to one of the adapters, depending on the requested operation. In this case ports would have to check the role of the user who did the request.
 
