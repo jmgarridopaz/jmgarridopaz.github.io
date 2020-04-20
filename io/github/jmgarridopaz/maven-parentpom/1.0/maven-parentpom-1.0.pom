@@ -5,14 +5,14 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<!-- Parent POM for BlueZone projects -->
-	<groupId>io.github.jmgarridopaz.bluezone</groupId>
-	<artifactId>bluezone-maven-parentpom</artifactId>
+	<!-- Parent POM for my projects -->
+	<groupId>io.github.jmgarridopaz</groupId>
+	<artifactId>maven-parentpom</artifactId>
 	<version>1.0</version>
 
 	<packaging>pom</packaging>
 
-	<name>BlueZone Parent POM</name>
+	<name>My Parent POM</name>
 
 	<properties>
 		<!-- Char encoding -->
@@ -20,7 +20,7 @@
 		<project.build.sourceEncoding>${project.encondig}</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${project.encondig}</project.reporting.outputEncoding>
 		<!-- Java -->
-		<java.version>9</java.version>
+		<java.version>1.8</java.version>
 		<!-- Plugins -->
 		<mavenCompilerPlugin.version>3.8.1</mavenCompilerPlugin.version>
 		<!-- Skip maven test compilation and execution -->
@@ -31,14 +31,8 @@
 		<dependencies>
 			<!-- My Java language Utils Library -->
 			<dependency>
-				<groupId>io.github.jmgarridopaz.javautils</groupId>
+				<groupId>io.github.jmgarridopaz</groupId>
 				<artifactId>io-github-jmgarridopaz-javautils</artifactId>
-				<version>1.0</version>
-			</dependency>
-			<!-- My Ports And Adapters Pattern Library -->
-			<dependency>
-				<groupId>io.github.jmgarridopaz.portsadapters</groupId>
-				<artifactId>io-github-jmgarridopaz-portsadapters</artifactId>
 				<version>1.0</version>
 			</dependency>
 		</dependencies>
@@ -84,7 +78,7 @@
 		</repository>
      </repositories>
      
-	<!-- Deploy the artifact to the local repository -->
+	<!-- Deploy the artifact to a project local repository -->
 	<distributionManagement>
 		<repository>
 			<id>local-repo</id>
