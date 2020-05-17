@@ -8,7 +8,7 @@
 	<!-- Parent POM for my projects -->
 	<groupId>io.github.jmgarridopaz</groupId>
 	<artifactId>parent</artifactId>
-	<version>1.0</version>
+	<version>1.0.0</version>
 
 	<packaging>pom</packaging>
 
@@ -16,9 +16,9 @@
 
 	<properties>
 		<!-- Char encoding -->
-		<project.encondig>UTF-8</project.encondig>
-		<project.build.sourceEncoding>${project.encondig}</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>${project.encondig}</project.reporting.outputEncoding>
+		<project.enconding>UTF-8</project.enconding>
+		<project.build.sourceEncoding>${project.enconding}</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>${project.enconding}</project.reporting.outputEncoding>
 		<!-- Java -->
 		<java.version>1.8</java.version>
 		<!-- Plugins -->
@@ -33,7 +33,7 @@
 			<dependency>
 				<groupId>io.github.jmgarridopaz.lib</groupId>
 				<artifactId>java-lang-utils</artifactId>
-				<version>1.0</version>
+				<version>1.0.0</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
