@@ -21,6 +21,8 @@
 		<project.reporting.outputEncoding>${project.enconding}</project.reporting.outputEncoding>
 		<!-- Java -->
 		<java.version>1.8</java.version>
+		<!-- Dependencies -->
+		<javalangutils.version>1.0.0</javalangutils.version>
 		<!-- Plugins -->
 		<mavenCompilerPlugin.version>3.8.1</mavenCompilerPlugin.version>
 		<!-- Skip maven test compilation and execution -->
@@ -33,7 +35,7 @@
 			<dependency>
 				<groupId>io.github.jmgarridopaz.lib</groupId>
 				<artifactId>java-lang-utils</artifactId>
-				<version>1.0.0</version>
+				<version>${javalangutils.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
