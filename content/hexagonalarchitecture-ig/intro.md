@@ -9,7 +9,7 @@ layout: default
 <span class="credits right">Published on March 29, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
 </div>
 
-<p class="intro">When I wrote a conceptual article about Hexagonal Architecture, aka Ports and Adapters pattern, my intention was to show an implementation example as well. It’s been a long time, but never is too late. So here it is, a pragmatic article for sharing my vision of how to implement an application structuring it according to Hexagonal Architecture pattern. As I always do, I try to be faithful to the original pattern and other material from its author, Dr. Alistair Cockburn</p>
+<p class="intro">When I wrote a conceptual article about Hexagonal Architecture, aka Ports and Adapters pattern, my intention was to show an implementation example as well. It’s been a long time, but it is never too late. So here it is, a pragmatic article for sharing my vision of how to implement an application structuring it according to Hexagonal Architecture pattern. As I always do, I try to be faithful to the original pattern and other material from its author, Dr. Alistair Cockburn</p>
 
 #### TABLE OF CONTENTS
 
@@ -25,7 +25,7 @@ First of all, I think that it’s good to remember the main goal of Hexagonal Ar
 
 Allow “users” (a human being, another application, a batch script, ...) to drive the application “in isolation” from real world devices (databases, files, servers, other applications, ...). In particular, test cases are also drivers of the application. Therefore, Hexagonal Architecture allows business logic to be tested in isolation.
 
-This is important to be reminded, because as we will see later during the development process, the application will be already done when we run the test cases against the isolated hexagon and they pass, using “test doubles” for the real world devices that the hexagon depends on.
+This is important to be reminded, because as we will see later during the development process, the application will already be done when we run the test cases against the isolated hexagon and they pass, using “test doubles” for the real world devices that the hexagon depends on.
 
 At that point the business logic will be done. What will be left is adding real adapters for the UI, database, etc. And from that moment on, those acceptance tests will become regression tests, so that we should pass them after every refactoring to prevent and detect business logic leaking from the hexagon.
 
@@ -38,7 +38,7 @@ The goal we’ve just seen is achieved by decoupling business logic from technol
 
 In this article I want to show an implementation guide for describing the structure, the development process, and the startup of a hexagonal architecture application, using some kind of design techniques, mainly custom diagrams, and illustrating it with the development of an example application using Java 9.
 
-However, my intention isn’t just to show the source code of an example in a particular programming language, but to show also the dependencies between the components of the architecture (who knows of whom), and how to configure those dependencies to build and run the whole system, since they are important things to know for a programmer who wants to implement a hexagonal application, regardless of the programming language we use.
+However, my intention isn’t just to show the source code of an example in a particular programming language, but to also show the dependencies between the components of the architecture (who knows of whom), and how to configure those dependencies to build and run the whole system, since they are important things to know for a programmer that wants to implement a hexagonal application, regardless of the programming language they use.
 
 Does this mean that the programming language we use for the implementation doesn’t matter? Not at all. It is important, in the sense that you will have to manage to implement the concepts and rules of the application architecture, the better your programming language mechanisms allow you.
 
@@ -69,7 +69,7 @@ I’ve structured the implementation guide into the following chapters, and each
 4. Real adapters.
 5. Advanced execution.
 
-These are my intentions, but then life will decide whether or not I will be able to finish it all. I hope I will though, but who knows?... This is life, and live :)
+Those are my intentions, but then life will decide whether or not I will be able to finish it all. I hope I will though, but who knows?... This is life, and live :)
 
 Last, but not least, I would like to thank Alistair Cockburn for being always there, for always answering to my questions. Thank you very much Alistair.
 
