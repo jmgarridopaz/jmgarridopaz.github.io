@@ -9,13 +9,15 @@ layout: default
 <span class="credits right">Published on September 8, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
 </div>
 
-<p class="intro">Here I ask some questions to Dr. Alistair Cockburn, the man who wrote the Hexagonal Architecture pattern, also known as Ports And Adapters pattern. They are just some questions that I considered interesting, so I hope that "hexagonal readers" enjoy this post. I would like to thank Alistair Cockburn for letting me ask him these questions, and for spending his time answering them in such a comprehensive way.</p>
+<p class="intro">Here I ask some questions to Dr. Alistair Cockburn, the man who wrote the Ports And Adapters pattern, also known as Hexagonal Architecture. They are just some questions that I considered interesting, so I hope that "hexagonal readers" enjoy this post. I would like to thank Alistair Cockburn for letting me ask him these questions, and for spending his time answering them in such a comprehensive way.</p>
 
 <br>
 
-__QUESTION #1 (JG): I'm not going to ask you "why a hexagon", but "what is the story of the two names for the pattern"? (two articles at "wiki.c2.com" before you wrote the pattern) and "which name do you prefer"? (_Hexagonal Architecure_ or _Ports and Adapters_).__
+__QUESTION #1 (Juan Garrido):__
 
-__ANSWER #1 (AC):__
+_I'm not going to ask you "why a hexagon", but "what is the story of the two names for the pattern"? (two articles at "wiki.c2.com" before you wrote the pattern) and "which name do you prefer"? ("Hexagonal Architecure" or "Ports and Adapters")._
+
+__ANSWER #1 (Alistair Cockburn):__
 
 a) The hexagon: Everyone was drawing architectural pictures with rectangles, user on the top and database on the bottom, or user on the left and database on the right, I wanted to avoid that reflex, so I couldn't use a rectangle. (Related: I didn't know about the left-right asymmetry at the time.) Pentagons and heptagons are impossible to draw, so hexagon was an unused shape. That's all.
 
@@ -23,10 +25,11 @@ b) Ports and Adapters: I first drew this picture with the hexagon in 1994 (found
 
 c) However, "hexagonal architecture" is catchier, the hexagon shape is memorable, and they had already been in use for a while by that time (I published it first without the "ports and adapters" name), so #HexagonalArchitecture stuck and is still the easiest handle for the pattern.
 
+__QUESTION #2 (Juan Garrido):__
 
-__QUESTION #2 (JG): When did you first write anything about hexagonal architecture, and why? (what was the motivation of writing it?)__
+_When did you first write anything about hexagonal architecture, and why? (what was the motivation of writing it?)_
 
-__ANSWER #2 (AC):__
+__ANSWER #2 (Alistair Cockburn):__
 
 Interesting trying to find the history of it.
 
@@ -119,15 +122,21 @@ You can look at a lot of the histories by going to : https://web.archive.org/web
 
 (at this point, I wish I had a web site operational, so I could load all this history up there.)
 
+__QUESTION #3 (Juan Garrido):__
 
-#### Q3 (Juan Garrido): Regarding the origin of the pattern, I discovered few time ago the paralelism between "Hexagonal Architecture" and "Use Cases". So I wrote about it in a section of one of my articles ( https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html#tc4 ). What can you tell us about this relationship with use cases? Am I right about it? or should I change anything I wrote?
+_Regarding the origin of the pattern, I discovered few time ago the paralelism between "Hexagonal Architecture" and "Use Cases". So I wrote about it in a section of one of my articles ( https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html#tc4 ). What can you tell us about this relationship with use cases? Am I right about it? or should I change anything I wrote?_
+
+__ANSWER #3 (Alistair Cockburn):__
 
 The driver/driven = primary/secondary distinction is correct. The goal levels less so. A sea-level or user-task-level use case roughly speaking represents one business atomic transaction, quite possible a database "transaction" in database terms (meaning fully committed or fully rolled back). However, every function call on a port is a use case, and probably a fish-level or even clam-level use case from a human's point of view. A new function call might only add a small piece of information or answer a small question needed to reach the full business transaction.
 
 It might be that a port aggregates one-person summary level use case, but it's possible that they summary level use case involves multiple people hitting multiple ports. The purpose of a summary level use case is to show the macro flow, so there is no reason to expect them to stay on one port. Something needs to show how all the hits to the system over time add up to something interesting from the human or business perspective.
 
+__QUESTION #4 (Juan Garrido):__
 
-#### Q4 (Juan Garrido): You said in your "Alistair in the Hexagone" talk how popular the pattern is (lot of clicks on your website link), and I would add lot of people talking about it in Twitter, etc. In fact, "Use Cases" apart, I know you for "Hexagonal Architecture", not for the "Agile Manifesto", but this is my fault :). What do you think is the reason of this? (why is it that popular?) Did you ever imagine this when you wrote the pattern 15 years ago?
+__You said in your "Alistair in the Hexagone" talk how popular the pattern is (lot of clicks on your website link), and I would add lot of people talking about it in Twitter, etc. In fact, "Use Cases" apart, I know you for "Hexagonal Architecture", not for the "Agile Manifesto", but this is my fault :). What do you think is the reason of this? (why is it that popular?) Did you ever imagine this when you wrote the pattern 15 years ago?__
+
+__ANSWER #4 (Alistair Cockburn):__
 
 No idea, quite frankly. Imagine that I started teaching this in 1994, talking about it in 1998, trying unsuccessfully to do anything about it in 2004. Then Kevin Rutherford picks it up in 2005 and starts writing about it (now 10 years later). Even later, maybel 2012 or so, the Domain Driven Design people picked it up, as I imagine it, to put a wall around the domain model and get the technology out of their way. An act of self-defense, as I imagine it. I have still never been able to get anyone to implement it on any projects I visit. One of my senior architect friends still was making fun of me for this funny pattern in 2015.
 
