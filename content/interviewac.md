@@ -11,6 +11,7 @@ layout: default
 
 <p class="intro">Here I ask some questions to Dr. Alistair Cockburn, the man who wrote the Hexagonal Architecture pattern, also known as Ports And Adapters pattern. They are just some questions that I considered interesting, so I hope that "hexagonal readers" enjoy this post. I would like to thank Alistair Cockburn for letting me ask him these questions, and for spending his time answering them in such a comprehensive way.</p>
 
+<p></p>
 
 #### QUESTION #1 (JG): I'm not going to ask you "why a hexagon", but "what is the story of the two names for the pattern"? (two articles at "wiki.c2.com" before you wrote the pattern) and "which name do you prefer"? (___Hexagonal Architecure___ or ___Ports and Adapters___).
 
@@ -173,6 +174,6 @@ What was it that triggered your first interest in Hexagonal Architecture, and wh
 
 =====
 
-Well, at the beginning of 2016, I was developing a web application, a personal project, for my nephew Emilio García (), SEO consultant. I used the classical 3 layered architecture and MVC pattern. One day, looking at my laptop screen, I realized that the source code was full of framework annotations, a real mess, that didn't allow me to understand what the code was for, regarding to business. I began to search on the Internet and I discovered architectures that promote business domain decoupling. The most I liked was Hexagonal Architecture. Why? Probably because of the ports mechanism, which helps to define better the interactions with the outside world.
+Well, at the beginning of 2016, I was developing a web application, a personal project for my nephew Emilio García (@CampamentoWeb), SEO consultant. I used the classical 3 layered architecture and MVC pattern. One day, looking at my laptop screen, I realized that the source code was full of framework annotations, a real mess, that didn't allow me to understand what the code was for, regarding to business. I began to search on the Internet and I discovered architectures that promote business domain decoupling. The most I liked was Hexagonal Architecture. Why? Probably because of the ports mechanism, which helps to define better the interactions with the outside world.
 
 Am I passionate and energetic explaining Hexagonal Architecture? Well I don't know, but my motivation for writing an article explaining it, was to share my knowledgement and to clarify concepts, since I saw many misconceptions over the Internet. So I did a lot of research on your material (the pattern, your website, the "Alistair in the Hexagone" talk) in order to write a thorough article.
