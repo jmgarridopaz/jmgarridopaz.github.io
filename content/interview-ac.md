@@ -69,8 +69,7 @@ f) It seems it was only around September 2005 that I finally had all the pieces:
 
 Here is what I wrote on my RSS feed about it: 
 
-"
-
+~~~
 <item><pubdate>
 2005 07 15
 13:01 MST
@@ -82,13 +81,11 @@ http://c2.com/cgi/wiki?PortsAndAdaptersArchitecture
 Somewhere in the mid-90s I started drawing a symmetric architecture in which the database is considered not at the "bottom of the stack", but fully outside the application, just as we recommend doing with the user interface. To break up perceptions about top and bottom and left and right, I drew it with a hexagonal shape, and came up with the rather lame name HexagonalArchitecture --- simply because I could not identify think of what the "hexagon" meant, but knew it had to have facets, and no number smaller than 5 made visual sense (and pentagons are harder to draw than hexagons). Finally just worked out what the drawing meant and realized this picture or architecture should be called Ports and Adapters (think operating system or hi-fi ports, and Design Pattern "adapters"). I'll get around to writing a full article on it when I have more examples and project implications to relate, but for now I'm just posting to Ward's wikiwiki site. If you know of prior or related architectural patterns similar to this, write me. 
 </description>
 </item>
+~~~
 
-"
+and
 
-and 
-
-"
-
+~~~
 <item><pubdate>
 2005 09 05
 23:01 MST
@@ -101,8 +98,7 @@ Back in 1998 I named the Hexagonal architecture pattern, and some people have us
 This is version 0.9, waiting for some additional reader feedback.
 </description>
 </item>
-
-"
+~~~
 
 The code came from a job in 2004, when I was visiting a project at the hospitals in Utah, and they wanted to get better automated testing, so I worked with one programmer to create sample hexagonal architecture code. I had realized by this time that there wasn't another pattern quite like it, and it needed a proper writeup. Up until that time I didn't have any sample code to show, so I couldn't write it. With the sample code, I could.
 
