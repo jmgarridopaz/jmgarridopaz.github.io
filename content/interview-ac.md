@@ -146,8 +146,11 @@ Imagine my surprise, then, when it turned up in a book on Domain Driven Design (
 
 In 2017, there were a number of people giving tutorials on this pattern, and nobody had ever asked me why I created it and what it meant! And some of those explanations were quite wrong (the main error is usually using only one technology per port, or port per technology, when the whole point of a port is to allow technology substitutions). So I asked Thomas Pierrain if we could do a dual-presentation, me giving the history and him doing the programming. That is the only time I've explained the history and motivation in public so far. You can see it here: https://www.youtube.com/watch?v=th4AgBcrEHA.
 
+__QUESTION #5 (Juan Garrido):__
 
-#### Q5 (Juan Garrido): Would you like to say something about some topic, or explain something that I didn't ask to you?
+__Would you like to say anything about any topic, or explain anything that I didn't ask to you?
+
+__ANSWER #5 (Alistair Cockburn):__
 
 Maybe ... One thing about use cases and one thing about my other work.
 
@@ -177,15 +180,16 @@ Poetry, strangely enough, feels to me the same as when I described techniques th
 
 When I ever get my own publishing channel, I guess I'll publish a lot of this stuff. It's been an interesting journey.
 
+__QUESTION #6 (Juan Garrido):__
 
-#### Q6 (Juan Garrido): Do you have any question for me?
+__Do you have any question for me?__
 
-Yes.
+__ANSWER #6 (Alistair Cockburn):__
 
-What was it that triggered your first interest in Hexagonal Architecture, and what made you finally so passionate and energetic about explaining it?
+Yes. What was it that triggered your first interest in Hexagonal Architecture, and what made you finally so passionate and energetic about explaining it?
 
 =====
 
-Well, at the beginning of 2016, I was developing a web application, a personal project, for my nephew Emilio García (), SEO consultant. I used the classical 3 layered architecture and MVC pattern. One day, looking at my laptop screen, I realized that the source code was full of framework annotations, a real mess, that didn't allow me to understand what the code was for, regarding to business. I began to search on the Internet and I discovered architectures that promote business domain decoupling. The most I liked was Hexagonal Architecture. Why? Probably because of the ports mechanism, which helps to define better the interactions with the outside world.
+Well, at the beginning of 2016, I was developing a web application, a personal project, for my nephew Emilio García [@CampamentoWeb](https://twitter.com/CampamentoWeb), SEO consultant. I used the classical 3 layered architecture and MVC pattern. One day, looking at my laptop screen, I realized that the source code was full of framework annotations, a real mess, that didn't allow me to understand what the code was for, regarding to business. I began to search on the Internet and I discovered architectures that promote business domain decoupling. The most I liked was Hexagonal Architecture. Why? Probably because of the ports mechanism, which helps to define better the interactions with the outside world.
 
 Am I passionate and energetic explaining Hexagonal Architecture? Well I don't know, but my motivation for writing an article explaining it, was to share my knowledgement and to clarify concepts, since I saw many misconceptions over the Internet. So I did a lot of research on your material (the pattern, your website, the "Alistair in the Hexagone" talk) in order to write a thorough article.
