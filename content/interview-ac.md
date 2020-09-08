@@ -10,9 +10,7 @@ layout: default
 </div>
 
 <p class="intro">Here I ask some questions to Dr. Alistair Cockburn, the man who wrote the Ports And Adapters pattern, also known as Hexagonal Architecture. They are just some questions that I considered interesting, so I hope that "hexagonal readers" enjoy this post. I would like to thank Alistair Cockburn for letting me ask him these questions, and for spending his time answering them in such a comprehensive way.</p>
-
-<br>
-
+<hr>
 __QUESTION #1 (Juan Garrido):__
 
 _I'm not going to ask you "why a hexagon", but "what is the story of the two names for the pattern"? (two articles at "wiki.c2.com" before you wrote the pattern) and "which name do you prefer"? ("Hexagonal Architecure" or "Ports and Adapters")._
@@ -24,7 +22,7 @@ a) The hexagon: Everyone was drawing architectural pictures with rectangles, use
 b) Ports and Adapters: I first drew this picture with the hexagon in 1994 (found my course notes with it!), next drew it on the board of a friend around 1998. It wasn't until sometime around 2002 or so (I don't recall when), when I was doing some research on the pattern to write it up formally, and I was looking for similar patterns to refer to (found some similar ones, but none covered the main idea), that I saw something about "ports" in a pattern somewhere, and possibly the "adapter" pattern in the Design Patterns book, that I realized the sides of the hexagon represented port in some formal sense. Hence, "Ports and Adapters" to make a clearer name for the architectural pattern. I then had an answer to "what constitutes one facet of the hexagon?"
 
 c) However, "hexagonal architecture" is catchier, the hexagon shape is memorable, and they had already been in use for a while by that time (I published it first without the "ports and adapters" name), so #HexagonalArchitecture stuck and is still the easiest handle for the pattern.
-
+<hr>
 __QUESTION #2 (Juan Garrido):__
 
 _When did you first write anything about hexagonal architecture, and why? (what was the motivation of writing it?)_
@@ -121,7 +119,7 @@ that was pretty nice, as I now look at it.
 You can look at a lot of the histories by going to : https://web.archive.org/web/20040701000000*/http://alistair.cockburn.us/
 
 (at this point, I wish I had a web site operational, so I could load all this history up there.)
-
+<hr>
 __QUESTION #3 (Juan Garrido):__
 
 _Regarding the origin of the pattern, I discovered few time ago the paralelism between "Hexagonal Architecture" and "Use Cases". So I wrote about it in a section of one of my articles ( https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html#tc4 ). What can you tell us about this relationship with use cases? Am I right about it? or should I change anything I wrote?_
@@ -131,10 +129,10 @@ __ANSWER #3 (Alistair Cockburn):__
 The driver/driven = primary/secondary distinction is correct. The goal levels less so. A sea-level or user-task-level use case roughly speaking represents one business atomic transaction, quite possible a database "transaction" in database terms (meaning fully committed or fully rolled back). However, every function call on a port is a use case, and probably a fish-level or even clam-level use case from a human's point of view. A new function call might only add a small piece of information or answer a small question needed to reach the full business transaction.
 
 It might be that a port aggregates one-person summary level use case, but it's possible that they summary level use case involves multiple people hitting multiple ports. The purpose of a summary level use case is to show the macro flow, so there is no reason to expect them to stay on one port. Something needs to show how all the hits to the system over time add up to something interesting from the human or business perspective.
-
+<hr>
 __QUESTION #4 (Juan Garrido):__
 
-__You said in your "Alistair in the Hexagone" talk how popular the pattern is (lot of clicks on your website link), and I would add lot of people talking about it in Twitter, etc. In fact, "Use Cases" apart, I know you for "Hexagonal Architecture", not for the "Agile Manifesto", but this is my fault :). What do you think is the reason of this? (why is it that popular?) Did you ever imagine this when you wrote the pattern 15 years ago?__
+_You said in your "Alistair in the Hexagone" talk how popular the pattern is (lot of clicks on your website link), and I would add lot of people talking about it in Twitter, etc. In fact, "Use Cases" apart, I know you for "Hexagonal Architecture", not for the "Agile Manifesto", but this is my fault :). What do you think is the reason of this? (why is it that popular?) Did you ever imagine this when you wrote the pattern 15 years ago?_
 
 __ANSWER #4 (Alistair Cockburn):__
 
@@ -145,10 +143,10 @@ So, I had basically forgotten it by 2010. Was using it on a baby project of my o
 Imagine my surprise, then, when it turned up in a book on Domain Driven Design ("Growing Object-Oriented Software, Guided by Tests, by Steve Freeman and Nat Pryce) and started seeing it quoted and explained!
 
 In 2017, there were a number of people giving tutorials on this pattern, and nobody had ever asked me why I created it and what it meant! And some of those explanations were quite wrong (the main error is usually using only one technology per port, or port per technology, when the whole point of a port is to allow technology substitutions). So I asked Thomas Pierrain if we could do a dual-presentation, me giving the history and him doing the programming. That is the only time I've explained the history and motivation in public so far. You can see it here: https://www.youtube.com/watch?v=th4AgBcrEHA.
-
+<hr>
 __QUESTION #5 (Juan Garrido):__
 
-__Would you like to say anything about any topic, or explain anything that I didn't ask to you?
+_Would you like to say anything about any topic, or explain anything that I didn't ask to you?_
 
 __ANSWER #5 (Alistair Cockburn):__
 
@@ -179,10 +177,10 @@ Use cases were part of my methodology research, as was object-oriented design. I
 Poetry, strangely enough, feels to me the same as when I described techniques that I observe other people using. In both cases, I try to climb into someone's head and describe what I or they see in a way that a different person can see that also. This has been an interesting experience.
 
 When I ever get my own publishing channel, I guess I'll publish a lot of this stuff. It's been an interesting journey.
-
+<hr>
 __QUESTION #6 (Juan Garrido):__
 
-__Do you have any question for me?__
+_Do you have any question for me?_
 
 __ANSWER #6 (Alistair Cockburn):__
 
@@ -190,6 +188,8 @@ Yes. What was it that triggered your first interest in Hexagonal Architecture, a
 
 =====
 
-Well, at the beginning of 2016, I was developing a web application, a personal project, for my nephew Emilio García [@CampamentoWeb](https://twitter.com/CampamentoWeb), SEO consultant. I used the classical 3 layered architecture and MVC pattern. One day, looking at my laptop screen, I realized that the source code was full of framework annotations, a real mess, that didn't allow me to understand what the code was for, regarding to business. I began to search on the Internet and I discovered architectures that promote business domain decoupling. The most I liked was Hexagonal Architecture. Why? Probably because of the ports mechanism, which helps to define better the interactions with the outside world.
+__(Juan Garrido):__
+
+Well, at the beginning of 2016, I was developing a web application, a personal project for my nephew Emilio García [@CampamentoWeb](https://twitter.com/CampamentoWeb), SEO consultant. I used the classical 3 layered architecture and MVC pattern. One day, looking at my laptop screen, I realized that the source code was full of framework annotations, a real mess, that didn't allow me to understand what the code was for, regarding to business. I began to search on the Internet and I discovered architectures that promote business domain decoupling. The most I liked was Hexagonal Architecture. Why? Probably because of the ports mechanism, which helps to define better the interactions with the outside world.
 
 Am I passionate and energetic explaining Hexagonal Architecture? Well I don't know, but my motivation for writing an article explaining it, was to share my knowledgement and to clarify concepts, since I saw many misconceptions over the Internet. So I did a lot of research on your material (the pattern, your website, the "Alistair in the Hexagone" talk) in order to write a thorough article.
