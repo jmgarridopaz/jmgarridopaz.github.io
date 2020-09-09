@@ -45,17 +45,17 @@ At the time, I was looking to have interfaces on all sides, borrowing from the M
 
 b) Probably the first time I got to test this idea in the wild would have been maybe around 1998 or so, when I was visiting my friend Mho Salim and he was describing a problem he had that the hexagonal architecture solved.
 
-I described that in the video in Paris, take a look here: [https://youtu.be/th4AgBcrEHA?t=858](https://youtu.be/th4AgBcrEHA?t=858)
+I described that in the video in Paris, take a look here: <a href="https://youtu.be/th4AgBcrEHA?t=858" target="_blank">https://youtu.be/th4AgBcrEHA?t=858</a>
 
 =====
 
 c) Evidently I had been talking about it more in 1998, because Kevin Rutherford wrote in his blog "Ever since I heard of it (around 1998 or so) I’ve been trying to persuade people to think in terms of Alistair Cockburn’s hexagonal architecture model."
 
-Reference: [https://silkandspinach.net/2004/07/13/hexagonal-architecture/](https://silkandspinach.net/2004/07/13/hexagonal-architecture/)
+Reference: <a href="https://silkandspinach.net/2004/07/13/hexagonal-architecture/" target="_blank">https://silkandspinach.net/2004/07/13/hexagonal-architecture/</a>
 
 =====
 
-d) I wrote it up in Ward Cunningham's wikwiki web by 2004 (sadly, one cannot see the creation dates of pages on Ward's wiki). You can still read that discussion here: [http://wiki.c2.com/?HexagonalArchitecture](http://wiki.c2.com/?HexagonalArchitecture). Kevin Rutherford refers to it in 2004/07/13: [https://silkandspinach.net/2004/07/13/hexagonal-architecture/](https://silkandspinach.net/2004/07/13/hexagonal-architecture/).
+d) I wrote it up in Ward Cunningham's wikwiki web by 2004 (sadly, one cannot see the creation dates of pages on Ward's wiki). You can still read that discussion here: <a href="http://wiki.c2.com/?HexagonalArchitecture" target="_blank">http://wiki.c2.com/?HexagonalArchitecture</a>. Kevin Rutherford refers to it in 2004/07/13: <a href="https://silkandspinach.net/2004/07/13/hexagonal-architecture/" target="_blank">https://silkandspinach.net/2004/07/13/hexagonal-architecture/</a>.
 
 =====
 
@@ -121,7 +121,7 @@ that was pretty nice, as I now look at it.
 You can look at a lot of the histories by going to :
 
 <p>
-<a href="https://web.archive.org/web/20040701000000*/http://alistair.cockburn.us/">https://web.archive.org/web/20040701000000*/http://alistair.cockburn.us/</a>
+<a href="https://web.archive.org/web/20040701000000*/http://alistair.cockburn.us/" target="_blank">https://web.archive.org/web/20040701000000*/http://alistair.cockburn.us/</a>
 </p>
 
 (at this point, I wish I had a web site operational, so I could load all this history up there.)
