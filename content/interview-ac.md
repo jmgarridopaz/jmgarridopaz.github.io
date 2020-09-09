@@ -9,13 +9,9 @@ layout: default
 <span class="credits right">Published on September 8, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
 </div>
 
-<p class="intro">Here I ask some questions to Dr. Alistair Cockburn, the man who wrote the Ports And Adapters pattern, also known as Hexagonal Architecture. They are just some questions that I considered interesting, so I hope that "hexagonal readers" enjoy this post. I would like to thank Alistair Cockburn for letting me ask him these questions, and for spending his time answering them in such a comprehensive way.</p>
+<p class="intro">Here I ask some questions to Dr. Alistair Cockburn, the auhor of Ports And Adapters pattern, also known as Hexagonal Architecture. They are just some questions that I considered interesting, so I hope that "hexagonal readers" enjoy this post. I would like to thank Alistair Cockburn for letting me ask him these questions, and for spending his time answering them in such a comprehensive way.</p>
 <hr>
-__Question #1:__
-
-_(Juan Garrido):_
-
-_I'm not going to ask you "why a hexagon", but "what is the story of the two names for the pattern"? (two articles at "wiki.c2.com" before you wrote the pattern) and "which name do you prefer"? ("Hexagonal Architecure" or "Ports and Adapters")._
+_(Juan Garrido):_ __QUESTION #1: I'm not going to ask you "why a hexagon", but "what is the story of the two names for the pattern"? (two articles at "wiki.c2.com" before you wrote the pattern) and "which name do you prefer"? ("Hexagonal Architecure" or "Ports and Adapters").__
 
 _(Alistair Cockburn):_
 
