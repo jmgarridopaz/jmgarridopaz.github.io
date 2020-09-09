@@ -45,29 +45,29 @@ At the time, I was looking to have interfaces on all sides, borrowing from the M
 
 b) Probably the first time I got to test this idea in the wild would have been maybe around 1998 or so, when I was visiting my friend Mho Salim and he was describing a problem he had that the hexagonal architecture solved.
 
-I described that in the video in Paris, take a look here: <a target="_blank" ref="https://youtu.be/th4AgBcrEHA?t=858">https://youtu.be/th4AgBcrEHA?t=858</a>
+I described that in the video in Paris, take a look here: <a target="_blank" href="https://youtu.be/th4AgBcrEHA?t=858">https://youtu.be/th4AgBcrEHA?t=858</a>
 
 =====
 
 c) Evidently I had been talking about it more in 1998, because Kevin Rutherford wrote in his blog "Ever since I heard of it (around 1998 or so) I’ve been trying to persuade people to think in terms of Alistair Cockburn’s hexagonal architecture model."
 
-Reference: <a target="_blank" ref="https://silkandspinach.net/2004/07/13/hexagonal-architecture/">https://silkandspinach.net/2004/07/13/hexagonal-architecture/</a>
+Reference: <a target="_blank" href="https://silkandspinach.net/2004/07/13/hexagonal-architecture/">https://silkandspinach.net/2004/07/13/hexagonal-architecture/</a>
 
 =====
 
-d) I wrote it up in Ward Cunningham's wikwiki web by 2004 (sadly, one cannot see the creation dates of pages on Ward's wiki). You can still read that discussion here: <a target="_blank" ref="http://wiki.c2.com/?HexagonalArchitecture">http://wiki.c2.com/?HexagonalArchitecture</a>. Kevin Rutherford refers to it in 2004/07/13: <a target="_blank" ref="https://silkandspinach.net/2004/07/13/hexagonal-architecture/">https://silkandspinach.net/2004/07/13/hexagonal-architecture/</a>.
+d) I wrote it up in Ward Cunningham's wikwiki web by 2004 (sadly, one cannot see the creation dates of pages on Ward's wiki). You can still read that discussion here: <a target="_blank" href="http://wiki.c2.com/?HexagonalArchitecture">http://wiki.c2.com/?HexagonalArchitecture</a>. Kevin Rutherford refers to it in 2004/07/13: <a target="_blank" href="https://silkandspinach.net/2004/07/13/hexagonal-architecture/">https://silkandspinach.net/2004/07/13/hexagonal-architecture/</a>.
 
 =====
 
-e) Kevin Rutherford seems to have provided the final "whack on the side of the head" with his March 22 2005 blog post about it <a target="_blank" ref="https://silkandspinach.net/2005/03/22/the-middle-hexagon-should-be-independent-of-the-adapters/">https://silkandspinach.net/2005/03/22/the-middle-hexagon-should-be-independent-of-the-adapters/</a> and I created the page <a target="_blank" ref="http://wiki.c2.com/?PortsAndAdaptersArchitecture">http://wiki.c2.com/?PortsAndAdaptersArchitecture</a> in June 2005, with the sentences:
+e) Kevin Rutherford seems to have provided the final "whack on the side of the head" with his March 22 2005 blog post about it <a target="_blank" href="https://silkandspinach.net/2005/03/22/the-middle-hexagon-should-be-independent-of-the-adapters/">https://silkandspinach.net/2005/03/22/the-middle-hexagon-should-be-independent-of-the-adapters/</a> and I created the page <a target="_blank" href="http://wiki.c2.com/?PortsAndAdaptersArchitecture">http://wiki.c2.com/?PortsAndAdaptersArchitecture</a> in June 2005, with the sentences:
 
-<<"I finally had this 'aha!' moment (June 2005) in which I saw that the facets of the hexagon are 'ports' (well, this is the part I sort of knew) and the objects between the two hexagons are 'adapters' (oddly, this was the aha!, and thanks to RebeccaWirfsBrock for her new book ObjectDesign and KevinRutherford for his blog entry <a target="_blank" ref="http://silkandspinach.net/blog/2005/03/the_middle_hexa.html">http://silkandspinach.net/blog/2005/03/the_middle_hexa.html</a> for providing me with the necessary WhackOnTheSideOfTheHead to see the ports and the adapters (adaptors?)), and so the architectural pattern is PortsAndAdaptersArchitecture. It admits of a better explanation than what I could come up with in HexagonalArchitecture. The facets of the hexagon represent different conversations that the application is having with the outside world... ">>
+<<"I finally had this 'aha!' moment (June 2005) in which I saw that the facets of the hexagon are 'ports' (well, this is the part I sort of knew) and the objects between the two hexagons are 'adapters' (oddly, this was the aha!, and thanks to RebeccaWirfsBrock for her new book ObjectDesign and KevinRutherford for his blog entry <a target="_blank" href="http://silkandspinach.net/blog/2005/03/the_middle_hexa.html">http://silkandspinach.net/blog/2005/03/the_middle_hexa.html</a> for providing me with the necessary WhackOnTheSideOfTheHead to see the ports and the adapters (adaptors?)), and so the architectural pattern is PortsAndAdaptersArchitecture. It admits of a better explanation than what I could come up with in HexagonalArchitecture. The facets of the hexagon represent different conversations that the application is having with the outside world... ">>
 
-Kevin was right on it: On July 25, 2005, he wrote a new blog post saying: "Last month Alistair began using a new name for the Hexagonal Architecture pattern – he now calls it the Ports and Adapters Architecture." (reference: <a target="_blank" ref="https://silkandspinach.net/2005/07/25/ports-and-adapters-architecture/">https://silkandspinach.net/2005/07/25/ports-and-adapters-architecture/</a>)
+Kevin was right on it: On July 25, 2005, he wrote a new blog post saying: "Last month Alistair began using a new name for the Hexagonal Architecture pattern – he now calls it the Ports and Adapters Architecture." (reference: <a target="_blank" href="https://silkandspinach.net/2005/07/25/ports-and-adapters-architecture/">https://silkandspinach.net/2005/07/25/ports-and-adapters-architecture/</a>)
 
 =====
 
-f) It seems it was only around September 2005 that I finally had all the pieces: code, meaning of adapters, side references, and all. I finally wrote the article on my site: Reference: <a target="_blank" ref="https://web.archive.org/web/20060318201137/http://alistair.cockburn.us/rss.rdf">https://web.archive.org/web/20060318201137/http://alistair.cockburn.us/rss.rdf</a>
+f) It seems it was only around September 2005 that I finally had all the pieces: code, meaning of adapters, side references, and all. I finally wrote the article on my site: Reference: <a target="_blank" href="https://web.archive.org/web/20060318201137/http://alistair.cockburn.us/rss.rdf">https://web.archive.org/web/20060318201137/http://alistair.cockburn.us/rss.rdf</a>
 
 (and in those days, I hand-wrote my RSS feed :) hah.
 
@@ -108,19 +108,19 @@ The code came from a job in 2004, when I was visiting a project at the hospitals
 
 By the way, it is kind of fun to use webarchive.org to look at the different states of the site over the years, and in particular how I published all of the content in table or RSS. Take a look:
 
-<p><a target="_blank" ref="https://web.archive.org/web/20060110220907/http://alistair.cockburn.us/sitehistory.htm">https://web.archive.org/web/20060110220907/http://alistair.cockburn.us/sitehistory.htm</a></p>
+<p><a target="_blank" href="https://web.archive.org/web/20060110220907/http://alistair.cockburn.us/sitehistory.htm">https://web.archive.org/web/20060110220907/http://alistair.cockburn.us/sitehistory.htm</a></p>
 
-<p><a target="_blank" ref="https://web.archive.org/web/20060318201137/http://alistair.cockburn.us/rss.rdf">https://web.archive.org/web/20060318201137/http://alistair.cockburn.us/rss.rdf</a></p>
+<p><a target="_blank" href="https://web.archive.org/web/20060318201137/http://alistair.cockburn.us/rss.rdf">https://web.archive.org/web/20060318201137/http://alistair.cockburn.us/rss.rdf</a></p>
 
 and earlier:
 
-<p><a target="_blank" ref="https://web.archive.org/web/20040605235858/http://alistair.cockburn.us/sitehistory.html">https://web.archive.org/web/20040605235858/http://alistair.cockburn.us/sitehistory.html</a></p>
+<p><a target="_blank" href="https://web.archive.org/web/20040605235858/http://alistair.cockburn.us/sitehistory.html">https://web.archive.org/web/20040605235858/http://alistair.cockburn.us/sitehistory.html</a></p>
 
 that was pretty nice, as I now look at it.
 
 You can look at a lot of the histories by going to :
 
-<p><a target="_blank" ref="https://web.archive.org/web/20040701000000*/http://alistair.cockburn.us/">https://web.archive.org/web/20040701000000*/http://alistair.cockburn.us/</a></p>
+<p><a target="_blank" href="https://web.archive.org/web/20040701000000*/http://alistair.cockburn.us/">https://web.archive.org/web/20040701000000*/http://alistair.cockburn.us/</a></p>
 
 (at this point, I wish I had a web site operational, so I could load all this history up there.)
 <hr>
@@ -128,7 +128,7 @@ _(Juan Garrido):_
 
 __Question #3:__
 
-__Regarding the origin of the pattern, I discovered few time ago the paralelism between "Hexagonal Architecture" and "Use Cases". So I wrote about it in a section of one of my articles ( <a target="_blank" ref="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html#tc4">https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html#tc4</a> ). What can you tell us about this relationship with use cases? Am I right about it? or should I change anything I wrote?__
+__Regarding the origin of the pattern, I discovered few time ago the paralelism between "Hexagonal Architecture" and "Use Cases". So I wrote about it in a section of one of my articles ( <a target="_blank" href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html#tc4">https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html#tc4</a> ). What can you tell us about this relationship with use cases? Am I right about it? or should I change anything I wrote?__
 
 _(Alistair Cockburn):_
 
@@ -150,7 +150,7 @@ So, I had basically forgotten it by 2010. Was using it on a baby project of my o
 
 Imagine my surprise, then, when it turned up in a book on Domain Driven Design ("Growing Object-Oriented Software, Guided by Tests, by Steve Freeman and Nat Pryce) and started seeing it quoted and explained!
 
-In 2017, there were a number of people giving tutorials on this pattern, and nobody had ever asked me why I created it and what it meant! And some of those explanations were quite wrong (the main error is usually using only one technology per port, or port per technology, when the whole point of a port is to allow technology substitutions). So I asked Thomas Pierrain if we could do a dual-presentation, me giving the history and him doing the programming. That is the only time I've explained the history and motivation in public so far. You can see it here: <a target="_blank" ref="https://www.youtube.com/watch?v=th4AgBcrEHA">https://www.youtube.com/watch?v=th4AgBcrEHA</a>
+In 2017, there were a number of people giving tutorials on this pattern, and nobody had ever asked me why I created it and what it meant! And some of those explanations were quite wrong (the main error is usually using only one technology per port, or port per technology, when the whole point of a port is to allow technology substitutions). So I asked Thomas Pierrain if we could do a dual-presentation, me giving the history and him doing the programming. That is the only time I've explained the history and motivation in public so far. You can see it here: <a target="_blank" href="https://www.youtube.com/watch?v=th4AgBcrEHA">https://www.youtube.com/watch?v=th4AgBcrEHA</a>
 <hr>
 _(Juan Garrido):_
 
