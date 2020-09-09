@@ -25,11 +25,13 @@ b) Ports and Adapters: I first drew this picture with the hexagon in 1994 (found
 
 c) However, "hexagonal architecture" is catchier, the hexagon shape is memorable, and they had already been in use for a while by that time (I published it first without the "ports and adapters" name), so #HexagonalArchitecture stuck and is still the easiest handle for the pattern.
 <hr>
-__QUESTION #2 (Juan Garrido):__
+_(Juan Garrido):_
 
-_When did you first write anything about hexagonal architecture, and why? (what was the motivation of writing it?)_
+__Question #2:__
 
-__ANSWER #2 (Alistair Cockburn):__
+__When did you first write anything about hexagonal architecture, and why? (what was the motivation of writing it?)__
+
+_(Alistair Cockburn):_
 
 Interesting trying to find the history of it.
 
@@ -122,21 +124,25 @@ You can look at a lot of the histories by going to :
 
 (at this point, I wish I had a web site operational, so I could load all this history up there.)
 <hr>
-__QUESTION #3 (Juan Garrido):__
+_(Juan Garrido):_
 
-_Regarding the origin of the pattern, I discovered few time ago the paralelism between "Hexagonal Architecture" and "Use Cases". So I wrote about it in a section of one of my articles ( [https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html#tc4](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html#tc4) ). What can you tell us about this relationship with use cases? Am I right about it? or should I change anything I wrote?_
+__Question #3:__
 
-__ANSWER #3 (Alistair Cockburn):__
+__Regarding the origin of the pattern, I discovered few time ago the paralelism between "Hexagonal Architecture" and "Use Cases". So I wrote about it in a section of one of my articles ( [https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html#tc4](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html#tc4) ). What can you tell us about this relationship with use cases? Am I right about it? or should I change anything I wrote?__
+
+_(Alistair Cockburn):_
 
 The driver/driven = primary/secondary distinction is correct. The goal levels less so. A sea-level or user-task-level use case roughly speaking represents one business atomic transaction, quite possible a database "transaction" in database terms (meaning fully committed or fully rolled back). However, every function call on a port is a use case, and probably a fish-level or even clam-level use case from a human's point of view. A new function call might only add a small piece of information or answer a small question needed to reach the full business transaction.
 
 It might be that a port aggregates one-person summary level use case, but it's possible that they summary level use case involves multiple people hitting multiple ports. The purpose of a summary level use case is to show the macro flow, so there is no reason to expect them to stay on one port. Something needs to show how all the hits to the system over time add up to something interesting from the human or business perspective.
 <hr>
-__QUESTION #4 (Juan Garrido):__
+_(Juan Garrido):_
 
-_You said in your "Alistair in the Hexagone" talk how popular the pattern is (lot of clicks on your website link), and I would add lot of people talking about it in Twitter, etc. In fact, "Use Cases" apart, I know you for "Hexagonal Architecture", not for the "Agile Manifesto", but this is my fault :). What do you think is the reason of this? (why is it that popular?) Did you ever imagine this when you wrote the pattern 15 years ago?_
+__Question #4:__
 
-__ANSWER #4 (Alistair Cockburn):__
+__You said in your "Alistair in the Hexagone" talk how popular the pattern is (lot of clicks on your website link), and I would add lot of people talking about it in Twitter, etc. In fact, "Use Cases" apart, I know you for "Hexagonal Architecture", not for the "Agile Manifesto", but this is my fault :). What do you think is the reason of this? (why is it that popular?) Did you ever imagine this when you wrote the pattern 15 years ago?__
+
+_(Alistair Cockburn):_
 
 No idea, quite frankly. Imagine that I started teaching this in 1994, talking about it in 1998, trying unsuccessfully to do anything about it in 2004. Then Kevin Rutherford picks it up in 2005 and starts writing about it (now 10 years later). Even later, maybel 2012 or so, the Domain Driven Design people picked it up, as I imagine it, to put a wall around the domain model and get the technology out of their way. An act of self-defense, as I imagine it. I have still never been able to get anyone to implement it on any projects I visit. One of my senior architect friends still was making fun of me for this funny pattern in 2015.
 
@@ -146,11 +152,13 @@ Imagine my surprise, then, when it turned up in a book on Domain Driven Design (
 
 In 2017, there were a number of people giving tutorials on this pattern, and nobody had ever asked me why I created it and what it meant! And some of those explanations were quite wrong (the main error is usually using only one technology per port, or port per technology, when the whole point of a port is to allow technology substitutions). So I asked Thomas Pierrain if we could do a dual-presentation, me giving the history and him doing the programming. That is the only time I've explained the history and motivation in public so far. You can see it here: [https://www.youtube.com/watch?v=th4AgBcrEHA](https://www.youtube.com/watch?v=th4AgBcrEHA)
 <hr>
-__QUESTION #5 (Juan Garrido):__
+_(Juan Garrido):_
 
-_Would you like to say anything about any topic, or explain anything that I didn't ask to you?_
+__Question #5:__
 
-__ANSWER #5 (Alistair Cockburn):__
+__Would you like to say anything about any topic, or explain anything that I didn't ask to you?__
+
+_(Alistair Cockburn):_
 
 Maybe ... One thing about use cases and one thing about my other work.
 
@@ -180,17 +188,19 @@ Poetry, strangely enough, feels to me the same as when I described techniques th
 
 When I ever get my own publishing channel, I guess I'll publish a lot of this stuff. It's been an interesting journey.
 <hr>
-__QUESTION #6 (Juan Garrido):__
+_(Juan Garrido):_
 
-_Do you have any question for me?_
+__Question #6:__
 
-__ANSWER #6 (Alistair Cockburn):__
+__Do you have any question for me?__
+
+_(Alistair Cockburn):_
 
 Yes. What was it that triggered your first interest in Hexagonal Architecture, and what made you finally so passionate and energetic about explaining it?
 
 =====
 
-__(Juan Garrido):__
+_(Juan Garrido):_
 
 Well, at the beginning of 2016, I was developing a web application, a personal project for my nephew Emilio García [@CampamentoWeb](https://twitter.com/CampamentoWeb), SEO consultant. I was using the classical 3 layered architecture and MVC pattern. One day, looking at my laptop screen, I realized that the source code was full of framework annotations, a real mess, that didn't allow me to understand what the code was for, regarding to business. I began to search on the Internet and I discovered architectures that promote business domain decoupling. The most I liked was Hexagonal Architecture. Why? Probably because of the ports mechanism, which helps to define better the interactions with the outside world.
 
