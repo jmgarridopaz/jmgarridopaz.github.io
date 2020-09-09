@@ -11,11 +11,13 @@ layout: default
 
 <p class="intro">Here I ask some questions to Dr. Alistair Cockburn, the man who wrote the Ports And Adapters pattern, also known as Hexagonal Architecture. They are just some questions that I considered interesting, so I hope that "hexagonal readers" enjoy this post. I would like to thank Alistair Cockburn for letting me ask him these questions, and for spending his time answering them in such a comprehensive way.</p>
 <hr>
-__QUESTION #1 (Juan Garrido):__
+__Question #1:__
+
+_(Juan Garrido):_
 
 _I'm not going to ask you "why a hexagon", but "what is the story of the two names for the pattern"? (two articles at "wiki.c2.com" before you wrote the pattern) and "which name do you prefer"? ("Hexagonal Architecure" or "Ports and Adapters")._
 
-__ANSWER #1 (Alistair Cockburn):__
+_(Alistair Cockburn):_
 
 a) The hexagon: Everyone was drawing architectural pictures with rectangles, user on the top and database on the bottom, or user on the left and database on the right, I wanted to avoid that reflex, so I couldn't use a rectangle. (Related: I didn't know about the left-right asymmetry at the time.) Pentagons and heptagons are impossible to draw, so hexagon was an unused shape. That's all.
 
@@ -189,3 +191,9 @@ Yes. What was it that triggered your first interest in Hexagonal Architecture, a
 =====
 
 __(Juan Garrido):__
+
+Well, at the beginning of 2016, I was developing a web application, a personal project for my nephew Emilio García [@CampamentoWeb](https://twitter.com/CampamentoWeb), SEO consultant. I was using the classical 3 layered architecture and MVC pattern. One day, looking at my laptop screen, I realized that the source code was full of framework annotations, a real mess, that didn't allow me to understand what the code was for, regarding to business. I began to search on the Internet and I discovered architectures that promote business domain decoupling. The most I liked was Hexagonal Architecture. Why? Probably because of the ports mechanism, which helps to define better the interactions with the outside world.
+
+Am I passionate and energetic explaining Hexagonal Architecture? Well I don't know, maybe that's my attitude with things I like. My motivation for writing an article explaining it, was to share my knowledge and try to clarify concepts, since I saw many misconceptions over the Internet. So I did a lot of research on your material (the pattern, your website, the "Alistair in the Hexagone" talk) in order to write a thorough article.
+
+Regarding the popular misunderstanding many people have about Hexagonal Architecture and DDD (Domain Driven Design) layers... maybe the reason I did never have it is that I discovered DDD later on, so that I already knew that Hexagonal Architecture was already there, and it doesn't say how do you have to organize the code inside the hexagon. Splitting it into application and domain layers is a DDD topic.
