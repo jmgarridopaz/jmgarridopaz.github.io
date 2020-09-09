@@ -6,7 +6,7 @@ layout: default
 <h1>Interview with Alistair Cockburn</h1>
 <p>About Hexagonal Architecture... and more</p>
 <hr>
-<span class="credits right">Published on September 8, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
+<span class="credits right">Published on September 9, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
 </div>
 
 <p class="intro">Here I ask some questions to Dr. Alistair Cockburn, the auhor of Ports And Adapters pattern, also known as Hexagonal Architecture. They are just some questions that I considered interesting, so I hope that "hexagonal readers" enjoy this post. I would like to thank Alistair Cockburn for letting me ask him these questions, and for spending his time answering them in such a comprehensive way.</p>
