@@ -120,7 +120,7 @@ that was pretty nice, as I now look at it.
 
 You can look at a lot of the histories by going to :
 
-[https://web.archive.org/web/20040701000000*/http://alistair.cockburn.us/](https://web.archive.org/web/20040701000000*/http://alistair.cockburn.us/)
+https://web.archive.org/web/20040701000000*/http://alistair.cockburn.us/
 
 (at this point, I wish I had a web site operational, so I could load all this history up there.)
 <hr>
