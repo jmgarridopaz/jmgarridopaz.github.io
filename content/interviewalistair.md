@@ -114,7 +114,7 @@ By the way, it is kind of fun to use webarchive.org to look at the different sta
 
 and earlier:
 
-[https://web.archive.org/web/20040605235858/http://alistair.cockburn.us/sitehistory.html](https://web.archive.org/web/20040605235858/http://alistair.cockburn.us/sitehistory.html){:target="_blank"}
+[https://web.archive.org/web/20040605235858/http://alistair.cockburn.us/sitehistory.html](https://web.archive.org/web/20040605235858/http://alistair.cockburn.us/sitehistory.html)
 
 that was pretty nice, as I now look at it.
 
