@@ -7,7 +7,7 @@ layout: default
 <p>Chapter 1: Application Design</p>
 <hr>
 <span class="credits right">Published on March 30, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
-<br>
+<br/>
 <span class="credits right">Updated on October 10, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
 <br>
 <span class="credits right">Added Github Repository URL with source code.</span>
