@@ -7,6 +7,9 @@ layout: default
 <p>Chapter 1: Application Design</p>
 <hr>
 <span class="credits right">Published on March 30, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
+<span class="credits right">Updated on October 10, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
+<span class="credits right">Added Github Repository URL with source code.</span>
+<span class="credits right">Added Dr. Alistair Cockburn quote about Use Cases</span>
 </div>
 
 <p class="introquote">To Thomas Pierrain. You are not alone, all together we will win</p>
@@ -68,6 +71,8 @@ For the sake of simplicity, we'll do the following assumptions:
 * Payments are performed calling the remote system synchronously. It could be possible that a payment was succesful, but then the permit issuing failed. In real life, an scheduled process would be launched to refund these transactions. In the example application, this refund process won't be implemented.
 
 * Regarding parking inspectors, the example application will just implement the car checking. Parking fine warnings won't be managed by the application.
+
+The URL of the GitHub Repository with the application source code is: <a target="_blank" href="https://github.com/jmgarridopaz/bluezone">https://github.com/jmgarridopaz/bluezone</a>
 
 <div id="tc3"></div>
 ### 3.- DESIGNING PROCESS
