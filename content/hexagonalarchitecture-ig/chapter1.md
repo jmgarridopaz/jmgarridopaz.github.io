@@ -197,24 +197,24 @@ ___"for parking cars" port:___
 
 1. Interactions of the actor (A) with the port (P):  
 A: Requests a parking permit  
-P: Returns all the rates  
+P: Returns all the rates indexed by name  
 A: Enters the car plate, the rate name, the ending datetime of the period, and the payment card  
 P: Issues the parking permit  
 
 2. Operations of the port:  
-getAllRates, issuePermit  
+getAllRatesByName, issuePermit  
 
 3. Description of the operations:
 
-~~~
+~~~ Java
 public interface ForParkingCars {
 
 	/**
 	 * Returns the information of all the available rates in the city.
 	 * 
-	 * @return	a list of RateInfo objects
+	 * @return	a map of RateData objects, indexed by rate name. @see RateInfo
 	 */
-	public List<RateInfo> getAllRates();
+	public Map<String, RateData> getAllRatesByName();
 
 	
 	/**
@@ -222,67 +222,98 @@ public interface ForParkingCars {
 	 * Returns a ticket with the permit information.
 	 * 
 	 * First the permit price is calculated, depending on the number of minutes of the permit period,
-	 * according to the rate of the area where the car is parked.
+	 * according to the rate of the area where the car is parked at.
 	 * Then, permit price is charged to the payment card.
 	 * And finally the permit is stored.
 	 * 
-	 * @param	clock			Clock to get current datetime from, since it will be the starting datetime of the permit period
-	 * @param	carPlate		Car plate of the car we want to get the permit for
-	 * @param	rateName		Rate name of the regulated area where we want to park the car
-	 * @param	endingDateTime	A datetime in the future, that will be the expiration date of the permit period
-	 * @param	paymentCardInfo	Information about the card to charge the permit price to.
-	 * @return					an PermitTicket object
+	 * @param	clock		Clock to get current datetime from, since it will be the starting datetime of the permit period
 	 * 
+	 * @param	permitRequest	DTO with the info needed for issuing the permit. @see PermitRequest
+	 * 
+	 * @return	permitTicket	DTO with the info of the issued permit. @see PermitTicket
 	 */
-	public PermitTicket issuePermit ( Clock clock, String carPlate, String rateName, LocalDateTime endingDateTime, PaymentCardInfo paymentCardInfo );
+	public PermitTicket issuePermit ( Clock clock, PermitRequest permitRequest );
 
 }
 ~~~
 
 Definition of the data that port operations manage:
 ~~~
-public interface RateInfo {
-	
-	public String name();
-	
-	public BigDecimal amountPerHour();
-	
-	public String currencySymbol();
-	
-	public int minNumberOfMinutes();
-	
-	public int maxNumberOfMinutes();
-	
-	public Map < DayOfWeek, List<LocalTime> > timeTable();
-
+public class RateData {	
+	private String		name;
+	private MoneyDto	costPerHour;
+	private int		minMinutesAllowed;
+	private int		maxMinutesAllowed;
+	private TimeTableDto	timetable;
+	...
 }
 
-public interface PaymentCardInfo {
-	
-	public String number();
-	
-	public String cvv();
-	
-	public YearMonth expirationDate();
-
+public class MoneyDto {
+	private BigDecimal amount;
+	private String currencySymbol;
+	...
 }
 
-public interface PermitTicket {
+public class TimeTableDto {
+	private Map<DayOfWeek,List<TimeIntervalDto>> intervalsByDayOfWeek;
+	...
+}
 
-	public String code();
-	
-	public String carPlate();
-	
-	public String rateName();
-	
-	public LocalDateTime startingDateTime();
-	
-	public LocalDateTime endingDateTime();
-	
-	public BigDecimal priceAmount();
-	
-	public String priceCurrencySymbol();
-	
+public class TimeIntervalDto {
+	private LocalTime minTime;
+	private LocalTime maxTime;
+	...
+}
+~~~
+
+~~~
+/**
+ * DTO class with the input needed for issuing a permit:
+ * 		carPlate	Plate of the car to get the permit for
+ * 		rateName	Rate name of the regulated area where the car will be parked at
+ * 		endingDateTime	Expiration datetime of the permit period
+ * 		paymentCard	Data of the card to charge the permit price to. @see PaymentCardData
+ */
+public class PermitRequest {
+	private String		carPlate;
+	private String		rateName;
+	private LocalDateTime	endingDateTime;
+	private PaymentCardData	paymentCard;
+	...
+}
+
+/**
+ * DTO class with information about a payment card:
+ * 		number		16 digits
+ * 		cvv		Card verification value (3 digits)
+ * 		expirationDate	Year and month from which the card will no longer be valid
+ */
+public class PaymentCardData {
+	private String		number;
+	private String		cvv;
+	private YearMonth	expirationDate;
+	...
+}
+~~~
+
+~~~
+/**
+ * DTO class with the output returned when issuing a permit:
+ * 		code			Unique identifier of the permit
+ * 		carPlate		Plate of the car the permit has been issued for
+ * 		startingDateTime	When the permit period begins
+ * 		endingDateTime		When the permit period expires
+ * 		rateName		Rate name of the regulated area where the car is parked at
+ * 		price			Amount of money payed for the permit
+ */
+public class PermitTicket {
+	private String		code;
+	private String		carPlate;
+	private LocalDateTime	startingDateTime;
+	private LocalDateTime	endingDateTime;
+	private String		rateName;
+	private MoneyDto	price;
+	...
 }
 ~~~
 
@@ -290,10 +321,10 @@ ___"for checking cars" port:___
 
 1. Interactions of the actor (A) with the port (P):  
 A: Enters the car plate and the rate name  
-P: Checks whether the car is parked correctly  
+P: Checks whether the car is illegally parked
 
 2. Operations of the port:  
-isParkedCorrectly  
+illegallyParkedCar  
 
 3. Description of the operations:
 
@@ -301,15 +332,15 @@ isParkedCorrectly
 public interface ForCheckingCars {
 		
 	/**
-	 * Checks whether a car parked in a regulated area has an active permit.
+	 * Checks whether a car parked at a regulated area doesn't have any active permit.
 	 * A permit is active if the current datetime is before the ending datetime of the permit period.
 	 * 
 	 * @param	clock		Clock to get current datetime from
 	 * @param	carPlate	Car plate of the car that we want to check
-	 * @param	rateName	Rate name of the regulated area where the car to check is parked
-	 * @return				true if there exists an active permit, false otherwise
+	 * @param	rateName	Rate name of the regulated area where the car to check is parked at
+	 * @return			true if the car doesn't have any active permit for the rate, false otherwise
 	 */
-	public boolean isParkedCorrectly ( Clock clock, String carPlate, String rateName );
+	public boolean illegallyParkedCar ( Clock clock, String carPlate, String rateName );
 	
 }
 ~~~
@@ -344,6 +375,16 @@ So the application is structured grouping responsabilities in ports acording to 
 In the right side of the hexagon... To perform its responsabilities, the hexagon will have to achieve goals. For achieving these goals it might need to interact with external systems (driven actors) through driven ports. These interactions link application goals with driven actor responsabilies.
 
 The hexagon would be like any other actor. It has goals and to achieve them it might need to interact with another actor.
+
+#### REMARK:
+
+I want to quote here Dr. Alistair Cockburn, when I asked him in an interview what could he tell us about the "Hexagonal Architecture - Use Cases" relationship, whether I am right, or should I change anything I wrote about this topic. He answered the following:
+
+_<< The driver/driven = primary/secondary distinction is correct. The goal levels less so. A sea-level or user-task-level use case roughly speaking represents one business atomic transaction, quite possible a database “transaction” in database terms (meaning fully committed or fully rolled back). However, every function call on a port is a use case, and probably a fish-level or even clam-level use case from a human’s point of view. A new function call might only add a small piece of information or answer a small question needed to reach the full business transaction._
+
+_It might be that a port aggregates one-person summary level use case, but it’s possible that they summary level use case involves multiple people hitting multiple ports. The purpose of a summary level use case is to show the macro flow, so there is no reason to expect them to stay on one port. Something needs to show how all the hits to the system over time add up to something interesting from the human or business perspective.>>_
+
+I want to thank Alistair Cockburn for his attention and his comments. You can read the entire interview at <a target="_blank" href="https://jmgarridopaz.github.io/content/interviewalistair.html">https://jmgarridopaz.github.io/content/interviewalistair.html</a>
 
 <div id="tc5"></div>
 ### 5.- LINKS
