@@ -30,7 +30,7 @@ This is the second article of a series showing how to implement an application a
 
 The example application is called BlueZone, and it is described and designed in <a target="_blank" href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html">Chapter 1</a>.
 
-The source code is available at this GitHub repository: <a target="_blank" href="https://github.com/jmgarridopaz/bluezone">https://github.com/jmgarridopaz/bluezone</a>
+The source code is available at <a target="_blank" href="https://github.com/jmgarridopaz/bluezone">this GitHub repository</a>.
 
 In this chapter we will see how to organize the source code, and the dependencies between the different components, analyzing the knowledge ("who knows of whom") and the configuration of those dependencies.
 
@@ -44,11 +44,11 @@ However, from the reading of the <a target="_blank" href="https://web.archive.or
 [DIAGRAMS OF UML COMPONENTS OR CIRCLE, AND FLATTENNED LAYERS]
 
 * Modular:  
-- One module for the hexagon.  
-- One module for each adapter.
+  - One module for the hexagon.  
+  - One module for each adapter.
 * Two layers:  
-- Inner layer: the hexagon.  
-- Outer layer: all the adapters (drawn in an outer hexagon).
+  - Inner layer: the hexagon.  
+  - Outer layer: all the adapters (drawn in an outer hexagon).
 
 Whatever option you choose, I consider 3 key concepts here, that makes this architecture different from others like Onion:
 
