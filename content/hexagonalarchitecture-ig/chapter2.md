@@ -23,36 +23,36 @@ layout: default
 <div id="tc1"></div>
 ### 1.- INTRODUCTION
 
-This is the second article of a series showing how to implement an application according to Hexagonal Architecture, also known as Ports and Adapters pattern.
+This is the second article of a series showing how to implement an application according to Hexagonal Architecture, also known as Ports and Adapters pattern, which was written by Dr. Alistair Cockburn.
 
 The example application is called BlueZone, and it is described and designed in <a target="_blank" href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html">Chapter 1</a>.
 
-Neither the <a target="_blank" href="https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture">pattern definition</a> nor the  <a target="_blank" href="https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL">videos explaining it</a>, by Alistair Cockburn, doesn't say anything anywhere about how to implement the architecture. However, from the explanation of the elements (hexagon, actors, ports, adapters) and the interactions between them, along with the drawings, make me have a modular vision of Hexagonal Architecture, with the hexagon at the center, and adapters around it, belonging to no layer, each one attached to the hexagon port it uses / implements.
+Neither the <a target="_blank" href="https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture">pattern definition</a> nor the  <a target="_blank" href="https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL">videos by Alistair Cockburn explaining the pattern</a>, don't say anything anywhere about how to implement the architecture. However, after reading and watching those resources, the explanation of the elements (hexagon, actors, ports, adapters) and the interactions between them, along with the drawings, make me have **a modular vision of Hexagonal Architecture**, with the hexagon at the center, and adapters around it, belonging to no layer, each one attached to a port of the hexagon. The different adapters depending on a port stand for different swappable technologies that the actor communicating with the hexagon might use.
 
-In this chapter we will see how to organize the source code, which is available at <a target="_blank" href="https://github.com/jmgarridopaz/bluezone">this GitHub repository</a>, and the dependencies between the different components, analyzing the knowledge ("who knows of whom") and the configuration of those dependencies.
+In this chapter we will see how to organize the source code in modules using Java 9, and the dependencies between modules, analyzing the knowledge ("who knows of whom") and the configuration of those dependencies.
 
-<div id="tc3"></div>
-### 3.- SOURCE CODE ORGANIZATION
+<div id="tc2"></div>
 
-So, the whole project is structured in modules.
+### 2.- SOURCE CODE ORGANIZATION
 
 The code base of the example application is at <a target="_blank" href="https://github.com/jmgarridopaz/bluezone">BlueZone GitHub repository</a>.
 
-I've put all the modules in just one GitHub repository, so that you can see and build them all together, but Java 9 allows you to have them in different repositories, compile them apart, and then provide their locations at runtime to choose them dynamically. We will see this later on, at the end of this article series, as an advanced way of execution.
+The whole project is structured in modules. I've put all the modules in just one GitHub repository, so that you can see and build them all together, but Java 9 allows you to have them in different repositories, compile them apart, and then provide their locations at runtime to choose them dynamically. We will see this later on, at the end of this article series, as an advanced way of execution.
+
+![Figure 1: Project structure in Eclipse IDE](/assets/images/hexagonalarchitecture-ig/figure2-1.png)
+
+<p class="intro">Figure 1: Project structure in Eclipse IDE</p>
 
 These are the modules and the convention I follow to name them and their packages (a Java 9 module is a set of packages):
 
-* **One module for the hexagon**, with name:  `<app_name>.hexagon`
+2.1.- One module for the hexagon, with name:  `<app_name>.hexagon`
 
-  There will be one package for each port:
+We need to distinguish ports in their own packages, in order to publish them and make them available to the outside world, so there will be one package for each port:
 
-  `<reverse_domain_name>.<app_name>.hexagon.driverports.<driver_port_name>`
-
-  `<reverse_domain_name>.<app_name>.hexagon.drivenports.<driven_port_name>`
-
-Ports are named following the ***forDoingSomething pattern***, saying what they are for, in a technology agnostic way from the application point of view, i.e. no matter the technology of the actor that is behind the port.
-
-A port package contains the interface and the data types it manages, that the hexagon will publish to the outside world.
+~~~
+<reverse_domain_name>.<app_name>.hexagon.driverports.<driver_port_name>
+<reverse_domain_name>.<app_name>.hexagon.drivenports.<driven_port_name>
+~~~
 
 `bluezone.hexagon` module has 5 ports (2 driver and 3 driven):
 
@@ -65,11 +65,40 @@ package io.github.jmgarridopaz.bluezone.hexagon.drivenports.forstoringpermits;
 package io.github.jmgarridopaz.bluezone.hexagon.drivenports.forpaying;
 ```
 
+Ports are named following the ***forDoingSomething pattern***, saying what they are for, in a technology agnostic way from the application point of view, i.e. no matter the technology of the actor that is behind the port.
+
+A package for a port contains the interface defining the port operations, and the data types it manages.
+
 The other packages of the hexagon module, and how you organize them, fall out of the scope of Hexagonal Architecture pattern.
 
-An usual way of structuring the hexagon is to split it into two layers: application and domain, following DDD rules, but this has nothing to do with Hexagonal Architecture.
+The **business logic (hexagon source code)** will be a set of Java classes, types, etc implementing the operations defined at driver port interfaces, and calling operations on driven port interfaces. But you can structure this source code however you want to.
 
-Somewhere, the business logic (hexagon source code) will have to implement driver ports interfaces, and to use driven ports interfaces, but you can structure it however you want to.
+In Java, the simplest way to implement an hexagon would be a class **implementing driver port interfaces**, and **depending on driven port interfaces**.
+
+~~~java
+public class BusinessLogic implements ForParkingCars, ForCheckingCars {
+	
+    private final ForObtainingRates forObtainingRates;
+    private final ForStoringPermits forStoringPermits;
+    private final ForPaying forPaying;
+    
+	public BusinessLogic ( ForObtainingRates forObtainingRates, ForStoringPermits forStoringPermits, ForPaying forPaying ) {
+        this.forObtainingRates = forObtainingRates;
+        this.forStoringPermits = forStoringPermits;
+        this.forPaying = forPaying;
+    }
+    
+    @Override
+	public Map<String,RateData> getAllRatesByName() {
+        // Implement the driver port operation calling driven ports operations
+    }
+    
+    // ...
+~~~
+
+
+
+A usual way of structuring the hexagon is to split it into two layers: application and domain, following DDD rules, but this has nothing to do with Hexagonal Architecture.
 
 
 
