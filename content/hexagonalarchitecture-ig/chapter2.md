@@ -4,10 +4,12 @@ layout: default
 
 <div id="title">
 <h1>Hexagonal Architecture: An implementation guide</h1>
+<hr>
 <p>Chapter 2: PROJECT STRUCTURE</p>
 <hr>
 <span class="credits right">Published on Month dd, yyyy by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
 </div>
+
 [Previous Chapter](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html)
 [Intro Chapter](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/intro.html)
 [Next Chapter](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter3.html)
@@ -15,13 +17,21 @@ layout: default
 #### TABLE OF CONTENTS
 
 1. [Introduction](#tc1)
-2. [Modules vs Layers](#tc2)
-3. [Source code organization](#tc3)
-4. [Dependencies](#tc4)
+
+2. [Source code organization](#tc2)
+
+   2.1. [One module for the hexagon](#tc2-1)
+   2.2. [One module for each adaper](#tc2-2)
+   2.3. [One module for the startup](#tc2-3)
+
+3. [Dependencies](#tc3)
+
+4. [Modules vs Layers](#tc4)
+
 5. [Links](#tc5)
 
 <div id="tc1"></div>
-### 1.- INTRODUCTION
+###1.- INTRODUCTION
 
 This is the second article of a series showing how to implement an application according to Hexagonal Architecture, also known as Ports and Adapters pattern, which was written by Dr. Alistair Cockburn.
 
@@ -32,42 +42,58 @@ Neither the <a target="_blank" href="https://web.archive.org/web/20180822100852/
 In this chapter we will see how to organize the source code in modules using Java 9, and the dependencies between modules, analyzing the knowledge ("who knows of whom") and the configuration of those dependencies.
 
 <div id="tc2"></div>
-
-### 2.- SOURCE CODE ORGANIZATION
+###2.- SOURCE CODE ORGANIZATION
 
 The code base of the example application is at <a target="_blank" href="https://github.com/jmgarridopaz/bluezone">BlueZone GitHub repository</a>.
 
-The whole project is structured in modules. I've put all the modules in just one GitHub repository, so that you can see and build them all together, but Java 9 allows you to have them in different repositories, compile them apart, and then provide their locations at runtime to choose them dynamically. We will see this later on, at the end of this article series, as an advanced way of execution.
+The whole project is structured in modules. In Java 9, a module is a set of packages, that you can compile apart generating a jar file. Modules depend on each other.
 
-![Figure 1: Project structure in Eclipse IDE](/assets/images/hexagonalarchitecture-ig/figure2-1.png)
+I've put all the modules in just one GitHub repository, so that you can see and build them all together, but Java 9 allows you to have them in different repositories, compile them apart, and then provide their locations at runtime to choose them dynamically. We will see this later on, at the end of this article series, as an advanced way of execution.
 
-<p class="intro">Figure 1: Project structure in Eclipse IDE</p>
+Now let's see the modules and the convention I follow for naming them and their packages.
 
-These are the modules and the convention I follow to name them and their packages (a Java 9 module is a set of packages):
+<div id="tc2-1"></div>
 
-2.1.- One module for the hexagon, with name:  `<app_name>.hexagon`
+#### 2.1.- One module for the hexagon, with name:  `<app_name>.hexagon`
 
-We need to distinguish ports in their own packages, in order to publish them and make them available to the outside world, so there will be one package for each port:
+Hexagonal Architecture pattern says nothing about how to structure the source code of the hexagon. The pattern just says that the hexagon offers "ports" to the outside world, for allowing external actors to interact with the hexagon.
+
+So how do we "publish" an interface (the port) of a module (the hexagon)?
+
+Before Java 9, a public type was visible to the rest of the world. Now, with modules, a public type is just visible inside its module. For other modules to see the public type, you have to export the package the type belongs to. Exporting a package would be like "publishing" its public types to the outside world.
+
+So we will have **a package for each port of the hexagon**. A package for a port contains a public interface defining the port operations, and public data types that those operations manage.
+
+The name of a package for a port will be:
 
 ~~~
-<reverse_domain_name>.<app_name>.hexagon.driverports.<driver_port_name>
-<reverse_domain_name>.<app_name>.hexagon.drivenports.<driven_port_name>
+<reverse_domain_name>.<app_name>.hexagon.<side>.<port_name>
 ~~~
 
-`bluezone.hexagon` module has 5 ports (2 driver and 3 driven):
+This way ports are grouped by their side (driver/driven), so that we see at a first glance whether the port is driver or driven.
 
-```java
-package io.github.jmgarridopaz.bluezone.hexagon.driverports.forparkingcars;
-package io.github.jmgarridopaz.bluezone.hexagon.driverports.forcheckingcars;
+In the example application, the name of the hexagon module is
 
-package io.github.jmgarridopaz.bluezone.hexagon.drivenports.forobtainingrates;
-package io.github.jmgarridopaz.bluezone.hexagon.drivenports.forstoringpermits;
-package io.github.jmgarridopaz.bluezone.hexagon.drivenports.forpaying;
-```
+~~~java
+bluezone.hexagon
+~~~
+
+which has 5 packages for its ports (3 driver and 2 driven):
+
+~~~java
+package io.github.jmgarridopaz.bluezone.hexagon.driver.forparkingcars;
+package io.github.jmgarridopaz.bluezone.hexagon.driver.forcheckingcars;
+
+package io.github.jmgarridopaz.bluezone.hexagon.driven.forobtainingrates;
+package io.github.jmgarridopaz.bluezone.hexagon.driven.forstoringpermits;
+package io.github.jmgarridopaz.bluezone.hexagon.driven.forpaying;
+~~~
 
 Ports are named following the ***forDoingSomething pattern***, saying what they are for, in a technology agnostic way from the application point of view, i.e. no matter the technology of the actor that is behind the port.
 
-A package for a port contains the interface defining the port operations, and the data types it manages.
+![Figure 1: Ports packages in hexagon module](/assets/images/hexagonalarchitecture-ig/figure2-1.png)
+
+<p class="intro">Figure 1: Ports packages in hexagon module</p>
 
 The other packages of the hexagon module, and how you organize them, fall out of the scope of Hexagonal Architecture pattern.
 
@@ -82,37 +108,37 @@ public class BusinessLogic implements ForParkingCars, ForCheckingCars {
     private final ForStoringPermits forStoringPermits;
     private final ForPaying forPaying;
     
-	public BusinessLogic ( ForObtainingRates forObtainingRates, ForStoringPermits forStoringPermits, ForPaying forPaying ) {
+    public BusinessLogic ( ForObtainingRates forObtainingRates, ForStoringPermits forStoringPermits, ForPaying forPaying ) {
         this.forObtainingRates = forObtainingRates;
         this.forStoringPermits = forStoringPermits;
         this.forPaying = forPaying;
     }
     
     @Override
-	public Map<String,RateData> getAllRatesByName() {
+    public Map<String,RateData> getAllRatesByName() {
         // Implement the driver port operation calling driven ports operations
     }
     
     // ...
 ~~~
 
-
-
 A usual way of structuring the hexagon is to split it into two layers: application and domain, following DDD rules, but this has nothing to do with Hexagonal Architecture.
 
+<div id="tc2-2"></div>
 
+####2.2.- One module for each adapter, with name `<app_name>.adapter.<port_name>.<technology>`
 
-* **One module for each adapter**, with name `<app_name>.adapter.<port_name>.<technology>`
+* The "technology" part could be as specific and long as you want. For example:
 
-  The "technology" part could be as specific and long as you want. For example:
-
-`<app_name>.adapter.<port_name>.webui`
-`<app_name>.adapter.<port_name>.webui.spring`
-`<app_name>.adapter.<port_name>.test.cucumber`
-`<app_name>.adapter.<port_name>.database.sql.orm.jpa`
-`<app_name>.adapter.<port_name>.database.mongo`
-`<app_name>.adapter.<port_name>.file`
-`<app_name>.adapter.<port_name>.stub`
+~~~
+<app_name>.adapter.<port_name>.webui
+<app_name>.adapter.<port_name>.webui.spring
+<app_name>.adapter.<port_name>.test.cucumber
+<app_name>.adapter.<port_name>.database.sql.orm.jpa
+<app_name>.adapter.<port_name>.database.mongo
+<app_name>.adapter.<port_name>.file
+<app_name>.adapter.<port_name>.stub
+~~~
 
 In our example we are going to develop 2 adapters for each port:
 
@@ -139,22 +165,22 @@ The root package for an adapter source code would be:
 
 `package <reverse_domain_name>.<app_name>.adapters.<port_name>.<technology>`
 
+<div id="tc2-3"></div>
 
-
-* **One module for building and running the application**, with name: `<app_name>.startup`
+####2.3.- One module for building and running the application, with name: `<app_name>.startup`
 
   This module is the entry point to the application. It runs a driver adapter. So it has a package for each driver adapter, with a Java main class, that will build the application and run the driver adapter.
 
-  ```java
-  package io.github.jmgarridopaz.bluezone.startup.forparkingcars.test;
-  package io.github.jmgarridopaz.bluezone.startup.forparkingcars.webui;
-  package io.github.jmgarridopaz.bluezone.startup.forcheckingcars.test;
-  package io.github.jmgarridopaz.bluezone.startup.forcheckingcars.cli;
-  ```
+~~~java
+package io.github.jmgarridopaz.bluezone.startup.forparkingcars.test;
+package io.github.jmgarridopaz.bluezone.startup.forparkingcars.webui;
+package io.github.jmgarridopaz.bluezone.startup.forcheckingcars.test;
+package io.github.jmgarridopaz.bluezone.startup.forcheckingcars.cli;
+~~~
 
-<div id="tc4"></div>
+<div id="tc3"></div>
 
-### 4.- DEPENDENCIES.
+###3.- DEPENDENCIES.
 
 Dependencies rules between modules are easy:
 
@@ -199,7 +225,7 @@ In Java 9, every module has a `module-info.java` file where it declares the modu
 
 <div id="tc4"></div>
 
-### 4.- MODULES vs LAYERS
+###4.- MODULES vs LAYERS
 
 [DIAGRAMS OF UML COMPONENTS OR CIRCLE, AND FLATTENNED LAYERS]
 
