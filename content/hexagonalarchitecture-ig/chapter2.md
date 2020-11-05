@@ -9,7 +9,6 @@ layout: default
 <hr>
 <span class="credits right">Published on Month dd, yyyy by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
 </div>
-
 [Previous Chapter](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html)
 [Intro Chapter](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/intro.html)
 [Next Chapter](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter3.html)
@@ -20,9 +19,9 @@ layout: default
 
 2. [Source code organization](#tc2)
 
-   2.1. [One module for the hexagon](#tc2-1)
-   2.2. [One module for each adaper](#tc2-2)
-   2.3. [One module for the startup](#tc2-3)
+   2.1. [One module for the hexagon](#tc2-1)  
+   2.2. [One module for each adapter](#tc2-2)  
+   2.3. [One module for starting up the application](#tc2-3)
 
 3. [Dependencies](#tc3)
 
@@ -31,9 +30,9 @@ layout: default
 5. [Links](#tc5)
 
 <div id="tc1"></div>
-###1.- INTRODUCTION
+### 1.- INTRODUCTION
 
-This is the second article of a series showing how to implement an application according to Hexagonal Architecture, also known as Ports and Adapters pattern, which was written by Dr. Alistair Cockburn.
+This is the second article of a series showing how to implement an application according to Hexagonal Architecture, also known as Ports and Adapters pattern, whose author is Dr. Alistair Cockburn.
 
 The example application is called BlueZone, and it is described and designed in <a target="_blank" href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html">Chapter 1</a>.
 
@@ -42,7 +41,7 @@ Neither the <a target="_blank" href="https://web.archive.org/web/20180822100852/
 In this chapter we will see how to organize the source code in modules using Java 9, and the dependencies between modules, analyzing the knowledge ("who knows of whom") and the configuration of those dependencies.
 
 <div id="tc2"></div>
-###2.- SOURCE CODE ORGANIZATION
+### 2.- SOURCE CODE ORGANIZATION
 
 The code base of the example application is at <a target="_blank" href="https://github.com/jmgarridopaz/bluezone">BlueZone GitHub repository</a>.
 
@@ -54,7 +53,7 @@ Now let's see the modules and the convention I follow for naming them and their 
 
 <div id="tc2-1"></div>
 
-#### 2.1.- One module for the hexagon, with name:  `<app_name>.hexagon`
+#### 2.1.- ONE MODULE FOR THE HEXAGON, with name:  `<app_name>.hexagon`
 
 Hexagonal Architecture pattern says nothing about how to structure the source code of the hexagon. The pattern just says that the hexagon offers "ports" to the outside world, for allowing external actors to interact with the hexagon.
 
@@ -64,13 +63,17 @@ Before Java 9, a public type was visible to the rest of the world. Now, with mod
 
 So we will have **a package for each port of the hexagon**. A package for a port contains a public interface defining the port operations, and public data types that those operations manage.
 
+![Figure 1: Ports packages in hexagon module](/assets/images/hexagonalarchitecture-ig/figure2-1.png)
+
+<p class="intro">Figure 1: Ports packages in hexagon module</p>
+
 The name of a package for a port will be:
 
 ~~~
 <reverse_domain_name>.<app_name>.hexagon.<side>.<port_name>
 ~~~
 
-This way ports are grouped by their side (driver/driven), so that we see at a first glance whether the port is driver or driven.
+This way ports are grouped by their side (driver/driven), so that we see at a first glance whether the port is driver or driven. This is important, since driver ports operations are called by an adapter, while driven port operation are implemented by an adapter. It's the left/right asymmetry .
 
 In the example application, the name of the hexagon module is
 
@@ -78,7 +81,7 @@ In the example application, the name of the hexagon module is
 bluezone.hexagon
 ~~~
 
-which has 5 packages for its ports (3 driver and 2 driven):
+which has 5 packages for its ports (2 driver and 3 driven):
 
 ~~~java
 package io.github.jmgarridopaz.bluezone.hexagon.driver.forparkingcars;
@@ -91,15 +94,11 @@ package io.github.jmgarridopaz.bluezone.hexagon.driven.forpaying;
 
 Ports are named following the ***forDoingSomething pattern***, saying what they are for, in a technology agnostic way from the application point of view, i.e. no matter the technology of the actor that is behind the port.
 
-![Figure 1: Ports packages in hexagon module](/assets/images/hexagonalarchitecture-ig/figure2-1.png)
+=====
 
-<p class="intro">Figure 1: Ports packages in hexagon module</p>
+*The **business logic (hexagon source code)** organization fall out of the scope of Hexagonal Architecture pattern. It will be a set of Java classes, types, etc implementing the operations defined at driver port interfaces, and calling operations on driven port interfaces. But **you can structure this source code however you want to, it is not a Hexagonal Architecture issue**.*
 
-The other packages of the hexagon module, and how you organize them, fall out of the scope of Hexagonal Architecture pattern.
-
-The **business logic (hexagon source code)** will be a set of Java classes, types, etc implementing the operations defined at driver port interfaces, and calling operations on driven port interfaces. But you can structure this source code however you want to.
-
-In Java, the simplest way to implement an hexagon would be a class **implementing driver port interfaces**, and **depending on driven port interfaces**.
+*As an example, the simplest way in Java to implement a hexagon would be just one class, **implementing driver port interfaces**, and **depending on driven port interfaces** (constructor arguments).*
 
 ~~~java
 public class BusinessLogic implements ForParkingCars, ForCheckingCars {
@@ -122,13 +121,15 @@ public class BusinessLogic implements ForParkingCars, ForCheckingCars {
     // ...
 ~~~
 
-A usual way of structuring the hexagon is to split it into two layers: application and domain, following DDD rules, but this has nothing to do with Hexagonal Architecture.
+*A usual way of structuring the hexagon is to split it into two layers: application and domain, following DDD (Domain Driven Design) rules, but this has nothing to do with Hexagonal Architecture.*
+
+=====
 
 <div id="tc2-2"></div>
 
-####2.2.- One module for each adapter, with name `<app_name>.adapter.<port_name>.<technology>`
+#### 2.2.- ONE MODULE FOR EACH ADAPTER, with name `<app_name>.adapter.<port_name>.<technology>`
 
-* The "technology" part could be as specific and long as you want. For example:
+The "technology" part could be as specific and long as you want. For example:
 
 ~~~
 <app_name>.adapter.<port_name>.webui
@@ -144,43 +145,58 @@ In our example we are going to develop 2 adapters for each port:
 
 Driver adapters:
 
-`bluezone.adapter.forparkingcars.test`
-`bluezone.adapter.forparkingcars.webui`
-
-`bluezone.adapter.forcheckingcars.test`
-`bluezone.adapter.forcheckingcars.cli`
+~~~java
+bluezone.adapter.forparkingcars.test
+bluezone.adapter.forparkingcars.webui
+    
+bluezone.adapter.forcheckingcars.test
+bluezone.adapter.forcheckingcars.cli
+~~~
 
 Driven adapters:
 
-`bluezone.adapter.forobtainingrates.stub`
-`bluezone.adapter.forobtainingrates.file`
+~~~java
+bluezone.adapter.forobtainingrates.stub
+bluezone.adapter.forobtainingrates.file
 
-`bluezone.adapter.forstoringpermits.fake.imdb.map`
-`bluezone.adapter.forstoringpermits.database.jpa`
-
-`bluezone.adapter.forpaying.mock`
-`bluezone.adapter.forpaying.remotesystem`
+bluezone.adapter.forstoringpermits.fake.imdb.map
+bluezone.adapter.forstoringpermits.database.jpa.mariadb
+    
+bluezone.adapter.forpaying.mock
+bluezone.adapter.forpaying.remotesystem
+~~~
 
 The root package for an adapter source code would be:
 
-`package <reverse_domain_name>.<app_name>.adapters.<port_name>.<technology>`
+~~~java
+package <reverse_domain_name>.<app_name>.adapter.<port_name>.<technology>
+~~~
+
+
 
 <div id="tc2-3"></div>
 
-####2.3.- One module for building and running the application, with name: `<app_name>.startup`
+#### 2.3.- ONE MODULE FOR STARTING UP THE APPLICATION, with name: `<app_name>.startup`
 
-  This module is the entry point to the application. It runs a driver adapter. So it has a package for each driver adapter, with a Java main class, that will build the application and run the driver adapter.
+This module is the entry point to the application.
+
+It instantiates the different components of the architecture, wires them up, and runs the application. The application can be run by either one of the existing driver adapters, including tests.
+
+So the source code will be structured into one package for each driver adapter:
 
 ~~~java
 package io.github.jmgarridopaz.bluezone.startup.forparkingcars.test;
 package io.github.jmgarridopaz.bluezone.startup.forparkingcars.webui;
+
 package io.github.jmgarridopaz.bluezone.startup.forcheckingcars.test;
 package io.github.jmgarridopaz.bluezone.startup.forcheckingcars.cli;
 ~~~
 
+During my researching on hexagonal architecture, I've studied several techniques for implementing the application startup, and I will show them in detail along the next articles in these series.
+
 <div id="tc3"></div>
 
-###3.- DEPENDENCIES.
+### 3.- DEPENDENCIES.
 
 Dependencies rules between modules are easy:
 
@@ -221,7 +237,17 @@ In Java 9, every module has a `module-info.java` file where it declares the modu
 
 3. **The Startup Module.**
 
+A package will have  Java main class will build the application and run the application following these steps:
 
+1. Initialize driven actors. For example a database.
+2. Instantiate driven adapters with driven actors.
+3. Apply Dependency Configurable Pattern on driven side, i.e. instantiate hexagon classes passing driven adapters as arguments.
+4. Apply Dependency Configurable Pattern on driver side, i.e. instantiate a driver adapter with the hexagon class that implements the driver port.
+5. Run the driver adapter.
+
+<div id="tc3"></div>
+
+### 
 
 <div id="tc4"></div>
 
