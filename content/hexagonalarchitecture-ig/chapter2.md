@@ -50,8 +50,7 @@ The important thing with this way of naming modules, is that when we see a modul
 ![Figure 1: Modules naming convention](/assets/images/hexagonalarchitecture-ig/figure2-1.png)
 
 <p class="figure">Figure 1: Modules naming convention (*)</p>
-
-(*) *bluezone-parent is a maven configuration module, nothing to do with a Java 9 source code module*
+<p class="figure">(*) bluezone-parent is a maven configuration module, nothing to do with a Java 9 source code module</p>
 
 <div id="tc2-1"></div>
 #### 2.1.- ONE MODULE FOR THE HEXAGON, with name:  `<app_name>.hexagon`
