@@ -21,7 +21,7 @@
     text-align: center;
 }
 
-p.intro {
+p.intro, p.figure {
     text-align: center;
     font-style: italic;
 }
