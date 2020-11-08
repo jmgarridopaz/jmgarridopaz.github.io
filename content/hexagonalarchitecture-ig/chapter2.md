@@ -47,6 +47,12 @@ Now let's see the modules and the convention I follow for naming them and their 
 
 The important thing with this way of naming modules, is that when we see a module name at first glance, we know whether it is business logic or it deals with real world technology, since the first word after the application name is either "hexagon" or "adapter".
 
+![Figure 1: Modules naming convention](/assets/images/hexagonalarchitecture-ig/figure2-1.png)
+
+<p class="figure">Figure 1: Modules naming convention (*)</p>
+
+(*) *bluezone-parent is a maven configuration module, nothing to do with a Java 9 source code module*
+
 <div id="tc2-1"></div>
 #### 2.1.- ONE MODULE FOR THE HEXAGON, with name:  `<app_name>.hexagon`
 
@@ -58,9 +64,9 @@ Before Java 9, a public type was visible to the rest of the world. Now, with mod
 
 So we will have **a package for each port of the hexagon**. A package for a port contains a public interface defining the port operations, and public data types that those operations manage.
 
-![Figure 1: Ports packages in hexagon module](/assets/images/hexagonalarchitecture-ig/figure2-1.png)
+![Figure 2: Ports packages in hexagon module](/assets/images/hexagonalarchitecture-ig/figure2-2.png)
 
-<p class="intro">Figure 1: Ports packages in hexagon module</p>
+<p class="figure">Figure 2: Ports packages in hexagon module</p>
 
 The name of a package for a port will be:
 
@@ -287,6 +293,14 @@ This module configures the dependencies between the hexagon and the adapters, ap
 3. Apply Configurable Dependency Pattern on driver side: Instantiate a driver adapter, which knows of the driver port of the hexagon.
 4. Run the driver adapter.
 
+Here is a hand-drawn diagram I made once about this topic:
+
+![Figure 3: Dependency Configurator in Startup Module](/assets/images/hexagonalarchitecture-ig/figure2-3.png)
+
+<p class="figure">Figure 3: Dependency Configurator in Startup Module</p>
+
+I offered this picture to Alistair Cockburn, who published it on Twitter: <a target="_blank" href="https://twitter.com/TotherAlistair/status/1122918489558278145">https://twitter.com/TotherAlistair/status/1122918489558278145</a>
+
 At either the driver or driven side, the Configurable Dependency Pattern applies as follows:
 
 > 
@@ -336,7 +350,7 @@ public class BusinessLogic implements ForParkingCars, ForCheckingCars {
 <div id="tc4"></div>
 ### 4.- MODULES vs LAYERS.
 
-Hexagonal Architecture is just an ***object structural pattern***, it is not an architecture style.
+Hexagonal Architecture is an ***object structural pattern***, it is not an architecture style.
 
 So it is not layered "per se", it is not component-based (modular) "per se", etc. It is whatever you want it to be, in the sense that the architecture style you use is an implementation detail that the pattern doesn't fix. You can implement it using any architecture style, as long as it fits the structure and relationship rules of the pattern.
 
