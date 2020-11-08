@@ -228,7 +228,8 @@ Regarding to dependencies, in Java 9 every module has a definition file (`module
 
 So let's see the `module-info.java` file of the modules:
 
-**The hexagon module.**
+**THE HEXAGON MODULE.**
+
 It contains the business logic, including ports. The hexagon is decoupled from any technology, i.e. from the adapters. If we modify the adapters, the hexagon shouldn't care, so *it doesn't require (depend on) any module*, maybe just some library module with utilities of the programming language if you will.
 
 ~~~java
@@ -248,7 +249,8 @@ module bluezone.hexagon {
 *It publishes (exports) the packages with the ports*. Each port package just publishes the interface defining port operations, and the data types that those operations manage. Any logic implementing the driver ports is hidden to other modules.
 It is also possible to declare the modules you want to export a package to, so that you could export a port just to its adapters. But we would have to change this file and recompile the hexagon, every time we add a new adapter.
 
-**The adapters modules.**
+**THE ADAPTERS MODULES.**
+
 An adapter module for a port, requires the hexagon module, and other modules related to libraries and frameworks, according to the technology that the actor behind the port is using.
 For example, the definition file for `bluezone.adapter.forparkingcars.test` module is:
 
@@ -272,7 +274,8 @@ module bluezone.adapter.forparkingcars.test {
 We can see that it requires the hexagon module, since it uses `forparkingcars`  port, and it also requires modules about "cucumber", which is the specific technology used by the actor (test cases).
 `io.github.jmgarridopaz.lib.portsadapters` module is a library of my own, where I define types regarding hexagonal architecture.
 
-**The startup module.**
+**THE STARTUP MODULE.**
+
 It builds the application and runs it, so it needs access to all modules: hexagon and adapters.
 
 ~~~java
@@ -298,7 +301,8 @@ Here is a hand-drawn diagram I made once about this topic:
 
 <p class="figure">Figure 3: Dependency Configurator in Startup Module</p>
 
-I offered this picture to Alistair Cockburn, who published it on Twitter: <a target="_blank" href="https://twitter.com/TotherAlistair/status/1122918489558278145">https://twitter.com/TotherAlistair/status/1122918489558278145</a>
+I offered this picture to Alistair Cockburn, who published it on Twitter:
+<a target="_blank" href="https://twitter.com/TotherAlistair/status/1122918489558278145">https://twitter.com/TotherAlistair/status/1122918489558278145</a>
 
 At either the driver or driven side, the Configurable Dependency Pattern applies as follows:
 
@@ -358,6 +362,9 @@ For example, I see two architecture styles we can implement the pattern with:
 * **Modular**: This is the approach I follow in these article series, as we have just seen in the previous sections.
   - One module for the hexagon.  
   - One module for each adapter.
+
+![Figure 4: Modular Diagram of Driven Side](/assets/images/hexagonalarchitecture-ig/figure2-4.png)
+<p class="figure">Figure 4: Modular Diagram of Driven Side</p>
 
 * **Layered**: It splits source code into two layers (inside vs outside), with just a dependency rule: "outside" depends on "inside".
   - Inside layer: the hexagon.  
