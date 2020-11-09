@@ -15,7 +15,7 @@ layout: default
 2. [Source code organization](#tc2)  
    2.1. [One module for the hexagon](#tc2-1)  
    2.2. [One module for each adapter](#tc2-2)  
-   2.3. [One module for the application startup](#tc2-3)
+   2.3. [One module for application startup](#tc2-3)
 3. [Dependencies](#tc3)
 4. [Modules vs Layers](#tc4)
 5. [Links](#tc5)
@@ -190,7 +190,7 @@ package <reverse_domain_name>.<app_name>.adapter.<port_name>.<technology>
 ~~~
 
 <div id="tc2-3"></div>
-#### 2.3.- ONE MODULE FOR THE APPLICATION STARTUP, with name: `<app_name>.startup`
+#### 2.3.- ONE MODULE FOR APPLICATION STARTUP, with name: `<app_name>.startup`
 
 This module is the entry point to the application.
 
