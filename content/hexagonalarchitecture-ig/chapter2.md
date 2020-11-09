@@ -48,7 +48,6 @@ Now let's see the modules and the convention I follow for naming them and their 
 The important thing with this way of naming modules, is that when we see a module name at first glance, we know whether it is business logic or it deals with real world technology, since the first word after the application name is either "hexagon" or "adapter".
 
 ![Figure 1: Modules naming convention](/assets/images/hexagonalarchitecture-ig/figure2-1.png)
-
 <p class="figure">Figure 1: Modules naming convention (*)</p>
 <p class="figure">(*) bluezone-parent is a maven configuration module, nothing to do with a Java 9 source code module</p>
 
@@ -64,7 +63,6 @@ Before Java 9, a public type was visible to the rest of the world. Now, with mod
 So we will have **a package for each port of the hexagon**. A package for a port contains a public interface defining the port operations, and public data types that those operations manage.
 
 ![Figure 2: Ports packages in hexagon module](/assets/images/hexagonalarchitecture-ig/figure2-2.png)
-
 <p class="figure">Figure 2: Ports packages in hexagon module</p>
 
 The name of a package for a port will be:
@@ -298,7 +296,6 @@ This module configures the dependencies between the hexagon and the adapters, ap
 Here is a hand-drawn diagram I made once about this topic:
 
 ![Figure 3: Dependency Configurator in Startup Module](/assets/images/hexagonalarchitecture-ig/figure2-3.png)
-
 <p class="figure">Figure 3: Dependency Configurator in Startup Module</p>
 
 I offered this picture to Alistair Cockburn, who published it on Twitter:
@@ -363,18 +360,28 @@ For example, I see two architecture styles we can implement the pattern with:
   - One module for the hexagon.  
   - One module for each adapter.
 
-![Figure 4: Modular Diagram of Driven Side](/assets/images/hexagonalarchitecture-ig/figure2-4.png)
-<p class="figure">Figure 4: Modular Diagram of Driven Side</p>
+The modular diagram is similar to an UML component diagram. The hexagon module would like a component where driver ports are "provided interfaces", and driven ports are "required interfaces":
+
+![Figure 4a: Modular Diagram (Driver Side)](/assets/images/hexagonalarchitecture-ig/figure2-4a.png)
+<p class="figure">Figure 4a: Modular Diagram (Driver Side)</p>
+
+![Figure 4b: Modular Diagram (Driven Side)](/assets/images/hexagonalarchitecture-ig/figure2-4b.png)
+<p class="figure">Figure 4b: Modular Diagram (Driven Side)</p>
 
 * **Layered**: It splits source code into two layers (inside vs outside), with just a dependency rule: "outside" depends on "inside".
   - Inside layer: the hexagon.  
-  - Outside layer: all the adapters (drawn in an outer hexagon).
+  - Outside layer: all the adapters.
+
+![Figure 5: Layered Diagram](/assets/images/hexagonalarchitecture-ig/figure2-5.png)
+<p class="figure">Figure 5: Layered Diagram</p>
+
+These two layers would be in fact three, since the startup module can be considered here as another layer on top of the outside layer.
 
 I see the modular approach more flexible, since we can add adapters dynamically, without having to recompile the other adapters in the layer.
 
-Whatever approach you choose, there are some key concepts to consider for fitting Hexagonal Architecture pattern rules:
+Whatever approach you choose, there are some key concepts to consider for fitting Hexagonal Architecture pattern rules, which make it different from Onion:
 
-1. **Ports are not a layer themselves.** A driver port is part of the hexagon API, and a driven port is part of the hexagon SPI. But both are a part of the hexagon, they are interfaces that belong to the business logic of the application, i.e. to the hexagon. In Java 9, ports are interfaces into packages that the hexagon module publishes to other modules. The other packages are hidden to the outside world.
+1. **Ports are not a layer themselves.** Ports are part of the hexagon, they are interfaces that belong to the business logic of the application, i.e. to the hexagon. In Java 9, ports are interfaces into packages that the hexagon module publishes to other modules. The other packages are hidden to the outside world.
 
 2. **An adapter depends on the hexagon at one of its ports.** An adapter is a piece of software playing a role (driver/driven) against a port. A driver adapter will be a Java class that "uses" a driver port interface, and a driven adapter will be a class that "implements" a driven port interface. In Java, this is achieved by using generic types. For example, a driver adapter is a generic class with one type parameter, which is the driver port interface that it uses. Whether an adapter plays different roles: it drives more than one port; or it is driven by more than one port; or it is driven by a hexagon port and it drives a port of another hexagon... it's up to you, but then you should know that you are not following the <a target="_blank" href="https://en.wikipedia.org/wiki/Single_responsibility_principle">SRP (Single Responsability Principle)</a>.
 
