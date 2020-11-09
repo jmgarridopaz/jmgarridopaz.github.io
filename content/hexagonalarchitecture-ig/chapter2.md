@@ -6,7 +6,7 @@ layout: default
 <hr>
 <p>Chapter 2: PROJECT STRUCTURE</p>
 <hr>
-<span class="credits right">Published on Month dd, yyyy by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
+<span class="credits right">Published on November 9, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
 </div>
 
 #### TABLE OF CONTENTS
@@ -300,11 +300,11 @@ Here is a hand-drawn diagram I made once about this topic:
 I offered this picture to Alistair Cockburn, who published it on Twitter:
 <a target="_blank" href="https://twitter.com/TotherAlistair/status/1122918489558278145">https://twitter.com/TotherAlistair/status/1122918489558278145</a>
 
-At either the driver or driven side, the Configurable Dependency Pattern applies as follows:
+At either driver or driven side, the Configurable Dependency Pattern applies as follows, <a target="_blank" href="https://youtu.be/th4AgBcrEHA?t=1403"> quoting Alistair Cockburn in his "Alistair in the Hexagone" talk</a>:
 
 > 
 >
-> *The one who triggers the interaction has to know the dependency.*
+> *The one who does the triggering has to know the dependency.*
 >
 > 
 
@@ -412,6 +412,10 @@ Whatever approach you choose, there are some key concepts to consider for fittin
 * "Hexagonal != Layers", by Thomas Pierrain:
 
 <a target="_blank" href="https://tpierrain.blogspot.com/2016/04/hexagonal-layers.html">https://tpierrain.blogspot.com/2016/04/hexagonal-layers.html</a>
+
+* "The key ring metaphor: A three steps initialization" (pdf, page 11), by Thomas Pierrain:
+
+<a target="_blank" href="https://github.com/tpierrain/hexagonalThis/blob/master/Hexagonal.pdf">https://github.com/tpierrain/hexagonalThis/blob/master/Hexagonal.pdf</a>
 
 <br/>
 
