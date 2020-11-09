@@ -8,9 +8,6 @@ layout: default
 <hr>
 <span class="credits right">Published on Month dd, yyyy by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
 </div>
-<div class="left"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html">Previous Chapter</a></div>
-<div class="center"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/intro.html">Intro Chapter</a></div>
-<div class="right"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter3.html">Next Chapter</a></div>
 
 #### TABLE OF CONTENTS
 
@@ -409,6 +406,7 @@ Whatever approach you choose, there are some key concepts to consider for fittin
 <a target="_blank" href="https://web.archive.org/web/20170624023207/http://alistair.cockburn.us/Configurable+Dependency">https://web.archive.org/web/20170624023207/http://alistair.cockburn.us/Configurable+Dependency</a>
 
 * "Java 9 Modularity" book. Authors: Sander Mak & Paul Bakker. Publisher: O'Reilly
+
 <a target="_blank" href="https://javamodularity.com/">https://javamodularity.com/</a>
 
 * "Hexagonal != Layers", by Thomas Pierrain:
