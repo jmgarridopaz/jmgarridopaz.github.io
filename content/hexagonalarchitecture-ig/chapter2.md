@@ -362,10 +362,10 @@ For example, I see two architecture styles we can implement the pattern with:
 
 The modular diagram is similar to an UML component diagram. The hexagon module would like a component where driver ports are "provided interfaces", and driven ports are "required interfaces":
 
-![Figure 4a: Modular Diagram (Driver Side)](/assets/images/hexagonalarchitecture-ig/figure2-4a.png)
+![Figure 4a: Modular Diagram (Driver Side)](/assets/images/hexagonalarchitecture-ig/figure2-4-1.png)
 <p class="figure">Figure 4a: Modular Diagram (Driver Side)</p>
 
-![Figure 4b: Modular Diagram (Driven Side)](/assets/images/hexagonalarchitecture-ig/figure2-4b.png)
+![Figure 4b: Modular Diagram (Driven Side)](/assets/images/hexagonalarchitecture-ig/figure2-4-2.png)
 <p class="figure">Figure 4b: Modular Diagram (Driven Side)</p>
 
 * **Layered**: It splits source code into two layers (inside vs outside), with just a dependency rule: "outside" depends on "inside".
