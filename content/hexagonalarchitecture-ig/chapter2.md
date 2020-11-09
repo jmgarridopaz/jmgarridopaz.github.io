@@ -41,6 +41,8 @@ The code base of the example application is at <a target="_blank" href="https://
 
 The whole project is structured in modules. In Java 9, a module is a set of packages, that you can compile apart generating a jar file. Modules depend on each other.
 
+Regarding Java 9 modules, I highly recommend the book <a target="_blank" href="https://javamodularity.com/">"Java 9 Modularity: Patterns and practices for developing maintainable applications", by Sander Mak & Paul Bakker</a>
+
 I've put all the modules in just one GitHub repository, so that you can see and build them all together, but Java 9 allows you to have them in different repositories, compile them apart, and then provide their locations at runtime to choose them dynamically. We will see this later on, at the end of this article series, as an advanced way of execution.
 
 Now let's see the modules and the convention I follow for naming them and their packages.
@@ -287,7 +289,7 @@ module bluezone.startup {
 	...
 }
 ~~~
-This module configures the dependencies between the hexagon and the adapters, applying the Configurable Dependency Pattern at both driven and driver side, following these steps:
+This module configures the dependencies between the hexagon and the adapters, applying the <a target="_blank" href="https://web.archive.org/web/20170624023207/http://alistair.cockburn.us/Configurable+Dependency">Configurable Dependency Pattern</a> at both driven and driver side, following these steps:
 1. For each driven port, instantiates a driven adapter, which implements the driven port interface.
 2. Apply Configurable Dependency Pattern on driven side: Instantiate the hexagon class, which knows of driven ports, and implements a driver port interface.
 3. Apply Configurable Dependency Pattern on driver side: Instantiate a driver adapter, which knows of the driver port of the hexagon.
@@ -360,7 +362,7 @@ For example, I see two architecture styles we can implement the pattern with:
   - One module for the hexagon.  
   - One module for each adapter.
 
-The modular diagram is similar to an UML component diagram. The hexagon module would like a component where driver ports are "provided interfaces", and driven ports are "required interfaces":
+The modular diagram is similar to an UML component diagram. The hexagon module would look like a component where driver ports are "provided interfaces", and driven ports are "required interfaces":
 
 ![Figure 4a: Modular Diagram (Driver Side)](/assets/images/hexagonalarchitecture-ig/figure2-4-1.png)
 <p class="figure">Figure 4a: Modular Diagram (Driver Side)</p>
@@ -392,19 +394,26 @@ Whatever approach you choose, there are some key concepts to consider for fittin
 
 * Ports and Adapters Pattern (aka Hexagonal Architecture), by Alistair Cockburn:
 
-[https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture](https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture)
+<a target="_blank" href="https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture">https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture</a>
 
 * My conceptual article about Ports and Adapters Pattern (aka Hexagonal Architecture):
 
-[https://jmgarridopaz.github.io/content/hexagonalarchitecture.html](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html)
+<a target="_blank" href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html">https://jmgarridopaz.github.io/content/hexagonalarchitecture.html</a>
 
 * Alistair in the Hexagone: a talk by Alistair Cockburn about Hexagonal Architecture:
 
-[https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL](https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL)
+<a target="_blank" href="https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL">https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL</a>
+
+* "Configurable Dependency Pattern", by Gerard Meszaros & Alistair Cockburn:
+
+<a target="_blank" href="https://web.archive.org/web/20170624023207/http://alistair.cockburn.us/Configurable+Dependency">https://web.archive.org/web/20170624023207/http://alistair.cockburn.us/Configurable+Dependency</a>
+
+* "Java 9 Modularity" book. Authors: Sander Mak & Paul Bakker. Publisher: O'Reilly
+<a target="_blank" href="https://javamodularity.com/">https://javamodularity.com/</a>
 
 * "Hexagonal != Layers", by Thomas Pierrain:
 
-[https://tpierrain.blogspot.com/2016/04/hexagonal-layers.html](https://tpierrain.blogspot.com/2016/04/hexagonal-layers.html)
+<a target="_blank" href="https://tpierrain.blogspot.com/2016/04/hexagonal-layers.html">https://tpierrain.blogspot.com/2016/04/hexagonal-layers.html</a>
 
 <br/>
 
