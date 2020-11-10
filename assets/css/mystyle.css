@@ -40,3 +40,17 @@ section p img {
     margin-left: auto;
     margin-right: auto;
 }
+
+ul.list_hor {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li.item_left, li.item_center {
+  float: left;
+}
+
+li.item_right {
+  float: right;
+}
