@@ -41,16 +41,23 @@ section p img {
     margin-right: auto;
 }
 
-ul.list_hor {
-  list-style-type: none;
+div.list_hor {
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
-li.item_left, li.item_center {
+div.list_hor div.item_left {
   float: left;
+  width: 33%;
 }
 
-li.item_right {
+div.list_hor div.item_center {
+  float: left;
+  width: 34%;
+}
+
+div.list_hor div.item_right {
   float: right;
+  width: 33%;
 }
