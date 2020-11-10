@@ -3,7 +3,7 @@ layout: default
 ---
 <div id="title">
 <div class="title_text"><h1>Hexagonal Architecture</h1></div>
-<div class="title_text"><h1>An implementation guide</h1></div>
+<div class="title_text"><h2>An implementation guide</h2></div>
 <div class="title_up_line"><hr></div>
 <div class="title_sub_text"><h3>Chapter 2: PROJECT STRUCTURE</h3></div>
 <div class="list_hor">
