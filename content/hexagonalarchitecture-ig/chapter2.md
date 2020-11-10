@@ -8,7 +8,7 @@ layout: default
 <ul class="list_hor">
   <li class="item_left"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html">Previous Chapter</a></li>
   <li class="item_center"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/intro.html">Intro Chapter</a></li>
-  <li class="item_right"></li>
+  <li class="item_right"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter3.html">Next Chapter</a></li>
 </ul>
 <hr>
 <span class="credits right">Published on November 9, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
