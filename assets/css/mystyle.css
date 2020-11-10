@@ -27,6 +27,7 @@ p.intro, p.figure {
 }
 
 p.introquote {
+    margin-bottom: 10px;
     text-align: right;
     font-style: italic;
 }
@@ -50,7 +51,7 @@ div.title_text {
 }
 
 div.title_up_line hr {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 div.title_sub_text {
