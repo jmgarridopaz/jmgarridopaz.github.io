@@ -3,16 +3,20 @@ layout: default
 ---
 
 <div id="title">
-<h1>Hexagonal Architecture: An implementation guide</h1>
-<p>Chapter 1: Application Design</p>
-<hr>
-<span class="credits right">Published on March 30, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
-<br>
-<span class="credits right">Updated on October 10, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
-<br>
-<span class="credits right">[Added Github Repository URL]</span>
-<br>
-<span class="credits right">[Added Dr. Alistair Cockburn quote about Use Cases]</span>
+<div class="title_text"><h1>Hexagonal Architecture</h1></div>
+<div class="title_text"><h2>An implementation guide</h2></div>
+<div class="title_up_line"><hr></div>
+<div class="title_sub_text"><h3>Chapter 1: APPLICATION DESIGN</h3></div>
+<div class="list_hor">
+  <div class="item_left"></div>
+  <div class="item_center"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/intro.html">Intro Chapter</a></div>
+  <div class="item_right"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter2.html">Next Chapter</a></div>
+</div>
+<div class="title_bottom_line"><hr></div>
+<div class="published">Published on March 30, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></div>
+<div class="published">Updated on October 10, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></div>
+<div class="published">[Added Github Repository URL]</div>
+<div class="published">[Added Dr. Alistair Cockburn quote about Use Cases]</div>
 </div>
 
 <p class="introquote">To Thomas Pierrain. You are not alone, all together we will win</p>
