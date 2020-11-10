@@ -50,7 +50,7 @@ div.title_text {
 }
 
 div.title_up_line hr {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 div.title_sub_text {
@@ -83,6 +83,10 @@ div.list_hor div.item_right {
 div.list_hor div.item_footer {
     margin-bottom: 10px;
     clear: both;
+}
+
+div.list_hor div.item_disabled {
+    color: #696969;
 }
 
 div.title_bottom_line hr {
