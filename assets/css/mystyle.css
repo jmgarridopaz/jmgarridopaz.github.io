@@ -41,11 +41,15 @@ section p img {
     margin-right: auto;
 }
 
+div#title {
+    margin-bottom: 20px;    
+}
+
 div.title_text {
     text-align: center;
 }
 
-div.title_up_line {
+div.title_up_line hr {
     margin-bottom: 10px;
 }
 
@@ -55,7 +59,10 @@ div.title_sub_text {
 
 div.list_hor {
   width: 100%;
-  margin: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 10px;
   padding: 0;
 }
 
@@ -77,8 +84,11 @@ div.list_hor div.item_right {
 }
 
 div.title_bottom_line {
-    margin-bottom: 10px;
     clear: both;
+}
+
+div.title_bottom_line hr {
+    margin-bottom: 10px;
 }
 
 div.published {
