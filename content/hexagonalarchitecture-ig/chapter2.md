@@ -2,16 +2,16 @@
 layout: default
 ---
 <div id="title">
-<h1>Hexagonal Architecture: An implementation guide</h1>
-<hr>
-<p>Chapter 2: PROJECT STRUCTURE</p>
+<div><h1>Hexagonal Architecture: An implementation guide</h1></div>
+<div><hr></div>
+<div>Chapter 2: PROJECT STRUCTURE</div>
 <div class="list_hor">
-  <div class="item_left"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html">Previous Chapter</a></div>
+  <div class="item_left"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html">Prev Chapter</a></div>
   <div class="item_center"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/intro.html">Intro Chapter</a></div>
   <div class="item_right"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter3.html">Next Chapter</a></div>
 </div>
-<hr>
-<span class="credits right">Published on November 9, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
+<div><hr></div>
+<div>Published on November 9, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></div>
 </div>
 
 #### TABLE OF CONTENTS
