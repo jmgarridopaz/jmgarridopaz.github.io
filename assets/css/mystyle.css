@@ -59,10 +59,7 @@ div.title_sub_text {
 
 div.list_hor {
   width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin: 0;
   padding: 0;
 }
 
@@ -88,6 +85,7 @@ div.title_bottom_line {
 }
 
 div.title_bottom_line hr {
+    margin-up: 10px;
     margin-bottom: 10px;
 }
 
