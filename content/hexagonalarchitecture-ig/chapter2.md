@@ -9,7 +9,8 @@ layout: default
 <div class="list_hor">
   <div class="item_left"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html">Prev Chapter</a></div>
   <div class="item_center"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/intro.html">Intro Chapter</a></div>
-  <div class="item_right"></div>
+  <div class="item_right item_disabled">Next Chapter</div>
+  <div class="item_footer"></div>
 </div>
 <div class="title_bottom_line"><hr></div>
 <div class="published">Published on November 9, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></div>
