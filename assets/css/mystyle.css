@@ -61,3 +61,7 @@ div.list_hor div.item_right {
   float: right;
   width: 33%;
 }
+
+div.nav_line {
+    clear: both;
+}
