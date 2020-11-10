@@ -75,17 +75,17 @@ div.list_hor div.item_center {
 }
 
 div.list_hor div.item_right {
-  float: right;
+  float: left;
   text-align: right;
   width: 33%;
 }
 
-div.title_bottom_line {
+div.list_hor div.item_footer {
+    margin-bottom: 10px;
     clear: both;
 }
 
 div.title_bottom_line hr {
-    margin-up: 10px;
     margin-bottom: 10px;
 }
 
