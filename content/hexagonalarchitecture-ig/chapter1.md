@@ -8,7 +8,7 @@ layout: default
 <div class="title_up_line"><hr></div>
 <div class="title_sub_text"><h3>Chapter 1: APPLICATION DESIGN</h3></div>
 <div class="list_hor">
-  <div class="item_left"></div>
+  <div class="item_left"> </div>
   <div class="item_center"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/intro.html">Intro Chapter</a></div>
   <div class="item_right"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter2.html">Next Chapter</a></div>
 </div>
