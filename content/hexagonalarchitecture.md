@@ -428,29 +428,37 @@ This way you can test the application end to end, including “real” adapters 
 At this point you are done. You can __configure every port with the adapter you wish__, and __run the application with any combination__ of ports and adapters configuration.
 
 <div id="tc9"></div>
-### 9.- LINKS
+### 9.- LINKSS
 
 * Article by Alistair Cockburn defining Ports and Adapters Pattern:
 
-~~~
+~~~HTML
 <a href="https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture">https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture</a>
 ~~~
 
 * My translation of Alistair Cockburn article into spanish:
 
+~~~
 <a href="https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.html">https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.html</a>
+~~~
 
 * Alistair in the Hexagone: a talk by Alistair Cockburn about Hexagonal Architecture:
 
+~~~
 <a href="https://www.youtube.com/watch?v=th4AgBcrEHA&amp;list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL">https://www.youtube.com/watch?v=th4AgBcrEHA&amp;list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL</a>
+~~~
 
 * Interview with Alistair Cockburn about Hexagonal Architecture:
 
+~~~
 <a href="https://web.archive.org/web/20170925184018/http://alistair.cockburn.us/Hexagonal+Architecture+FAQ">https://web.archive.org/web/20170925184018/http://alistair.cockburn.us/Hexagonal+Architecture+FAQ</a>
+~~~
 
 * An article I like about Hexagonal Architecture:
 
+~~~
 <a href="https://beyondxscratch.wordpress.com/2017/08/19/decoupling-your-technical-code-from-your-business-logic-with-the-hexagonal-architecture-hexarch">https://beyondxscratch.wordpress.com/2017/08/19/decoupling-your-technical-code-from-your-business-logic-with-the-hexagonal-architecture-hexarch</a>
+~~~
 
 <br/>
 
