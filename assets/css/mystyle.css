@@ -21,6 +21,10 @@
     text-align: center;
 }
 
+a {
+    overflow-wrap: break-word;
+}
+
 p.intro, p.figure {
     text-align: center;
     font-style: italic;
