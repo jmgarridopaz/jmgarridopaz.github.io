@@ -428,11 +428,11 @@ This way you can test the application end to end, including “real” adapters 
 At this point you are done. You can __configure every port with the adapter you wish__, and __run the application with any combination__ of ports and adapters configuration.
 
 <div id="tc9"></div>
-### 9.- LINKS
+### 9.- LINKSS
 
 * Article by Alistair Cockburn defining Ports and Adapters Pattern:
 
-<a target="_blank" href="https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture">https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture</a>
+<a style="display:block;" target="_blank" href="https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture">https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture</a>
 
 * My translation of Alistair Cockburn article into spanish:
 
