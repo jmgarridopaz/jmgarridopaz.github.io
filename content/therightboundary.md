@@ -2,8 +2,7 @@
 layout: default
 ---
 <div id="title">
-<div class="title_text"><h1>Hexagonal Architecture</h1></div>
-<div class="title_text"><h2>THE "RIGHT" BOUNDARY</h2></div>
+<div class="title_text"><h1>Hexagonal Architecture: THE "RIGHT" BOUNDARY</h1></div>
 <div class="title_up_line"><hr></div>
 <div class="published">Published on November 27, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></div>
 </div>
@@ -36,11 +35,13 @@ That was my mistake: I put a driven port for the domain concept, instead of putt
 
 I was aware of my mistake about the location of driven ports after <a target="_blank" href="https://twitter.com/JuanMGarridoPaz/status/1316276051866157056">asking Alistair Cockburn about it on Twitter</a>. He answered "yes" to all of these:
 
+> 
 > So, Alistair, if a task doesn't need to touch any technology (for example) translate A into B (once we got A from a repo), my mistake is that I shouldn't put that task in an adapter, but inside the hexagon. The adapter is just fetching A from the repository. Did I get you right?
-
+> 
 > I mean if we need to translate concepts locally it would be like having a sublayer of local adapters inside the hexagon, but that's our decision and hexagonal architecture doesn't say anything about it.
-
+> 
 > Similar to split the hexagon into application layer and domain. It's a DDD thing that you can do or not, but it isn't a hexagonal architecture issue.
+> 
 
 And also after reading again this <a target="_blank" href="https://web.archive.org/web/20170925184018/http://alistair.cockburn.us/Hexagonal+Architecture+FAQ">"Hexagonal Architecture FAQ"</a>, where Alistair Cockburn defines how to create an hexagonal application. Here he says that a port is an interface that groups interactions with a repository/recipient:
 
@@ -122,7 +123,7 @@ On page 101 (Technical characteristics of an ACL):
 <div id="tc6"></div>
 ### 6.- FITTING "DOMAIN DRIVEN DESIGN" INTO "HEXAGONAL ARCHITECTURE" AT DRIVEN SIDE.
 
-So the mistake is to give the "driven port role" to a domain service interface when the implementation of such an interface does much more things than just sending/retrieving the information to/from a driven actor.
+So the mistake is to give the "driven port role" to a "Domain Service Interface" (D.S.I.) when the implementation of such an interface does much more things than just sending/retrieving the information to/from a driven actor.
 
 The ACL concept from DDD is wider than the driven adapter concept from Hexagonal Architecture.
 
@@ -130,8 +131,8 @@ The things that an ACL does besides talking to repositories (mixing their inform
 
 We could add a sublayer inside the hexagon for that "ACL logic", just like splitting the hexagon at the driver side into application layer and domain, which is also a DDD issue.
 
-![Figure 1: ...](/assets/images/figure.png)
-<p class="figure">Figure 1: ...</p>
+![Figure 1: Hexagonal Architecture "right" side with ACL](/assets/images/therightboundary/figure1.png)
+<p class="figure">Figure 1: Hexagonal Architecture "right" side with ACL</p>
 
 Hexagon = Domain + ACL logic
 
