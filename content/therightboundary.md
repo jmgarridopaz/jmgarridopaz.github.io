@@ -2,7 +2,8 @@
 layout: default
 ---
 <div id="title">
-<div class="title_text"><h1>Hexagonal Architecture: THE "RIGHT" BOUNDARY</h1></div>
+<div class="title_text"><h2>Hexagonal Architecture</h2></div>
+<div class="title_text"><h1>The "right" boundary</h1></div>
 <div class="title_up_line"><hr></div>
 <div class="published">Published on November 27, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></div>
 </div>
