@@ -15,7 +15,7 @@ layout: default
 3. [Domain Driven Design & Hexagonal Architecture](#tc3)
 4. [Driven Port (Hexagonal Architecture)](#tc4)
 5. [Anti Corruption Layer (Domain Driven Design)](#tc5)
-6. [Fitting "Domain Driven Design" into "Hexagonal Architecture" at Driven Side)](#tc6)
+6. [Fitting "Domain Driven Design" into "Hexagonal Architecture" at Driven Side](#tc6)
 7. [Links](#tc7)
 
 <div id="tc1"></div>
@@ -23,7 +23,7 @@ layout: default
 
 This article tries to clear up a misconception I had regarding Hexagonal Architecture I've recently realized of. It has to do with the "right" (driven) side of the hexagon:
 
-Where do we put the boundary (port interfaces) between the inside and the outside of the hexagon in the driven side?
+___Where do we put the boundary (port interfaces) between the inside and the outside of the hexagon in the driven side?___
 
 When I had a domain concept that depended on external systems, I used to put an interface to abstract the process of building its instances. I gave that interface the "driven port role", and I gave that process the "driven adapter role", no matter how complex the process was, or how many external systems it had to access. This is a "Domain Driven Design" ( DDD ) influence. That adapter is called "Anti Corruption Layer" ( ACL ) in DDD lingo.
 
@@ -32,35 +32,29 @@ But Hexagonal Architecture has nothing to do with DDD, Hexagonal Architecture kn
 That was my mistake: I put a driven port for the domain concept, instead of putting a driven port for each external system.
 
 <div id="tc2"></div>
-### 2.- HOW I DID REALIZE OF.
+### 2.- HOW DID I REALIZE OF.
 
 I was aware of my mistake about the location of driven ports after <a target="_blank" href="https://twitter.com/JuanMGarridoPaz/status/1316276051866157056">asking Alistair Cockburn about it on Twitter</a>. He answered "yes" to all of these:
 
-=====
+> So, Alistair, if a task doesn't need to touch any technology (for example) translate A into B (once we got A from a repo), my mistake is that I shouldn't put that task in an adapter, but inside the hexagon. The adapter is just fetching A from the repository. Did I get you right?
 
-So, Alistair, if a task doesn't need to touch any technology (for example) translate A into B (once we got A from a repo), my mistake is that I shouldn't put that task in an adapter, but inside the hexagon. The adapter is just fetching A from the repository. Did I get you right?
+> I mean if we need to translate concepts locally it would be like having a sublayer of local adapters inside the hexagon, but that's our decision and hexagonal architecture doesn't say anything about it.
 
-I mean if we need to translate concepts locally it would be like having a sublayer of local adapters inside the hexagon, but that's our decision and hexagonal architecture doesn't say anything about it.
-
-Similar to split the hexagon into application layer and domain. It's a DDD thing that you can do or not, but it isn't a hexagonal architecture issue.
-
-=====
+> Similar to split the hexagon into application layer and domain. It's a DDD thing that you can do or not, but it isn't a hexagonal architecture issue.
 
 And also after reading again this <a target="_blank" href="https://web.archive.org/web/20170925184018/http://alistair.cockburn.us/Hexagonal+Architecture+FAQ">"Hexagonal Architecture FAQ"</a>, where Alistair Cockburn defines how to create an hexagonal application. Here he says that a port is an interface that groups interactions with a repository/recipient:
 
-=====
-
-step 1. Draw a circle (or a hexagon). Put everything that touches the real world on the outside. That includes humans, servers, databases, ...
-
-step 2. Organize all the interactions across the boundary of that hexagon... things that provide information to the application (I’ll call these "repositories"), things that get notified by the application (I’ll call these "recipients"). Each of those capture a set of verbs or function calls or interactions, and makes a "port" or "interface"...
-
-step 3. Label those clusters with a verb ending in "-ing" (present participle) saying what they are for. For example: ... This repository port is for "obtaining information about (whatever)". This recipient port is for "notifying recipients about (whatever)”
-
-step 4. Allow any desired technology to operate to those interfaces using some adapter code... on the recipient or repository side, adapters allow different technologies to respond to requests and notification: mock databases, flat files, real databases, and so on.
-
-...
-
-=====
+> 
+> step 1. Draw a circle (or a hexagon). __Put everything that touches the real world on the outside__. That includes humans, servers, databases, ...
+> 
+> step 2. __Organize all the interactions across the boundary__ of that hexagon... things that provide information to the application (I’ll call these __"repositories"__), things that get notified by the application (I’ll call these __"recipients"__). Each of those capture a __set of verbs or function calls or interactions, and makes a "port" or "interface"__...
+> 
+> step 3. Label those clusters with a verb ending in "-ing" (present participle) saying what they are for. For example: ... This __repository port__ is for "obtaining information about (whatever)". This __recipient port__ is for "notifying recipients about (whatever)”
+> 
+> step 4. Allow any desired technology to operate to those interfaces using some adapter code... __on the recipient or repository side, adapters allow different technologies to respond to requests and notification__: mock databases, flat files, real databases, and so on.
+> 
+> ...
+> 
 
 By reading again all of these, and of course the original article with the pattern too, I realized that a driven port is just for talking to a driven actor (repository/recipient) using a technology, i.e. for sending/retrieving information to/from a driven actor according to a technology. But nothing else, no aditional logic for translating or processig that information into another one.
 
@@ -111,23 +105,19 @@ If then we need to process (translate, merge with other, whatever) that informat
 
 An Anti Corruption Laye is an integration pattern between two bounded contexts ( Upstream ---> Downstream ). Upstream context is the "server" application, and downstream context is the "client".
 
-Vaughn Vernon, in his book "Implementing Domain Driven Design" says the following about ACLs:
+Vaughn Vernon, in his book "Implementing Domain Driven Design" says the following about ACLs.
 
 On page 93 (ACL definition):
 
-=====
-
-As a downstream client, create an isolation layer to provide your system with functionality of the upstream system in terms of your own domain model. This layer talks to the other system through its existing interface, requiring little or no modification to the other system. Internally, the layer translates in one or both directions as necesary between the two models.
-
-=====
+> 
+> As a downstream client, create an isolation layer to provide your system with functionality of the upstream system in terms of your own domain model. This layer talks to the other system through its existing interface, requiring little or no modification to the other system. Internally, the layer translates in one or both directions as necesary between the two models.
+> 
 
 On page 101 (Technical characteristics of an ACL):
 
-=====
-
-A domain service can be defined in the downstream context... A client domain service implementation accesses a remote service. Server returns representations in a shared common language (for example XML or JSON). The downstream ACL translates representations into domain objects of its local context, not of the upstream model.
-
-=====
+> 
+> A domain service can be defined in the downstream context... A client domain service implementation accesses a remote service. Server returns representations in a shared common language (for example XML or JSON). The downstream ACL translates representations into domain objects of its local context, not of the upstream model.
+> 
 
 <div id="tc6"></div>
 ### 6.- FITTING "DOMAIN DRIVEN DESIGN" INTO "HEXAGONAL ARCHITECTURE" AT DRIVEN SIDE.
@@ -145,11 +135,9 @@ We could add a sublayer inside the hexagon for that "ACL logic", just like split
 
 Hexagon = Domain + ACL logic
 
-ACL = ACL logic + HA ports + HA adapters
+ACL = ACL logic + HA drven ports + HA driven adapters
 
 We want to fit DDD into Hexagonal Architecture, not the oher way. Hexagonal Architecture is already there and it defines what a driven port is. If we want to create an interface inside the hexagon (a domain service interface) to protect the domain, we shouldn't say it is a Hexagonal Architecture driven port, because it is not. Hexagonal Architecture says: "Put a driven port for the repository". It doesn't say: "Put a driven port for an internal domain concept to build it from others".
-
-Thomas Pierrain has written some articles about this subject, the driven side of the hexagon, which I refer to in the links section.
 
 <div id="tc7"></div>
 ### 7.- LINKS
