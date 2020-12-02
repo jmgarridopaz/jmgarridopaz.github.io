@@ -137,9 +137,13 @@ We could add a sublayer inside the hexagon for that "ACL logic", just like split
 
 Hexagon = Domain + ACL logic
 
-ACL = ACL logic + HA drven ports + HA driven adapters
+ACL = ACL logic + HA driven ports + HA driven adapters
 
 We want to fit DDD into Hexagonal Architecture, not the oher way. Hexagonal Architecture is already there and it defines what a driven port is. If we want to create an interface inside the hexagon (a domain service interface) to protect the domain, we shouldn't say it is a Hexagonal Architecture driven port, because it is not. Hexagonal Architecture says: "Put a driven port for the repository". It doesn't say: "Put a driven port for an internal domain concept to build it from others".
+
+I've coded a simple example in this Github repository:
+
+<a target="_blank" href="https://github.com/jmgarridopaz/task-management">https://github.com/jmgarridopaz/task-management</a>
 
 <div id="tc7"></div>
 ### 7.- LINKS
