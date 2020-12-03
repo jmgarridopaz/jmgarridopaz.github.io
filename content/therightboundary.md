@@ -145,6 +145,9 @@ I've coded a simple example in this Github repository:
 
 <a target="_blank" href="https://github.com/jmgarridopaz/task-management">https://github.com/jmgarridopaz/task-management</a>
 
+![Figure 2: DDD into Hexagonal Architecture](/assets/images/therightboundary/figure2.png)
+<p class="figure">Figure 2: DDD into Hexagonal Architecture</p>
+
 <div id="tc7"></div>
 ### 7.- LINKS
 
