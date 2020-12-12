@@ -29,7 +29,7 @@ When I had a domain concept that depended on an external system, I used to put a
 
 But Hexagonal Architecture has nothing to do with DDD, Hexagonal Architecture knows nothing of DDD, Hexagonal Architecture is just a pattern that says: Put a driven port interface for any "real world thing" (driven actor) that the hexagon needs to talk to.
 
-That was my mistake: I put a driven port for the domain concept, instead of putting a driven port for each external system.
+That was my mistake: I put a driven port for the domain concept, instead of putting a driven port for the external system.
 
 <div id="tc2"></div>
 ### 2.- HOW DID I REALIZE OF.
@@ -144,9 +144,6 @@ We want to fit DDD into Hexagonal Architecture, not the oher way. Hexagonal Arch
 I've coded a simple example in this Github repository:
 
 <a target="_blank" href="https://github.com/jmgarridopaz/task-management">https://github.com/jmgarridopaz/task-management</a>
-
-![Figure 2: DDD into Hexagonal Architecture](/assets/images/therightboundary/figure2.png)
-<p class="figure">Figure 2: DDD into Hexagonal Architecture</p>
 
 <div id="tc7"></div>
 ### 7.- LINKS
