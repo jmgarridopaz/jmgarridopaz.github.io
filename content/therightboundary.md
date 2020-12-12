@@ -25,7 +25,7 @@ This article tries to clear up a misconception I had regarding Hexagonal Archite
 
 ___Where do we put the boundary (port interfaces) between the inside and the outside of the hexagon in the driven side?___
 
-When I had a domain concept that depended on external systems, I used to put an interface to abstract the process of building its instances. I gave that interface the "driven port role", and I gave that process the "driven adapter role", no matter how complex the process was, or how many external systems it had to access. This is a "Domain Driven Design" ( DDD ) influence. That adapter is called "Anti Corruption Layer" ( ACL ) in DDD lingo.
+When I had a domain concept that depended on an external system, I used to put an interface to abstract the process of building its instances. I gave that interface the "driven port role", and I gave that process the "driven adapter role", no matter how complex the process was, or if it had to translate the model of the external system into the domain model of my application. This is a "Domain Driven Design" ( DDD ) influence. That adapter is called "Anti Corruption Layer" ( ACL ) in DDD lingo.
 
 But Hexagonal Architecture has nothing to do with DDD, Hexagonal Architecture knows nothing of DDD, Hexagonal Architecture is just a pattern that says: Put a driven port interface for any "real world thing" (driven actor) that the hexagon needs to talk to.
 
@@ -100,7 +100,7 @@ The port deals with objects representing the information sent/retrieved to/from 
 
 That's the hexagon boundary.
 
-If then we need to process (translate, merge with other, whatever) that information to obtain objects belonging to our domain, we will have to add logic inside the hexagon to do it. But that's not a Hexagonal Architecture issue.
+If then we need to process that information to obtain objects belonging to our domain, we will have to add logic inside the hexagon to do it. But that's not a Hexagonal Architecture issue.
 
 <div id="tc5"></div>
 ### 5.- ANTI CORRUPTION LAYER (DOMAIN DRIVEN DESIGN).
@@ -128,7 +128,7 @@ So the mistake is to give the "driven port role" to a "Domain Service Interface"
 
 The ACL concept from DDD is wider than the driven adapter concept from Hexagonal Architecture.
 
-The things that an ACL does besides talking to repositories (mixing their information into another, translating concepts, processing that information, whatever) are not a Hexagonal Architecture issue. Those things are logic that belongs to the inside of the hexagon, and Hexagonal Architecture says nothing about that, it's a DDD issue.
+What an ACL does besides talking to a repository (translating objects the driven port deals with into objects of our domain) is not a Hexagonal Architecture issue. It is logic that belongs to the inside of the hexagon, and Hexagonal Architecture says nothing about it, it's a DDD issue.
 
 We could add a sublayer inside the hexagon for that "ACL logic", just like splitting the hexagon at the driver side into application layer and domain, which is also a DDD issue.
 
@@ -137,7 +137,7 @@ We could add a sublayer inside the hexagon for that "ACL logic", just like split
 
 Hexagon = Domain + ACL logic
 
-ACL = ACL logic + HA driven ports + HA driven adapters
+ACL = ACL logic + HA driven port + HA driven adapter
 
 We want to fit DDD into Hexagonal Architecture, not the oher way. Hexagonal Architecture is already there and it defines what a driven port is. If we want to create an interface inside the hexagon (a domain service interface) to protect the domain, we shouldn't say it is a Hexagonal Architecture driven port, because it is not. Hexagonal Architecture says: "Put a driven port for the repository". It doesn't say: "Put a driven port for an internal domain concept to build it from others".
 
