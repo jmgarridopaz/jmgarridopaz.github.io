@@ -105,7 +105,7 @@ If then we need to process that information to obtain objects belonging to our d
 <div id="tc5"></div>
 ### 5.- ANTI CORRUPTION LAYER (DOMAIN DRIVEN DESIGN).
 
-An Anti Corruption Laye is an integration pattern between two bounded contexts ( Upstream ---> Downstream ). Upstream context is the "server" application, and downstream context is the "client".
+An Anti Corruption Layer is an integration pattern between two bounded contexts ( Upstream ---> Downstream ). Upstream context is the "server" application, and downstream context is the "client".
 
 Vaughn Vernon, in his book "Implementing Domain Driven Design" says the following about ACLs.
 
@@ -144,6 +144,14 @@ We want to fit DDD into Hexagonal Architecture, not the oher way. Hexagonal Arch
 I've coded a simple example in this Github repository:
 
 <a target="_blank" href="https://github.com/jmgarridopaz/task-management">https://github.com/jmgarridopaz/task-management</a>
+
+The following picture summarizes how DDD would fit into Hexagonal Architecture, at both driver and driven sides.
+
+![Figure 2: DDD into Hexagonal Architecture](/assets/images/therightboundary/figure2.png)
+<p class="figure">Figure 2: DDD into Hexagonal Architecture</p>
+
+If we apply the ACL integration pattern with more than just one upstream bounded conext, there will be an ACL and a driven port for each of those upstream bounded contexts, since DDD integration patterns are between two bounded contexts. So the "ACL LAYER" rectangle in the drawing would group all the ACLs we had for integrating with external bounded contexts, one ACL for each driven port.
+
 
 <div id="tc7"></div>
 ### 7.- LINKS
