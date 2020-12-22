@@ -1,10 +1,12 @@
 ---
 layout: default
+title: Hexagonal Architecture: Ports and Adapters Pattern
+description:
 ---
 
 <div id="title">
-<h1>Ports and Adapters Pattern</h1>
-<p>(Hexagonal Architecture)</p>
+<h1>Hexagonal Architecture</h1>
+<p>(Ports and Adapters Pattern)</p>
 <hr>
 <span class="credits right">Published on August 29, 2018 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
 </div>
