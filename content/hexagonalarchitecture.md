@@ -1,5 +1,6 @@
 ---
 layout: default
+page.title: Hexagonal Architecture
 ---
 
 <div id="title">
