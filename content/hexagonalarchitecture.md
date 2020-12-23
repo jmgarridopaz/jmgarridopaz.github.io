@@ -4,8 +4,9 @@ layout: default
 
 ## Hexagonal Architecture
 
+### (Ports and Adapters Pattern)
+
 <div id="title">
-{{ page.title }}
 <hr>
 <span class="credits right">Published on August 29, 2018 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
 </div>
