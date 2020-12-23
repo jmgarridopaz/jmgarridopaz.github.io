@@ -1,5 +1,5 @@
 ---
-title: Hexagonal Architecture - Ports and Adapters Pattern
+title: Hexagonal Architecture
 layout: default
 ---
 
