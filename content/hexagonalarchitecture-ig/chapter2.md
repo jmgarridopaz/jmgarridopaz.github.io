@@ -2,7 +2,7 @@
 title: Project Structure - An Implementation Guide - Hexagonal Architecture
 custom_article_title: Hexagonal Architecture
 custom_article_subtitle: An implementation guide
-custom_chapter_title: Chapter 2: PROJECT STRUCTURE
+custom_chapter_title: 'Chapter 2: PROJECT STRUCTURE'
 custom_chapter_prev_url: https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html
 custom_chapter_next_url:
 custom_published_date: November 9, 2020
