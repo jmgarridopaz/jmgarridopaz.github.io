@@ -47,6 +47,10 @@ section p img {
     margin-right: auto;
 }
 
+div#title {
+    margin-bottom: 0px;    
+}
+
 div.article_title {
   text-align: center;
 }
