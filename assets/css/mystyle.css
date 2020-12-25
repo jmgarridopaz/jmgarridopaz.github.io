@@ -31,6 +31,7 @@ p.intro, p.figure {
 }
 
 p.introquote {
+    margin-top: 10px;
     margin-bottom: 10px;
     text-align: right;
     font-style: italic;
@@ -46,55 +47,49 @@ section p img {
     margin-right: auto;
 }
 
-div#title {
-    margin-bottom: 10px;
+div.article_title {
+  text-align: center;
 }
 
-div.title_text {
+div.article_subtitle {
     text-align: center;
 }
 
-div.title_up_line hr {
+div.chapter_line hr {
     margin-bottom: 10px;
 }
 
-div.title_sub_text {
+div.chapter_title {
     text-align: center;
 }
 
-div.list_hor {
+div.chapter_navigator {
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
-div.list_hor div.item_left {
+div.chapter_navigator div.chapter_prev {
   float: left;
-  width: 33%;
+  width: 50%;
 }
 
-div.list_hor div.item_center {
-  float: left;
-  text-align: center;
-  width: 34%;
-}
-
-div.list_hor div.item_right {
+div.chapter_navigator div.chapter_next {
   float: left;
   text-align: right;
-  width: 33%;
+  width: 50%;
 }
 
-div.list_hor div.item_footer {
+div.chapter_navigator div.chapter_footer {
     margin-bottom: 10px;
     clear: both;
 }
 
-div.list_hor div.item_disabled {
+div.chapter_navigator div.chapter_disabled {
     color: #696969;
 }
 
-div.title_bottom_line hr {
+div.published_line hr {
     margin-bottom: 10px;
 }
 

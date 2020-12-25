@@ -1,12 +1,13 @@
 ---
+title: Articles - Hexagonal Architecture
+custom_article_title: Articles
+custom_article_subtitle:
+custom_chapter_title:
+custom_published_date:
+custom_author_url: https://github.com/jmgarridopaz
+custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
-
-<div id="title">
-<h1>Articles</h1>
-<hr>
-<span class="credits right">By <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
-</div>
 
 - #### [Ports and Adapters Patern (Hexagonal Architecture)](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html)
 

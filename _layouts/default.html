@@ -53,6 +53,26 @@
 
       <section>
 
+        <div id="title">
+            <div class="article_title"><h1>{{ custom_article_title }}</h1></div>
+            {% if custom_article_subtitle %}
+            <div class="article_subtitle"><h2>{{ custom_article_subtitle }}</h2></div>
+            {% endif %}
+            {% if custom_chapter_title %}
+            <div class="chapter_line"><hr /></div>
+            <div class="chapter_title"><h3>{{ custom_chapter_title }}</h3></div>
+            <div class="chapter_navigator">
+                <div class="chapter_prev"><a href="{{ custom_chapter_prev_url }}">Previous Chapter</a></div>
+                <div class="chapter_next"><a href="{{ custom_chapter_next_url }}">Next Chapter</a></div>
+                <div class="chapter_footer"></div>
+            </div>
+            {% endif %}
+            <div class="published_line"><hr /></div>
+            {% if custom_published_date %}
+            <div class="published">Published on {{ custom_published_date }} by <a href="{{ custom_author_url }}">{{ custom_author_name }}</a></div>
+            {% endif %}
+        </div>
+
         {{ content }}
         
       </section>

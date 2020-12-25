@@ -1,21 +1,15 @@
 ---
+title: An Implementation Guide - Hexagonal Architecture
+custom_article_title: Hexagonal Architecture
+custom_article_subtitle: An implementation guide
+custom_chapter_title: Intro Chapter
+custom_chapter_prev_url:
+custom_chapter_next_url: https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html
+custom_published_date: March 29, 2020
+custom_author_url: https://github.com/jmgarridopaz
+custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
-
-<div id="title">
-<div class="title_text"><h1>Hexagonal Architecture</h1></div>
-<div class="title_text"><h2>An implementation guide</h2></div>
-<div class="title_up_line"><hr></div>
-<div class="title_sub_text"><h3>Intro Chapter</h3></div>
-<div class="list_hor">
-  <div class="item_left item_disabled">Prev Chapter</div>
-  <div class="item_center item_disabled">Intro Chapter</div>
-  <div class="item_right"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html">Next Chapter</a></div>
-  <div class="item_footer"></div>
-</div>
-<div class="title_bottom_line"><hr></div>
-<div class="published">Published on March 29, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></div>
-</div>
 
 <p class="intro">When I wrote a conceptual article about Hexagonal Architecture, aka Ports and Adapters pattern, my intention was to show an implementation example as well. It’s been a long time, but never is too late. So here it is, a pragmatic article for sharing my vision of how to implement an application structuring it according to Hexagonal Architecture pattern. As I always do, I try to be faithful to the original pattern and other material from its author, Dr. Alistair Cockburn</p>
 

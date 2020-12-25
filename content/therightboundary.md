@@ -1,12 +1,13 @@
 ---
+title: The right boundary - Hexagonal Architecture
+custom_article_title: Hexagonal Architecture
+custom_article_subtitle: The "right" boundary
+custom_chapter_title:
+custom_published_date: November 27, 2020
+custom_author_url: https://github.com/jmgarridopaz
+custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
-<div id="title">
-<div class="title_text"><h2>Hexagonal Architecture</h2></div>
-<div class="title_text"><h1>The "right" boundary</h1></div>
-<div class="title_up_line"><hr></div>
-<div class="published">Published on November 27, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></div>
-</div>
 
 #### TABLE OF CONTENTS
 

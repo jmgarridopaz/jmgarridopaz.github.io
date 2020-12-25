@@ -1,24 +1,19 @@
 ---
+title: Application Design - An Implementation Guide - Hexagonal Architecture
+custom_article_title: Hexagonal Architecture
+custom_article_subtitle: An implementation guide
+custom_chapter_title: Chapter 1: APPLICATION DESIGN
+custom_chapter_prev_url: https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/intro.html
+custom_chapter_next_url: https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter2.html
+custom_published_date: March 30, 2020
+custom_author_url: https://github.com/jmgarridopaz
+custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
 
-<div id="title">
-<div class="title_text"><h1>Hexagonal Architecture</h1></div>
-<div class="title_text"><h2>An implementation guide</h2></div>
-<div class="title_up_line"><hr></div>
-<div class="title_sub_text"><h3>Chapter 1: APPLICATION DESIGN</h3></div>
-<div class="list_hor">
-  <div class="item_left item_disabled">Prev Chapter</div>
-  <div class="item_center"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/intro.html">Intro Chapter</a></div>
-  <div class="item_right"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter2.html">Next Chapter</a></div>
-  <div class="item_footer"></div>
-</div>
-<div class="title_bottom_line"><hr></div>
-<div class="published">Published on March 30, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></div>
-<div class="published">Updated on October 10, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></div>
+<div class="published">Updated on October 10, 2020 by <a href="{{ custom_author_url }}">{{ custom_author_name }}</a></div>
 <div class="published">[Added Github Repository URL]</div>
 <div class="published">[Added Dr. Alistair Cockburn quote about Use Cases]</div>
-</div>
 
 <p class="introquote">To Thomas Pierrain. You are not alone, all together we will win</p>
 

@@ -1,20 +1,15 @@
 ---
+title: Project Structure - An Implementation Guide - Hexagonal Architecture
+custom_article_title: Hexagonal Architecture
+custom_article_subtitle: An implementation guide
+custom_chapter_title: Chapter 2: PROJECT STRUCTURE
+custom_chapter_prev_url: https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html
+custom_chapter_next_url:
+custom_published_date: November 9, 2020
+custom_author_url: https://github.com/jmgarridopaz
+custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
-<div id="title">
-<div class="title_text"><h1>Hexagonal Architecture</h1></div>
-<div class="title_text"><h2>An implementation guide</h2></div>
-<div class="title_up_line"><hr></div>
-<div class="title_sub_text"><h3>Chapter 2: PROJECT STRUCTURE</h3></div>
-<div class="list_hor">
-  <div class="item_left"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html">Prev Chapter</a></div>
-  <div class="item_center"><a href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/intro.html">Intro Chapter</a></div>
-  <div class="item_right item_disabled">Next Chapter</div>
-  <div class="item_footer"></div>
-</div>
-<div class="title_bottom_line"><hr></div>
-<div class="published">Published on November 9, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></div>
-</div>
 
 #### TABLE OF CONTENTS
 

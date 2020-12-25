@@ -1,12 +1,13 @@
 ---
+title: Contact
+custom_article_title: Contact
+custom_article_subtitle:
+custom_chapter_title:
+custom_published_date:
+custom_author_url: https://github.com/jmgarridopaz
+custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
-
-<div id="title">
-<h1>Contact</h1>
-<hr>
-<span class="credits right">By <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
-</div>
 
 Your questions, suggestions, comments, opinion, or any feedback are wellcome.
 

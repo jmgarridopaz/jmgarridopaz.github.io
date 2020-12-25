@@ -1,15 +1,13 @@
 ---
+title:
+custom_article_title: Hexagonal Me
+custom_article_subtitle: About this web site
+custom_chapter_title:
+custom_published_date:
+custom_author_url: https://github.com/jmgarridopaz
+custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
-
-<div id="title">
-<h1>{{ site.title }}</h1>
-<p>{{ site.description }}</p>
-<hr>
-<span class="credits right">By <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
-</div>
-
-## About this web site
 
 <p class="introquote">"Praise makes you weak"</p>
 

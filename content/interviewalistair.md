@@ -1,13 +1,13 @@
 ---
+title: Interview with Alistair Cockburn - Hexagonal Architecture
+custom_article_title: Interview with Alistair Cockburn
+custom_article_subtitle: About Hexagonal Architecture... and more
+custom_chapter_title:
+custom_published_date: September 9, 2020
+custom_author_url: https://github.com/jmgarridopaz
+custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
-
-<div id="title">
-<h1>Interview with Alistair Cockburn</h1>
-<p>About Hexagonal Architecture... and more</p>
-<hr>
-<span class="credits right">Published on September 9, 2020 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
-</div>
 
 <p class="intro">Here I ask some questions to Dr. Alistair Cockburn, the auhor of Ports And Adapters pattern, also known as Hexagonal Architecture. They are just some questions that I considered interesting, so I hope that "hexagonal readers" enjoy this post. I would like to thank Alistair Cockburn for letting me ask him these questions, and for spending his time answering them in such a comprehensive way.</p>
 <hr>

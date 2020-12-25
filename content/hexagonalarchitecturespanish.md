@@ -1,13 +1,13 @@
 ---
+title: Spanish Translation - Hexagonal Architecture
+custom_article_title: Arquitectura Hexagonal
+custom_article_subtitle: Mi traducción al español del Patrón "Ports and Adapters" de Alistair Cockburn
+custom_chapter_title:
+custom_published_date:  July 23, 2018
+custom_author_url: https://github.com/jmgarridopaz
+custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
-
-<div id="title">
-<h1>Arquitectura Hexagonal</h1>
-<p>Mi traducción al español del Patrón "Ports and Adapters" de Alistair Cockburn</p>
-<hr>
-<span class="credits right">Published on July 23, 2018 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
-</div>
 
 El patrón "Ports and Adapters" es obra del Dr. Alistair Cockburn, coautor del "Agile Manifesto", que allá por el año 2005 escribió un articulo donde definía el patrón. Ésta es la traducción de dicho artículo. Mi agradecimiento al Sr. Cockburn por permitirme traducirlo.
 

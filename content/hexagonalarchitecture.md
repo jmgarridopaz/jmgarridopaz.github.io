@@ -1,14 +1,13 @@
 ---
-title: Hexagonal Architecture
+title: Hexagonal Architecture - Ports ans Adapters Pattern
+custom_article_title: Ports and Adapters Pattern
+custom_article_subtitle: (Hexagonal Architecture)
+custom_chapter_title:
+custom_published_date: August 29, 2018
+custom_author_url: https://github.com/jmgarridopaz
+custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
-
-<div id="title">
-<h1>Ports and Adapters Pattern</h1>
-<p>(Hexagonal Architecture)</p>
-<hr>
-<span class="credits right">Published on August 29, 2018 by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
-</div>
 
 <p class="intro">This article is for sharing my knowledge about Ports & Adapters pattern (also known as Hexagonal Architecture), hoping it can be helpful to someone interested in this subject. Here I expose my understanding of this architecture pattern, after being reading articles, watching talks and learning about it, since I first heard of it two years ago. This is a conceptual article, rather than a practical one. I hope to publish a pragmatic article soon, explaining my implementation of this architecture using Java 9 modules; and I hope to upload a proof of concept to github as well</p>
 
@@ -51,7 +50,7 @@ layout: default
 ### 1.- INTRODUCTION
 
 Ports and Adapters is an Object Structural Pattern coined by Dr. Alistair Cockburn, in an <a href="https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture" target="_blank">article</a> he wrote in 2005.
-  
+
 If you are thinking... "Isn't the article too old? How is it that it is still worth it nowadays, being software development a discipline in continous evolution where new technologies and frameworks arise every day and kill the one we used yesterday?" Well the answer is in the question. Ports & Adapters is a pattern that promotes __decoupling from technology__ and frameworks. So no, it isn’t too old. Good things are timeless. They are like wine, they get better as time passes by.
 
 The __main idea of Ports & Adapters__ is to define the structure of an application so that it could be run by different kinds of clients (humans, tests cases, other applications, ...), and it could be __tested in isolation from external devices__ of the real world that the application depends on (databases, servers, other applications, ...).
