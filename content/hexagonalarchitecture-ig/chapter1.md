@@ -2,7 +2,7 @@
 title: Application Design - An Implementation Guide - Hexagonal Architecture
 custom_article_title: Hexagonal Architecture
 custom_article_subtitle: An implementation guide
-custom_chapter_title: Chapter 1: APPLICATION DESIGN
+custom_chapter_title: Chapter 1\: APPLICATION DESIGN
 custom_chapter_prev_url: https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/intro.html
 custom_chapter_next_url: https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter2.html
 custom_published_date: March 30, 2020
