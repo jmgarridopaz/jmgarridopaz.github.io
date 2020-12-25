@@ -1,8 +1,8 @@
 ---
-title: Application Design - An Implementation Guide - Hexagonal Architecture
+title: Application Design An Implementation Guide - Hexagonal Architecture
 custom_article_title: Hexagonal Architecture
 custom_article_subtitle: An implementation guide
-custom_chapter_title: Chapter 1: APPLICATION DESIGN
+custom_chapter_title: Chapter 1 APPLICATION DESIGN
 custom_chapter_prev_url: https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/intro.html
 custom_chapter_next_url: https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter2.html
 custom_published_date: March 30, 2020
@@ -11,7 +11,7 @@ custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
 
-<div class="published">Updated on October 10, 2020 by <a href="{{ custom_author_url }}">{{ custom_author_name }}</a></div>
+<div class="published">Updated on October 10, 2020 by <a href="{{ page.custom_author_url }}">{{ page.custom_author_name }}</a></div>
 <div class="published">[Added Github Repository URL]</div>
 <div class="published">[Added Dr. Alistair Cockburn quote about Use Cases]</div>
 
