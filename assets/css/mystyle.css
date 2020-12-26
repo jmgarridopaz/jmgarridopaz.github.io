@@ -1,4 +1,4 @@
-#header div {
+div#header {
     max-width: 650px;
     margin: 0 auto;
     padding: 10px 10px;
@@ -6,7 +6,7 @@
     margin: 6px auto;
 }
 
-#header div a {
+div#header div.header_button a {
     color: black;
     border: 1px solid #5d910b;
     background: linear_gradient(#93bd20, #659e10);
@@ -19,6 +19,10 @@
     font-size: 14px;
     display: inline-block;
     text-align: center;
+}
+
+div#header div.header_text {
+    text-align: right;
 }
 
 a {
