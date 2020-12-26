@@ -62,8 +62,16 @@
             <div class="chapter_line"><hr /></div>
             <div class="chapter_title"><h3>{{ page.custom_chapter_title }}</h3></div>
             <div class="chapter_navigator">
+                {% if page.custom_chapter_prev_url %}
                 <div class="chapter_prev"><a href="{{ page.custom_chapter_prev_url }}">Previous Chapter</a></div>
+                {% else %}
+                <div class="chapter_prev chapter_disabled">Previous Chapter</div>
+                {% endif %}
+                {% if page.custom_chapter_next_url %}
                 <div class="chapter_next"><a href="{{ page.custom_chapter_next_url }}">Next Chapter</a></div>
+                {% else %}
+                <div class="chapter_next chapter disabled">Next Chapter</div>
+                {% endif %}
                 <div class="chapter_footer"></div>
             </div>
             {% endif %}
