@@ -21,8 +21,17 @@ div#header div.header_button a {
     text-align: center;
 }
 
+div#header div.header_button {
+    float: left;
+}
+
 div#header div.header_text {
+    float: left;
     text-align: right;
+}
+
+div#header div.header_footer {
+    clear: both;
 }
 
 a {
