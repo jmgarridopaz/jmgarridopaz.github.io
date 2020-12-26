@@ -1,9 +1,8 @@
 div#header div.header_wrapper {
     max-width: 650px;
     margin: 0 auto;
-    padding: 10px 10px;
+    padding: 0px;
     background: none;
-    margin: 6px auto;
 }
 /*
 div#header a.header_button {
