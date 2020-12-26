@@ -1,11 +1,11 @@
-div#header div {
+div#header div.header_wrapper {
     max-width: 650px;
     margin: 0 auto;
     padding: 10px 10px;
     background: none;
     margin: 6px auto;
 }
-
+/*
 div#header a.header_button {
     color: black;
     border: 1px solid #5d910b;
@@ -20,9 +20,8 @@ div#header a.header_button {
     display: inline-block;
     text-align: center;
 }
-
-div#header a.header_text {
-    color: black;
+*/
+div#header div.header_button {
     border: 1px solid #5d910b;
     background: linear_gradient(#93bd20, #659e10);
     border-radius: 2px;
@@ -30,10 +29,31 @@ div#header a.header_text {
     background-color: white;
     padding: 10px 12px;
     margin-top: 6px;
+    float: left;
+}
+
+div#header div.header_button a {
+    color: black;
     line-height: 14px;
     font-size: 14px;
-    display: inline-block;
+    text-align: center;
+}
+
+div#header div.header_text {
+    background: none;
+    padding: 10px 12px;
+    margin-top: 6px;
+    float: right;
+}
+
+div#header div.header_text a {
+    line-height: 14px;
+    font-size: 14px;
     text-align: right;
+}
+
+div#header div.header_wrapper div.header_footer {
+    clear: both;
 }
 
 a {
