@@ -3,7 +3,7 @@ title: An Implementation Guide - Hexagonal Architecture
 custom_article_title: Hexagonal Architecture
 custom_article_subtitle: An implementation guide
 custom_chapter_title: Intro Chapter
-custom_chapter_prev_url: ''
+custom_chapter_prev_url:
 custom_chapter_next_url: https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html
 custom_published_date: March 29, 2020
 custom_author_url: https://github.com/jmgarridopaz
