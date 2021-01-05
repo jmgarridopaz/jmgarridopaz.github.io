@@ -122,6 +122,12 @@ On page 101 (Technical characteristics of an ACL):
 > A domain service can be defined in the downstream context... A client domain service implementation accesses a remote service. Server returns representations in a shared common language (for example XML or JSON). The downstream ACL translates representations into domain objects of its local context, not of the upstream model.
 > 
 
+Also, in his book "Domain-Driven Design Distilled", Vaughn Vernon defines ACL this way:
+
+> 
+> An Anticorruption Layer is the most defensive Context Mapping relationship, where the downstream team creates a translation layer between its Ubiquitous Language (model) and the Ubiquitous Language (model) that is upstream to it. The layer isolates the downstream model from the upstream model and translates between the two. Thus, this is also an approach to integration. Whenever possible, you should try to create an Anticorruption Layer between your downstream model and an upstream integration model, so that you can produce model concepts on your side of the integration that specifically fit your business needs and that keep you completely isolated from foreign concepts. Yet, just like hiring a translator to act between two teams speaking different languages, the cost could be too high in various ways for some cases.
+> 
+
 <div id="tc6"></div>
 ### 6.- FITTING "DOMAIN DRIVEN DESIGN" INTO "HEXAGONAL ARCHITECTURE" AT DRIVEN SIDE.
 
