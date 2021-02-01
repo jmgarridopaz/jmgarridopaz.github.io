@@ -142,7 +142,7 @@ We could add a sublayer inside the hexagon for that "ACL logic", just like split
 ![Figure 1: Hexagonal Architecture "right" side with ACL](/assets/images/therightboundary/figure1.png)
 <p class="figure">Figure 1: Hexagonal Architecture "right" side with ACL</p>
 
-Hexagon = Domain + ACL logic
+Hexagon = Domain + ACL logic + HA driven port
 
 ACL = ACL logic + HA driven port + HA driven adapter
 
@@ -156,9 +156,6 @@ The following picture summarizes how DDD would fit into Hexagonal Architecture, 
 
 ![Figure 2: DDD into Hexagonal Architecture](/assets/images/therightboundary/figure2.png)
 <p class="figure">Figure 2: DDD into Hexagonal Architecture</p>
-
-If we apply the ACL integration pattern with more than just one upstream bounded conext, there will be an ACL and a driven port for each of those upstream bounded contexts, since DDD integration patterns are between two bounded contexts. So the "ACL LAYER" rectangle in the drawing would group all the ACLs we had for integrating with external bounded contexts, one ACL for each driven port.
-
 
 <div id="tc7"></div>
 ### 7.- LINKS
