@@ -17,7 +17,11 @@ layout: default
 4. [Driven Port (Hexagonal Architecture)](#tc4)
 5. [Anti Corruption Layer (Domain Driven Design)](#tc5)
 6. [Fitting "Domain Driven Design" into "Hexagonal Architecture" at Driven Side](#tc6)
-7. [Links](#tc7)
+7. [Example application](#tc7)  
+   7.1. [DDD Context Map](#tc7-1)  
+   7.2. [Implementation using Hexagonal Architecture](#tc7-2)  
+   7.3. [About testing](#tc7-3)
+8. [Links](#tc8)
 
 <div id="tc1"></div>
 ### 1.- THE MISTAKE.
@@ -131,7 +135,7 @@ Also, in his book "Domain-Driven Design Distilled", Vaughn Vernon defines ACL th
 <div id="tc6"></div>
 ### 6.- FITTING "DOMAIN DRIVEN DESIGN" INTO "HEXAGONAL ARCHITECTURE" AT DRIVEN SIDE.
 
-So the mistake is to give the "driven port role" to a "Domain Service Interface" (D.S.I.) when the implementation of such an interface does much more things than just sending/retrieving the information to/from a driven actor.
+So my mistake is to give the "driven port role" to a "Domain Service Interface" (D.S.I.) when the implementation of such an interface does much more things than just sending/retrieving the information to/from a driven actor.
 
 The ACL concept from DDD is wider than the driven adapter concept from Hexagonal Architecture.
 
@@ -148,17 +152,78 @@ ACL = ACL logic + HA driven port + HA driven adapter
 
 We want to fit DDD into Hexagonal Architecture, not the oher way. Hexagonal Architecture is already there and it defines what a driven port is. If we want to create an interface inside the hexagon (a domain service interface) to protect the domain, we shouldn't say it is a Hexagonal Architecture driven port, because it is not. Hexagonal Architecture says: "Put a driven port for the repository". It doesn't say: "Put a driven port for an internal domain concept to build it from others".
 
-I've coded a simple example in this Github repository:
-
-<a target="_blank" href="https://github.com/jmgarridopaz/task-management">https://github.com/jmgarridopaz/task-management</a>
-
 The following picture summarizes how DDD would fit into Hexagonal Architecture, at both driver and driven sides.
 
 ![Figure 2: DDD into Hexagonal Architecture](/assets/images/therightboundary/figure2.png)
 <p class="figure">Figure 2: DDD into Hexagonal Architecture</p>
 
 <div id="tc7"></div>
-### 7.- LINKS
+### 7.- EXAMPLE APPLICATION.
+
+I've coded a simple example application, called Task Management, that you can see in this Github repository:
+
+<a target="_blank" href="https://github.com/jmgarridopaz/task-management">https://github.com/jmgarridopaz/task-management</a>
+
+___Task Management___ is an application, a collaborative tool, used by employees of a company for assigning tasks to each other. The domain model has concepts like "assignee", that is the employee who a task is assigned to, and has to perform it. An assignee has an id, a unique short name kindof an alias, and an email.
+
+<div id="tc7-1"></div>
+#### 7.1.- DDD CONTEXT MAP.
+
+We assume two already existing systems:
+
+- _Company_, with information about employees, which have properties like id, first name, last name, email, job.
+- _Identity and Access_, with information about the users of our application. Users have an id, a login name, and a password. A user is an employee, the user id is the employee id.
+
+Using "Domain Driven Design" ( DDD ) strategic patterns, we have the following context map showing how our application integrates with these external systems:
+
+![Figure 3: Context Map](/assets/images/therightboundary/figure3.png)
+<p class="figure">Figure 3: Context Map</p>
+
+Both "upstream" (U) systems offer an "Open Host Service / Published Language" (OHS/PL), which is a HTTP REST API as the OHS, using JSON as the PL.
+
+Our _Task Management_ application is "downstream" (D), with an "Anti Corruption Layer" (ACL) for translating concepts from U models into our D model. So we build an assignee from an employee (id and email) and a user (login name).
+
+<div id="tc7-2"></div>
+#### 7.2.- IMPLEMENTATION USING HEXAGONAL ARCHITECTURE.
+
+This drawing shows interfaces, classes and packages from source code:
+
+![Figure 4: Hexagonal Architecture implementation](/assets/images/therightboundary/figure4.png)
+<p class="figure">Figure 4: Hexagonal Architecture implementation</p>
+
+Ports are APIs isolating the application from the real world. In our case, both external systems are real world items (http repositories). So there will be driven ports for getting information (employees and users) from them.
+
+When our application needs to get an assignee from an id, it uses a domain service interface ("AssigneeService"). The ACL implements this interface in two steps:
+
+1. Accesses the repositories using ports and adapters, in order to get the objects (employe and user) from the external systems. This operation deals with techonology.
+2. Translates employee and user objects into an "assignee" object. This is a semantic operation, no technologies are involved.
+
+We put the ACL translation logic inside the hexagon but outside the domain, because it doesn't deal with technology (it isn't infraestructure code), but it deals with concepts that don't belong to our domain (employee and user).
+
+Does this mean or suggest, specially to junior developers, that they could use technology into this ACL because it is outside the domain? Absolutely no, because it is inside the hexagon, it isn't infrastructure code... And rule number one in hexagonal architecture is to isolate the hexagon from real world using APIs (ports). Moreover, it is an architect responsibility to avoid using technology inside the hexagon, so that an inexpert developer couldn't write infrastructure code there. With Maven this is easy to achieve: Just don't put any dependency item in the pom file of the hexagon module.
+
+This is analog to "Application Layer" in the driver side. It is inside the hexagon, but outside the domain. This layer is technology agnostic too, it isn't infrastructure code, but it isn't the domain. It has concepts that don't belong to the domain, like DTOs and DPOs, that we expose to the real world, protecting our domain from external access.
+
+<div id="tc7-3"></div>
+#### 7.3.- ABOUT TESTING.
+
+Configurable Dependency pattern allows us to swap external real world items (web repositories) for test doubles (stubs), so that we can test the hexagon in isolation from techonologies.
+
+ACL translation logic is covered by these tests too, since it is not technological stuff and so it belongs to the hexagon.
+
+Does this mean that we cannot just test the domain itself without the ACL? Absolutely no, you can test it by mocking the ACL. But it would be just like testing any other component else inside the hexagon. And hexagonal architecture doesn't say anything about it.
+
+Testing the hexagon in isolation from real world items, driven by test cases, is one of the main goals of hexagonal architecture. Putting ACL logic outside the hexagon would break this.
+
+Here is a pretty cool Cucumber html test report, for the test case that I've implemented in the example:
+
+![Figure 5: Cucumber HTML report](/assets/images/therightboundary/figure5.png)
+<p class="figure">Figure 5: Cucumber HTML report</p>
+
+As we can see, employee and user concepts appear in the test case but they don't belong to our domain, they belong to _Company_ and _Identity & Access_ external systems. Why is this? Because we are testing the whole hexagon including the ACL logic, not just the domain. So the data that feed our test case in the "given" clause are the data from the repositories (employees and users). And the driver actor of the real system is also an employee, who is the final real world user of the application, that's why it appears in the "AS a..." clause of the feature.
+
+<div id="tc8"></div>
+### 8.- LINKS
 
 * Ports and Adapters Pattern (aka Hexagonal Architecture), by Alistair Cockburn:
 
