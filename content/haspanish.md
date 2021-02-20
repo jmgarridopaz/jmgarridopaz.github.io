@@ -30,7 +30,7 @@ Permitir que una aplicación sea ejecutada indistintamente por usuarios, program
 
 Cuando llega un evento del mundo exterior, un adaptador dependiente de la tecnología lo convierte en una llamada a un procedimiento utilizable, o en un mensaje, de un puerto (2). La aplicación ignora completamente la naturaleza del dispositivo de entrada. Cuando la aplicación tiene algo que enviar, lo hace a través de un puerto a un adaptador, el cual crea las señales oportunas que necesita la tecnología del dispositivo receptor (sea éste un ser humano o un sistema automatizado). La aplicación mantiene una interacción basada en un diálogo semántico con los adaptadores que la rodean, no conoce la naturaleza de los dispositivos que están al otro lado de los adaptadores.
 
-![Figura 1: Arquitectura hexagonal básica](/assets/images/hexagonalarchitecturespanish/figura1.png)
+![Figura 1: Arquitectura hexagonal básica](/assets/images/hexagonalarchitecturespanish/figura-1.png)
 
 ### Motivación
 
