@@ -1,3 +1,13 @@
+---
+title: Arquitectura Hexagonal - Patrón Puertos y Adaptadores
+custom_article_title: Arquitectura Hexagonal
+custom_article_subtitle: Mi traducción al español del Patrón "Ports and Adapters" de Alistair Cockburn
+custom_chapter_title:
+custom_published_date: July 23, 2018
+custom_author_url: https://github.com/jmgarridopaz
+custom_author_name: Juan Manuel Garrido de Paz
+layout: default
+---
 # Arquitectura Hexagonal
 
 Cree su aplicación para que funcione sin interfaz de usuario ni base de datos, de manera que usted pueda ejercitar la aplicación ejecutando pruebas de regresión automatizadas; para que funcione cuando la base de datos no esté disponible; y comunique aplicaciones entre sí sin intervención por parte del usuario.
