@@ -1,11 +1,11 @@
 ---
 title: Arquitectura Hexagonal - Patrón Puertos y Adaptadores
-custom_article_title: Arquitectura Hexagonal
-custom_article_subtitle: Mi traducción al español del Patrón "Ports and Adapters" de Alistair Cockburn
+custom_article_title: -
+custom_article_subtitle: Traducción al español del Patrón "Ports and Adapters", de Alistair Cockburn
 custom_chapter_title:
-custom_published_date: July 23, 2018
-custom_author_url: https://github.com/jmgarridopaz
-custom_author_name: Juan Manuel Garrido de Paz
+custom_published_date: -
+custom_author_url: -
+custom_author_name: -
 layout: default
 ---
 # Arquitectura Hexagonal
