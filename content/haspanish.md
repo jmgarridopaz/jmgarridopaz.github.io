@@ -96,3 +96,186 @@ La figura 3 muestra la misma aplicación convertida en un diagrama de arquitectu
 2. Añadiendo una GUI a la aplicación, manteniendo la base de datos mock.
 3. Realizando pruebas de integración, con scripts de pruebas automatizadas (por ejemplo desde “CruiseControl” ) dirigiendo la aplicación, contra una base de datos real que contenga datos de prueba.
 4. Uso real, con una persona utilizando la aplicación para acceder a una base de datos de producción.
+
+### Código de Ejemplo
+
+Aforturnadamente, la aplicación más simple que muestra la arquitectura Ports and Adapters viene con la documentación de FIT . Es una sencilla aplicación para calcular un descuento:
+
+discount ( amount ) = amount * rate ( amount ); (7)
+
+En nuestra adaptación, la cantidad vendrá dada por el usuario y el porcentaje estará en una base de datos, de manera que habrá dos puertos. Los implementamos por etapas:
+
+- Con pruebas, pero con un porcentaje constante en lugar de una base de datos mock.
+- Con la GUI.
+- Con una base de datos mock que puede ser intercambiada por una base de datos real.
+
+Gracias a Gyan Sharma de IHC por facilitar el código para este ejemplo.
+
+__Etapa 1: FIT | Aplicación | Constante__ (en lugar de una Base de Datos mock )
+
+Primero creamos los casos de prueba en una tabla HTML ( ver la documentación de FIT ):
+
+TestDiscounter
+amount discount()
+100 5
+200 10
+
+Observar que los nombres de las columnas serán nombres de clases y de funciones en nuestro programa. FIT tiene formas de saltarse estas normas de terminología, pero para este artículo es más fácil simplemente dejarlo tal cual está.
+
+Sabiendo cuáles serán los datos de prueba, creamos el adaptador del “lado del usuario”, el ColumnFixture que viene con FIT:
+
+~~~ java
+import fit.ColumnFixture;
+public class TestDiscounter extends ColumnFixture
+{
+ private Discounter app = new Discounter();
+ public double amount;
+ public double discount()
+ { return app.discount(amount); }
+}
+~~~
+
+Esto es todo en lo que al adaptador se refiere. Hasta aquí, las pruebas se ejecutan desde la línea de comandos (ver el libro sobre FIT para saber qué ruta necesitaremos). Utilizamos la siguiente:
+
+~~~
+set FIT_HOME=/FIT/FitLibraryForFit15Feb2005
+java -cp %FIT_HOME%/lib/javaFit1.1b.jar;%FIT_HOME%/dist/fitLibraryForFit.jar;src;bin
+fit.FileRunner test/Discounter.html TestDiscount_Output.html
+~~~
+
+FIT genera un archivo de salida con colores mostrándonos qué fue satisfactorio (o qué falló, en el caso de que cometiéramos un error tipográfico en algún lugar a lo largo del proceso).
+
+Llegados a este punto el código está listo para pasarlo a “CruiseControl” u otra herramienta de integración continua, e incluirlo en la suite de compilación y pruebas.
+
+__Etapa 2: UI | Aplicación | Constante__ (en lugar de una Base de Datos mock )
+
+Cree usted su propia UI que ejecute la aplicación “Discounter”, ya que el código es un poco largo para incluirlo aquí. Algunas de las líneas clave del código son éstas:
+
+~~~ java
+...
+Discounter app = new Discounter();
+public void actionPerformed(ActionEvent event) {
+...
+String amountStr = text1.getText();
+double amount = Double.parseDouble(amountStr);
+discount = app.discount(amount));
+text3.setText( "" + discount );
+...
+~~~
+
+Llegados a este punto, se puede realizar una demo de la aplicación, y también probarla con tests de regresión. Los adaptadores del “lado del usuario” están ambos ejecutandose.
+
+__Etapa 3: (FIT o UI) | Aplicación | Base de datos mock__
+
+Para crear un adaptador reemplazable en el “lado de la base de datos” creamos: una interfaz de un repositorio; un “RepositoryFactory” que creará la base de datos mock , o el objeto real de servicio; y el mock en memoria para la base de datos.
+
+~~~ java
+public interface RateRepository
+{
+ double getRate(double amount);
+}
+~~~
+
+~~~ java
+public class RepositoryFactory
+{
+ public RepositoryFactory() { super(); }
+ public static RateRepository getMockRateRepository()
+ {
+ return new MockRateRepository();
+ }
+}
+~~~
+
+~~~ java
+public class MockRateRepository implements RateRepository
+{
+ public double getRate(double amount)
+ {
+ if(amount <= 100) return 0.01;
+ if(amount <= 1000) return 0.02;
+ return 0.05;
+ }
+}
+~~~
+
+Para conectar este adaptador a la aplicación “Discounter”, necesitamos modificar la aplicación en sí, para que acepte un adaptador de repositorio a usar, y que el adaptador ( FIT o UI ) del lado del usuario pase el repositorio a utilizar ( real o mock ) al constructor de la aplicación. A continuación se muestra la aplicación modificada y un adaptador FIT que le pasa un repositorio mock (el código del adaptador FIT que elige si se le pasa el adaptador mock del repositorio o el adaptador real, es más extenso y no añade nueva información, de manera que omito dicha versión aquí).
+
+~~~ java
+import repository.RepositoryFactory;
+import repository.RateRepository;
+public class Discounter
+{
+ private RateRepository rateRepository;
+ public Discounter(RateRepository r)
+ {
+ super();
+ rateRepository = r;
+ }
+ public double discount(double amount)
+ {
+ double rate = rateRepository.getRate( amount );
+ return amount * rate;
+ }
+}
+~~~
+
+~~~ java
+import app.Discounter;
+import fit.ColumnFixture;
+public class TestDiscounter extends ColumnFixture
+{
+ private Discounter app =
+ new Discounter(RepositoryFactory.getMockRateRepository());
+ public double amount;
+ public double discount()
+ {
+ return app.discount( amount );
+ }
+}
+~~~
+
+Esto concluye la implementación de la versión más sencilla de la arquitectura hexagonal.
+
+Para una implementación diferente, utilizando Ruby y Rack para el uso del navegador, ver https://github.com/totheralistair/SmallerWebHexagon
+
+### Notas sobre la Aplicación del Patrón
+
+__La Asimetría Izquierda-Derecha__
+
+El patrón Ports and Adapters está escrito deliberadamente con la intención de que todos los puertos sean similares. Esta intención es útil a nivel de arquitectura. En cuanto a su implementación, los puertos y los adaptadores muestran dos aspectos, que llamaré “primario” y “secundario”, por razones que pronto serán obvias. También se podrían llamar adaptadores “directores” y adaptadores “dirigidos”.
+
+Un lector avispado se habrá dado cuenta de que en todos los ejemplos anteriores, los fixtures (8) de FIT se usan en los puertos de la izquierda y los mocks en los de la derecha. En la arquitectura de tres capas, FIT se encuentra en la capa superior y el mock en la capa inferior.
+
+Esto está relacionado con la idea de “actores primarios” y “actores secundarios” en los casos de uso. Un “actor primario” es un actor que dirige la aplicación (la saca de un estado inactivo para que lleve a cabo una de las funciones que ofrece). Un “actor secundario” es aquel al que la aplicación dirige, bien para obtener repuesta de él, bien para simplemente notificarle algo. La distinción entre “primario” y “secundario” reside en quién inicia la comunicación o es el responsable de ella.
+
+El adaptador de pruebas natural para un actor “primario” es FIT , ya que dicho framework está diseñado para leer un script y dirigir la aplicación. El adaptador de pruebas natural para un actor “secundario” de tipo base de datos es un mock, ya que está diseñado para responder consultas o grabar eventos provenientes de la aplicación.
+
+Estas observaciones nos llevan a seguir el diagrama de contexto de casos de uso del sistema, y dibujar los “puertos primarios” y “adaptadores primarios” en la parte izquierda (o superior) del hexágono, y los “puertos secundarios” y “adaptadores secundarios” en la parte derecha (o inferior) del hexágono.
+
+La relación entre puertos/adaptadores primarios y secundarios y su respectiva implementación con FIT y mocks es algo útil a tener en cuenta, pero debería ser considerada como una consecuencia de utilizar la arquitectura Ports and Adapters, no como una forma de saltársela. El beneficio fundamental de una implementación de Ports and Adapters es la posibilidad de ejecutar la aplicación de manera totalmente aislada.
+
+__Casos de Uso y La Frontera de la Aplicación__
+
+Utilizar el patrón de arquitectura hexagonal sirve para reforzar la manera preferente de escribir casos de uso.
+
+Un error habitual es escribir casos de uso que contienen conocimiento de la tecnología situada fuera del puerto. Estos casos de uso se han ganado justificadamente un mal nombre en la industria por ser largos, difíciles de leer, pesados, y caros de mantener.
+
+Entendiendo la arquitectura Ports and Adapters, podemos ver que los casos de uso deberían estar escritos en la frontera de la aplicación (el hexágono interno), para especificar las funciones y eventos que admite la aplicación, independientemente de la tecnología externa. Estos casos de uso son más cortos, más fáciles de leer, menos caros de mantener, y más estables a lo largo del tiempo.
+
+__¿Cuántos puertos?__
+
+Lo que es exactamente un puerto y lo que no, en gran parte, es cuestión de gustos. En un extremo, a cada caso de uso se le podría dar su propio puerto, dando lugar a cientos de puertos en muchas aplicaciones. Alternativamente, podríamos imaginar unir todos lo puertos primarios y todos los puertos secundarios, de
+manera que sólo haya dos puertos, un lado izquierdo y un lado derecho.
+
+Ninguno de los extremos parece óptimo.
+
+El sistema meteorológico descrito en el apartado “Usos Conocidos” tiene cuatro puertos naturales: la fuente suministradora de la información meteorológica, el administrador, los abonados notificados, y la base de datos de abonados. El controlador de una máquina de café tiene cuatro puertos naturales: el usuario, la base de datos de tipos de café y precios, los dispensadores, y el compartimento de modedas. Un sistema de medicación de un hospital podría tener tres: uno para la enfermera, otro para la base de datos de prescripciones, y otro para los dispensadores de medicación.
+
+No parece que exista ningún perjuicio concreto al elegir un número “incorrecto” de puertos, de manera que sigue siendo una cuestión de intuición. Mi elección tiende a ser un número pequeño, dos, tres o cuatro puertos, tal y como se describe anteriormente y en el apartado “Usos Conocidos”.
+
+### Usos Conocidos
+
+[Figura 4]
+
+La figura 4 muestra una aplicación con cuatro puertos y varios adaptadores para cada puerto. Proviene de una aplicación que escuchaba alertas emitidas por el servicio meteorológico nacional acerca de terremotos, tornados, incendios e inundaciones, y notificaba a la gente en sus teléfonos o en el contestador automático. Cuando se discutió este sistema sus interfaces se identificaron por “tecnología, ligada al propósito”. Había una interfaz para los datos de entrada que llegan por cable, una para la notificación de datos que serán enviados a contestadores automáticos, una interfaz de administración implementada en una GUI, y una interfaz de base de datos para recuperar los datos de los abonados.
