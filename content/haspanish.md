@@ -12,7 +12,7 @@ layout: default
 
 Cree su aplicación para que funcione sin interfaz de usuario ni base de datos, de manera que usted pueda ejercitar la aplicación ejecutando pruebas de regresión automatizadas; para que funcione cuando la base de datos no esté disponible; y comunique aplicaciones entre sí sin intervención por parte del usuario.
 
-![Imagen enchufe 1-4](/assets/images/hexagonalarchitecturespanish/figure0.png)
+![Imagen enchufe 1-4](/assets/images/hexagonalarchitecturespanish/figura0.png)
 
 # El Patrón: PORTS AND ADAPTERS (1) (“Patrón Estructural de Objetos”)
 
@@ -30,7 +30,7 @@ Permitir que una aplicación sea ejecutada indistintamente por usuarios, program
 
 Cuando llega un evento del mundo exterior, un adaptador dependiente de la tecnología lo convierte en una llamada a un procedimiento utilizable, o en un mensaje, de un puerto (2). La aplicación ignora completamente la naturaleza del dispositivo de entrada. Cuando la aplicación tiene algo que enviar, lo hace a través de un puerto a un adaptador, el cual crea las señales oportunas que necesita la tecnología del dispositivo receptor (sea éste un ser humano o un sistema automatizado). La aplicación mantiene una interacción basada en un diálogo semántico con los adaptadores que la rodean, no conoce la naturaleza de los dispositivos que están al otro lado de los adaptadores.
 
-[Figura 1]
+![Figura 1: Arquitectura hexagonal básica](/assets/images/hexagonalarchitecturespanish/figura1.png)
 
 ### Motivación
 
@@ -84,11 +84,11 @@ En el apartado “Notas sobre la Aplicación del Patrón”, se mencionará de n
 
 ### Estructura
 
-[Figura 2]
+![Figura 2: Arquitectura hexagonal con adaptadores](/assets/images/hexagonalarchitecturespanish/figura2.png)
 
 La figura 2 muestra una aplicación con dos puertos activos y varios adaptadores para cada puerto. Los dos puertos son el lado que controla la aplicación y el lado para recuperar datos. Este dibujo muestra que la aplicación puede ser dirigida de igual manera por una suite de pruebas automatizadas de regresión a nivel de sistema, por un ser humano, por una aplicación http remota, o por otra aplicación local. En el lado de los datos, la aplicación se puede configurar para ejecutarse desacoplada de bases de datos externas, utilizando una base de datos de sustitución Oracle en memoria, o mock ; o se puede ejecutar con la base de datos de pruebas o con la de producción. La especificación funcional de la aplicación, puede que en casos de uso, se hace contra la interfaz del hexágono interno, y no contra ninguna de las tecnologías externas que se podrían utilizar.
 
-[Figura 3]
+![Figura 3: Imagen puerta de granero](/assets/images/hexagonalarchitecturespanish/figura3.png)
 
 La figura 3 muestra la misma aplicación convertida en un diagrama de arquitectura en tres capas. Para simplificar el diagrama, sólo se muestran dos adaptadores para cada puerto. Con este diagrama se pretende mostrar cómo múltiples adaptadores encajan en las capas superior e inferior, y la secuencia en la que se usan los distintos adaptadores durante el desarrollo del sistema. Las flechas numeradas muestran el orden en el que un equipo debería desarrollar y usar la aplicación:
 
@@ -276,6 +276,6 @@ No parece que exista ningún perjuicio concreto al elegir un número “incorrec
 
 ### Usos Conocidos
 
-[Figura 4]
+![Figura 4: Ejemplo complejo](/assets/images/hexagonalarchitecturespanish/figura4.png)
 
 La figura 4 muestra una aplicación con cuatro puertos y varios adaptadores para cada puerto. Proviene de una aplicación que escuchaba alertas emitidas por el servicio meteorológico nacional acerca de terremotos, tornados, incendios e inundaciones, y notificaba a la gente en sus teléfonos o en el contestador automático. Cuando se discutió este sistema sus interfaces se identificaron por “tecnología, ligada al propósito”. Había una interfaz para los datos de entrada que llegan por cable, una para la notificación de datos que serán enviados a contestadores automáticos, una interfaz de administración implementada en una GUI, y una interfaz de base de datos para recuperar los datos de los abonados.
