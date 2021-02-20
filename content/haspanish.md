@@ -12,7 +12,7 @@ layout: default
 
 Cree su aplicación para que funcione sin interfaz de usuario ni base de datos, de manera que usted pueda ejercitar la aplicación ejecutando pruebas de regresión automatizadas; para que funcione cuando la base de datos no esté disponible; y comunique aplicaciones entre sí sin intervención por parte del usuario.
 
-[Figura 0]
+![Imagen enchufe 1-4](/assets/images/hexagonalarchitecturespanish/figure0.png)
 
 # El Patrón: PORTS AND ADAPTERS (1) (“Patrón Estructural de Objetos”)
 
