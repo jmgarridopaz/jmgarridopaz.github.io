@@ -1,7 +1,7 @@
 ---
 title: Arquitectura Hexagonal - Patrón Puertos y Adaptadores
 custom_article_title: Arquitectura Hexagonal
-custom_article_subtitle: Traducción al español del artículo original de Alistair Cockburn
+custom_article_subtitle: Traducción al español del artículo original de Alistair Cockburn (https://alistair.cockburn.us/hexagonal-architecture/)
 custom_chapter_title:
 custom_published_date: 21 de Febrero de 2021
 custom_author_url: https://github.com/jmgarridopaz
@@ -9,31 +9,7 @@ custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
 
-<p class="intro">El patrón "Ports and Adapters" (Puertos y Adaptadores), también llamado "Hexagonal Architecture" (Arquitectura Hexagonal), es obra del Dr. Alistair Cockburn, coautor del "Agile Manifesto", que allá por el año 2005 escribió un articulo donde definía el patrón. El artículo original en inglés está disponible en la URL <a target="_blank" href="https://alistair.cockburn.us/hexagonal-architecture/">https://alistair.cockburn.us/hexagonal-architecture/</a>. Ésta es mi traducción al español de dicho artículo. Mi agradecimiento a Alistair Cockburn por permitirme traducirlo.</p>
-
-____
-
-### ÍNDICE DE CONTENIDOS
-
-[Propósito](#tc1)
-[Motivación](#tc2)
-[Naturaleza de la Solución](#tc3)
-[Estructura)](#tc4)
-[Código de Ejemplo)](#tc5)
-   [Etapa 1: FIT | Aplicación | Constante](#tc7-1)  
-   [Etapa 2: UI | Aplicación | Constante](#tc7-2)  
-   [Etapa 3: (FIT o UI) | Aplicación | Base de datos mock](#tc7-3)
-[Notas sobre la Aplicación del Patrón](#tc8)
-   [Etapa 1: FIT | Aplicación | Constante](#tc7-1)  
-   [Etapa 2: UI | Aplicación | Constante](#tc7-2)  
-   [Etapa 3: (FIT o UI) | Aplicación | Base de datos mock](#tc7-3)
-[Notas sobre la Aplicación del Patrón](#tc8)
-
-____
-
-## Arquitectura Hexagonal
-
-Cree su aplicación para que funcione sin interfaz de usuario ni base de datos, de manera que usted pueda ejercitar la aplicación ejecutando pruebas de regresión automatizadas; para que funcione cuando la base de datos no esté disponible; y comunique aplicaciones entre sí sin intervención por parte del usuario.
+<p class="intro">Cree su aplicación para que funcione sin interfaz de usuario ni base de datos, de manera que usted pueda ejercitar la aplicación ejecutando pruebas de regresión automatizadas; para que funcione cuando la base de datos no esté disponible; y comunique aplicaciones entre sí sin intervención por parte del usuario.</p>
 
 ![Imagen enchufe 1-4](/assets/images/hexagonalarchitecturespanish/figura0.png)
 
