@@ -30,7 +30,7 @@ Permitir que una aplicación sea ejecutada indistintamente por usuarios, program
 
 Cuando llega un evento del mundo exterior, un adaptador dependiente de la tecnología lo convierte en una llamada a un procedimiento utilizable, o en un mensaje, de un puerto (2). La aplicación ignora completamente la naturaleza del dispositivo de entrada. Cuando la aplicación tiene algo que enviar, lo hace a través de un puerto a un adaptador, el cual crea las señales oportunas que necesita la tecnología del dispositivo receptor (sea éste un ser humano o un sistema automatizado). La aplicación mantiene una interacción basada en un diálogo semántico con los adaptadores que la rodean, no conoce la naturaleza de los dispositivos que están al otro lado de los adaptadores.
 
-![Figura 1: Arquitectura hexagonal básica](/assets/images/hexagonalarchitecturespanish/figura-1.png)
+![Figura 1: Arquitectura hexagonal básica](/assets/images/hexagonalarchitecturespanish/figura1.png)
 
 ### Motivación
 
@@ -279,3 +279,58 @@ No parece que exista ningún perjuicio concreto al elegir un número “incorrec
 ![Figura 4: Ejemplo complejo](/assets/images/hexagonalarchitecturespanish/figura4.png)
 
 La figura 4 muestra una aplicación con cuatro puertos y varios adaptadores para cada puerto. Proviene de una aplicación que escuchaba alertas emitidas por el servicio meteorológico nacional acerca de terremotos, tornados, incendios e inundaciones, y notificaba a la gente en sus teléfonos o en el contestador automático. Cuando se discutió este sistema sus interfaces se identificaron por “tecnología, ligada al propósito”. Había una interfaz para los datos de entrada que llegan por cable, una para la notificación de datos que serán enviados a contestadores automáticos, una interfaz de administración implementada en una GUI, y una interfaz de base de datos para recuperar los datos de los abonados.
+
+Se estaba realizando un gran esfuerzo, debido a que se necesitaba añadir una interfaz http para el servicio meteorológico, una interfaz de email para sus abonados, y se tenía que encontrar una forma de empaquetar y desempaquetar la suite de la aplicación, que iba creciendo cada vez más, para las distintas preferencias de compra de los clientes. Se temía estar enfrentándose a una pesadilla de mantenimiento y pruebas, ya que se tenían que implementar, probar y mantener versiones separadas para todas las combinaciones y permutaciones.
+
+El cambio en el diseño fue organizar las interfaces del sistema “por propósito” en vez de por tecnología, y hacer que las tecnologías fuesen sustituibles (en todos los lados del hexágono) por adaptadores. Enseguida se adquirió la habilidad necesaria para incluir la recepción de los datos vía http y la notificación por email (los nuevos adaptadores se muestran en la figura con línea discontinuas). Haciendo que cada aplicación fuese ejecutable en modo headless mediante APIs, se pudo añadir un adaptador aplicación-a-aplicación y desempaquetar la suite de la aplicación, conectando las sub-aplicaciones bajo demanda. Finalmente, haciendo que cada aplicación fuese ejecutable de manera completamente aislada, con adaptadores test y mock , se adquirió la capacidad de aplicar pruebas de regresión a las aplicaciones, con scripts autónomos de pruebas automatizadas.
+
+__Mac, Windows, Google, Flickr, Web 2.0__
+
+A principios de los 90, se requería que aplicaciones MacIntosh tales como procesadores de texto tuvieran interfaces API, de manera que aplicaciones y scripts escritos por el usuario pudieran acceder a toda la funcionalidad de las aplicaciones. Las aplicaciones Windows de escritorio han evolucionado para tener la misma capacidad (no tengo conocimiento histórico para decir cuál fue primero, ni es relevante en este caso).
+
+La tendencia actual (2005) en aplicaciones web es publicar un API y permitir a otras aplicaciones web acceder a dichas APIs directamente. Así, es posible publicar datos sobre la criminalidad local en un mapa de Google , o crear aplicaciones web que sean capaces de archivar y realizar anotaciones en fotos de Flickr.
+
+Todos estos ejemplos tratan de hacer visibles las APIs de los “puertos primarios”. No vemos ninguna información aquí sobre los puertos secundarios.
+
+__Salida Almacenada__
+
+Willem Bogaerts escribió el siguiente ejemplo en la wiki C2:
+
+“Encontré algo similar, pero principalmente porque mi capa de aplicación tenía una fuerte tendencia a terminar convirtiéndose en una centralita telefónica que gestionara cosas que no debería. Mi aplicación generaba una salida, la mostraba al usuario y después tenía posibilidad de almacenarla también. Mi principal problema era que no se necesitaba guardarla siempre. Entonces, mi aplicación generaba una salida, tenía que almacenarla temporalmente ( en un buffer ) y presentarla al usuario. Después, cuando el usuario decidía que quería guardar la salida, la aplicación recuperaba el buffer y la almacenaba de manera definitiva.
+
+Esto no me gustaba en absoluto. Entonces encontré una solución: Tener un control de presentación con posibilidad de almacenamiento. Ahora la aplicación no canalizaría más la salida en diferentes direcciones, sino que simplemente la enviaría al control de presentación. Es el control de presentación el que guardaría temporalmente la respuesta y daría al usuario la posibilidad de almacenarla definitivamente.
+
+La arquitectura tradicional en capas enfatiza que la ‘UI’ y el ‘almacenamiento’ son distintos. La arquitectura Ports and Adapters puede hacer que la salida sea simplemente ‘salida’ otra vez.”
+
+__Ejemplo Anónimo de la Wiki C2__
+
+“En un proyecto en el que trabajé, utilizábamos la ‘Metáfora de Sistema’ de un sistema estéreo formado por componentes. Cada componente tiene interfaces definidas, cada una de ellas con un propósito específico. Así podemos conectar los componentes entre sí de innumerables formas, usando simples cables y adaptadores.”
+
+__Desarrollo con un Equipo Amplio Distribuido__
+
+Todavía está en fase de pruebas así que no cuenta como un uso propiamente dicho del patrón. Sin embargo es interesante considerarlo.
+
+Equipos ubicados en diferentes lugares utilizan todos la Arquitectura Hexagonal, usando FIT y mocks de manera que las aplicaciones o componentes se pueden probar aisladamente. CruiseControl construye los ejecutables cada media hora y ejecuta todas las aplicaciones usando la combinación “ FIT + mock ”. Conforme se van completando los subsistemas de la aplicación y las bases de datos, los mocks se reemplazan por bases de datos de pruebas.
+
+__Desarrollo por Separado de la UI y de la Lógica de Aplicación__
+
+Todavía está en una fase temprana de pruebas así que no cuenta como un uso del patrón. Sin embargo es interesante considerarlo.
+
+El diseño de la UI es inestable, ya que aún no se ha decidido acerca de una tecnología directora o una metáfora. La arquitectura de los servicios back-end no se ha decidido, y de hecho cambiará probablemente varias veces a lo largo de los seis próximos meses. En todo caso, el proyecto ha comenzado oficialmente y el tiempo corre.
+
+El equipo crea pruebas FIT y mocks para aislar su aplicación, y crea funcionalidad que se pueda probar, para mostrarla a sus usuarios. Cuando las decisiones acerca de la UI y de los servicios back-end finalmente encajen, debería ser trivial añadir dichos elementos a la aplicación. Permanezca atento para aprender cómo se resuelve este asunto (o inténtelo usted mismo y escríbame para hacérmelo saber).
+
+### Patrones Relacionados
+
+__Adaptador__
+
+El libro “Dessign Patterns” contiene una descripción del patrón “Adaptador” genérico: “Convierte la interfaz de una clase en otra interfaz que el cliente espera”. El patrón Ports and Adapters es un uso particular del patrón “Adaptador”.
+
+__Modelo-Vista-Controlador__
+
+El patrón MVC fue implementado muy pronto, en 1974, en el proyecto Smalltalk. Ha tenido muchas variantes a lo largo de los años, como por ejemplo “Modelo-Interactor” y “Modelo-Vista-Presentador”. Cada una de ellas implementa la idea de Ports and Adapters en los puertos primarios, no en los secundarios.
+
+__“Objetos Mock” y “Loopback”__
+
+“Un objeto ‘mock’ es un ‘agente doble’ usado para probar el comportamiento de otros objetos. En primer lugar, un objeto ‘mock’ actúa como una implementación falsa de una interfaz o clase que imita el comportamiento externo de una implementación real. En segundo lugar, un objeto ‘mock’ observa cómo
+otros objetos interactúan con sus métodos y compara el comportamiento efectivo con las expectativas
