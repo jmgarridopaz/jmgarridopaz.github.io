@@ -9,18 +9,19 @@ custom_author_name:
 layout: default
 ---
 
-<p class="intro">Traducción al español del artículo original de Alistair Cockburn</p>
-
-<p class="intro">(<a target="_blank" href="https://alistair.cockburn.us/hexagonal-architecture/">https://alistair.cockburn.us/hexagonal-architecture/</a>)</p>
-
-<div class="published">Autor de la traducción: <a target="_blank" href="https://github.com/jmgarridopaz">Juan Manuel Garrido de Paz</a></div>
-<div class="published">Fecha de la traducción: 24 de Junio de 2018</div>
-<div class="published">Fecha de la primera publicación de la traducción (<a target="_blank" href="https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.pdf">documento PDF</a>): 23 de Julio de 2018</div>
-<div class="published">Fecha de esta publicación: 21 de Febrero de 2021</div>
+Traducción al español del artículo original de Alistair Cockburn  
+(<a target="_blank" href="https://alistair.cockburn.us/hexagonal-architecture/">https://alistair.cockburn.us/hexagonal-architecture/</a>)
 
 ____
 
-Cree su aplicación para que funcione sin interfaz de usuario ni base de datos, de manera que usted pueda ejercitar la aplicación ejecutando pruebas de regresión automatizadas; para que funcione cuando la base de datos no esté disponible; y comunique aplicaciones entre sí sin intervención por parte del usuario.
+<div class="published">Autor de la traducción: <a target="_blank" href="https://github.com/jmgarridopaz">Juan Manuel Garrido de Paz</a></div>
+<div class="published">Fecha de la traducción: 24 de Junio de 2018</div>
+<div class="published">Fecha de esta publicación: 21 de Febrero de 2021</div>
+<div class="published"><a href="#anexo">ANEXO: Notas sobre la traducción</a></div>
+
+____
+
+<p class="intro">Cree su aplicación para que funcione sin interfaz de usuario ni base de datos, de manera que usted pueda ejercitar la aplicación ejecutando pruebas de regresión automatizadas; para que funcione cuando la base de datos no esté disponible; y comunique aplicaciones entre sí sin intervención por parte del usuario.</p>
 
 ![Imagen enchufe 1-4](/assets/images/hexagonalarchitecturespanish/figura0.png)
 
@@ -387,3 +388,52 @@ http://www.objectmentor.com/resources/articles/dip.pdf
 * The “Loopback” pattern : Cockburn, A., online en http://c2.com/ cgi / wiki?LoopBack
 
 * “Use cases:” Cockburn, A., “Writing Effective Use Cases” , Addison-Wesley, 2001, y Cockburn, A., “Structuring Use Cases with Goals” , online en http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm (13)
+
+____
+
+<div id="anexo"></div>
+## ANEXO: NOTAS SOBRE LA TRADUCCIÓN
+
+* El nombre del patrón se considera un nombre propio, por lo que las referencias a él siempre se harán utilizando el nombre original en inglés (Ports and Adapters). En español sería “Puertos y Adaptadores”.
+
+* El artículo original, en su apartado “Intent”, contiene la frase:
+
+“As events arrive from the outside world at a port, a technology-specific adapter converts it into a usable procedure call or message and passes it to the application”
+
+La cual puede dar lugar a confusión, porque podría entenderse que el dibujo de la arquitectura fuese:
+
+Actor Primario ==> Puerto Primario ==> Adaptador Primario ==> Hexágono
+
+Cuando el dibujo correcto es:
+
+Actor Primario ==> Adaptador Primario ==> Puerto Primario (API del Hexágono)
+
+Tras preguntarle sobre ello, Alistair Cockburn me dió otra versión de la citada frase. La reescribió de la siguiente forma:
+
+"As an event arrives from the outside world, it gets converted by a technology-specific adapter to a usable procedure call or message at the port"
+
+La cual encaja con la arquitectura. Es por tanto esta frase la que he traducido, y queda así:
+
+”Cuando llega un evento del mundo exterior, un adaptador dependiente de la tecnología lo convierte en una llamada a un procedimiento utilizable, o en un mensaje, de un puerto”
+
+* API son las siglas en inglés de “Application Programming Interface” (Interfaz de Programación de Aplicaciones).
+
+* QA son las siglas en inglés de “Quality Assurance” (Aseguramiento de la Calidad).
+
+* Modo "headless" es un modo de funcionamiento sin interfaz de usuario.
+
+* GUI son las siglas en inglés de “Graphical User Interface” (Interfaz Gráfica de Usuario).
+
+* “discount” significa descuento, “amount” cantidad, y “rate” porcentaje.
+
+* El concepto de fixture en los frameworks de pruebas de software, se refiere a la configuración previa del entorno de ejecución de las pruebas. Por ejemplo, el ColumnFixture de FIT, o @BeforeClass de JUnit.
+
+* Enlace roto. El enlace actual (Junio 2018) es el siguiente: http://www.mockobjects.com
+
+10 Siglas en inglés de “Information Technology” ( Tecnología de la Información ).
+
+11 Enlace roto.
+
+12 Enlace roto. El enlace actual (Junio 2018) es el siguiente: http://www.mockobjects.com
+
+13 Enlace roto. Actualmente (Junio 2018) se desconoce si será migrado.
