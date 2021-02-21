@@ -332,5 +332,54 @@ El patrón MVC fue implementado muy pronto, en 1974, en el proyecto Smalltalk. H
 
 __“Objetos Mock” y “Loopback”__
 
-“Un objeto ‘mock’ es un ‘agente doble’ usado para probar el comportamiento de otros objetos. En primer lugar, un objeto ‘mock’ actúa como una implementación falsa de una interfaz o clase que imita el comportamiento externo de una implementación real. En segundo lugar, un objeto ‘mock’ observa cómo
-otros objetos interactúan con sus métodos y compara el comportamiento efectivo con las expectativas
+“Un objeto ‘mock’ es un ‘agente doble’ usado para probar el comportamiento de otros objetos. En primer lugar, un objeto ‘mock’ actúa como una implementación falsa de una interfaz o clase que imita el comportamiento externo de una implementación real. En segundo lugar, un objeto ‘mock’ observa cómo otros objetos interactúan con sus métodos y compara el comportamiento efectivo con las expectativas prefijadas. Cuando se da una discrepancia, un objeto ‘mock’ puede interrumpir la prueba e informar de la anomalía. Si la discrepancia no puede ser descubierta durante la prueba, un método de verificación invocado por el realizador de la misma asegura que todas las expectativas se han cumplido o se ha informado de los fallos.” - de http://MockObjects.com (9)
+
+Implementándolos cumpliendo completamente con la agenda mock-object , los objetos mock se usan en toda la aplicación, no sólo en la interfaz externa. La idea clave del movimiento mock-object es el cumplimiento del protocolo especificado a nivel de clases individuales y objetos. Tomo prestada su palabra “mock” como la mejor descripción breve de “sustituto en memoria de un actor secundario externo”.
+
+El patrón Loopback es un patrón explícito para crear una sustitución interna de un dispositivo externo.
+
+__Pedestal__
+
+En “Patterns for Generating a Layered Architecture” , Barry Rubel describe un patrón para crear un eje de simetría en software de control que es muy similar a Ports and Adapters . El patrón “Pedestal” propugna implementar un objeto que represente cada dispositivo hardware de un sistema, y enlazar dichos objetos entre sí en una capa de control. El patrón “Pedestal” se puede usar para describir cualquiera de los dos lados de la arquitectura hexagonal, pero no redunda en la similitud entre adaptadores. Además, al haber sido escrito para un entorno de control mecánico, no es tan fácil ver cómo aplicar el patrón a aplicaciones de IT (10).
+
+__Checks__
+
+El lenguaje del patrón de Ward Cunningham para detectar y gestionar errores de usuario en la entrada de datos, es adecuado para la gestión de errores en la frontera del hexágono interno.
+
+__Inversión de Dependencias (Inyección de Dependencias) y SPRING__
+
+El Principio de Inversión de Dependencias de Bob Martin (también llamado Inyección de Dependencias por Martin Fowler) establece que:
+
+“Los módulos de alto nivel no deberían depender de los módulos de bajo nivel. Ambos deberían depender de abstracciones. Las abstracciones no deberían depender de los detalles. Los detalles deberían depender de las abstracciones.”
+
+El patrón de “Inyección de Dependencias” de Martin Fowler aporta algunas implementaciones, las cuales muestran cómo crear adaptadores intercambiables para los actores secundarios. El código se puede escribir directamente, como se hace en el código de ejemplo del artículo, o usando archivos de configuración y dejando que el framework SPRING genere el código equivalente.
+
+### Agradecimientos
+
+Gracias a Gyan Sharma, de “Intermountain Health Care” , por facilitar el código de ejemplo utilizado aquí. Gracias a Rebecca Wirfs-Brock por su libro “Object Design” , que leído junto al patrón “Adaptador” del libro “Design Patterns” , me ayudó a comprender de qué trataba el hexágono. Gracias también a las personas que en la wiki de Ward aportaron comentarios sobre este patrón a lo largo de los años ( por ejemplo, particularmente el de Kevin Rutherford: http://silkandspinach.net/blog/2004/07/hexagonal_soup.html ).
+
+### Referencias y Lecturas relacionadas
+
+* FIT, A Framework for Integrating Testing : Cunningham, W., online en http://fit.c2.com , y Mugridge, R. y
+Cunningham, W., “Fit for Developing Software” , Prentice-Hall PTR, 2005.
+
+* The “Adapter” pattern : en Gamma, E., Helm, R., Johnson, R., Vlissides, J., “Design Patterns” , Addison-Wesley,
+1995, pp. 139-150.
+
+* The “Pedestal” pattern : en Rubel, B., “Patterns for Generating a Layered Architecture” , en Coplien, J.,
+Schmidt, D., “PatternLanguages of Program Design” , Addison-Wesley, 1995, pp. 119-150.
+
+* The “Checks” pattern : de Cunningham, W., online en http://c2.com/ppr/checks.html
+
+* The “Dependency Inversion Principle” “Agile Software Development Principles Patterns and Practices”,
+Prentice Hall, 2003, Chapter 11: “The Dependency-Inversion Principle”, y online en
+http://www.objectmentor.com/resources/articles/dip.pdf
+(11)
+
+* The “Dependency Injection” pattern : Fowler, M., online en http://www.martinfowler.com/articles/injection.html
+
+* The “Mock Object” pattern : Freeman, S. online en http://MockObjects.com (12)
+
+* The “Loopback” pattern : Cockburn, A., online en http://c2.com/ cgi / wiki?LoopBack
+
+* “Use cases:” Cockburn, A., “Writing Effective Use Cases” , Addison-Wesley, 2001, y Cockburn, A., “Structuring Use Cases with Goals” , online en http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm (13)
