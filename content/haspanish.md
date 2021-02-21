@@ -9,14 +9,18 @@ custom_author_name:
 layout: default
 ---
 
-<div class="published">Traducción al español del artículo original de Alistair Cockburn (<a href="https://alistair.cockburn.us/hexagonal-architecture/">https://alistair.cockburn.us/hexagonal-architecture/</a>)</div>
-<div class="published">Autor de la traducción: <a href="https://github.com/jmgarridopaz">Juan Manuel Garrido de Paz</a></div>
+<p class="intro">Traducción al español del artículo original de Alistair Cockburn</p>
+
+<p class="intro">(<a target="_blank" href="https://alistair.cockburn.us/hexagonal-architecture/">https://alistair.cockburn.us/hexagonal-architecture/</a>)</p>
+
+<div class="published">Autor de la traducción: <a target="_blank" href="https://github.com/jmgarridopaz">Juan Manuel Garrido de Paz</a></div>
 <div class="published">Fecha de la traducción: 24 de Junio de 2018</div>
-<div class="published">Fecha de publicación de la traducción: 23 de Julio de 2018</div>
+<div class="published">Fecha de la primera publicación de la traducción (<a target="_blank" href="https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.pdf">documento PDF</a>): 23 de Julio de 2018</div>
+<div class="published">Fecha de esta publicación: 21 de Febrero de 2021</div>
 
-<p class="introquote">Traducción al español del artículo original de Alistair Cockburn (<a href="https://alistair.cockburn.us/hexagonal-architecture/">https://alistair.cockburn.us/hexagonal-architecture/</a>)</p>
+____
 
-<p class="intro">Cree su aplicación para que funcione sin interfaz de usuario ni base de datos, de manera que usted pueda ejercitar la aplicación ejecutando pruebas de regresión automatizadas; para que funcione cuando la base de datos no esté disponible; y comunique aplicaciones entre sí sin intervención por parte del usuario.</p>
+Cree su aplicación para que funcione sin interfaz de usuario ni base de datos, de manera que usted pueda ejercitar la aplicación ejecutando pruebas de regresión automatizadas; para que funcione cuando la base de datos no esté disponible; y comunique aplicaciones entre sí sin intervención por parte del usuario.
 
 ![Imagen enchufe 1-4](/assets/images/hexagonalarchitecturespanish/figura0.png)
 
