@@ -25,7 +25,7 @@ ____
 
 ![Imagen enchufe 1-4](/assets/images/hexagonalarchitecturespanish/figura0.png)
 
-## El Patrón: PORTS AND ADAPTERS (1) (“Patrón Estructural de Objetos”)
+## El Patrón: PORTS AND ADAPTERS <sup id="npp1_ref"><a href="#npp1">(1)</a></sup> (“Patrón Estructural de Objetos”)
 
 ### Nombres alternativos: “Ports & Adapters” , “Arquitectura Hexagonal”
 
@@ -391,14 +391,21 @@ http://www.objectmentor.com/resources/articles/dip.pdf
 
 ____
 
-<div id="anexo"></div>
 ## ANEXO: NOTAS SOBRE LA TRADUCCIÓN
 
-* El nombre del patrón se considera un nombre propio, por lo que las referencias a él siempre se harán utilizando el nombre original en inglés (Ports and Adapters). En español sería “Puertos y Adaptadores”.
+<div id="npp1"></div>
+(1) [↑](#npp1_ref) El nombre del patrón se considera un nombre propio, por lo que las referencias a él siempre se harán utilizando el nombre original en inglés (Ports and Adapters). En español sería “Puertos y Adaptadores”.
 
-* El artículo original, en su apartado “Intent”, contiene la frase:
 
-“As events arrive from the outside world at a port, a technology-specific adapter converts it into a usable procedure call or message and passes it to the application”
+
+____
+
+<div id="npp2"></div>
+(2) Esta frase no se corresponde con la del artículo original.
+
+El artículo original, en su apartado “Intent”, contiene la frase:
+
+“As events arrive from the outside world at a port, a technology-specific adapter converts it into a usable procedure call or message and passes it to the application”  
 
 La cual puede dar lugar a confusión, porque podría entenderse que el dibujo de la arquitectura fuese:
 
@@ -416,24 +423,22 @@ La cual encaja con la arquitectura. Es por tanto esta frase la que he traducido,
 
 ”Cuando llega un evento del mundo exterior, un adaptador dependiente de la tecnología lo convierte en una llamada a un procedimiento utilizable, o en un mensaje, de un puerto”
 
-* API son las siglas en inglés de “Application Programming Interface” (Interfaz de Programación de Aplicaciones).
+(3) Siglas en inglés de “Application Programming Interface”.
 
-* QA son las siglas en inglés de “Quality Assurance” (Aseguramiento de la Calidad).
+(4) Siglas en inglés de “Quality Assurance” (Aseguramiento de la Calidad).
 
-* Modo "headless" es un modo de funcionamiento sin interfaz de usuario.
+(5) Modo de funcionamiento sin interfaz de usuario.
 
-* GUI son las siglas en inglés de “Graphical User Interface” (Interfaz Gráfica de Usuario).
+(6) Siglas en inglés de “Graphical User Interface”.
 
-* “discount” significa descuento, “amount” cantidad, y “rate” porcentaje.
+(7) “discount” significa descuento, “amount” cantidad, y “rate” porcentaje.
 
-* El concepto de fixture en los frameworks de pruebas de software, se refiere a la configuración previa del entorno de ejecución de las pruebas. Por ejemplo, el ColumnFixture de FIT, o @BeforeClass de JUnit.
+(8) El concepto de fixture en los frameworks de pruebas de software, se refiere a la configuración previa del entorno de ejecución de las pruebas. Por ejemplo, el ColumnFixture de FIT, o @BeforeClass de JUnit.
 
-* Enlace roto. El enlace actual (Junio 2018) es el siguiente: http://www.mockobjects.com
+(9) Enlace roto. El enlace actual (Febrero 2021) es el siguiente: http://www.mockobjects.com
 
-10 Siglas en inglés de “Information Technology” ( Tecnología de la Información ).
+(10) Siglas en inglés de “Information Technology” (Tecnología de la Información).
 
-11 Enlace roto.
+(11) Enlace roto. https://web.archive.org/web/20151204043748/http://www.objectmentor.com/resources/articles/dip.pdf
 
-12 Enlace roto. El enlace actual (Junio 2018) es el siguiente: http://www.mockobjects.com
-
-13 Enlace roto. Actualmente (Junio 2018) se desconoce si será migrado.
+(13) Enlace roto. https://web.archive.org/web/20060704170710/http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm
