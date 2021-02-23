@@ -118,7 +118,7 @@ En nuestra adaptación, la cantidad vendrá dada por el usuario y el porcentaje 
 
 *Gracias a Gyan Sharma de IHC por facilitar el código para este ejemplo.*
 
-Etapa 1: *FIT* \| Aplicación \| Constante (en lugar de una Base de Datos *mock* )
+**Etapa 1: *FIT* \| Aplicación \| Constante** (en lugar de una Base de Datos *mock* )
 
 Primero creamos los casos de prueba en una tabla HTML ( ver la documentación de *FIT* ):
 
@@ -154,7 +154,7 @@ fit.FileRunner test/Discounter.html TestDiscount_Output.html
 
 Llegados a este punto el código está listo para pasarlo a "*CruiseControl*" u otra herramienta de integración continua, e incluirlo en la *suite* de compilación y pruebas.
 
-Etapa 2: UI | Aplicación | Constante (en lugar de una Base de Datos *mock* )
+**Etapa 2: UI \| Aplicación \| Constante** (en lugar de una Base de Datos *mock* )
 
 Cree usted su propia UI que ejecute la aplicación "Discounter", ya que el código es un poco largo para incluirlo aquí. Algunas de las líneas clave del código son éstas:
 
@@ -172,7 +172,7 @@ text3.setText( "" + discount );
 
 Llegados a este punto, se puede realizar una demo de la aplicación, y también probarla con tests de regresión. Los adaptadores del "lado del usuario" están ambos ejecutandose.
 
-Etapa 3: (*FIT* o UI) | Aplicación | Base de datos *mock*
+**Etapa 3: (*FIT* o UI) \| Aplicación \| Base de datos *mock***
 
 Para crear un adaptador reemplazable en el "lado de la base de datos" creamos: una interfaz de un repositorio; un "RepositoryFactory" que creará la base de datos *mock* , o el objeto real de servicio; y el *mock* en memoria para la base de datos.
 
