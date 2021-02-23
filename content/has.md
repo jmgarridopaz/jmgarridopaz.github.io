@@ -108,7 +108,9 @@ La figura 3 muestra la misma aplicación convertida en un diagrama de arquitectu
 
 Aforturnadamente, la aplicación más simple que muestra la arquitectura *Ports and Adapters* viene con la documentación de *FIT* . Es una sencilla aplicación para calcular un descuento:
 
+~~~ java
 discount ( amount ) = amount * rate ( amount ); <sup id="npp7_ref"><a href="#npp7">(7)</a></sup>
+~~~
 
 En nuestra adaptación, la cantidad vendrá dada por el usuario y el porcentaje estará en una base de datos, de manera que habrá dos puertos. Los implementamos por etapas:
 
