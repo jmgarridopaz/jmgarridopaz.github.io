@@ -16,8 +16,7 @@ Traducción al español del artículo original de Alistair Cockburn
 
 <div class="published">Autor de la traducción: <a target="_blank" href="https://github.com/jmgarridopaz">Juan Manuel Garrido de Paz</a></div>
 <div class="published">Fecha de la traducción: 24 de Junio de 2018</div>
-<div class="published">Fecha de esta publicación: 21 de Febrero de 2021</div>
-<div class="published"><a href="#anexo">ANEXO: Notas sobre la traducción</a></div>
+<div class="published">Fecha de esta publicación: 23 de Febrero de 2021</div>
 
 ****
 
@@ -36,6 +35,7 @@ Permitir que una aplicación sea ejecutada indistintamente por usuarios, program
 *Cuando llega un evento del mundo exterior, un adaptador dependiente de la tecnología lo convierte en una llamada a un procedimiento utilizable, o en un mensaje, de un puerto* <sup id="npp2_ref"><a href="#npp2">(2)</a></sup>. La aplicación ignora completamente la naturaleza del dispositivo de entrada. Cuando la aplicación tiene algo que enviar, lo hace a través de un puerto a un adaptador, el cual crea las señales oportunas que necesita la tecnología del dispositivo receptor (sea éste un ser humano o un sistema automatizado). La aplicación mantiene una interacción basada en un diálogo semántico con los adaptadores que la rodean, no conoce la naturaleza de los dispositivo0s que están al otro lado de los adaptadores.
 
 ![Figura 1: Arquitectura hexagonal básica](/assets/images/hexagonalarchitecturespanish/figura1.png)
+<p class="figure">Figura 1</p>
 
 ### Motivación
 
@@ -90,10 +90,12 @@ En el apartado "Notas sobre la Aplicación del Patrón", se mencionará de nuevo
 ### Estructura
 
 ![Figura 2: Arquitectura hexagonal con adaptadores](/assets/images/hexagonalarchitecturespanish/figura2.png)
+<p class="figure">Figura 2</p>
 
 La figura 2 muestra una aplicación con dos puertos activos y varios adaptadores para cada puerto. Los dos puertos son el lado que controla la aplicación y el lado para recuperar datos. Este dibujo muestra que la aplicación puede ser dirigida de igual manera por una *suite* de pruebas automatizadas de regresión a nivel de sistema, por un ser humano, por una aplicación *http* remota, o por otra aplicación local. En el lado de los datos, la aplicación se puede configurar para ejecutarse desacoplada de bases de datos externas, utilizando una base de datos de sustitución Oracle en memoria, o *mock* ; o se puede ejecutar con la base de datos de pruebas o con la de producción. La especificación funcional de la aplicación, puede que en casos de uso, se hace contra la interfaz del hexágono interno, y no contra ninguna de las tecnologías externas que se podrían utilizar.
 
 ![Figura 3: Imagen puerta de granero](/assets/images/hexagonalarchitecturespanish/figura3.png)
+<p class="figure">Figura 3</p>
 
 La figura 3 muestra la misma aplicación convertida en un diagrama de arquitectura en tres capas. Para simplificar el diagrama, sólo se muestran dos adaptadores para cada puerto. Con este diagrama se pretende mostrar cómo múltiples adaptadores encajan en las capas superior e inferior, y la secuencia en la que se usan los distintos adaptadores durante el desarrollo del sistema. Las flechas numeradas muestran el orden en el que un equipo debería desarrollar y usar la aplicación:
 
@@ -116,7 +118,7 @@ En nuestra adaptación, la cantidad vendrá dada por el usuario y el porcentaje 
 
 *Gracias a Gyan Sharma de IHC por facilitar el código para este ejemplo.*
 
-**Etapa 1: *FIT* | Aplicación | Constante** (en lugar de una Base de Datos *mock* )
+Etapa 1: *FIT* | Aplicación | Constante (en lugar de una Base de Datos *mock* )
 
 Primero creamos los casos de prueba en una tabla HTML ( ver la documentación de *FIT* ):
 
@@ -152,7 +154,7 @@ fit.FileRunner test/Discounter.html TestDiscount_Output.html
 
 Llegados a este punto el código está listo para pasarlo a "*CruiseControl*" u otra herramienta de integración continua, e incluirlo en la *suite* de compilación y pruebas.
 
-**Etapa 2: UI | Aplicación | Constante** (en lugar de una Base de Datos *mock* )
+Etapa 2: UI | Aplicación | Constante (en lugar de una Base de Datos *mock* )
 
 Cree usted su propia UI que ejecute la aplicación "Discounter", ya que el código es un poco largo para incluirlo aquí. Algunas de las líneas clave del código son éstas:
 
@@ -170,7 +172,7 @@ text3.setText( "" + discount );
 
 Llegados a este punto, se puede realizar una demo de la aplicación, y también probarla con tests de regresión. Los adaptadores del "lado del usuario" están ambos ejecutandose.
 
-**Etapa 3: (*FIT* o UI) | Aplicación | Base de datos *mock***
+Etapa 3: (*FIT* o UI) | Aplicación | Base de datos *mock*
 
 Para crear un adaptador reemplazable en el "lado de la base de datos" creamos: una interfaz de un repositorio; un "RepositoryFactory" que creará la base de datos *mock* , o el objeto real de servicio; y el *mock* en memoria para la base de datos.
 
@@ -242,7 +244,7 @@ public class TestDiscounter extends ColumnFixture
 
 Esto concluye la implementación de la versión más sencilla de la arquitectura hexagonal.
 
-Para una implementación diferente, utilizando *Ruby* y *Rack* para el uso del navegador, ver https://github.com/totheralistair/SmallerWebHexagon
+Para una implementación diferente, utilizando *Ruby* y *Rack* para el uso del navegador, ver <a target="_blank" href="https://github.com/totheralistair/SmallerWebHexagon">https://github.com/totheralistair/SmallerWebHexagon</a>
 
 ### Notas sobre la Aplicación del Patrón
 
@@ -282,6 +284,7 @@ No parece que exista ningún perjuicio concreto al elegir un número "incorrecto
 ### Usos Conocidos
 
 ![Figura 4: Ejemplo complejo](/assets/images/hexagonalarchitecturespanish/figura4.png)
+<p class="figure">Figura 4</p>
 
 La figura 4 muestra una aplicación con cuatro puertos y varios adaptadores para cada puerto. Proviene de una aplicación que escuchaba alertas emitidas por el servicio meteorológico nacional acerca de terremotos, tornados, incendios e inundaciones, y notificaba a la gente en sus teléfonos o en el contestador automático. Cuando se discutió este sistema sus interfaces se identificaron por "tecnología, ligada al propósito". Había una interfaz para los datos de entrada que llegan por cable, una para la notificación de datos que serán enviados a contestadores automáticos, una interfaz de administración implementada en una GUI, y una interfaz de base de datos para recuperar los datos de los abonados.
 
@@ -361,11 +364,11 @@ El patrón de "Inyección de Dependencias" de Martin Fowler aporta algunas imple
 
 ### Agradecimientos
 
-Gracias a Gyan Sharma, de "*Intermountain Health Care*" , por facilitar el código de ejemplo utilizado aquí. Gracias a Rebecca Wirfs-Brock por su libro "*Object Design*" , que leído junto al patrón "Adaptador" del libro "*Design Patterns*" , me ayudó a comprender de qué trataba el hexágono. Gracias también a las personas que en la wiki de Ward aportaron comentarios sobre este patrón a lo largo de los años ( por ejemplo, particularmente el de Kevin Rutherford: http://silkandspinach.net/blog/2004/07/hexagonal_soup.html ).
+Gracias a Gyan Sharma, de "*Intermountain Health Care*" , por facilitar el código de ejemplo utilizado aquí. Gracias a Rebecca Wirfs-Brock por su libro "*Object Design*" , que leído junto al patrón "Adaptador" del libro "*Design Patterns*" , me ayudó a comprender de qué trataba el hexágono. Gracias también a las personas que en la wiki de Ward aportaron comentarios sobre este patrón a lo largo de los años ( por ejemplo, particularmente el de Kevin Rutherford: <a target="_blank" href="http://silkandspinach.net/blog/2004/07/hexagonal_soup.html">http://silkandspinach.net/blog/2004/07/hexagonal_soup.html</a> ).
 
 ### Referencias y Lecturas relacionadas
 
-* FIT, A Framework for Integrating Testing : Cunningham, W., online en http://fit.c2.com , y Mugridge, R. y
+* FIT, A Framework for Integrating Testing : Cunningham, W., online en <a target="_blank" href="http://fit.c2.com">http://fit.c2.com</a>, y Mugridge, R. y
 Cunningham, W., "Fit for Developing Software" , Prentice-Hall PTR, 2005.
 
 * The "Adapter" pattern : en Gamma, E., Helm, R., Johnson, R., Vlissides, J., "Design Patterns" , Addison-Wesley,
@@ -374,16 +377,16 @@ Cunningham, W., "Fit for Developing Software" , Prentice-Hall PTR, 2005.
 * The "Pedestal" pattern : en Rubel, B., "Patterns for Generating a Layered Architecture" , en Coplien, J.,
 Schmidt, D., "PatternLanguages of Program Design" , Addison-Wesley, 1995, pp. 119-150.
 
-* The "Checks" pattern : de Cunningham, W., online en http://c2.com/ppr/checks.html
+* The "Checks" pattern : de Cunningham, W., online en <a target="_blank" href="http://c2.com/ppr/checks.html">http://c2.com/ppr/checks.html</a>
 
 * The "Dependency Inversion Principle" "Agile Software Development Principles Patterns and Practices",
 Prentice Hall, 2003, Chapter 11: "The Dependency-Inversion Principle", y online en <a target="_blank" href="https://web.archive.org/web/20151204043748/http://www.objectmentor.com/resources/articles/dip.pdf">http://www.objectmentor.com/resources/articles/dip.pdf</a> <sup id="npp11_ref"><a href="#npp11">(11)</a></sup>
 
-* The "Dependency Injection" pattern : Fowler, M., online en http://www.martinfowler.com/articles/injection.html
+* The "Dependency Injection" pattern : Fowler, M., online en <a target="_blank" href="http://www.martinfowler.com/articles/injection.html">http://www.martinfowler.com/articles/injection.html</a>
 
 * The "Mock Object" pattern : Freeman, S. online en <a target="_blank" href="https://web.archive.org/web/20060705230613/http://www.mockobjects.com/FrontPage.html">http://MockObjects.com</a>
 
-* The "Loopback" pattern : Cockburn, A., online en http://c2.com/ cgi / wiki?LoopBack
+* The "Loopback" pattern : Cockburn, A., online en <a target="_blank" href="http://c2.com/cgi/wiki?LoopBack">http://c2.com/cgi/wiki?LoopBack</a>
 
 * "Use cases:" Cockburn, A., "Writing Effective Use Cases" , Addison-Wesley, 2001, y Cockburn, A., "Structuring Use Cases with Goals" , online en <a target="_blank" href="https://web.archive.org/web/20060704170710/http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm">http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm</a> <sup id="npp12_ref"><a href="#npp12">(12)</a></sup>
 
