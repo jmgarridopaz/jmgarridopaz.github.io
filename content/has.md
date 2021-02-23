@@ -9,9 +9,7 @@ custom_author_name:
 layout: default
 ---
 
-<p class="introquote">El 4 de enero de 2005, el Dr. Alistair Cockburn (coautor del "Manifiesto Ágil"), publicó un artículo ( <a target="_blank" href="https://alistair.cockburn.us/hexagonal-architecture/">https://alistair.cockburn.us/hexagonal-architecture/</a> ) donde definía formalmente el patrón "Ports and Adapters" (Puertos y Adaptadores), conocido también como "Hexagonal Architecture" (Arquitectura Hexagonal). Ésta es la traducción al español de dicho artículo. Mi agradecimiento a Alistair Cockburn por permitirme traducirlo.</p>
-
-****
+<p class="intro">El 4 de enero de 2005, el Dr. Alistair Cockburn (coautor del "Manifiesto Ágil"), publicó un artículo ( <a target="_blank" href="https://alistair.cockburn.us/hexagonal-architecture/">https://alistair.cockburn.us/hexagonal-architecture/</a> ) donde definía formalmente el patrón "Ports and Adapters" (Puertos y Adaptadores), conocido también como "Hexagonal Architecture" (Arquitectura Hexagonal). Ésta es la traducción al español de dicho artículo. Mi agradecimiento a Alistair Cockburn por permitirme traducirlo.</p>
 
 <div class="published">Autor de la traducción: <a target="_blank" href="https://github.com/jmgarridopaz">Juan Manuel Garrido de Paz</a></div>
 <div class="published">Fecha de la traducción: 24 de Junio de 2018</div>
@@ -19,7 +17,7 @@ layout: default
 
 ****
 
-<p class="intro">Cree su aplicación para que funcione sin interfaz de usuario ni base de datos, de manera que usted pueda ejercitar la aplicación ejecutando pruebas de regresión automatizadas; para que funcione cuando la base de datos no esté disponible; y comunique aplicaciones entre sí sin intervención por parte del usuario.</p>
+<p>Cree su aplicación para que funcione sin interfaz de usuario ni base de datos, de manera que usted pueda ejercitar la aplicación ejecutando pruebas de regresión automatizadas; para que funcione cuando la base de datos no esté disponible; y comunique aplicaciones entre sí sin intervención por parte del usuario.</p>
 
 ![Imagen enchufe 1-4](/assets/images/hexagonalarchitecturespanish/figura0.png)
 
