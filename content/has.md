@@ -9,8 +9,7 @@ custom_author_name:
 layout: default
 ---
 
-Traducción al español del artículo original de Alistair Cockburn  
-(<a target="_blank" href="https://alistair.cockburn.us/hexagonal-architecture/">https://alistair.cockburn.us/hexagonal-architecture/</a>)
+<p class="introquote">El 4 de enero de 2005, el Dr. Alistair Cockburn (coautor del "Manifiesto Ágil"), publicó un artículo ( <a target="_blank" href="https://alistair.cockburn.us/hexagonal-architecture/">https://alistair.cockburn.us/hexagonal-architecture/</a> ) donde definía formalmente el patrón "Ports and Adapters" (Puertos y Adaptadores), conocido también como "Hexagonal Architecture" (Arquitectura Hexagonal). Ésta es la traducción al español de dicho artículo. Mi agradecimiento a Alistair Cockburn por permitirme traducirlo.</p>
 
 ****
 
@@ -24,7 +23,8 @@ Traducción al español del artículo original de Alistair Cockburn
 
 ![Imagen enchufe 1-4](/assets/images/hexagonalarchitecturespanish/figura0.png)
 
-## El Patrón: *PORTS AND ADAPTERS* <sup id="npp1_ref"><a href="#npp1">(1)</a></sup> ("Patrón Estructural de Objetos")
+## El Patrón: *PORTS AND ADAPTERS* <sup id="npp1_ref"><a href="#npp1">(1)</a></sup>  
+**("Patrón Estructural de Objetos")**
 
 ### Nombres alternativos: "*Ports & Adapters*" , "Arquitectura Hexagonal"
 
