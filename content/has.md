@@ -106,10 +106,10 @@ La figura 3 muestra la misma aplicación convertida en un diagrama de arquitectu
 
 ### Código de Ejemplo
 
-Aforturnadamente, la aplicación más simple que muestra la arquitectura *Ports and Adapters* viene con la documentación de *FIT* . Es una sencilla aplicación para calcular un descuento:
+Aforturnadamente, la aplicación más simple que muestra la arquitectura *Ports and Adapters* viene con la documentación de *FIT* . Es una sencilla aplicación para calcular un descuento <sup id="npp7_ref"><a href="#npp7">(7)</a></sup>:
 
 ~~~ java
-discount ( amount ) = amount * rate ( amount ); <sup id="npp7_ref"><a href="#npp7">(7)</a></sup>
+discount ( amount ) = amount * rate ( amount );
 ~~~
 
 En nuestra adaptación, la cantidad vendrá dada por el usuario y el porcentaje estará en una base de datos, de manera que habrá dos puertos. Los implementamos por etapas:
@@ -125,9 +125,11 @@ En nuestra adaptación, la cantidad vendrá dada por el usuario y el porcentaje 
 Primero creamos los casos de prueba en una tabla HTML ( ver la documentación de *FIT* ):
 
 TestDiscounter
-amount discount()
-100 5
-200 10
+
+| amount | discount() |
+|:------:|:----------:|
+|    100 |          5 |
+|    200 |         10 |
 
 Observar que los nombres de las columnas serán nombres de clases y de funciones en nuestro programa. *FIT* tiene formas de saltarse estas normas de terminología, pero para este artículo es más fácil simplemente dejarlo tal cual está.
 
