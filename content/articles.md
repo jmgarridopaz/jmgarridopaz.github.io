@@ -25,6 +25,6 @@ layout: default
 
 - #### [Hexagonal Architecture: The "right" boundary](https://jmgarridopaz.github.io/content/therightboundary.html)
 
-- #### [My translation of "Ports and Adapters Pattern" (by Alistair Cockburn) into spanish](https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.html)
+- #### [My translation of "Ports and Adapters Pattern" (by Alistair Cockburn) into spanish](https://jmgarridopaz.github.io/content/arquitecturahexagonal.html)
 
 - #### [Interview with Alistair Cockburn](https://jmgarridopaz.github.io/content/interviewalistair.html)
