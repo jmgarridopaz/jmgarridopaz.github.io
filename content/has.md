@@ -124,7 +124,7 @@ En nuestra adaptación, la cantidad vendrá dada por el usuario y el porcentaje 
 
 Primero creamos los casos de prueba en una tabla HTML ( ver la documentación de *FIT* ):
 
-| TestDiscounter |            |
+|        TestDiscounter       |
 |     amount     | discount() |
 |:--------------:|:----------:|
 |            100 |          5 |
