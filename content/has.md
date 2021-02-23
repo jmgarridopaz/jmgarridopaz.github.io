@@ -124,11 +124,12 @@ En nuestra adaptación, la cantidad vendrá dada por el usuario y el porcentaje 
 
 Primero creamos los casos de prueba en una tabla HTML ( ver la documentación de *FIT* ):
 
-**TestDiscounter**
-|     amount     | discount() |
-|:--------------:|:----------:|
-|            100 |          5 |
-|            200 |         10 |
+*TestDiscounter*:
+
+| amount | discount() |
+|:------:|:----------:|
+|    100 |          5 |
+|    200 |         10 |
 
 Observar que los nombres de las columnas serán nombres de clases y de funciones en nuestro programa. *FIT* tiene formas de saltarse estas normas de terminología, pero para este artículo es más fácil simplemente dejarlo tal cual está.
 
