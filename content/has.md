@@ -21,8 +21,7 @@ layout: default
 
 ![Imagen enchufe 1-4](/assets/images/hexagonalarchitecturespanish/figura0.png)
 
-## El Patrón: *PORTS AND ADAPTERS* <sup id="npp1_ref"><a href="#npp1">(1)</a></sup>  
-**("Patrón Estructural de Objetos")**
+## El Patrón: *PORTS AND ADAPTERS* <sup id="npp1_ref"><a href="#npp1">(1)</a></sup> ("Patrón Estructural de Objetos")
 
 ### Nombres alternativos: "*Ports & Adapters*" , "Arquitectura Hexagonal"
 
@@ -396,6 +395,8 @@ Prentice Hall, 2003, Chapter 11: "The Dependency-Inversion Principle", y online 
 
 ## ANEXO: NOTAS SOBRE LA TRADUCCIÓN
 
+Hay ciertos términos que deliberadamente no han sido traducidos, bien por ser considerados nombres propios (como por ejemplo los nombres de libros), bien por ser términos informáticos que en español se usan habitualmente tal cual (como por ejemplo batch, framework, mock, etc).
+
 <div id="npp1"></div>
 (1) [↑](#npp1_ref) El nombre del patrón se considera un nombre propio, por lo que las referencias a él siempre se harán utilizando el nombre original en inglés (*Ports and Adapters*). En español sería "Puertos y Adaptadores".
 
@@ -439,13 +440,13 @@ La cual encaja con la arquitectura. Es por tanto esta frase la que he traducido,
 (8) [↑](#npp8_ref) El concepto de *fixture* en los *frameworks* de pruebas de software, se refiere a la configuración previa del entorno de ejecución de las pruebas. Por ejemplo, el *ColumnFixture* de *FIT*, o @BeforeClass de JUnit.
 
 <div id="npp9"></div>
-(9) [↑](#npp9_ref) El sitio web http://MockObjects.com está caído. En su lugar se ha redirigido a la última copia disponible del mismo en el "Archivo de Internet" ( https://web.archive.org/web/20060705230613/http://www.mockobjects.com/FrontPage.html ).
+(9) [↑](#npp9_ref) El sitio web <a target="_blank" href="http://MockObjects.com">http://MockObjects.com</a> está caído. En su lugar se ha redirigido a la última copia disponible del mismo en el "Archivo de Internet" ( <a target="_blank" href="https://web.archive.org/web/20060705230613/http://www.mockobjects.com/FrontPage.html">https://web.archive.org/web/20060705230613/http://www.mockobjects.com/FrontPage.html</a> ).
 
 <div id="npp10"></div>
 (10) [↑](#npp10_ref) IT son las siglas en inglés de "Information Technology" (Tecnología de la Información).
 
 <div id="npp11"></div>
-(11) [↑](#npp11_ref) El enlace http://www.objectmentor.com/resources/articles/dip.pdf referencia un recurso incorrecto. En su lugar se ha referenciado la última copia del recurso correcto disponible en el "Archivo de Internet" ( https://web.archive.org/web/20151204043748/http://www.objectmentor.com/resources/articles/dip.pdf ).
+(11) [↑](#npp11_ref) El enlace <a target="_blank" href="http://www.objectmentor.com/resources/articles/dip.pdf">http://www.objectmentor.com/resources/articles/dip.pdf</a> referencia un recurso incorrecto. En su lugar se ha referenciado la última copia del recurso correcto disponible en el "Archivo de Internet" ( <a target="_blank" href="https://web.archive.org/web/20151204043748/http://www.objectmentor.com/resources/articles/dip.pdf">https://web.archive.org/web/20151204043748/http://www.objectmentor.com/resources/articles/dip.pdf</a> ).
 
 <div id="npp12"></div>
-(12) [↑](#npp12_ref) El sitio web del artículo http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm está caído. En su lugar se ha redirigido a la última copia disponible de dicho artículo en el "Archivo de Internet" ( https://web.archive.org/web/20060704170710/http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm ).
+(12) [↑](#npp12_ref) El sitio web del artículo <a target="_blank" href="http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm">http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm</a> está caído. En su lugar se ha redirigido a la última copia disponible de dicho artículo en el "Archivo de Internet" ( <a target="_blank" href="https://web.archive.org/web/20060704170710/http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm">https://web.archive.org/web/20060704170710/http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm</a> ).
