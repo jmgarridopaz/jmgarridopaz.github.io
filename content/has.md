@@ -118,7 +118,7 @@ En nuestra adaptación, la cantidad vendrá dada por el usuario y el porcentaje 
 
 *Gracias a Gyan Sharma de IHC por facilitar el código para este ejemplo.*
 
-Etapa 1: *FIT* | Aplicación | Constante (en lugar de una Base de Datos *mock* )
+Etapa 1: *FIT* \| Aplicación \| Constante (en lugar de una Base de Datos *mock* )
 
 Primero creamos los casos de prueba en una tabla HTML ( ver la documentación de *FIT* ):
 
