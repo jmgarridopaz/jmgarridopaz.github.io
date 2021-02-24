@@ -369,27 +369,27 @@ Gracias a Gyan Sharma, de "*Intermountain Health Care*" , por facilitar el códi
 
 ### Referencias y Lecturas relacionadas
 
-* ***"FIT, A Framework for Integrating Testing"***: Cunningham, W., online en <a target="_blank" href="http://fit.c2.com">http://fit.c2.com</a>, y Mugridge, R. y
+* ***"FIT, A Framework for Integrating Testing"*** : Cunningham, W., online en <a target="_blank" href="http://fit.c2.com">http://fit.c2.com</a>, y Mugridge, R. y
 Cunningham, W., ***"Fit for Developing Software"***, Prentice-Hall PTR, 2005.
 
-* ***"The Adapter pattern"***: en Gamma, E., Helm, R., Johnson, R., Vlissides, J., ***"Design Patterns"***, Addison-Wesley,
+* ***"The Adapter pattern"*** : en Gamma, E., Helm, R., Johnson, R., Vlissides, J., ***"Design Patterns"***, Addison-Wesley,
 1995, pp. 139-150.
 
-* ***"The Pedestal pattern"***: en Rubel, B., ***"Patterns for Generating a Layered Architecture"***, en Coplien, J.,
+* ***"The Pedestal pattern"*** : en Rubel, B., ***"Patterns for Generating a Layered Architecture"***, en Coplien, J.,
 Schmidt, D., ***"PatternLanguages of Program Design"***, Addison-Wesley, 1995, pp. 119-150.
 
-* ***"The Checks pattern***: de Cunningham, W., online en <a target="_blank" href="http://c2.com/ppr/checks.html">http://c2.com/ppr/checks.html</a>
+* ***"The Checks pattern"*** : de Cunningham, W., online en <a target="_blank" href="http://c2.com/ppr/checks.html">http://c2.com/ppr/checks.html</a>
 
-* ***"The Dependency Inversion Principle"***: Martin, R., en ***"Agile Software Development Principles Patterns and Practices"***,
+* ***"The Dependency Inversion Principle"*** : Martin, R., en ***"Agile Software Development Principles Patterns and Practices"***,
 Prentice Hall, 2003, ***"Chapter 11: The Dependency-Inversion Principle"***, y online en <a target="_blank" href="https://web.archive.org/web/20151204043748/http://www.objectmentor.com/resources/articles/dip.pdf">http://www.objectmentor.com/resources/articles/dip.pdf</a> <sup id="npp11_ref"><a href="#npp11">(11)</a></sup>
 
-* ***"The Dependency Injection pattern"***: Fowler, M., online en <a target="_blank" href="http://www.martinfowler.com/articles/injection.html">http://www.martinfowler.com/articles/injection.html</a>
+* ***"The Dependency Injection pattern"*** : Fowler, M., online en <a target="_blank" href="http://www.martinfowler.com/articles/injection.html">http://www.martinfowler.com/articles/injection.html</a>
 
-* ***"The Mock Object pattern"***: Freeman, S. online en <a target="_blank" href="https://web.archive.org/web/20060705230613/http://www.mockobjects.com/FrontPage.html">http://MockObjects.com</a>
+* ***"The Mock Object pattern"*** : Freeman, S. online en <a target="_blank" href="https://web.archive.org/web/20060705230613/http://www.mockobjects.com/FrontPage.html">http://MockObjects.com</a>
 
-* ***"The Loopback pattern"***: Cockburn, A., online en <a target="_blank" href="http://c2.com/cgi/wiki?LoopBack">http://c2.com/cgi/wiki?LoopBack</a>
+* ***"The Loopback pattern"*** : Cockburn, A., online en <a target="_blank" href="http://c2.com/cgi/wiki?LoopBack">http://c2.com/cgi/wiki?LoopBack</a>
 
-* ***"Use cases"***: Cockburn, A., ***"Writing Effective Use Cases"***, Addison-Wesley, 2001, y Cockburn, A., ***"Structuring Use Cases with Goals"***, online en <a target="_blank" href="https://web.archive.org/web/20060704170710/http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm">http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm</a> <sup id="npp12_ref"><a href="#npp12">(12)</a></sup>
+* ***"Use cases"*** : Cockburn, A., ***"Writing Effective Use Cases"***, Addison-Wesley, 2001, y Cockburn, A., ***"Structuring Use Cases with Goals"***, online en <a target="_blank" href="https://web.archive.org/web/20060704170710/http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm">http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm</a> <sup id="npp12_ref"><a href="#npp12">(12)</a></sup>
 
 ****
 
