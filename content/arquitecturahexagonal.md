@@ -9,7 +9,7 @@ custom_author_name:
 layout: default
 ---
 
-<p class="intro">El 4 de enero de 2005, el Dr. Alistair Cockburn (coautor del "Manifiesto Ágil"), publicó un artículo ( <a target="_blank" href="https://alistair.cockburn.us/hexagonal-architecture/">https://alistair.cockburn.us/hexagonal-architecture/</a> ) donde definía formalmente el patrón "Ports and Adapters" (Puertos y Adaptadores), conocido también como "Hexagonal Architecture" (Arquitectura Hexagonal). Ésta es la traducción al español de dicho artículo. Mi agradecimiento a Alistair Cockburn por permitirme traducirlo.</p>
+<p class="intro">El 4 de enero de 2005, el Dr. Alistair Cockburn (coautor del "Manifiesto Ágil"), publicó un artículo ( <a target="_blank" href="https://alistair.cockburn.us/hexagonal-architecture/">https://alistair.cockburn.us/hexagonal-architecture/</a> ) donde definía formalmente el patrón "Ports and Adapters" (Puertos y Adaptadores), conocido también como "Hexagonal Architecture" (Arquitectura Hexagonal). Ésta es la traducción <sup id="npp0_ref"><a href="#npp0">(0)</a></sup> al español de dicho artículo. Mi agradecimiento a Alistair Cockburn por permitirme traducirlo.</p>
 
 <div class="published">Autor de la traducción: <a target="_blank" href="https://github.com/jmgarridopaz">Juan Manuel Garrido de Paz</a></div>
 <div class="published">Fecha de la traducción: 24 de Junio de 2018</div>
@@ -17,7 +17,7 @@ layout: default
 
 ****
 
-<p>Cree su aplicación para que funcione sin interfaz de usuario ni base de datos, de manera que usted pueda ejercitar la aplicación ejecutando pruebas de regresión automatizadas; para que funcione cuando la base de datos no esté disponible; y comunique aplicaciones entre sí sin intervención por parte del usuario.</p>
+Cree su aplicación para que funcione sin interfaz de usuario ni base de datos, de manera que usted pueda ejercitar la aplicación ejecutando pruebas de regresión automatizadas; para que funcione cuando la base de datos no esté disponible; y comunique aplicaciones entre sí sin intervención por parte del usuario.
 
 ![Imagen enchufe 1-4](/assets/images/hexagonalarchitecturespanish/figura0.png)
 
@@ -395,7 +395,8 @@ Prentice Hall, 2003, ***"Chapter 11: The Dependency-Inversion Principle"***, y o
 
 ## ANEXO: NOTAS SOBRE LA TRADUCCIÓN
 
-Hay ciertos términos que deliberadamente no han sido traducidos, bien por ser considerados nombres propios (como por ejemplo los nombres de libros), bien por ser términos informáticos que en español se usan habitualmente tal cual (como por ejemplo batch, framework, mock, etc).
+<div id="npp0"></div>
+(0) [↑](#npp0_ref) Hay ciertos términos que deliberadamente no han sido traducidos, bien por ser considerados nombres propios (como por ejemplo los nombres de libros), bien por ser términos informáticos que en español se usan habitualmente tal cual (como por ejemplo batch, framework, mock, etc).
 
 <div id="npp1"></div>
 (1) [↑](#npp1_ref) El nombre del patrón se considera un nombre propio, por lo que las referencias a él siempre se harán utilizando el nombre original en inglés (*Ports and Adapters*). En español sería "Puertos y Adaptadores".
