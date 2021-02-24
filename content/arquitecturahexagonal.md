@@ -9,7 +9,7 @@ custom_author_name:
 layout: default
 ---
 
-<p class="intro">El 4 de enero de 2005, el Dr. Alistair Cockburn (coautor del "Manifiesto Ágil"), publicó un artículo ( <a target="_blank" href="https://alistair.cockburn.us/hexagonal-architecture/">https://alistair.cockburn.us/hexagonal-architecture/</a> ) donde definía formalmente el patrón "Ports and Adapters" (Puertos y Adaptadores), conocido también como "Hexagonal Architecture" (Arquitectura Hexagonal). Ésta es la traducción <sup id="npp0_ref"><a href="#npp0">(0)</a></sup> al español de dicho artículo. Mi agradecimiento a Alistair Cockburn por permitirme traducirlo.</p>
+<p class="intro">El 4 de enero de 2005, el Dr. Alistair Cockburn (coautor del "Manifiesto Ágil"), publicó un artículo ( <a target="_blank" href="https://alistair.cockburn.us/hexagonal-architecture/">https://alistair.cockburn.us/hexagonal-architecture/</a> ) donde definía formalmente el patrón "Ports and Adapters" (Puertos y Adaptadores), conocido también como "Hexagonal Architecture" (Arquitectura Hexagonal). Ésta es la traducción <sup id="npp1_ref"><a href="#npp1">(1)</a></sup> al español de dicho artículo. Mi agradecimiento a Alistair Cockburn por permitirme traducirlo.</p>
 
 <div class="published">Autor de la traducción: <a target="_blank" href="https://github.com/jmgarridopaz">Juan Manuel Garrido de Paz</a></div>
 <div class="published">Fecha de la traducción: 24 de Junio de 2018</div>
@@ -21,7 +21,7 @@ Cree su aplicación para que funcione sin interfaz de usuario ni base de datos, 
 
 ![Imagen enchufe 1-4](/assets/images/hexagonalarchitecturespanish/figura0.png)
 
-## El Patrón: *PORTS AND ADAPTERS* <sup id="npp1_ref"><a href="#npp1">(1)</a></sup> ("Patrón Estructural de Objetos")
+## El Patrón: *PORTS AND ADAPTERS* <sup id="npp2_ref"><a href="#npp2">(2)</a></sup> ("Patrón Estructural de Objetos")
 
 ### Nombres alternativos: "*Ports & Adapters*" , "Arquitectura Hexagonal"
 
@@ -29,7 +29,7 @@ Cree su aplicación para que funcione sin interfaz de usuario ni base de datos, 
 
 Permitir que una aplicación sea ejecutada indistintamente por usuarios, programas, pruebas automatizadas, o archivos *batch* ; y que sea desarrollada y probada por separado, sin los posibles dipositivos y bases de datos de los que dependa en tiempo de ejecución.
 
-*Cuando llega un evento del mundo exterior, un adaptador dependiente de la tecnología lo convierte en una llamada a un procedimiento utilizable, o en un mensaje, de un puerto* <sup id="npp2_ref"><a href="#npp2">(2)</a></sup>. La aplicación ignora completamente la naturaleza del dispositivo de entrada. Cuando la aplicación tiene algo que enviar, lo hace a través de un puerto a un adaptador, el cual crea las señales oportunas que necesita la tecnología del dispositivo receptor (sea éste un ser humano o un sistema automatizado). La aplicación mantiene una interacción basada en un diálogo semántico con los adaptadores que la rodean, no conoce la naturaleza de los dispositivo0s que están al otro lado de los adaptadores.
+*Cuando llega un evento del mundo exterior, un adaptador dependiente de la tecnología lo convierte en una llamada a un procedimiento utilizable, o en un mensaje, de un puerto* <sup id="npp3_ref"><a href="#npp3">(3)</a></sup>. La aplicación ignora completamente la naturaleza del dispositivo de entrada. Cuando la aplicación tiene algo que enviar, lo hace a través de un puerto a un adaptador, el cual crea las señales oportunas que necesita la tecnología del dispositivo receptor (sea éste un ser humano o un sistema automatizado). La aplicación mantiene una interacción basada en un diálogo semántico con los adaptadores que la rodean, no conoce la naturaleza de los dispositivo0s que están al otro lado de los adaptadores.
 
 ![Figura 1: Arquitectura hexagonal básica](/assets/images/hexagonalarchitecturespanish/figura1.png)
 <p class="figure">Figura 1</p>
@@ -46,7 +46,7 @@ Una de las grandes pesadillas de las aplicaciones software a lo largo de los añ
 
 El intento de solución, llevado a cabo en muchas organizaciones, es crear una nueva capa en la arquitectura, con la promesa de que esta vez, real y verdaderamente, no se pondrá ninguna lógica de negocio en la nueva capa. Sin embargo, sin tener ningún mecanismo para detectar el incumplimiento de esa promesa, la organización se da cuenta pocos años después de que la nueva capa está repleta de lógica de negocio, y de que ha reaparecido el antiguo problema.
 
-Imaginemos por un momento que cada funcionalidad que la aplicación ofrece estuviera disponible a través de un API <sup id="npp3_ref"><a href="#npp3">(3)</a></sup> (Interfaz de Programación de Aplicaciones) o de la llamada a una función. En dicho caso, el departamento de pruebas o el de QA <sup id="npp4_ref"><a href="#npp4">(4)</a></sup> pueden ejecutar *scripts* de pruebas automatizadas, para detectar cuándo un nuevo código hace que una función que previamente funcionaba, deje de funcionar. Los expertos del negocio pueden crear casos de pruebas automatizados, antes de que se hayan finalizado los detalles de la interfaz gráfica de usuario, lo cual sirve a los programadores para saber cuándo han realizado correctamente su trabajo (y estas pruebas serán las ejecutadas por el departamento de pruebas). La aplicación se puede desplegar en modo *headless* <sup id="npp5_ref"><a href="#npp5">(5)</a></sup>, donde sólo el API está disponible, y otros programas pueden hacer uso de su funcionalidad – esto simplifica el diseño global de sistemas de aplicaciones complejas, y también permite que las aplicaciones con servicios negocio-a-negocio se llamen unas a otras a través de la web sin intervención del ser humano. Por último, las pruebas de regresión automatizadas detectan cualquier incumplimiento de la promesa de mantener la lógica de negocio fuera de la capa de presentación. La organización puede detectar, y después corregir, la fuga de lógica.
+Imaginemos por un momento que cada funcionalidad que la aplicación ofrece estuviera disponible a través de un API <sup id="npp4_ref"><a href="#npp4">(4)</a></sup> (Interfaz de Programación de Aplicaciones) o de la llamada a una función. En dicho caso, el departamento de pruebas o el de QA <sup id="npp5_ref"><a href="#npp5">(5)</a></sup> pueden ejecutar *scripts* de pruebas automatizadas, para detectar cuándo un nuevo código hace que una función que previamente funcionaba, deje de funcionar. Los expertos del negocio pueden crear casos de pruebas automatizados, antes de que se hayan finalizado los detalles de la interfaz gráfica de usuario, lo cual sirve a los programadores para saber cuándo han realizado correctamente su trabajo (y estas pruebas serán las ejecutadas por el departamento de pruebas). La aplicación se puede desplegar en modo *headless* <sup id="npp6_ref"><a href="#npp6">(6)</a></sup>, donde sólo el API está disponible, y otros programas pueden hacer uso de su funcionalidad – esto simplifica el diseño global de sistemas de aplicaciones complejas, y también permite que las aplicaciones con servicios negocio-a-negocio se llamen unas a otras a través de la web sin intervención del ser humano. Por último, las pruebas de regresión automatizadas detectan cualquier incumplimiento de la promesa de mantener la lógica de negocio fuera de la capa de presentación. La organización puede detectar, y después corregir, la fuga de lógica.
 
 Un problema similar interesante existe en lo que normalmente se considera "el otro lado" de la aplicación, donde la lógica de aplicación está ligada a una base de datos externa u otro servicio. Cuando el servidor de base de datos se cae o está bajo mantenimiento o necesita ser reemplazado, los programadores no pueden trabajar porque su trabajo está ligado a la presencia de la base de datos. Esto genera costes de demora y a menudo malas sensaciones entre la gente.
 
@@ -62,7 +62,7 @@ Olvidando por un momento cualquier asimetría entre la parte izquierda y la dere
 
 * El protocolo adopta la forma de una "Interfaz de Programación de Aplicaciones" (API).
 
-Para cada dispositivo externo hay un adaptador que convierte la definición del API a las señales que necesita el dispositivo y viceversa. Una "Interfaz Gráfica de Usuario" o GUI <sup id="npp6_ref"><a href="#npp6">(6)</a></sup> es un ejemplo de adaptador que convierte los movimientos de una persona al API del puerto. Otros adaptadores que encajan en el mismo puerto son: *frameworks* para pruebas automatizadas como *FIT* o *Fitnesse*, programas para ejecutar archivos *batch*, y cualquier código necesario para la comunicación entre aplicaciones a través de la red.
+Para cada dispositivo externo hay un adaptador que convierte la definición del API a las señales que necesita el dispositivo y viceversa. Una "Interfaz Gráfica de Usuario" o GUI <sup id="npp7_ref"><a href="#npp7">(7)</a></sup> es un ejemplo de adaptador que convierte los movimientos de una persona al API del puerto. Otros adaptadores que encajan en el mismo puerto son: *frameworks* para pruebas automatizadas como *FIT* o *Fitnesse*, programas para ejecutar archivos *batch*, y cualquier código necesario para la comunicación entre aplicaciones a través de la red.
 
 En otro lado de la aplicación, ésta se comunica con una entidad externa para obtener datos. Típicamente, el protocolo es un protocolo de base de datos. Desde el punto de vista de la aplicación, si la base de datos pasa de ser una base de datos SQL a ser un archivo de texto plano o cualquier otro tipo de base de datos, la conversación a través del API no debería cambiar. Por tanto otros adaptadores para el mismo puerto podrían ser: un adaptador SQL, un adaptador para archivo de texto plano, y lo más importante, un adaptador para una base de datos *mock*, que resida en memoria y no dependa en absoluto de la presencia de la base de datos real.
 
@@ -103,7 +103,7 @@ La figura 3 muestra la misma aplicación convertida en un diagrama de arquitectu
 
 ### Código de Ejemplo
 
-Aforturnadamente, la aplicación más simple que muestra la arquitectura *Ports and Adapters* viene con la documentación de *FIT* . Es una sencilla aplicación para calcular un descuento <sup id="npp7_ref"><a href="#npp7">(7)</a></sup>:
+Aforturnadamente, la aplicación más simple que muestra la arquitectura *Ports and Adapters* viene con la documentación de *FIT* . Es una sencilla aplicación para calcular un descuento <sup id="npp8_ref"><a href="#npp8">(8)</a></sup>:
 
 ~~~ java
 discount ( amount ) = amount * rate ( amount );
@@ -253,7 +253,7 @@ Para una implementación diferente, utilizando *Ruby* y *Rack* para el uso del n
 
 El patrón *Ports and Adapters* está escrito deliberadamente con la intención de que todos los puertos sean similares. Esta intención es útil a nivel de arquitectura. En cuanto a su implementación, los puertos y los adaptadores muestran dos aspectos, que llamaré "primario" y "secundario", por razones que pronto serán obvias. También se podrían llamar adaptadores "directores" y adaptadores "dirigidos".
 
-Un lector avispado se habrá dado cuenta de que en todos los ejemplos anteriores, los *fixtures* <sup id="npp8_ref"><a href="#npp8">(8)</a></sup> de *FIT* se usan en los puertos de la izquierda y los *mocks* en los de la derecha. En la arquitectura de tres capas, *FIT* se encuentra en la capa superior y el *mock* en la capa inferior.
+Un lector avispado se habrá dado cuenta de que en todos los ejemplos anteriores, los *fixtures* <sup id="npp9_ref"><a href="#npp9">(9)</a></sup> de *FIT* se usan en los puertos de la izquierda y los *mocks* en los de la derecha. En la arquitectura de tres capas, *FIT* se encuentra en la capa superior y el *mock* en la capa inferior.
 
 Esto está relacionado con la idea de "actores primarios" y "actores secundarios" en los casos de uso. Un "actor primario" es un actor que dirige la aplicación (la saca de un estado inactivo para que lleve a cabo una de las funciones que ofrece). Un "actor secundario" es aquel al que la aplicación dirige, bien para obtener repuesta de él, bien para simplemente notificarle algo. La distinción entre "primario" y "secundario" reside en quién inicia la comunicación o es el responsable de ella.
 
@@ -341,7 +341,7 @@ El patrón MVC fue implementado muy pronto, en 1974, en el proyecto Smalltalk. H
 
 **"Objetos *Mock*" y "*Loopback*"**
 
-"Un objeto '*mock*' es un 'agente doble' usado para probar el comportamiento de otros objetos. En primer lugar, un objeto '*mock*' actúa como una implementación falsa de una interfaz o clase que imita el comportamiento externo de una implementación real. En segundo lugar, un objeto '*mock*' observa cómo otros objetos interactúan con sus métodos y compara el comportamiento efectivo con las expectativas prefijadas. Cuando se da una discrepancia, un objeto '*mock*' puede interrumpir la prueba e informar de la anomalía. Si la discrepancia no puede ser descubierta durante la prueba, un método de verificación invocado por el realizador de la misma asegura que todas las expectativas se han cumplido o se ha informado de los fallos." - de <a target="_blank" href="https://web.archive.org/web/20060705230613/http://www.mockobjects.com/FrontPage.html">http://MockObjects.com</a> <sup id="npp9_ref"><a href="#npp9">(9)</a></sup>
+"Un objeto '*mock*' es un 'agente doble' usado para probar el comportamiento de otros objetos. En primer lugar, un objeto '*mock*' actúa como una implementación falsa de una interfaz o clase que imita el comportamiento externo de una implementación real. En segundo lugar, un objeto '*mock*' observa cómo otros objetos interactúan con sus métodos y compara el comportamiento efectivo con las expectativas prefijadas. Cuando se da una discrepancia, un objeto '*mock*' puede interrumpir la prueba e informar de la anomalía. Si la discrepancia no puede ser descubierta durante la prueba, un método de verificación invocado por el realizador de la misma asegura que todas las expectativas se han cumplido o se ha informado de los fallos." - de <a target="_blank" href="https://web.archive.org/web/20060705230613/http://www.mockobjects.com/FrontPage.html">http://MockObjects.com</a> <sup id="npp10_ref"><a href="#npp10">(10)</a></sup>
 
 Implementándolos cumpliendo completamente con la agenda *mock-object* , los objetos *mock* se usan en toda la aplicación, no sólo en la interfaz externa. La idea clave del movimiento *mock-object* es el cumplimiento del protocolo especificado a nivel de clases individuales y objetos. Tomo prestada su palabra "*mock*" como la mejor descripción breve de "sustituto en memoria de un actor secundario externo".
 
@@ -349,7 +349,7 @@ El patrón *Loopback* es un patrón explícito para crear una sustitución inter
 
 ***Pedestal***
 
-En "*Patterns for Generating a Layered Architecture*" , Barry Rubel describe un patrón para crear un eje de simetría en software de control que es muy similar a *Ports and Adapters* . El patrón "*Pedestal*" propugna implementar un objeto que represente cada dispositivo hardware de un sistema, y enlazar dichos objetos entre sí en una capa de control. El patrón "*Pedestal*" se puede usar para describir cualquiera de los dos lados de la arquitectura hexagonal, pero no redunda en la similitud entre adaptadores. Además, al haber sido escrito para un entorno de control mecánico, no es tan fácil ver cómo aplicar el patrón a aplicaciones de IT <sup id="npp10_ref"><a href="#npp10">(10)</a></sup>.
+En "*Patterns for Generating a Layered Architecture*" , Barry Rubel describe un patrón para crear un eje de simetría en software de control que es muy similar a *Ports and Adapters* . El patrón "*Pedestal*" propugna implementar un objeto que represente cada dispositivo hardware de un sistema, y enlazar dichos objetos entre sí en una capa de control. El patrón "*Pedestal*" se puede usar para describir cualquiera de los dos lados de la arquitectura hexagonal, pero no redunda en la similitud entre adaptadores. Además, al haber sido escrito para un entorno de control mecánico, no es tan fácil ver cómo aplicar el patrón a aplicaciones de IT <sup id="npp11_ref"><a href="#npp11">(11)</a></sup>.
 
 ***Checks***
 
@@ -381,7 +381,7 @@ Schmidt, D., ***"PatternLanguages of Program Design"***, Addison-Wesley, 1995, p
 * ***"The Checks pattern"*** : de Cunningham, W., online en <a target="_blank" href="http://c2.com/ppr/checks.html">http://c2.com/ppr/checks.html</a>
 
 * ***"The Dependency Inversion Principle"*** : Martin, R., en ***"Agile Software Development Principles Patterns and Practices"***,
-Prentice Hall, 2003, ***"Chapter 11: The Dependency-Inversion Principle"***, y online en <a target="_blank" href="https://web.archive.org/web/20151204043748/http://www.objectmentor.com/resources/articles/dip.pdf">http://www.objectmentor.com/resources/articles/dip.pdf</a> <sup id="npp11_ref"><a href="#npp11">(11)</a></sup>
+Prentice Hall, 2003, ***"Chapter 11: The Dependency-Inversion Principle"***, y online en <a target="_blank" href="https://web.archive.org/web/20151204043748/http://www.objectmentor.com/resources/articles/dip.pdf">http://www.objectmentor.com/resources/articles/dip.pdf</a> <sup id="npp12_ref"><a href="#npp12">(12)</a></sup>
 
 * ***"The Dependency Injection pattern"*** : Fowler, M., online en <a target="_blank" href="http://www.martinfowler.com/articles/injection.html">http://www.martinfowler.com/articles/injection.html</a>
 
@@ -389,20 +389,20 @@ Prentice Hall, 2003, ***"Chapter 11: The Dependency-Inversion Principle"***, y o
 
 * ***"The Loopback pattern"*** : Cockburn, A., online en <a target="_blank" href="http://c2.com/cgi/wiki?LoopBack">http://c2.com/cgi/wiki?LoopBack</a>
 
-* ***"Use cases"*** : Cockburn, A., ***"Writing Effective Use Cases"***, Addison-Wesley, 2001, y Cockburn, A., ***"Structuring Use Cases with Goals"***, online en <a target="_blank" href="https://web.archive.org/web/20060704170710/http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm">http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm</a> <sup id="npp12_ref"><a href="#npp12">(12)</a></sup>
+* ***"Use cases"*** : Cockburn, A., ***"Writing Effective Use Cases"***, Addison-Wesley, 2001, y Cockburn, A., ***"Structuring Use Cases with Goals"***, online en <a target="_blank" href="https://web.archive.org/web/20060704170710/http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm">http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm</a> <sup id="npp13_ref"><a href="#npp13">(13)</a></sup>
 
 ****
 
 ## ANEXO: NOTAS SOBRE LA TRADUCCIÓN
 
-<div id="npp0"></div>
-(0) [↑](#npp0_ref) Hay ciertos términos que deliberadamente no han sido traducidos, bien por ser considerados nombres propios (como por ejemplo los nombres de libros), bien por ser términos informáticos que en español se usan habitualmente tal cual (como por ejemplo batch, framework, mock, etc).
-
 <div id="npp1"></div>
-(1) [↑](#npp1_ref) El nombre del patrón se considera un nombre propio, por lo que las referencias a él siempre se harán utilizando el nombre original en inglés (*Ports and Adapters*). En español sería "Puertos y Adaptadores".
+(1) [↑](#npp1_ref) Hay ciertos términos que deliberadamente no han sido traducidos, bien por ser considerados nombres propios (como por ejemplo los nombres de libros), bien por ser términos informáticos que en español se usan habitualmente tal cual (como por ejemplo batch, framework, mock, etc).
 
 <div id="npp2"></div>
-(2) [↑](#npp2_ref) Esta frase no se corresponde con la del artículo original. El artículo original, en su apartado "Intent", contiene la frase:
+(2) [↑](#npp2_ref) El nombre del patrón se considera un nombre propio, por lo que las referencias a él siempre se harán utilizando el nombre original en inglés (*Ports and Adapters*). En español sería "Puertos y Adaptadores".
+
+<div id="npp3"></div>
+(3) [↑](#npp3_ref) Esta frase no se corresponde con la del artículo original. El artículo original, en su apartado "Intent", contiene la frase:
 
 "As events arrive from the outside world at a port, a technology-specific adapter converts it into a usable procedure call or message and passes it to the application"
 
@@ -422,32 +422,32 @@ La cual encaja con la arquitectura. Es por tanto esta frase la que he traducido,
 
 "Cuando llega un evento del mundo exterior, un adaptador dependiente de la tecnología lo convierte en una llamada a un procedimiento utilizable, o en un mensaje, de un puerto"
 
-<div id="npp3"></div>
-(3) [↑](#npp3_ref) API son las siglas en inglés de "Application Programming Interface" (Interfaz de Programación de Aplicaciones).
-
 <div id="npp4"></div>
-(4) [↑](#npp4_ref) QA son las siglas en inglés de "Quality Assurance" (Aseguramiento de la Calidad).
+(4) [↑](#npp4_ref) API son las siglas en inglés de "Application Programming Interface" (Interfaz de Programación de Aplicaciones).
 
 <div id="npp5"></div>
-(5) [↑](#npp5_ref) El modo de funcionamiento "headless" de una aplicación es un modo de funcionamiento sin interfaz de usuario.
+(5) [↑](#npp5_ref) QA son las siglas en inglés de "Quality Assurance" (Aseguramiento de la Calidad).
 
 <div id="npp6"></div>
-(6) [↑](#npp6_ref) GUI son las siglas en inglés de "Graphical User Interface" (Interfaz Gráfica de Usuario).
+(6) [↑](#npp6_ref) El modo de funcionamiento "headless" de una aplicación es un modo de funcionamiento sin interfaz de usuario.
 
 <div id="npp7"></div>
-(7) [↑](#npp7_ref) "discount" significa descuento, "amount" cantidad, y "rate" porcentaje.
+(7) [↑](#npp7_ref) GUI son las siglas en inglés de "Graphical User Interface" (Interfaz Gráfica de Usuario).
 
 <div id="npp8"></div>
-(8) [↑](#npp8_ref) El concepto de *fixture* en los *frameworks* de pruebas de software, se refiere a la configuración previa del entorno de ejecución de las pruebas. Por ejemplo, el *ColumnFixture* de *FIT*, o @BeforeClass de JUnit.
+(8) [↑](#npp8_ref) "discount" significa descuento, "amount" cantidad, y "rate" porcentaje.
 
 <div id="npp9"></div>
-(9) [↑](#npp9_ref) El sitio web <a target="_blank" href="http://MockObjects.com">http://MockObjects.com</a> está caído. En su lugar se ha redirigido a la última copia disponible del mismo en el "Archivo de Internet" ( <a target="_blank" href="https://web.archive.org/web/20060705230613/http://www.mockobjects.com/FrontPage.html">https://web.archive.org/web/20060705230613/http://www.mockobjects.com/FrontPage.html</a> ).
+(9) [↑](#npp9_ref) El concepto de *fixture* en los *frameworks* de pruebas de software, se refiere a la configuración previa del entorno de ejecución de las pruebas. Por ejemplo, el *ColumnFixture* de *FIT*, o @BeforeClass de JUnit.
 
 <div id="npp10"></div>
-(10) [↑](#npp10_ref) IT son las siglas en inglés de "Information Technology" (Tecnología de la Información).
+(10) [↑](#npp10_ref) El sitio web <a target="_blank" href="http://MockObjects.com">http://MockObjects.com</a> está caído. En su lugar se ha redirigido a la última copia disponible del mismo en el "Archivo de Internet" ( <a target="_blank" href="https://web.archive.org/web/20060705230613/http://www.mockobjects.com/FrontPage.html">https://web.archive.org/web/20060705230613/http://www.mockobjects.com/FrontPage.html</a> ).
 
 <div id="npp11"></div>
-(11) [↑](#npp11_ref) El enlace <a target="_blank" href="http://www.objectmentor.com/resources/articles/dip.pdf">http://www.objectmentor.com/resources/articles/dip.pdf</a> referencia un recurso incorrecto. En su lugar se ha referenciado la última copia del recurso correcto disponible en el "Archivo de Internet" ( <a target="_blank" href="https://web.archive.org/web/20151204043748/http://www.objectmentor.com/resources/articles/dip.pdf">https://web.archive.org/web/20151204043748/http://www.objectmentor.com/resources/articles/dip.pdf</a> ).
+(11) [↑](#npp11_ref) IT son las siglas en inglés de "Information Technology" (Tecnología de la Información).
 
 <div id="npp12"></div>
-(12) [↑](#npp12_ref) El sitio web del artículo <a target="_blank" href="http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm">http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm</a> está caído. En su lugar se ha redirigido a la última copia disponible de dicho artículo en el "Archivo de Internet" ( <a target="_blank" href="https://web.archive.org/web/20060704170710/http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm">https://web.archive.org/web/20060704170710/http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm</a> ).
+(12) [↑](#npp12_ref) El enlace <a target="_blank" href="http://www.objectmentor.com/resources/articles/dip.pdf">http://www.objectmentor.com/resources/articles/dip.pdf</a> referencia un recurso incorrecto. En su lugar se ha referenciado la última copia del recurso correcto disponible en el "Archivo de Internet" ( <a target="_blank" href="https://web.archive.org/web/20151204043748/http://www.objectmentor.com/resources/articles/dip.pdf">https://web.archive.org/web/20151204043748/http://www.objectmentor.com/resources/articles/dip.pdf</a> ).
+
+<div id="npp13"></div>
+(13) [↑](#npp13_ref) El sitio web del artículo <a target="_blank" href="http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm">http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm</a> está caído. En su lugar se ha redirigido a la última copia disponible de dicho artículo en el "Archivo de Internet" ( <a target="_blank" href="https://web.archive.org/web/20060704170710/http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm">https://web.archive.org/web/20060704170710/http://alistair.cockburn.us/crystal/articles/sucwg/structuringucswithgoals.htm</a> ).
