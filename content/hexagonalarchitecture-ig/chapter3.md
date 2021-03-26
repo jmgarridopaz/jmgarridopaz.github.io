@@ -41,7 +41,7 @@ These two things will be the starting point for developing the system.
 
 Now in this article we'll see the development sequence for coding the different components of the architecture.
 
-According to Alistair Cockburn (see for example his <a target="_blank" href="https://www.youtube.com/watch?v=Sc_B6dQ6di0?t=813">talk about Hexagonal Architecture at Agiles2020 conference</a>), the development sequence should have these steps:
+According to Alistair Cockburn (see for example his <a target="_blank" href="https://www.youtube.com/watch?v=Sc_B6dQ6di0&t=813">talk about Hexagonal Architecture at Agiles2020 conference</a>), the development sequence should have these steps:
 
 | STEP |DRIVER SIDE|HEXAGON<br />(APPLICATION)|DRIVEN SIDE|
 |:-:|:--:|:--:|:--:|
