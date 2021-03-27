@@ -34,12 +34,6 @@ So far we have seen the design (<a target="_blank" href="https://jmgarridopaz.gi
 
 - The driver ports definition, i.e. the specification of the API that the application exposes to users.
 
-![Figure 2: "for parking cars" interface](/assets/images/hexagonalarchitecture-ig/figure3-2.png)
-<p class="figure">Figure 2: "for parking cars" interface</p>
-
-![Figure 3: "for checking cars" interface](/assets/images/hexagonalarchitecture-ig/figure3-3.png)
-<p class="figure">Figure 3: "for checking cars" interface</p>
-
 ~~~java
 public interface ForParkingCars {
 
@@ -68,9 +62,8 @@ public interface ForParkingCars {
 	public PermitTicket issuePermit ( Clock clock, PermitRequest permitRequest );
 
 }
-~~~
 
-~~~java
+
 public interface ForCheckingCars {
 		
 	/**
@@ -120,8 +113,8 @@ In the next sections we will apply these steps for developing our Java 9 example
 
 In this section we will see the first step of the development sequence: Test Cases + Hardcoded Hexagon.
 
-![Figure 4: First development step: Test Cases + Hardcoded Hexagon](/assets/images/hexagonalarchitecture-ig/figure3-4.png)
-<p class="figure">Figure 4: First development step: Test Cases + Hardcoded Hexagon</p>
+![Figure 2: First development step: Test Cases + Hardcoded Hexagon](/assets/images/hexagonalarchitecture-ig/figure3-2.png)
+<p class="figure">Figure 2: First development step: Test Cases + Hardcoded Hexagon</p>
 
 We develop the following modules:
 
