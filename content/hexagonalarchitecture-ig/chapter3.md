@@ -34,8 +34,58 @@ So far we have seen the design (<a target="_blank" href="https://jmgarridopaz.gi
 
 - The driver ports definition, i.e. the specification of the API that the application exposes to users.
 
-![Figure 2: Driver ports interfaces](/assets/images/hexagonalarchitecture-ig/figure3-2.png)
-<p class="figure">Figure 2: Driver ports interfaces</p>
+![Figure 2: "for parking cars" interface](/assets/images/hexagonalarchitecture-ig/figure3-2.png)
+<p class="figure">Figure 2: "for parking cars" interface</p>
+
+![Figure 3: "for checking cars" interface](/assets/images/hexagonalarchitecture-ig/figure3-3.png)
+<p class="figure">Figure 3: "for checking cars" interface</p>
+
+~~~java
+public interface ForParkingCars {
+
+	/**
+	 * Returns the information of all the available rates in the city.
+	 * 
+	 * @return	a map of RateData objects, indexed by rate name. @see RateInfo
+	 */
+	public Map<String, RateData> getAllRatesByName();
+
+	/**
+	 * Issues a permit for a car parked at a regulated area, valid until a datetime, paying it with a card.
+	 * Returns a ticket with the permit information.
+	 * 
+	 * First the permit price is calculated, depending on the number of minutes of the permit period,
+	 * according to the rate of the area where the car is parked at.
+	 * Then, permit price is charged to the payment card.
+	 * And finally the permit is stored.
+	 * 
+	 * @param	clock			Clock to get current datetime from, since it will be the starting datetime of the permit period
+	 * 
+	 * @param	permitRequest	DTO with the info needed for issuing the permit. @see PermitRequest
+	 * 
+	 * @return	permitTicket	DTO with the info of the issued permit. @see PermitTicket
+	 */
+	public PermitTicket issuePermit ( Clock clock, PermitRequest permitRequest );
+
+}
+~~~
+
+~~~java
+public interface ForCheckingCars {
+		
+	/**
+	 * Checks whether a car parked at a regulated area doesn't have any active permit.
+	 * A permit is active if the current datetime is before the ending datetime of the permit period.
+	 * 
+	 * @param	clock		Clock to get current datetime from
+	 * @param	carPlate	Car plate of the car that we want to check
+	 * @param	rateName	Rate name of the regulated area where the car to check is parked at
+	 * @return				true if the car doesn't have any active permit for the rate, false otherwise
+	 */
+	public boolean illegallyParkedCar ( Clock clock, String carPlate, String rateName );
+	
+}
+~~~
 
 These two things will be the starting point for developing the system.
 
@@ -70,8 +120,8 @@ In the next sections we will apply these steps for developing our Java 9 example
 
 In this section we will see the first step of the development sequence: Test Cases + Hardcoded Hexagon.
 
-![Figure 3: First development step: Test Cases + Hardcoded Hexagon](/assets/images/hexagonalarchitecture-ig/figure3-3.png)
-<p class="figure">Figure 3: First development step: Test Cases + Hardcoded Hexagon</p>
+![Figure 4: First development step: Test Cases + Hardcoded Hexagon](/assets/images/hexagonalarchitecture-ig/figure3-4.png)
+<p class="figure">Figure 4: First development step: Test Cases + Hardcoded Hexagon</p>
 
 We develop the following modules:
 
