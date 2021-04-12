@@ -25,69 +25,24 @@ layout: default
 
 This is the third article of a series showing how to implement an application according to Hexagonal Architecture, also known as Ports and Adapters pattern, whose author is Dr. Alistair Cockburn.
 
-So far we have seen the design (<a target="_blank" href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html">Chapter 1</a>) and structure (<a target="_blank" href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter2.html">Chapter 2</a>) of a hexagonal application. As a result of the design, we got two things:
+So far we have seen the application design (<a target="_blank" href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html">Chapter 1</a>) and structure (<a target="_blank" href="https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter2.html">Chapter 2</a>). As a result of the design, we got two things:
 
-- A diagram showing the hexagon with the adapters we want to build.
+- A diagram showing the hexagon with the adapters we want to develop.
 
 ![Figure 1: The big picture](/assets/images/hexagonalarchitecture-ig/figure3-1.png)
 <p class="figure">Figure 1: The big picture</p>
 
-- The driver ports definition, i.e. the specification of the API that the application exposes to users.
+- The API definition, i.e. the interfaces (driver ports) with methods (use cases) that the application offers to users (driver actors).
 
-~~~java
-public interface ForParkingCars {
+  - <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/blob/stage1/src/bluezone-hexagon/src/main/bluezone.hexagon/io/github/jmgarridopaz/bluezone/hexagon/driver/forparkingcars/ForParkingCars.java">ForParkingCars interface</a> (getAllRatesByName and issuePermit methods).
+  - <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/blob/stage1/src/bluezone-hexagon/src/main/bluezone.hexagon/io/github/jmgarridopaz/bluezone/hexagon/driver/forcheckingcars/ForCheckingCars.java">ForCheckingCars interface</a> (illegallyParkedCar method).
 
-	/**
-	 * Returns the information of all the available rates in the city.
-	 * 
-	 * @return	a map of RateData objects, indexed by rate name. @see RateInfo
-	 */
-	public Map<String, RateData> getAllRatesByName();
+From these two things, we will begin to implement the different modules of the architecture, following a development sequence.
 
-	/**
-	 * Issues a permit for a car parked at a regulated area, valid until a datetime, paying it with a card.
-	 * Returns a ticket with the permit information.
-	 * 
-	 * First the permit price is calculated, depending on the number of minutes of the permit period,
-	 * according to the rate of the area where the car is parked at.
-	 * Then, permit price is charged to the payment card.
-	 * And finally the permit is stored.
-	 * 
-	 * @param	clock			Clock to get current datetime from, since it will be the starting datetime of the permit period
-	 * 
-	 * @param	permitRequest	DTO with the info needed for issuing the permit. @see PermitRequest
-	 * 
-	 * @return	permitTicket	DTO with the info of the issued permit. @see PermitTicket
-	 */
-	public PermitTicket issuePermit ( Clock clock, PermitRequest permitRequest );
+According to Alistair Cockburn (see for example his <a target="_blank" href="https://www.youtube.com/watch?v=Sc_B6dQ6di0&t=813">talk about Hexagonal Architecture at Agiles2020 conference</a>), this development sequence would have some stages:
 
-}
-
-
-public interface ForCheckingCars {
-		
-	/**
-	 * Checks whether a car parked at a regulated area doesn't have any active permit.
-	 * A permit is active if the current datetime is before the ending datetime of the permit period.
-	 * 
-	 * @param	clock		Clock to get current datetime from
-	 * @param	carPlate	Car plate of the car that we want to check
-	 * @param	rateName	Rate name of the regulated area where the car to check is parked at
-	 * @return				true if the car doesn't have any active permit for the rate, false otherwise
-	 */
-	public boolean illegallyParkedCar ( Clock clock, String carPlate, String rateName );
-	
-}
-~~~
-
-These two things will be the starting point for developing the system.
-
-Now in this article we'll see the development sequence for coding the different components of the architecture.
-
-According to Alistair Cockburn (see for example his <a target="_blank" href="https://www.youtube.com/watch?v=Sc_B6dQ6di0&t=813">talk about Hexagonal Architecture at Agiles2020 conference</a>), the development sequence should have these steps:
-
-| STEP |DRIVER SIDE|HEXAGON<br />(APPLICATION)|DRIVEN SIDE|
-|:-:|:--:|:--:|:--:|
+|STAGE|DRIVER SIDE|HEXAGON<br />(APPLICATION)|DRIVEN SIDE|
+|:--:|:--:|:--:|:--:|
 |(S1)|Test cases|Hardcoded|-|
 |(S2)|Test cases|Real|Test doubles|
 |(S3)|Real|Real|Test doubles|
@@ -105,32 +60,37 @@ There are some very important things to remark:
 - A test case is also a user of the application. And not just a user like any other else, but the first user.
 - After S1, the left side is done. We will have the driver adapter (test harness) with a configurable dependency on the hexagon.
 - After S2, the hexagon is done. At this point we have our application (business logic) done, since it can be tested in isolation from real world items. This is the main goal of Hexagonal Architecture.
-
-In the next sections we will apply these steps for developing our Java 9 example application, BlueZone. Source code is available at <a target="_blank" href="https://github.com/jmgarridopaz/bluezone">BlueZone GitHub repository</a>.
+- The inner development strategy and structure of each module (hexagon and adapters), are orthogonal to hexagonal architecture, it's your business. So, for example, it's up to you to use either an outside-in or an inside-out approach to develop the business logic, to structure it using layers or not, etc.
+- It falls out of the scope of these article series to fix a terminology for the different existing test categories (unit, functional, acceptance, end-to-end, system, etc). The most important thing is that hexagonal architecture lets you test the business logic in isolation from real world devices (technologies). Call this test whatever you want, the important thing is what it means.
 
 <div id="tc2"></div>
 ### 2.- HARDCODED HEXAGON
 
-In this section we will see the first step of the development sequence: Test Cases + Hardcoded Hexagon.
+In this section we will see the first stage in the development sequence: "Test Cases + Hardcoded Hexagon".
 
-![Figure 2: First development step: Test Cases + Hardcoded Hexagon](/assets/images/hexagonalarchitecture-ig/figure3-2.png)
-<p class="figure">Figure 2: First development step: Test Cases + Hardcoded Hexagon</p>
+Source code for this stage is available at <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/tree/stage1">stage1 tag in BlueZone GitHub Repository</a>.
 
-We develop the following modules:
+![Figure 2: First development stage: Test Cases + Hardcoded Hexagon](/assets/images/hexagonalarchitecture-ig/figure3-2.png)
+<p class="figure">Figure 2: First development stage: Test Cases + Hardcoded Hexagon</p>
 
-- An adapter to test "for parking cars" port functionality (use cases), using Cucumber test automation tool. Cucumber was built to support a software development process called BDD (Behaviour Driven Development). In the Links section you can see a couple of good articles by Julien Topçu about this topic.
+We have these modules:
 
-- An adapter using TestNG framework to test "for checking cars" port functionality.
+- <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/tree/stage1/src/bluezone-adapter-forparkingcars-test">bluezone.adapter.forparkingcars.test</a>: This adapter launches Cucumber tool from the command line, in order to run test cases against `ForParkingCars` interface methods. Cucumber is a test automation tool built to support BDD (Behavior-Driven Development). If you are interested in BDD and Cucumber, see the Links section at the end of this article.
+- <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/tree/stage1/src/bluezone-adapter-forcheckingcars-test">bluezone.adapter.forcheckingcars.test</a>: This adapter tests `ForCheckingCars` interface methods. To show different testing tools, this time we use TestNG framework, instead of Cucumber.
+- <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/tree/stage1/src/bluezone-hexagon">bluezone.hexagon</a>: This module contains the API, i.e. the driver ports (`ForParkingCars` and `ForCheckingCars` interfaces), and the classes implementing them using hardcoded values (<a target="_blank" href="https://github.com/jmgarridopaz/bluezone/blob/stage1/src/bluezone-hexagon/src/main/bluezone.hexagon/io/github/jmgarridopaz/bluezone/hexagon/driver/forparkingcars/implementation/hardcoded/HardCodedCarParker.java">HardCodedCarParker</a> and <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/blob/stage1/src/bluezone-hexagon/src/main/bluezone.hexagon/io/github/jmgarridopaz/bluezone/hexagon/driver/forcheckingcars/implementation/hardcoded/HardCodedCarChecker.java">HardCodedCarChecker</a>). In this first development stage, driven ports aren't used yet.
+- <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/tree/stage1/src/bluezone-startup">bluezone.startup</a>: This module instantiates the different components, builds the whole system, and runs the driver adapters. It deserves a chapter on its own, explaining different startup modes. So we will see it at the end of these article series.
 
-- The hexagon, including both driver port interfaces and their implementation, using hardcoded values in order to pass the tests.
+The <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/blob/stage1/README.md">README.md file</a> explains how to run the application (both test driver adapters).
 
-In the next video, I explain the source code for this first development step, which is available at <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/tree/S1">S1 tag in BlueZone GitHub repository</a>.
+Here you can see screen-shots of HTML reports, generated after running test cases:
 
-INSERT video
+![Figure 3: "for parking cars" test HTML report, generated by Cucumber](/assets/images/hexagonalarchitecture-ig/figure3-3.png)
+<p class="figure">Figure 3: "for parking cars" test HTML report, generated by Cucumber</p>
 
-At this moment, the left side of the hexagon is done, since we already have driver adapters for running test cases, and we also have the configurable dependency on the hexagon.
+![Figure 4: "for checking cars" test HTML report, generated by TestNG](/assets/images/hexagonalarchitecture-ig/figure3-4.png)
+<p class="figure">Figure 4: "for checking cars" test HTML report, generated by TestNG</p>
 
-Next step is developing test doubles as adapters on the right side.
+In the next stage we implement test doubles as adapters on the right side.
 
 Let's see.
 
@@ -152,25 +112,29 @@ TODO
 <div id="tc6"></div>
 ### 6.- LINKS
 
-- "Ports and Adapters Pattern" (aka Hexagonal Architecture), the original article, by Alistair Cockburn:
+- Hexagonal Architecture reources:
 
-<a target="_blank" href="https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture">https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture</a>
+<a target="_blank" href="https://jmgarridopaz.github.io/content/resources.html">https://jmgarridopaz.github.io/content/resources.html</a>
 
-- "Entre puertos y adaptadores: La Arquitectura Hexagonal", a talk by Alistair Cockburn at "Ágiles 2020" (XIII Jornadas Latinoamericanas de Agilidad). English with spanish subtitles:
+- Cucumber Website:
 
-<a target="_blank" href="https://www.youtube.com/watch?v=Sc_B6dQ6di0">https://www.youtube.com/watch?v=Sc_B6dQ6di0</a>
+<a target="_blank" href="https://cucumber.io/">https://cucumber.io/</a>
 
-- "Alistair in the Hexagone", a talk by Alistair Cockburn in Paris, June 2017:
+- "Behavior-Driven Development" (BDD) at Wikipedia:
 
-<a target="_blank" href="https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL">https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL</a>
+<a target="_blank" href="https://en.wikipedia.org/wiki/Behavior-driven_development">https://en.wikipedia.org/wiki/Behavior-driven_development</a>
 
-- "Behavior-Driven Development from scratch", by Julien Topçu:
+- "Behavior-Driven Development from scratch", an article by Julien Topçu:
 
 <a target="_blank" href="https://beyondxscratch.com/2019/05/21/behavior-driven-development-from-scratch/">https://beyondxscratch.com/2019/05/21/behavior-driven-development-from-scratch/</a>
 
-- "Implementing Functional Tests in Domain-Driven Design & Hexagonal Architecture using Cucumber", by Julien Topçu:
+- "Implementing Functional Tests in Domain-Driven Design & Hexagonal Architecture using Cucumber", an article by Julien Topçu:
 
 <a target="_blank" href="https://beyondxscratch.com/2019/08/26/implementing-functional-tests-in-domain-driven-design-hexagonal-architecture-using-cucumber-domain-driven-testing/">https://beyondxscratch.com/2019/08/26/implementing-functional-tests-in-domain-driven-design-hexagonal-architecture-using-cucumber-domain-driven-testing/</a>
+
+- TestNG, a testing framework for Java:
+
+<a target="_blank" href="https://testng.org/doc/">https://testng.org/doc/</a>
 
 <br/>
 
