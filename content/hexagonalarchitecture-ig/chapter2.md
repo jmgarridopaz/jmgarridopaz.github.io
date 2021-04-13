@@ -391,9 +391,9 @@ Whatever approach you choose, there are some key concepts to consider for fittin
 <div id="tc5"></div>
 ### 5.- LINKS
 
-- "Hexagonal Architecture" resources:
+- Hexagonal Architecture resources:
 
-https://jmgarridopaz.github.io/content/resources.html
+<a target="_blank" href="https://jmgarridopaz.github.io/content/resources.html">https://jmgarridopaz.github.io/content/resources.html</a>
 
 - "Java 9 Modularity" book. Authors: Sander Mak & Paul Bakker. Publisher: O'Reilly
 
