@@ -67,9 +67,8 @@ I’ve structured the implementation guide into the following chapters, and each
 
 1. [Application design](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html).
 2. [Project structure](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter2.html).
-3. The hexagon in isolation.
-4. Real adapters.
-5. Advanced execution.
+3. Development sequence.
+4. Application startup.
 
 These are my intentions, but then life will decide whether or not I will be able to finish it all. I hope I will though, but who knows?... This is life, and live :)
 
