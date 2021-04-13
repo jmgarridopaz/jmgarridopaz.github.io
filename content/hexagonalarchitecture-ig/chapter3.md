@@ -33,8 +33,8 @@ So far we have seen the application design (<a target="_blank" href="https://jmg
 
 - The API definition, i.e. the interfaces (driver ports) with methods (use cases) that the application offers to users (driver actors).
 
-  - <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/blob/stage1/src/bluezone-hexagon/src/main/bluezone.hexagon/io/github/jmgarridopaz/bluezone/hexagon/driver/forparkingcars/ForParkingCars.java">ForParkingCars interface</a> (getAllRatesByName and issuePermit methods).
-  - <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/blob/stage1/src/bluezone-hexagon/src/main/bluezone.hexagon/io/github/jmgarridopaz/bluezone/hexagon/driver/forcheckingcars/ForCheckingCars.java">ForCheckingCars interface</a> (illegallyParkedCar method).
+  - <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/blob/stage1/src/bluezone-hexagon/src/main/bluezone.hexagon/io/github/jmgarridopaz/bluezone/hexagon/driver/forparkingcars/ForParkingCars.java">ForParkingCars interface</a> (`getAllRatesByName` and `issuePermit` methods).
+  - <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/blob/stage1/src/bluezone-hexagon/src/main/bluezone.hexagon/io/github/jmgarridopaz/bluezone/hexagon/driver/forcheckingcars/ForCheckingCars.java">ForCheckingCars interface</a> (`illegallyParkedCar` method).
 
 From these two things, we will begin to implement the different modules of the architecture, following a development sequence.
 
@@ -97,12 +97,12 @@ Let's see.
 <div id="tc3"></div>
 ### 3.- THE HEXAGON IN ISOLATION
 
-TODO ASAP (coming soon).
+***TODO ASAP***
 
 <div id="tc4"></div>
 ### 4.- ADDING REAL ADAPTERS
 
-TODO
+***TODO***
 
 <div id="tc5"></div>
 ### 5.- LINKS
