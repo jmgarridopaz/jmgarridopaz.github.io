@@ -4,7 +4,7 @@ custom_article_title: Hexagonal Architecture
 custom_article_subtitle: An implementation guide
 custom_chapter_title: 'Chapter 2: PROJECT STRUCTURE'
 custom_chapter_prev_url: https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html
-custom_chapter_next_url:
+custom_chapter_next_url: https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter3.html
 custom_published_date: November 9, 2020
 custom_author_url: https://github.com/jmgarridopaz
 custom_author_name: Juan Manuel Garrido de Paz
@@ -391,31 +391,19 @@ Whatever approach you choose, there are some key concepts to consider for fittin
 <div id="tc5"></div>
 ### 5.- LINKS
 
-* Ports and Adapters Pattern (aka Hexagonal Architecture), by Alistair Cockburn:
+- "Hexagonal Architecture" resources:
 
-<a target="_blank" href="https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture">https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture</a>
+https://jmgarridopaz.github.io/content/resources.html
 
-* My conceptual article about Ports and Adapters Pattern (aka Hexagonal Architecture):
-
-<a target="_blank" href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html">https://jmgarridopaz.github.io/content/hexagonalarchitecture.html</a>
-
-* Alistair in the Hexagone: a talk by Alistair Cockburn about Hexagonal Architecture:
-
-<a target="_blank" href="https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL">https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL</a>
-
-* "Configurable Dependency Pattern", by Gerard Meszaros & Alistair Cockburn:
-
-<a target="_blank" href="https://web.archive.org/web/20170624023207/http://alistair.cockburn.us/Configurable+Dependency">https://web.archive.org/web/20170624023207/http://alistair.cockburn.us/Configurable+Dependency</a>
-
-* "Java 9 Modularity" book. Authors: Sander Mak & Paul Bakker. Publisher: O'Reilly
+- "Java 9 Modularity" book. Authors: Sander Mak & Paul Bakker. Publisher: O'Reilly
 
 <a target="_blank" href="https://javamodularity.com/">https://javamodularity.com/</a>
 
-* "Hexagonal != Layers", by Thomas Pierrain:
+- "Hexagonal != Layers", by Thomas Pierrain:
 
 <a target="_blank" href="https://tpierrain.blogspot.com/2016/04/hexagonal-layers.html">https://tpierrain.blogspot.com/2016/04/hexagonal-layers.html</a>
 
-* "The key ring metaphor: A three steps initialization" (pdf, page 11), by Thomas Pierrain:
+- "The key ring metaphor: A three steps initialization" (pdf, page 11), by Thomas Pierrain:
 
 <a target="_blank" href="https://github.com/tpierrain/hexagonalThis/blob/master/Hexagonal.pdf">https://github.com/tpierrain/hexagonalThis/blob/master/Hexagonal.pdf</a>
 
