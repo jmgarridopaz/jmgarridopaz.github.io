@@ -397,21 +397,17 @@ I want to thank Alistair Cockburn for his attention and his comments. You can re
 <div id="tc5"></div>
 ### 5.- LINKS
 
-* Ports and Adapters Pattern (aka Hexagonal Architecture), by Alistair Cockburn:
+- Hexagonal Architecture resources:
 
-[https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture](https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture)
+<a target="_blank" href="https://jmgarridopaz.github.io/content/resources.html">https://jmgarridopaz.github.io/content/resources.html</a>
 
-* My conceptual article about Ports and Adapters Pattern (aka Hexagonal Architecture):
+- "XUnit Test Patterns", by Gerard Meszaros:
 
-[https://jmgarridopaz.github.io/content/hexagonalarchitecture.html](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html)
+<a target="_blank" href="http://xunitpatterns.com">http://xunitpatterns.com</a>
 
-* "XUnit Test Patterns", by Gerard Meszaros:
+- "Structuring use cases with goals", an article by Alistair Cockburn:
 
-[http://xunitpatterns.com](http://xunitpatterns.com)
-
-* "Structuring use cases with goals" article, by Alistair Cockburn:
-
-[https://web.archive.org/web/20170620145208/http://alistair.cockburn.us/Structuring+use+cases+with+goals](https://web.archive.org/web/20170620145208/http://alistair.cockburn.us/Structuring+use+cases+with+goals)
+<a target="_blank" href="https://web.archive.org/web/20170620145208/http://alistair.cockburn.us/Structuring+use+cases+with+goals">https://web.archive.org/web/20170620145208/http://alistair.cockburn.us/Structuring+use+cases+with+goals</a>
 
 <br/>
 
