@@ -5,7 +5,7 @@ custom_article_subtitle: An implementation guide
 custom_chapter_title: 'Chapter 3: DEVELOPMENT SEQUENCE'
 custom_chapter_prev_url: https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter2.html
 custom_chapter_next_url:
-custom_published_date: March 26, 2021
+custom_published_date: April 13, 2021
 custom_author_url: https://github.com/jmgarridopaz
 custom_author_name: Juan Manuel Garrido de Paz
 layout: default
@@ -55,13 +55,14 @@ From that moment on, we add real adapters at both sides: first we change left si
 
 So that finally we get the application running in a production environment with real adapters at both sides (S5).
 
-There are some very important things to remark:
+Some important things to remark:
 
 - A test case is also a user of the application. And not just a user like any other else, but the first user.
 - After S1, the left side is done. We will have the driver adapter (test harness) with a configurable dependency on the hexagon.
 - After S2, the hexagon is done. At this point we have our application (business logic) done, since it can be tested in isolation from real world items. This is the main goal of Hexagonal Architecture.
 - The inner development strategy and structure of each module (hexagon and adapters), are orthogonal to hexagonal architecture, it's your business. So, for example, it's up to you to use either an outside-in or an inside-out approach to develop the business logic, to structure it using layers or not, etc.
 - It falls out of the scope of these article series to fix a terminology for the different existing test categories (unit, functional, acceptance, end-to-end, system, etc). The most important thing is that hexagonal architecture lets you test the business logic in isolation from real world devices (technologies). Call this test whatever you want, the important thing is what it means.
+- The hardcoded version of the hexagon implemented in S1, is also useful when developing real adapters for driver ports in S3, since we can "mock" the hexagon to test the driver adapter.
 
 <div id="tc2"></div>
 ### 2.- HARDCODED HEXAGON
@@ -80,7 +81,7 @@ We have these modules:
 - <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/tree/stage1/src/bluezone-hexagon">bluezone.hexagon</a>: This module contains the API, i.e. the driver ports (`ForParkingCars` and `ForCheckingCars` interfaces), and the classes implementing them using hardcoded values (<a target="_blank" href="https://github.com/jmgarridopaz/bluezone/blob/stage1/src/bluezone-hexagon/src/main/bluezone.hexagon/io/github/jmgarridopaz/bluezone/hexagon/driver/forparkingcars/implementation/hardcoded/HardCodedCarParker.java">HardCodedCarParker</a> and <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/blob/stage1/src/bluezone-hexagon/src/main/bluezone.hexagon/io/github/jmgarridopaz/bluezone/hexagon/driver/forcheckingcars/implementation/hardcoded/HardCodedCarChecker.java">HardCodedCarChecker</a>). In this first development stage, driven ports aren't used yet.
 - <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/tree/stage1/src/bluezone-startup">bluezone.startup</a>: This module instantiates the different components, builds the whole system, and runs the driver adapters. It deserves a chapter on its own, explaining different startup modes. So we will see it at the end of these article series.
 
-The <a target="_blank" href="https://github.com/jmgarridopaz/bluezone/blob/stage1/README.md">README.md file</a> explains how to run the application (both test driver adapters).
+<a target="_blank" href="https://github.com/jmgarridopaz/bluezone/blob/master/README.md">README.md file at BlueZone GitHub repository</a> explains how to run the application.
 
 Here you can see screen-shots of HTML reports, generated after running test cases:
 
