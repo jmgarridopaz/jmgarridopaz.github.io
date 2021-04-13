@@ -77,9 +77,9 @@ Last, but not least, I would like to thank Alistair Cockburn for being always th
 <div id="tc4"></div>
 ### 4.- LINKS
 
-- "Hexagonal Architecture" resources:
+- Hexagonal Architecture resources:
 
-[https://jmgarridopaz.github.io/content/resources.html](https://jmgarridopaz.github.io/content/resources.html)
+<a target="_blank" href="https://jmgarridopaz.github.io/content/resources.html">https://jmgarridopaz.github.io/content/resources.html</a>
 
 <br/>
 
