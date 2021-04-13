@@ -1,7 +1,7 @@
 ---
 title: Resources - Hexagonal Architecture
-custom_article_title: Some Hexagonal Architecture resources
-custom_article_subtitle:
+custom_article_title: Hexagonal Architecture
+custom_article_subtitle: Resources
 custom_chapter_title:
 custom_published_date:
 custom_author_url: https://github.com/jmgarridopaz
