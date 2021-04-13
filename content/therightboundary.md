@@ -225,27 +225,15 @@ As we can see, employee and user concepts appear in the test case but they don't
 <div id="tc8"></div>
 ### 8.- LINKS
 
-* Ports and Adapters Pattern (aka Hexagonal Architecture), by Alistair Cockburn:
+- Hexagonal Architecture resources:
 
-<a target="_blank" href="https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture">https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture</a>
+<a target="_blank" href="https://jmgarridopaz.github.io/content/resources.html">https://jmgarridopaz.github.io/content/resources.html</a>
 
-* My conceptual article about Ports and Adapters Pattern (aka Hexagonal Architecture):
-
-<a target="_blank" href="https://jmgarridopaz.github.io/content/hexagonalarchitecture.html">https://jmgarridopaz.github.io/content/hexagonalarchitecture.html</a>
-
-* Alistair in the Hexagone: a talk by Alistair Cockburn about Hexagonal Architecture:
-
-<a target="_blank" href="https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL">https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL</a>
-
-* "Hexagonal Architecture FAQ", questions by Stefane Wojewoda to Alistair Cockburn, at InfoQ in France:
-
-<a target="_blank" href="https://web.archive.org/web/20170925184018/http://alistair.cockburn.us/Hexagonal+Architecture+FAQ">https://web.archive.org/web/20170925184018/http://alistair.cockburn.us/Hexagonal+Architecture+FAQ</a>
-
-* "Hexagonal Architecture: Don't get lost on your right-side", by Thomas Pierrain:
+- "Hexagonal Architecture: Don't get lost on your right-side", by Thomas Pierrain:
 
 <a target="_blank" href="http://tpierrain.blogspot.com/2020/03/hexagonal-architecture-dont-get-lost-on.html">http://tpierrain.blogspot.com/2020/03/hexagonal-architecture-dont-get-lost-on.html</a>
 
-* "Adapters a true heralds of DDD", by Thomas Pierrain:
+- "Adapters a true heralds of DDD", by Thomas Pierrain:
 
 <a target="_blank" href="http://tpierrain.blogspot.com/2020/04/adapters-are-true-heralds-of-ddd.html">http://tpierrain.blogspot.com/2020/04/adapters-are-true-heralds-of-ddd.html</a>
 
