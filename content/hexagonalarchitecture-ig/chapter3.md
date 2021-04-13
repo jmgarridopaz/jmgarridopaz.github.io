@@ -16,9 +16,8 @@ layout: default
 1. [Introduction](#tc1)
 2. [Hardcoded hexagon](#tc2)
 3. [The hexagon in isolation](#tc3)
-4. [We are done](#tc4)
-5. [Adding real adapters](#tc5)
-6. [Links](#tc6)
+4. [Adding real adapters](#tc4)
+5. [Links](#tc5)
 
 <div id="tc1"></div>
 ### 1.- INTRODUCTION
@@ -101,19 +100,14 @@ Let's see.
 TODO ASAP (coming soon).
 
 <div id="tc4"></div>
-### 4.- WE ARE DONE
+### 4.- ADDING REAL ADAPTERS
 
 TODO
 
 <div id="tc5"></div>
-### 5.- ADDING REAL ADAPTERS
+### 5.- LINKS
 
-TODO
-
-<div id="tc6"></div>
-### 6.- LINKS
-
-- Hexagonal Architecture reources:
+- Hexagonal Architecture resources:
 
 <a target="_blank" href="https://jmgarridopaz.github.io/content/resources.html">https://jmgarridopaz.github.io/content/resources.html</a>
 
