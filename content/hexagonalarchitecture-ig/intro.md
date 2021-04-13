@@ -67,7 +67,7 @@ I’ve structured the implementation guide into the following chapters, and each
 
 1. [Application design](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter1.html).
 2. [Project structure](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter2.html).
-3. Development sequence.
+3. [Development sequence](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter3.html).
 4. Application startup.
 
 These are my intentions, but then life will decide whether or not I will be able to finish it all. I hope I will though, but who knows?... This is life, and live :)
@@ -77,29 +77,9 @@ Last, but not least, I would like to thank Alistair Cockburn for being always th
 <div id="tc4"></div>
 ### 4.- LINKS
 
-* Article by Alistair Cockburn defining Ports and Adapters Pattern:
+- "Hexagonal Architecture" resources:
 
-[https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture](https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture)
-
-* My conceptual article about Ports and Adapters Pattern (aka Hexagonal Architecture):
-
-[https://jmgarridopaz.github.io/content/hexagonalarchitecture.html](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html)
-
-* Alistair in the Hexagone: a talk by Alistair Cockburn about Hexagonal Architecture:
-
-[https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL](https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL)
-
-* Interview with Alistair Cockburn about Hexagonal Architecture:
-
-[https://web.archive.org/web/20170925184018/http://alistair.cockburn.us/Hexagonal+Architecture+FAQ](https://web.archive.org/web/20170925184018/http://alistair.cockburn.us/Hexagonal+Architecture+FAQ)
-
-* My translation of Alistair Cockburn article into spanish:
-
-[https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.html](https://jmgarridopaz.github.io/content/hexagonalarchitecturespanish.html)
-
-* An article I like about Hexagonal Architecture:
-
-[https://beyondxscratch.wordpress.com/2017/08/19/decoupling-your-technical-code-from-your-business-logic-with-the-hexagonal-architecture-hexarch](https://beyondxscratch.wordpress.com/2017/08/19/decoupling-your-technical-code-from-your-business-logic-with-the-hexagonal-architecture-hexarch)
+[https://jmgarridopaz.github.io/content/resources.html](https://jmgarridopaz.github.io/content/resources.html)
 
 <br/>
 
