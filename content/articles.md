@@ -9,6 +9,8 @@ custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
 
+<div class="published">by <a href="{{ page.custom_author_url }}">{{ page.custom_author_name }}</a></div>
+
 - #### [Ports and Adapters Patern (Hexagonal Architecture)](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html)
 
 - #### [Hexagonal Architecture: An implementation guide](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/intro.html)
@@ -17,11 +19,9 @@ layout: default
 
   - ##### [Chapter 2: Project structure](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter2.html)
 
-  - ##### Chapter 3: The hexagon in isolation. (Coming soon!)
+  - ##### [Chapter 3: Development sequence](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/chapter3.html)
 
-  - ##### Chapter 4: Real adapters.
-
-  - ##### Chapter 5: Advanced execution.
+  - ##### Chapter 4: Application startup.
 
 - #### [Hexagonal Architecture: The "right" boundary](https://jmgarridopaz.github.io/content/therightboundary.html)
 
