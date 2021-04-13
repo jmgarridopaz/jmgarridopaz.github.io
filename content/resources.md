@@ -1,3 +1,14 @@
+---
+title: Resources - Hexagonal Architecture
+custom_article_title: Some Hexagonal Architecture resources
+custom_article_subtitle:
+custom_chapter_title:
+custom_published_date:
+custom_author_url: https://github.com/jmgarridopaz
+custom_author_name: Juan Manuel Garrido de Paz
+layout: default
+---
+
 1. Original article by Alistair Cockburn, defining "Ports and Adapters" pattern, aka "Hexagonal Architecture":
 
 <a target="_blank" href="https://alistair.cockburn.us/hexagonal-architecture/">https://alistair.cockburn.us/hexagonal-architecture/</a>
