@@ -1,5 +1,6 @@
 ---
 title: Articles - Hexagonal Architecture
+description: Things I write about Hexagonal Architecture
 custom_article_title: Articles
 custom_article_subtitle:
 custom_chapter_title:
