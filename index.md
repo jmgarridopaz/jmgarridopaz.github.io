@@ -1,5 +1,5 @@
 ---
-title:
+title: Hexagonal Me - Hexagonal Architecture
 description:
 custom_article_title: Hexagonal Me
 custom_article_subtitle: About this web site
