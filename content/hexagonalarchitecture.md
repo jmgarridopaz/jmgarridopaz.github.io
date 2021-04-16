@@ -1,5 +1,6 @@
 ---
 title: Hexagonal Architecture - Ports ans Adapters Pattern
+description: An article explaining Hexagonal Architecture
 custom_article_title: Ports and Adapters Pattern
 custom_article_subtitle: (Hexagonal Architecture)
 custom_chapter_title:
