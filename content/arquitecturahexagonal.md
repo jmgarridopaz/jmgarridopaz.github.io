@@ -1,7 +1,8 @@
 ---
 title: Arquitectura Hexagonal - Patrón Puertos y Adaptadores
+description: Traducción al español del patrón "Ports and Adapters"
 custom_article_title: Arquitectura Hexagonal
-custom_article_subtitle:
+custom_article_subtitle: (Traducción al español del patrón "Ports and Adapters", de Alistair Cockburn)
 custom_chapter_title:
 custom_published_date:
 custom_author_url:
