@@ -1,5 +1,6 @@
 ---
-title: Contact
+title: Contact - Hexagonal Architecture
+description: Contact me for talking about Hexagonal Architecture
 custom_article_title: Contact
 custom_article_subtitle:
 custom_chapter_title:
