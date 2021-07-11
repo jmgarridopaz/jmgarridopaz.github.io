@@ -28,13 +28,13 @@ Then, in the implementation, some ports will use this or that variety of Configu
 
 __(Juan Garrido):__
 
-What I don't understand is:
+__What I don't understand is:__
 
-Why did you do the assumption of Hexagonal Architecture being perfectly symmetrical if you still didn't know it?
+__Why did you do the assumption of Hexagonal Architecture being perfectly symmetrical if you still didn't know it?__
 
-I mean, you define the solution in a way that you still don't know whether it can be achieved or not?
+__I mean, you define the solution in a way that you still don't know whether it can be achieved or not?__
 
-Shouldn't the order be: first we prove something by implementing it, and then we define what we have proved?
+__Shouldn't the order be: first we prove something by implementing it, and then we define what we have proved?__
 
 __(Alistair Cockburn):__
 
@@ -50,17 +50,17 @@ I didn't think about specific implementations - it wasn't until I wrote that art
 
 __(Juan Garrido):__
 
-Regarding Configurable Dependency and symmetry/asymmetry, my understanding is the following:
+__Regarding Configurable Dependency and symmetry/asymmetry, my understanding is the following:__
 
-Left-right asymmetry comes from the fact of who triggers the conversation.
+__Left-right asymmetry comes from the fact of who triggers the conversation.__
 
-- At the left side, it's the actor who does the triggering, so the type of the "adapter ===> hexagon" dependency is "uses"
+- __At the left side, it's the actor who does the triggering, so the type of the "adapter ===> hexagon" dependency is "uses"__
 
-- At the right side, it's the hexagon who triggers (the hexagon uses its own port, implemented by the adapter), so the type of the "hexagon <=== adapter" dependency is "implements"
+- __At the right side, it's the hexagon who triggers (the hexagon uses its own port, implemented by the adapter), so the type of the "hexagon <=== adapter" dependency is "implements"__
 
-But there's still a symmetry: adapters always depend on hexagon.
+__But there's still a symmetry: adapters always depend on hexagon.__
 
-Do you agree with me or do I miss anything?
+__Do you agree with me or do I miss anything?__
 
 __(Alistair Cockburn):__
 
@@ -122,8 +122,6 @@ lol
 
 Thanks.
 <hr>
-
-=====
 
 __(Juan Garrido):__
 
