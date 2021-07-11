@@ -9,7 +9,7 @@ custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
 
-<p class="intro">These are some pending questions I could not ask before to Dr. Alistair Cockburn, who coined the Heagonal Architecture pattern. Now I have had the chance, so I publish them here in case anyone is interested. Many thanks to Alistair Cockburn for his deference in answering them.</p>
+<p class="intro">These are some pending questions I could not ask before to Dr. Alistair Cockburn, the author of Hexagonal Architecture pattern. Now I have had the chance, so I publish them here in case anyone is interested. Thanks a lot to Alistair Cockburn for his deference in answering them.</p>
 <hr>
 
 __Question #1:__ _(Juan Garrido):_
@@ -40,7 +40,7 @@ __(Alistair Cockburn):__
 
 Good question - I was definitely looking for something that had no left-right or up-down asymmetry ---- I just wanted inside/outside.
 
-- There were a couple of patterns that hinted it was possible, something called pedestal or similar, can't recall.
+There were a couple of patterns that hinted it was possible, something called pedestal or similar, can't recall.
 
 People abuse the left-right or top/bottom shape to do things that aren't healthy for the architecture and maintenance, that's why I was so determined to find a way to talk about only inside-outside and not any direction.
 
