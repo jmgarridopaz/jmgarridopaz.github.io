@@ -28,4 +28,6 @@ layout: default
 
 - #### [My translation of "Ports and Adapters Pattern" (by Alistair Cockburn) into spanish](https://jmgarridopaz.github.io/content/arquitecturahexagonal.html)
 
-- #### [Interview with Alistair Cockburn](https://jmgarridopaz.github.io/content/interviewalistair.html)
+- #### [Interview with Alistair Cockburn (1st part)](https://jmgarridopaz.github.io/content/interviewalistair.html)
+
+- #### [Interview with Alistair Cockburn (2nd part)](https://jmgarridopaz.github.io/content/interviewalistair2.html)
