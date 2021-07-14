@@ -82,7 +82,11 @@ section p img {
 }
 
 div#title {
-    margin-bottom: 0px;    
+    margin-bottom: 0px;
+    background-image: url('/assets/images/website.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center left;
 }
 
 div.article_title {
