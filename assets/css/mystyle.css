@@ -93,6 +93,10 @@ div#txt_title {
     float: right;
 }
 
+div#footer_title {
+    clear: both;
+}
+
 div#logo_title img {
     max-width: 100%;
     height: auto;
