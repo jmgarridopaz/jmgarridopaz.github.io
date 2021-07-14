@@ -81,15 +81,12 @@ section p img {
     margin-right: auto;
 }
 
-div#title {
-    margin-bottom: 0px;
-}
-
 div#logo_title {
     float: left;
 }
 
-div#txt_title {
+div#title {
+    margin-bottom: 0px;
     float: left;
 }
 
