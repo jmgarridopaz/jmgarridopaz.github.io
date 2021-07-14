@@ -50,11 +50,7 @@
     <div class="wrapper">
 
       <section>
-
-        <div id="wrapper_title">
-        <div id="logo_title">
-            <img src="{{ '/assets/images/website160.png' }}" alt="Logo" />
-        </div>          
+        
         <div id="title">
             <div class="article_title"><h1>{{ page.custom_article_title }}</h1></div>
             {% if page.custom_article_subtitle %}
@@ -82,9 +78,7 @@
             <div class="published">Published on {{ page.custom_published_date }} by <a href="{{ page.custom_author_url }}">{{ page.custom_author_name }}</a></div>
             {% endif %}
         </div>
-        <div id="footer_title"></div>
-        </div>
-
+        
         {{ content }}
         
       </section>
