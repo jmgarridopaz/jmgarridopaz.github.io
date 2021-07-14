@@ -85,6 +85,14 @@ div#title {
     margin-bottom: 0px;
 }
 
+div#logo_title {
+    float: left;
+}
+
+div#txt_title {
+    float: right;
+}
+
 div#logo_title img {
     max-width: 100%;
     height: auto;
