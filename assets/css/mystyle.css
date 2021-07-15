@@ -85,21 +85,7 @@ div#title {
     margin-bottom: 0px;
 }
 
-div.article_header_logo {
-    float: left;
-}
-
-div.article_header_txt {
-    text-align: center;
-    height: auto;
-    float: right;
-}
-
-div.article_header_footer {
-    clear: both;
-}
-
-div.article_header_logo img {
+div.article_logo img {
     max-width: 100%;
     height: auto;
 }
