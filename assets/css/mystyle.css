@@ -90,6 +90,8 @@ div.article_header_logo {
 }
 
 div.article_header_txt {
+    text-align: center;
+    height: auto;
     float: right;
 }
 
