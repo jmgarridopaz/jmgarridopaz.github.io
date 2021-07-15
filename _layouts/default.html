@@ -50,12 +50,22 @@
     <div class="wrapper">
 
       <section>
-        
+
+        <div class="article_header">
+            <div class="article_header_logo">
+                <img src="{{ '/assets/images/website160.png' }}" alt="HexArch Logo" />
+            </div>
+            <div id="article_header_txt">
+                <div class="article_title"><h1>{{ page.custom_article_title }}</h1></div>
+                {% if page.custom_article_subtitle %}
+                <div class="article_subtitle"><h2>{{ page.custom_article_subtitle }}</h2></div>
+                {% endif %}
+            </div>
+            <div id="article_header_footer">
+                <hr />
+            </div>
+        </div>
         <div id="title">
-            <div class="article_title"><h1>{{ page.custom_article_title }}</h1></div>
-            {% if page.custom_article_subtitle %}
-            <div class="article_subtitle"><h2>{{ page.custom_article_subtitle }}</h2></div>
-            {% endif %}
             {% if page.custom_chapter_title %}
             <div class="chapter_line"><hr /></div>
             <div class="chapter_title"><h3>{{ page.custom_chapter_title }}</h3></div>
