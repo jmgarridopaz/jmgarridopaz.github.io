@@ -2,16 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>io.github.jmgarridopaz.lib</groupId>
-	<artifactId>ports-adapters</artifactId>
-	<version>1.0.0</version>
-    
+    <groupId>io.github.jmgarridopaz.lib.javalangutils</groupId>
+	<artifactId>lib-javalangutils</artifactId>
+    <version>1.0.0</version>
+
 	<packaging>jar</packaging>
 
-	<name>My Ports and Adapters Pattern (Hexagonal Architecture) Library</name>
+	<name>Java Language Utilities Library</name>
 
 	<properties>
         <!-- Char encoding -->
@@ -26,9 +26,9 @@
         <maven.test.skip>true</maven.test.skip>
 	</properties>
 
-	<build>
+    <build>
         <!-- src main directory -->
-		<sourceDirectory>src/main/io.github.jmgarridopaz.lib.portsadapters</sourceDirectory>
+        <sourceDirectory>src/main/io.github.jmgarridopaz.lib.javalangutils</sourceDirectory>
         <plugins>
             <!-- Compiler -->
             <plugin>
@@ -45,8 +45,8 @@
                     <showWarnings>true</showWarnings>
                 </configuration>
             </plugin>
-        </plugins>
-	</build>
+        </plugins>          
+    </build>
 
     <!-- Deploy the artifact to a project local repository -->
     <distributionManagement>
