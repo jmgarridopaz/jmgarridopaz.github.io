@@ -14,7 +14,7 @@ layout: default
 
 <a target="_blank" href="https://alistair.cockburn.us/hexagonal-architecture/">https://alistair.cockburn.us/hexagonal-architecture/</a>
 
-(2) "Entre puertos y adaptadores: La Arquitectura Hexagonal" (english with spanish subtitles), a talk by Alistair Cockburn at "Ágiles 2020" (XIII Jornadas Latinoamericanas de Agilidad). :
+(2) "Entre puertos y adaptadores: La Arquitectura Hexagonal" (english with spanish subtitles), a talk by Alistair Cockburn at "Ágiles 2020" (XIII Jornadas Latinoamericanas de Agilidad). November 10, 2020:
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Sc_B6dQ6di0">https://www.youtube.com/watch?v=Sc_B6dQ6di0</a>
 
