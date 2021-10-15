@@ -63,7 +63,7 @@ And also after reading again this <a target="_blank" href="https://web.archive.o
 > ...
 > 
 
-By reading again all of these, and of course the original article with the pattern too, I realized that a driven port is just for talking to a driven actor (repository/recipient) using a technology, i.e. for sending/retrieving information to/from a driven actor according to a technology. But nothing else, no aditional logic for translating or processig that information into another one.
+By reading again all of these, and of course the original article with the pattern too, I realized that a driven port is just for talking to a driven actor (repository/recipient), abstracting the technology this actor might use, i.e. for sending/retrieving information to/from a driven actor regardless of the actor's technology. Then an adapter will implement that communication using the specific technology of the concrete actor. But nothing else, no aditional logic for translating or processing the sent/retrieved information into another one.
 
 <div id="tc3"></div>
 ### 3.- DOMAIN DRIVEN DESIGN & HEXAGONAL ARCHITECTURE.
