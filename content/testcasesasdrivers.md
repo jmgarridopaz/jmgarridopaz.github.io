@@ -108,7 +108,7 @@ In this case, the test harness doesn't have to build the hexagon, it just calls 
 
 Let the test harness access the driven side through the "Dependency Configurator" component.
 
-To achieve this, we have to change the driver side dependency. So that now the driver adapter (the test harness) will depend on a driver port builder, instead of depending on the driven port itself. This builder would belong to the "Dependency Configurator".
+To achieve this, we have to change the driver side dependency. So that now the driver adapter (the test harness) will depend on a driver port builder, instead of depending on the driver port itself. This builder would belong to the "Dependency Configurator".
 
 In practice, this can be done in different ways, for example:
 
