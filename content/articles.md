@@ -26,6 +26,8 @@ layout: default
 
 - #### [Hexagonal Architecture: The "right" boundary](https://jmgarridopaz.github.io/content/therightboundary.html)
 
+- #### [Hexagonal Architecture: Test Cases as Drivers](https://jmgarridopaz.github.io/content/testcasesasdrivers.html)
+
 - #### [My translation of "Ports and Adapters Pattern" (by Alistair Cockburn) into spanish](https://jmgarridopaz.github.io/content/arquitecturahexagonal.html)
 
 - #### [Interview with Alistair Cockburn (1st part)](https://jmgarridopaz.github.io/content/interviewalistair.html)
