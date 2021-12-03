@@ -14,7 +14,7 @@ layout: default
 
 <div class="published">Autor de la traducción: <a target="_blank" href="https://github.com/jmgarridopaz">Juan Manuel Garrido de Paz</a></div>
 <div class="published">Fecha de la traducción: 24 de Junio de 2018</div>
-<div class="published">Fecha de esta publicación: 23 de Febrero de 2021</div>
+<div class="published">Fecha de esta publicación: 3 de Diciembre de 2021</div>
 
 ****
 
@@ -30,7 +30,7 @@ Cree su aplicación para que funcione sin interfaz de usuario ni base de datos, 
 
 Permitir que una aplicación sea ejecutada indistintamente por usuarios, programas, pruebas automatizadas, o archivos *batch* ; y que sea desarrollada y probada por separado, sin los posibles dipositivos y bases de datos de los que dependa en tiempo de ejecución.
 
-*Cuando llega un evento del mundo exterior, un adaptador dependiente de la tecnología lo convierte en una llamada a un procedimiento utilizable, o en un mensaje, de un puerto* <sup id="npp3_ref"><a href="#npp3">(3)</a></sup>. La aplicación ignora completamente la naturaleza del dispositivo de entrada. Cuando la aplicación tiene algo que enviar, lo hace a través de un puerto a un adaptador, el cual crea las señales oportunas que necesita la tecnología del dispositivo receptor (sea éste un ser humano o un sistema automatizado). La aplicación mantiene una interacción basada en un diálogo semántico con los adaptadores que la rodean, no conoce la naturaleza de los dispositivo0s que están al otro lado de los adaptadores.
+*Cuando cualquier cliente quiere utilizar la aplicación en un puerto, envía una petición que es convertida por un adaptador para la tecnología específica del cliente, en una llamada a un procedimiento o en un mensaje utilizables, y la pasa al puerto de la aplicación. La aplicación ignora completamente la tecnología del cliente* <sup id="npp3_ref"><a href="#npp3">(3)</a></sup>. Cuando la aplicación tiene algo que enviar, lo hace a través de un puerto a un adaptador, el cual crea las señales oportunas que necesita la tecnología del dispositivo receptor (sea éste un ser humano o un sistema automatizado). La aplicación mantiene una interacción basada en un diálogo semántico con los adaptadores que la rodean, no conoce la naturaleza de los dispositivo0s que están al otro lado de los adaptadores.
 
 ![Figura 1: Arquitectura hexagonal básica](/assets/images/hexagonalarchitecturespanish/figura1.png)
 <p class="figure">Figura 1</p>
@@ -403,25 +403,28 @@ Prentice Hall, 2003, ***"Chapter 11: The Dependency-Inversion Principle"***, y o
 (2) [↑](#npp2_ref) El nombre del patrón se considera un nombre propio, por lo que las referencias a él siempre se harán utilizando el nombre original en inglés (*Ports and Adapters*). En español sería "Puertos y Adaptadores".
 
 <div id="npp3"></div>
-(3) [↑](#npp3_ref) Esta frase no se corresponde con la del artículo original. El artículo original, en su apartado "Intent", contiene la frase:
+(3) [↑](#npp3_ref) 
+El 9 de octubre de 2021, Alistair Cockburn modificó el patrón "Ports and Adapters", sustituyendo la frase:
 
-"As events arrive from the outside world at a port, a technology-specific adapter converts it into a usable procedure call or message and passes it to the application"
+"As events arrive from the outside world at a port, a technology-specific adapter converts it into a usable procedure call or message and passes it to the application. The application is blissfully ignorant of the nature of the input device."
 
-La cual puede dar lugar a confusión, porque podría entenderse que el dibujo de la arquitectura fuese:
+que podría traducirse como:
+
+"Cuando los eventos del mundo exterior llegan a un puerto, un adaptador dependiente de la tecnología lo convierte en una llamada a un procedimiento o en un mensaje utilizables, y lo pasa a la aplicación. La aplicación ignora completamente la naturaleza del dispositivo de entrada."
+
+Por esta otra:
+
+"When any driver wants to use the application at a port, it sends a request that is converted by an adapter for the specific technology of the driver into an usable procedure call or message, which passes that to the application port. The application is blissfully ignorant of the driver’s technology."
+
+La cual es la que he traducido.
+
+La sustitución de una frase por otra, obedece al hecho de que la frase original podía dar lugar a confusión, porque podría entenderse que el dibujo de la arquitectura fuese:
 
 Actor Primario ==> Puerto Primario ==> Adaptador Primario ==> Hexágono
 
 Cuando el dibujo correcto es:
 
 Actor Primario ==> Adaptador Primario ==> Puerto Primario (API del Hexágono)
-
-Tras preguntarle sobre ello, Alistair Cockburn me dió otra versión de la citada frase. La reescribió de la siguiente forma:
-
-"As an event arrives from the outside world, it gets converted by a technology-specific adapter to a usable procedure call or message at the port"
-
-La cual encaja con la arquitectura. Es por tanto esta frase la que he traducido, y queda así:
-
-"Cuando llega un evento del mundo exterior, un adaptador dependiente de la tecnología lo convierte en una llamada a un procedimiento utilizable, o en un mensaje, de un puerto"
 
 <div id="npp4"></div>
 (4) [↑](#npp4_ref) API son las siglas en inglés de "Application Programming Interface" (Interfaz de Programación de Aplicaciones).
