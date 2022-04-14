@@ -26,6 +26,8 @@ layout: default
 
 - #### [Hexagonal Architecture: The "right" boundary](https://jmgarridopaz.github.io/content/therightboundary.html)
 
+- #### [What Hexagonal Architecture is](https://jmgarridopaz.github.io/content/whathais.html)
+
 ---
 
 - #### [My translation of "Ports and Adapters Pattern" (by Alistair Cockburn) into spanish](https://jmgarridopaz.github.io/content/arquitecturahexagonal.html)
