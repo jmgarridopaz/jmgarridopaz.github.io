@@ -9,6 +9,8 @@ custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
 
+<br />
+
 <p class="intro">Here I share some little quick videos that I recorded for posting them to Twitter. They are about topics related to Hexagonal Architecture</p>
 
 #### TABLE OF CONTENTS
@@ -29,10 +31,14 @@ See how elements of a classic MVC web application matches with the ones of a hex
 
 In an hexagonal application, test cases are drivers that need access to driven actors. This can be done directly (Back Door Manipulation Test) or through the hexagon API (Round Trip Test).
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dXkNE6sR4x8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <div id="tc3"></div>
 ### 3.- DEVELOPMENT SEQUENCE.
 
 This video illustrates the steps recommended by Alistair Cockburn to develop an hexagonal application from scratch, until you finally have the hexagon with all the adpaters it needs.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-DH3N-TA_dw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br/>
 
