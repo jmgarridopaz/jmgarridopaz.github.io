@@ -9,6 +9,8 @@ custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
 
+<p class="intro">Here I share some little quick videos that I recorded for posting them to Twitter. They are about topics related to Hexagonal Architecture</p>
+
 #### TABLE OF CONTENTS
 
 1. [From MVC to hexagonal](#tc1)
@@ -18,7 +20,9 @@ layout: default
 <div id="tc1"></div>
 ### 1.- FROM MVC TO HEXAGONAL.
 
-Here you can see how elements of a classic MVC web application matches with the ones of a hexagonal application.
+See how elements of a classic MVC web application matches with the ones of a hexagonal application.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fkr6CNoMwx4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <div id="tc2"></div>
 ### 2.- TEST CASES AS DRIVERS.
