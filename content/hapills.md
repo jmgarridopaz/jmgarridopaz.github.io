@@ -26,12 +26,16 @@ See how elements of a classic MVC web application matches with the ones of a hex
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fkr6CNoMwx4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<br />
+
 <div id="tc2"></div>
 ### 2.- TEST CASES AS DRIVERS.
 
 In an hexagonal application, test cases are drivers that need access to driven actors. This can be done directly (Back Door Manipulation Test) or through the hexagon API (Round Trip Test).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dXkNE6sR4x8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br />
 
 <div id="tc3"></div>
 ### 3.- DEVELOPMENT SEQUENCE.
