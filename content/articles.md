@@ -30,6 +30,10 @@ layout: default
 
 ---
 
+- #### [Hexagonal Architecture pills](https://jmgarridopaz.github.io/content/hapills.html)
+
+---
+
 - #### [My translation of "Ports and Adapters Pattern" (by Alistair Cockburn) into spanish](https://jmgarridopaz.github.io/content/arquitecturahexagonal.html)
 
 ---
