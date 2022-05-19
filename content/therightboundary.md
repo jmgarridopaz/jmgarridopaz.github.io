@@ -9,6 +9,9 @@ custom_author_name: Juan Manuel Garrido de Paz
 layout: default
 ---
 
+<div class="published">Updated on May 19, 2022 by <a href="{{ page.custom_author_url }}">{{ page.custom_author_name }}</a></div>
+<div class="published">[Added URLs with video and document by Eric Evans]</div>
+
 #### TABLE OF CONTENTS
 
 1. [The Mistake](#tc1)
