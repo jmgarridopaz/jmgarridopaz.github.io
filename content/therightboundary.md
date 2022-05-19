@@ -137,11 +137,11 @@ Also, in his book "Domain-Driven Design Distilled", Vaughn Vernon defines ACL th
 
 Eric Evans, says the following about the ACL, in contrast to the Classic Repository Pattern (see instant 40:50 of the next video):
 
-https://www.infoq.com/presentations/Strategy-Messy-Legacy-Systems/
+<a target="_blank" href="https://www.infoq.com/presentations/Strategy-Messy-Legacy-Systems/">https://www.infoq.com/presentations/Strategy-Messy-Legacy-Systems/</a>
 
 If you prefer the paper version, here it is (page 6):
 
-https://www.domainlanguage.com/wp-content/uploads/2016/04/GettingStartedWithDDDWhenSurroundedByLegacySystemsV1.pdf
+<a target="_blank" href="https://www.domainlanguage.com/wp-content/uploads/2016/04/GettingStartedWithDDDWhenSurroundedByLegacySystemsV1.pdf">https://www.domainlanguage.com/wp-content/uploads/2016/04/GettingStartedWithDDDWhenSurroundedByLegacySystemsV1.pdf</a>
 
 <div id="tc6"></div>
 ### 6.- FITTING "DOMAIN DRIVEN DESIGN" INTO "HEXAGONAL ARCHITECTURE" AT DRIVEN SIDE.
