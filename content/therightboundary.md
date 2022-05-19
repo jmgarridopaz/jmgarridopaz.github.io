@@ -132,6 +132,14 @@ Also, in his book "Domain-Driven Design Distilled", Vaughn Vernon defines ACL th
 > An Anticorruption Layer is the most defensive Context Mapping relationship, where the downstream team creates a translation layer between its Ubiquitous Language (model) and the Ubiquitous Language (model) that is upstream to it. The layer isolates the downstream model from the upstream model and translates between the two. Thus, this is also an approach to integration. Whenever possible, you should try to create an Anticorruption Layer between your downstream model and an upstream integration model, so that you can produce model concepts on your side of the integration that specifically fit your business needs and that keep you completely isolated from foreign concepts. Yet, just like hiring a translator to act between two teams speaking different languages, the cost could be too high in various ways for some cases.
 > 
 
+Eric Evans, says the following about the ACL, in contrast to the Classic Repository Pattern (see instant 40:50 of the next video):
+
+https://www.infoq.com/presentations/Strategy-Messy-Legacy-Systems/
+
+If you prefer the paper version, here it is (page 6):
+
+https://www.domainlanguage.com/wp-content/uploads/2016/04/GettingStartedWithDDDWhenSurroundedByLegacySystemsV1.pdf
+
 <div id="tc6"></div>
 ### 6.- FITTING "DOMAIN DRIVEN DESIGN" INTO "HEXAGONAL ARCHITECTURE" AT DRIVEN SIDE.
 
