@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Aug 08 22:02:55 CEST 2022
+lib-javalangutils-1.0.0.pom>=
+lib-javalangutils-1.0.0.jar>=
