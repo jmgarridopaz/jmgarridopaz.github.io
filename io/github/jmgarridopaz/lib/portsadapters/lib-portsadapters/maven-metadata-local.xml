@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <groupId>io.github.jmgarridopaz.lib.javalangutils</groupId>
-  <artifactId>lib-javalangutils</artifactId>
+  <groupId>io.github.jmgarridopaz.lib.portsadapters</groupId>
+  <artifactId>lib-portsadapters</artifactId>
   <versioning>
     <release>1.1.0</release>
     <versions>
       <version>1.0.0</version>
       <version>1.1.0</version>
     </versions>
-    <lastUpdated>20220808235945</lastUpdated>
+    <lastUpdated>20220809005557</lastUpdated>
   </versioning>
 </metadata>

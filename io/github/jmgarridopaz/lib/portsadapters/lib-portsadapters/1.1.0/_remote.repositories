@@ -1,4 +1,4 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Tue Aug 09 01:57:19 CEST 2022
-lib-javalangutils-1.0.0.pom>=
-lib-javalangutils-1.0.0.jar>=
+#Tue Aug 09 02:55:58 CEST 2022
+lib-portsadapters-1.1.0.pom>=
+lib-portsadapters-1.1.0.jar>=
