@@ -53,7 +53,8 @@
         <repository>
             <id>local-repo</id>
             <name>Local Repository</name>
-            <url>file://${project.build.directory}/localrepo</url>
+<!--            <url>file://${project.build.directory}/localrepo</url> -->
+            <url>file:///home/jmgarrido/.portsadapters/localrepo</url>
             <layout>default</layout>
             <uniqueVersion>false</uniqueVersion>
         </repository>
