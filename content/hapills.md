@@ -18,6 +18,7 @@ layout: default
 1. [From MVC to hexagonal](#tc1)
 2. [Test cases as drivers](#tc2)
 3. [Development sequence](#tc3)
+4. [Nested hexagons vs Hexagons network](#tc4)
 
 <div id="tc1"></div>
 ### 1.- FROM MVC TO HEXAGONAL.
@@ -43,6 +44,15 @@ In an hexagonal application, test cases are drivers that need access to driven a
 This video illustrates the steps recommended by Alistair Cockburn to develop an hexagonal application from scratch, until you finally have the hexagon with all the adpaters it needs.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-DH3N-TA_dw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/>
+
+<div id="tc4"></div>
+### 4.- NESTED HEXAGONS vs HEXAGONS NETWORK.
+
+Hexagons are so easy to draw that we can draw them everywhere. Drawing one inside another is not correct though. On the other hand, we can draw hexagons communicating with others in a network. You can see it in this video. Take a look.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KrJrNJ5QdxQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br/>
 
