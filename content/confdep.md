@@ -1,6 +1,22 @@
-Configurable Dependency
+---
+title: Configurable Dependency
+description:
+custom_article_title: Configurable Dependency
+custom_article_subtitle:
+custom_chapter_title:
+custom_published_date: January 8, 2023
+custom_author_url: https://github.com/jmgarridopaz
+custom_author_name: Juan Manuel Garrido de Paz
+layout: default
+---
 
-Pattern name: Configurable Dependency
+<p class="intro">This is a copy of a blog post written by Alistair Cockburn, who published it on March 18, 2012, at his old web site, which is offline nowadays.
+  
+  , where he talks about "Configurable Dependency"  published on March 18, 2012, a blog post about "Configurable Dependency" in his old web site, which is offline nowadays. This is a copy of the snapshot http://web.archive.org/web/20170624023207/http://alistair.cockburn.us/Configurable+Dependency, </p>
+
+### Configurable Dependency
+
+__Pattern name: Configurable Dependency__
 
 to replace Dependency Injection and Inversion of Control, the former a specific implementation, the latter a double negative.
 
