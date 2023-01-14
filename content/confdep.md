@@ -23,5 +23,4 @@ My dissatisfaction with Inversion of Control and Dependency Injection goes back 
 A good pattern names a common property of good examples of something (software design in this case). The property version of Dependency Injection would be "Injected Dependency", but that still doesn't name what it is that we are after - the property we want present in the design.
 
 ![Configurable Dependency illustrated](/assets/images/confdep/conf_dep_illustrated_800px.jpeg)
-
-Configurable Dependency illustrated
+<p class="figure">Configurable Dependency illustrated</p>
