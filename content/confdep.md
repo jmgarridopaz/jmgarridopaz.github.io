@@ -24,3 +24,33 @@ A good pattern names a common property of good examples of something (software d
 
 ![Configurable Dependency illustrated](/assets/images/confdep/conf_dep_illustrated_800px.jpeg)
 <p class="figure">Configurable Dependency illustrated</p>
+
+Gerard Meszaros today pointed out that the property we want is that the dependency is configurable, "configurable dependencies", he said. Gerard clarified further that Dependency Injection is only one way to get this property (which we still had not named at this point in the discussion, I was busy angling for "Parameterized Dependency"). Dependency Lookup would be another. That's when I decided that Configurable Dependency is the best (current) name for the property and the pattern, with Dependency Injection as one implementation pattern and Dependency Lookup as another.
+
+The good news about this renaming is that the pattern becomes something that is phrased in the positive, so I can put in my undergrad text on Software Engineering, and teach it to beginners so they just "get things right" from the beginning, not having to do it wrong first and right second. It also names the property we are after, so we can argue over when we want that property present, and when not (it introduces complexity, so one wouldn't want it everywhere).
+
+And finally, as with any pattern, there is an upside and a downside. The upside is configurability, the downside is complexity. So there should always be a discussion – do we want this benefit for this cost? That's the way a pattern should work
+
+The pattern still needs to be written in detail. Anyone care to help with that?
+
+### How do we choose a name?
+
+The ideal name is a noun that names a property that is present in well-constructed implementations. (The proper term for Patterns should be a phrase with a dangling referent: _Common Properties of Good Examples of "X"_. Thus you have "X" Patterns, as you should). That's why I don't like either Dependency Injection or Inversion of Control.
+
+In an ideal world, let's pretend for a minute that Configurable or Swappable passed our tests, I would be able to teach new students design according to this list:
+
+- What is a dependency? What isn't?
+- When do we want our dependency to be swappable/configurable?
+- What are ways to make it swappable/configurable? (Dependency Injection and Dependency Lookup being two alternative implementation routes)
+
+Other names we looked at were:
+
+- Parameterized Dependency
+- Swappable Dependency
+- Externalized Dependency
+
+Needing an icon or image, but for now:
+
+![Yin Yang](/assets/images/confdep/yin_yang.gif)
+
+__Discussion:__
