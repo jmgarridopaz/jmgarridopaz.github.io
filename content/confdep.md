@@ -53,4 +53,42 @@ Needing an icon or image, but for now:
 
 ![Yin Yang](/assets/images/confdep/yin_yang.gif)
 
-__Discussion:__
+___
+
+### Discussion
+
+I would not mind helping write it up
+
+-by Chris on 3/18/2012 at 11:06 PM
+
+_email me? thx AC_
+
+___
+
+Is this the same or only releated to Kevlin Henney’s Parameterise from Above (PfA)?
+
+Kevlin Henney. The PfA Papers: From the Top,
+ACCU Overload Journal #80 – Aug 2007,
+accu.org/index.php/journals/1411
+
+Kevlin Henney. The PfA Papers: The Clean Dozen,
+ACCU Overload Journal #81 – Oct 2007
+accu.org/index.php/journals/1420
+
+Kevlin Henney. The PfA Papers: Context Matters,
+ACCU Overload Journal #82 – Dec 2007
+accu.org/index.php/journals/1432
+
+Kevlin Henney. The PfA Papers: Deglobalisation,
+ACCU Overload Journal #83 – Feb 2008
+accu.org/index.php/journals/1470
+
+Cheers, Martin
+
+-by Martin Moene on 3/19/2012 at 4:24 AM
+
+_Thanks, Martin – I was unaware of that – will research and write Kevlin…. could be I just came up with the same thing. I notice that he chose an imperative-verb name. thx._
+
+-by Alistair on 3/19/2012 at 10:33 AM
+
+___
