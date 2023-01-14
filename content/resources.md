@@ -30,7 +30,9 @@ layout: default
 
 <a target="_blank" href="https://web.archive.org/web/20170925184018/http://alistair.cockburn.us/Hexagonal+Architecture+FAQ">https://web.archive.org/web/20170925184018/http://alistair.cockburn.us/Hexagonal+Architecture+FAQ</a>
 
-(6) "Configurable Dependency Pattern", by Gerard Meszaros & Alistair Cockburn. March, 2012:
+(6) "Configurable Dependency Pattern", by Alistair Cockburn. March 18, 2012:
+
+<a target="_blank" href="https://jmgarridopaz.github.io/content/confdep.html">https://jmgarridopaz.github.io/content/confdep.html</a>
 
 <a target="_blank" href="https://web.archive.org/web/20170624023207/http://alistair.cockburn.us/Configurable+Dependency">https://web.archive.org/web/20170624023207/http://alistair.cockburn.us/Configurable+Dependency</a>
 
