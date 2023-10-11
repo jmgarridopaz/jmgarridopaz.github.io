@@ -335,7 +335,7 @@ Likewise, __adding a new specific technology adapter__ to a port can be done wit
 <div id="tc6-1-4"></div>
 ##### 6.1.4.- APPLICATION IMMUNE TO TECHNOLOGY EVOLUTION
 
-Technology evolves more frequently than business logic does. In applications where the business logic is tied to technology, you can’t do technology changes without touching business logic. This is no good, beacuse business should not change.
+Technology evolves more frequently than business logic does. In applications where the business logic is tied to technology, you can’t do technology changes without touching business logic. This is no good, because business should not change.
 
 With hexagonal architecture, the technolgy you want to upgrade is located at an adapter outside the application. __You just have to change the adapter__. The __application itself remains immutable__ because it doesn’t depend on adapters.
 

@@ -12,7 +12,7 @@ layout: default
 
 <div class="published">by <a href="{{ page.custom_author_url }}">{{ page.custom_author_name }}</a></div>
 
-- #### [Ports and Adapters Patern (Hexagonal Architecture)](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html)
+- #### [Ports and Adapters Pattern (Hexagonal Architecture)](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html)
 
 - #### [Hexagonal Architecture: An implementation guide](https://jmgarridopaz.github.io/content/hexagonalarchitecture-ig/intro.html)
 
