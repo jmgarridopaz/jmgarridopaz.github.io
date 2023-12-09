@@ -24,7 +24,7 @@ During the last years, from about the mid 10’s, there’s been an increasing i
 
 But, what is Hexagonal Architecture? I will try to answer the question by going straight ahead to the roots, to the place where it is described by its author, and extracting a definition from there.
 
-___Hexagonal Architecture__ is an alternative name for a pattern, described by Alistair Cockburn in an article he published on 2005, January 4. The main name of the pattern is Ports and Adapters._
+___Hexagonal Architecture__ is an alternative name for a pattern, described by Alistair Cockburn in an article he published on 2005, September 5. The main name of the pattern is Ports and Adapters._
 
 <div id="tc2"></div>
 ### 2.- WHAT A PATTERN IS.
